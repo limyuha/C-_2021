@@ -29,7 +29,15 @@ namespace book_management_program.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(24, 27);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(574, 786);
+            this.panel1.TabIndex = 0;
             // 
             // mypage
             // 
@@ -37,6 +45,7 @@ namespace book_management_program.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1234, 844);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "mypage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
@@ -46,5 +55,7 @@ namespace book_management_program.Forms
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panel1;
     }
 }
