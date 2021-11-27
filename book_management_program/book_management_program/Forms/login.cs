@@ -20,10 +20,14 @@ namespace book_management_program
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using(main main_form = new main())
+            main m = new main();
+            m.ShowDialog();
+            /*
+            using (main main_form = new main())
             {
                 main_form.ShowDialog();
             }
+            */
         }
     }
 }
