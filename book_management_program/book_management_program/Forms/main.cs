@@ -26,5 +26,10 @@ namespace book_management_program.Forms
         {
 
         }
+
+        private void main_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
