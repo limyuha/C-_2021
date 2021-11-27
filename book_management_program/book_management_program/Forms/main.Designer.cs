@@ -38,7 +38,6 @@ namespace book_management_program.Forms
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
@@ -46,6 +45,7 @@ namespace book_management_program.Forms
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -64,13 +64,13 @@ namespace book_management_program.Forms
             this.columnHeader10 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader11 = new System.Windows.Forms.ColumnHeader();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -166,16 +166,6 @@ namespace book_management_program.Forms
             this.panel3.Size = new System.Drawing.Size(505, 317);
             this.panel3.TabIndex = 1;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("한컴 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(0, 9);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(58, 31);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "도서";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -231,6 +221,16 @@ namespace book_management_program.Forms
             this.columnHeader7.Text = "출판사";
             this.columnHeader7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader7.Width = 110;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("한컴 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(0, 9);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(58, 31);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "도서";
             // 
             // panel4
             // 
@@ -411,53 +411,19 @@ namespace book_management_program.Forms
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "대여 / 반납 / 에약";
             // 
-            // textBox1
+            // button7
             // 
-            this.textBox1.Location = new System.Drawing.Point(22, 76);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(249, 31);
-            this.textBox1.TabIndex = 0;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("한컴 고딕", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(14, 44);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(97, 29);
-            this.label10.TabIndex = 13;
-            this.label10.Text = "도서번호";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("한컴 고딕", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(14, 128);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(76, 29);
-            this.label11.TabIndex = 15;
-            this.label11.Text = "도서명";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(22, 160);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(249, 31);
-            this.textBox2.TabIndex = 14;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("한컴 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(22, 245);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(249, 48);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "대여";
-            this.button5.UseVisualStyleBackColor = false;
+            this.button7.BackColor = System.Drawing.Color.Red;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("한컴 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(22, 380);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(249, 48);
+            this.button7.TabIndex = 17;
+            this.button7.Text = "예약";
+            this.button7.UseVisualStyleBackColor = false;
             // 
             // button6
             // 
@@ -473,19 +439,57 @@ namespace book_management_program.Forms
             this.button6.Text = "반납";
             this.button6.UseVisualStyleBackColor = false;
             // 
-            // button7
+            // button5
             // 
-            this.button7.BackColor = System.Drawing.Color.Red;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("한컴 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(22, 380);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(249, 48);
-            this.button7.TabIndex = 17;
-            this.button7.Text = "예약";
-            this.button7.UseVisualStyleBackColor = false;
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("한컴 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(22, 245);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(249, 48);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "대여";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("한컴 고딕", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(14, 128);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(76, 29);
+            this.label11.TabIndex = 15;
+            this.label11.Text = "도서명";
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.White;
+            this.textBox2.Location = new System.Drawing.Point(22, 160);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(249, 31);
+            this.textBox2.TabIndex = 14;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("한컴 고딕", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(14, 44);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(97, 29);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "도서번호";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(22, 76);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(249, 31);
+            this.textBox1.TabIndex = 0;
             // 
             // main
             // 
