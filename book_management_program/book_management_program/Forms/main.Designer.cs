@@ -33,12 +33,12 @@ namespace book_management_program.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.logout_btn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.issue_btn = new System.Windows.Forms.Button();
+            this.search_form_btn = new System.Windows.Forms.Button();
+            this.mypage_btn = new System.Windows.Forms.Button();
+            this.home_btn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -97,13 +97,13 @@ namespace book_management_program.Forms
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel2.Controls.Add(this.button9);
-            this.panel2.Controls.Add(this.button8);
+            this.panel2.Controls.Add(this.logout_btn);
             this.panel2.Controls.Add(this.panel1);
-            this.panel2.Controls.Add(this.button4);
+            this.panel2.Controls.Add(this.issue_btn);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.search_form_btn);
+            this.panel2.Controls.Add(this.mypage_btn);
+            this.panel2.Controls.Add(this.home_btn);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -121,16 +121,16 @@ namespace book_management_program.Forms
             this.button9.Text = "도움말";
             this.button9.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // logout_btn
             // 
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Location = new System.Drawing.Point(23, 383);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(121, 58);
-            this.button8.TabIndex = 5;
-            this.button8.Text = "로그아웃";
-            this.button8.UseVisualStyleBackColor = true;
+            this.logout_btn.FlatAppearance.BorderSize = 0;
+            this.logout_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logout_btn.Location = new System.Drawing.Point(23, 383);
+            this.logout_btn.Name = "logout_btn";
+            this.logout_btn.Size = new System.Drawing.Size(121, 58);
+            this.logout_btn.TabIndex = 5;
+            this.logout_btn.Text = "로그아웃";
+            this.logout_btn.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -140,50 +140,52 @@ namespace book_management_program.Forms
             this.panel1.Size = new System.Drawing.Size(16, 58);
             this.panel1.TabIndex = 2;
             // 
-            // button4
+            // issue_btn
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(23, 319);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(121, 58);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "이슈";
-            this.button4.UseVisualStyleBackColor = true;
+            this.issue_btn.FlatAppearance.BorderSize = 0;
+            this.issue_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.issue_btn.Location = new System.Drawing.Point(23, 319);
+            this.issue_btn.Name = "issue_btn";
+            this.issue_btn.Size = new System.Drawing.Size(121, 58);
+            this.issue_btn.TabIndex = 4;
+            this.issue_btn.Text = "이슈";
+            this.issue_btn.UseVisualStyleBackColor = true;
+            this.issue_btn.Click += new System.EventHandler(this.issue_btn_Click);
             // 
-            // button3
+            // search_form_btn
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(23, 255);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(121, 58);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "도서 검색";
-            this.button3.UseVisualStyleBackColor = true;
+            this.search_form_btn.FlatAppearance.BorderSize = 0;
+            this.search_form_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.search_form_btn.Location = new System.Drawing.Point(23, 255);
+            this.search_form_btn.Name = "search_form_btn";
+            this.search_form_btn.Size = new System.Drawing.Size(121, 58);
+            this.search_form_btn.TabIndex = 3;
+            this.search_form_btn.Text = "도서 검색";
+            this.search_form_btn.UseVisualStyleBackColor = true;
+            this.search_form_btn.Click += new System.EventHandler(this.search_form_btn_Click);
             // 
-            // button2
+            // mypage_btn
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(23, 191);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 58);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "마이페이지";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.mypage_btn.FlatAppearance.BorderSize = 0;
+            this.mypage_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.mypage_btn.Location = new System.Drawing.Point(23, 191);
+            this.mypage_btn.Name = "mypage_btn";
+            this.mypage_btn.Size = new System.Drawing.Size(121, 58);
+            this.mypage_btn.TabIndex = 2;
+            this.mypage_btn.Text = "마이페이지";
+            this.mypage_btn.UseVisualStyleBackColor = true;
+            this.mypage_btn.Click += new System.EventHandler(this.mypage_btn_Click);
             // 
-            // button1
+            // home_btn
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(23, 127);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 58);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "홈";
-            this.button1.UseVisualStyleBackColor = true;
+            this.home_btn.FlatAppearance.BorderSize = 0;
+            this.home_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.home_btn.Location = new System.Drawing.Point(23, 127);
+            this.home_btn.Name = "home_btn";
+            this.home_btn.Size = new System.Drawing.Size(121, 58);
+            this.home_btn.TabIndex = 1;
+            this.home_btn.Text = "홈";
+            this.home_btn.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -587,12 +589,12 @@ namespace book_management_program.Forms
 
         #endregion
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button search_form_btn;
+        private System.Windows.Forms.Button mypage_btn;
+        private System.Windows.Forms.Button home_btn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button issue_btn;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ColumnHeader columnHeader1;
@@ -627,7 +629,7 @@ namespace book_management_program.Forms
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button logout_btn;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Button button9;

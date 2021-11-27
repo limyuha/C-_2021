@@ -17,7 +17,7 @@ namespace book_management_program.Forms
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void mypage_btn_Click(object sender, EventArgs e)
         {
             Point parentPoint = this.Location; //main 폼 시작 위치 값
 
@@ -27,5 +27,19 @@ namespace book_management_program.Forms
             mypage.Location = new Point(parentPoint.X + 155, parentPoint.Y + 45);
             mypage.Show();
         }
+        private void issue_btn_Click(object sender, EventArgs e)
+        {
+            
+        }
+        private void search_form_btn_Click(object sender, EventArgs e)
+        {
+            Point parentPoint = this.Location; //main 폼 시작 위치 값
+
+            search_form search = new search_form();
+            search.StartPosition = FormStartPosition.Manual;
+            search.Location = new Point(parentPoint.X + 155, parentPoint.Y + 45);
+            search.Show();
+        }
+
     }
 }
