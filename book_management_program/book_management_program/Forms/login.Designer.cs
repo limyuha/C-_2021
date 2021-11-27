@@ -48,7 +48,7 @@ namespace book_management_program
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1200, 71);
+            this.panel1.Size = new System.Drawing.Size(1378, 71);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -64,7 +64,7 @@ namespace book_management_program
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(504, 260);
+            this.label2.Location = new System.Drawing.Point(593, 259);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(190, 25);
             this.label2.TabIndex = 1;
@@ -72,7 +72,7 @@ namespace book_management_program
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(461, 344);
+            this.textBox1.Location = new System.Drawing.Point(550, 343);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(278, 31);
             this.textBox1.TabIndex = 2;
@@ -80,7 +80,7 @@ namespace book_management_program
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(461, 316);
+            this.label3.Location = new System.Drawing.Point(550, 315);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 25);
             this.label3.TabIndex = 3;
@@ -89,7 +89,7 @@ namespace book_management_program
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(461, 415);
+            this.label4.Location = new System.Drawing.Point(550, 414);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 25);
             this.label4.TabIndex = 5;
@@ -97,7 +97,7 @@ namespace book_management_program
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(461, 443);
+            this.textBox2.Location = new System.Drawing.Point(550, 442);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(278, 31);
             this.textBox2.TabIndex = 4;
@@ -109,7 +109,7 @@ namespace book_management_program
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(461, 501);
+            this.button1.Location = new System.Drawing.Point(550, 500);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(278, 40);
             this.button1.TabIndex = 6;
@@ -124,7 +124,7 @@ namespace book_management_program
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(461, 547);
+            this.button2.Location = new System.Drawing.Point(550, 546);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(278, 40);
             this.button2.TabIndex = 7;
@@ -136,7 +136,7 @@ namespace book_management_program
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1200, 800);
+            this.ClientSize = new System.Drawing.Size(1378, 844);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
