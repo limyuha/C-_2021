@@ -41,7 +41,6 @@ namespace book_management_program.Forms
             this.Name = "mypage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "mypage";
-            this.Load += new System.EventHandler(this.mypage_Load);
             this.ResumeLayout(false);
 
         }

@@ -16,10 +16,5 @@ namespace book_management_program.Forms
         {
             InitializeComponent();
         }
-
-        private void mypage_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

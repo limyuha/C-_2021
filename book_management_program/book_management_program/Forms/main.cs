@@ -19,7 +19,7 @@ namespace book_management_program.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Point parentPoint = this.Location;
+            Point parentPoint = this.Location; //main 폼 시작 위치 값
 
             mypage mypage = new mypage();
             mypage.StartPosition = FormStartPosition.Manual;
