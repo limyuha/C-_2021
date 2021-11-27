@@ -4,6 +4,9 @@
     <Compile Update="Forms\issue.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\issue_write.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\login.cs">
       <SubType>Form</SubType>
     </Compile>
