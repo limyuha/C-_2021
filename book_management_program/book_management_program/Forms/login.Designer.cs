@@ -1,7 +1,7 @@
 ﻿
 namespace book_management_program
 {
-    partial class Form1
+    partial class login
     {
         /// <summary>
         ///  Required designer variable.
@@ -115,6 +115,7 @@ namespace book_management_program
             this.button1.TabIndex = 6;
             this.button1.Text = "로그인";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -130,7 +131,7 @@ namespace book_management_program
             this.button2.Text = "회원가입";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // Form1
+            // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -147,7 +148,8 @@ namespace book_management_program
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

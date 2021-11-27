@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace book_management_program
+namespace book_management_program.Forms
 {
-    public partial class Form1 : Form
+    public partial class main : Form
     {
-        public Form1()
+        public main()
         {
             InitializeComponent();
         }
-
     }
 }
