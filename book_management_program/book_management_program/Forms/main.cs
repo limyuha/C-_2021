@@ -16,20 +16,5 @@ namespace book_management_program.Forms
         {
             InitializeComponent();
         }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void main_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

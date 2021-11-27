@@ -38,6 +38,7 @@ namespace book_management_program.Forms
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
@@ -62,12 +63,18 @@ namespace book_management_program.Forms
             this.columnHeader9 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader10 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader11 = new System.Windows.Forms.ColumnHeader();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -155,6 +162,16 @@ namespace book_management_program.Forms
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(505, 317);
             this.panel3.TabIndex = 1;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("한컴 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(0, 9);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(58, 31);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "도서";
             // 
             // label2
             // 
@@ -320,10 +337,11 @@ namespace book_management_program.Forms
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.label9);
             this.panel7.Controls.Add(this.listView2);
             this.panel7.Location = new System.Drawing.Point(162, 355);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1200, 477);
+            this.panel7.Size = new System.Drawing.Size(900, 477);
             this.panel7.TabIndex = 8;
             // 
             // listView2
@@ -337,9 +355,9 @@ namespace book_management_program.Forms
             this.columnHeader11});
             this.listView2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(0, 31);
+            this.listView2.Location = new System.Drawing.Point(0, 54);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(1200, 446);
+            this.listView2.Size = new System.Drawing.Size(900, 423);
             this.listView2.TabIndex = 0;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
@@ -347,32 +365,79 @@ namespace book_management_program.Forms
             // columnHeader3
             // 
             this.columnHeader3.Text = "도서 번호";
-            this.columnHeader3.Width = 200;
+            this.columnHeader3.Width = 150;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "도서명";
-            this.columnHeader5.Width = 200;
+            this.columnHeader5.Width = 150;
             // 
             // columnHeader8
             // 
             this.columnHeader8.Text = "저자";
-            this.columnHeader8.Width = 200;
+            this.columnHeader8.Width = 150;
             // 
             // columnHeader9
             // 
             this.columnHeader9.Text = "출판사";
-            this.columnHeader9.Width = 200;
+            this.columnHeader9.Width = 150;
             // 
             // columnHeader10
             // 
             this.columnHeader10.Text = "재고";
-            this.columnHeader10.Width = 200;
+            this.columnHeader10.Width = 149;
             // 
             // columnHeader11
             // 
             this.columnHeader11.Text = "대여량";
-            this.columnHeader11.Width = 200;
+            this.columnHeader11.Width = 150;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Location = new System.Drawing.Point(1073, 355);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(293, 477);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "대여 / 반납 / 에약";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(18, 76);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(249, 31);
+            this.textBox1.TabIndex = 0;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("한컴 고딕", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(14, 44);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(97, 29);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "도서번호";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("한컴 고딕", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(14, 128);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(76, 29);
+            this.label11.TabIndex = 15;
+            this.label11.Text = "도서명";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(18, 160);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(249, 31);
+            this.textBox2.TabIndex = 14;
             // 
             // main
             // 
@@ -381,6 +446,7 @@ namespace book_management_program.Forms
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1378, 844);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
@@ -393,7 +459,6 @@ namespace book_management_program.Forms
             this.Name = "main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Main";
-            this.Load += new System.EventHandler(this.main_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -405,6 +470,9 @@ namespace book_management_program.Forms
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -442,5 +510,11 @@ namespace book_management_program.Forms
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
