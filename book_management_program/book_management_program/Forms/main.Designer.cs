@@ -65,6 +65,8 @@ namespace book_management_program.Forms
             this.columnHeader10 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader11 = new System.Windows.Forms.ColumnHeader();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -403,7 +405,7 @@ namespace book_management_program.Forms
             // columnHeader10
             // 
             this.columnHeader10.Text = "재고";
-            this.columnHeader10.Width = 148;
+            this.columnHeader10.Width = 140;
             // 
             // columnHeader11
             // 
@@ -412,6 +414,8 @@ namespace book_management_program.Forms
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBox2);
+            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.button5);
@@ -426,6 +430,30 @@ namespace book_management_program.Forms
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "대여 / 반납 / 에약";
             // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Font = new System.Drawing.Font("맑은 고딕 Semilight", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBox2.Location = new System.Drawing.Point(166, 220);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(84, 25);
+            this.checkBox2.TabIndex = 19;
+            this.checkBox2.Text = "예약중";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoCheck = false;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.checkBox1.Font = new System.Drawing.Font("맑은 고딕 Semilight", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBox1.Location = new System.Drawing.Point(54, 220);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(84, 25);
+            this.checkBox1.TabIndex = 18;
+            this.checkBox1.Text = "대여중";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.Red;
@@ -433,7 +461,7 @@ namespace book_management_program.Forms
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("한컴 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(22, 380);
+            this.button7.Location = new System.Drawing.Point(22, 413);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(249, 48);
             this.button7.TabIndex = 17;
@@ -447,7 +475,7 @@ namespace book_management_program.Forms
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("한컴 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(22, 312);
+            this.button6.Location = new System.Drawing.Point(22, 345);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(249, 48);
             this.button6.TabIndex = 16;
@@ -461,7 +489,7 @@ namespace book_management_program.Forms
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("한컴 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(22, 245);
+            this.button5.Location = new System.Drawing.Point(22, 278);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(249, 48);
             this.button5.TabIndex = 9;
@@ -587,5 +615,7 @@ namespace book_management_program.Forms
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }
