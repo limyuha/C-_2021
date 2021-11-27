@@ -29,6 +29,7 @@ namespace book_management_program.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
@@ -196,6 +197,8 @@ namespace book_management_program.Forms
             // 
             // panel4
             // 
+            this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel4.Location = new System.Drawing.Point(765, 12);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(271, 150);
@@ -203,6 +206,7 @@ namespace book_management_program.Forms
             // 
             // panel5
             // 
+            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
             this.panel5.Location = new System.Drawing.Point(1087, 12);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(271, 150);
@@ -210,6 +214,7 @@ namespace book_management_program.Forms
             // 
             // panel6
             // 
+            this.panel6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel6.BackgroundImage")));
             this.panel6.Location = new System.Drawing.Point(765, 181);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(593, 148);
