@@ -32,6 +32,7 @@ namespace book_management_program.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -44,13 +45,29 @@ namespace book_management_program.Forms
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader8 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader9 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader10 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader11 = new System.Windows.Forms.ColumnHeader();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -76,6 +93,14 @@ namespace book_management_program.Forms
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(144, 844);
             this.panel2.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(1, 127);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(16, 58);
+            this.panel1.TabIndex = 2;
             // 
             // button4
             // 
@@ -187,45 +212,167 @@ namespace book_management_program.Forms
             this.columnHeader7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader7.Width = 110;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(1, 127);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(16, 58);
-            this.panel1.TabIndex = 2;
-            // 
             // panel4
             // 
             this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel4.Controls.Add(this.label4);
+            this.panel4.Controls.Add(this.label3);
             this.panel4.Location = new System.Drawing.Point(765, 12);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(271, 150);
             this.panel4.TabIndex = 6;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("한컴 고딕", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(53, 65);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(168, 57);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "10,000";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Font = new System.Drawing.Font("한컴 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.Gray;
+            this.label3.Location = new System.Drawing.Point(23, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(93, 36);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "장서량";
+            // 
             // panel5
             // 
             this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.label6);
             this.panel5.Location = new System.Drawing.Point(1087, 12);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(271, 150);
             this.panel5.TabIndex = 7;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("한컴 고딕", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(57, 68);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(168, 57);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "10,000";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label6.Font = new System.Drawing.Font("한컴 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.Gray;
+            this.label6.Location = new System.Drawing.Point(27, 23);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(152, 36);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "하루 대여량";
+            // 
             // panel6
             // 
             this.panel6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel6.BackgroundImage")));
+            this.panel6.Controls.Add(this.label7);
+            this.panel6.Controls.Add(this.label8);
             this.panel6.Location = new System.Drawing.Point(765, 181);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(593, 148);
             this.panel6.TabIndex = 7;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("한컴 고딕", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(308, 43);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(168, 57);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "10,000";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label8.Font = new System.Drawing.Font("한컴 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.Color.Gray;
+            this.label8.Location = new System.Drawing.Point(103, 54);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(152, 36);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "기간 대여량";
+            // 
             // panel7
             // 
-            this.panel7.Location = new System.Drawing.Point(162, 396);
+            this.panel7.Controls.Add(this.listView2);
+            this.panel7.Location = new System.Drawing.Point(162, 355);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1196, 422);
+            this.panel7.Size = new System.Drawing.Size(1200, 477);
             this.panel7.TabIndex = 8;
+            // 
+            // listView2
+            // 
+            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader3,
+            this.columnHeader5,
+            this.columnHeader8,
+            this.columnHeader9,
+            this.columnHeader10,
+            this.columnHeader11});
+            this.listView2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listView2.HideSelection = false;
+            this.listView2.Location = new System.Drawing.Point(0, 31);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(1200, 446);
+            this.listView2.TabIndex = 0;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "도서 번호";
+            this.columnHeader3.Width = 200;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "도서명";
+            this.columnHeader5.Width = 200;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "저자";
+            this.columnHeader8.Width = 200;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "출판사";
+            this.columnHeader9.Width = 200;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "재고";
+            this.columnHeader10.Width = 200;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "대여량";
+            this.columnHeader11.Width = 200;
             // 
             // main
             // 
@@ -251,6 +398,13 @@ namespace book_management_program.Forms
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -275,5 +429,18 @@ namespace book_management_program.Forms
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
     }
 }
