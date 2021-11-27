@@ -52,7 +52,7 @@ namespace book_management_program.Forms
             "도서명",
             "저자",
             "출판사"});
-            this.comboBox1.Location = new System.Drawing.Point(336, 62);
+            this.comboBox1.Location = new System.Drawing.Point(336, 63);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(95, 33);
             this.comboBox1.TabIndex = 0;
@@ -73,7 +73,7 @@ namespace book_management_program.Forms
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(803, 63);
+            this.button1.Location = new System.Drawing.Point(803, 62);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 34);
             this.button1.TabIndex = 2;

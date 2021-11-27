@@ -20,3 +20,4 @@ E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-wind
 E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Properties.Resources.resources
 E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.mypage.resources
 E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.search_form.resources
+E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.issue.resources

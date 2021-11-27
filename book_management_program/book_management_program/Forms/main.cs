@@ -29,7 +29,12 @@ namespace book_management_program.Forms
         }
         private void issue_btn_Click(object sender, EventArgs e)
         {
-            
+            Point parentPoint = this.Location; //main 폼 시작 위치 값
+
+            issue issue = new issue();
+            issue.StartPosition = FormStartPosition.Manual;
+            issue.Location = new Point(parentPoint.X + 155, parentPoint.Y + 45);
+            issue.Show();
         }
         private void search_form_btn_Click(object sender, EventArgs e)
         {
