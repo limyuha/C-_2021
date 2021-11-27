@@ -32,6 +32,7 @@ namespace book_management_program.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
@@ -95,6 +96,7 @@ namespace book_management_program.Forms
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel2.Controls.Add(this.button9);
             this.panel2.Controls.Add(this.button8);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.button4);
@@ -107,6 +109,17 @@ namespace book_management_program.Forms
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(144, 844);
             this.panel2.TabIndex = 0;
+            // 
+            // button9
+            // 
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Location = new System.Drawing.Point(23, 447);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(121, 58);
+            this.button9.TabIndex = 6;
+            this.button9.Text = "도움말";
+            this.button9.UseVisualStyleBackColor = true;
             // 
             // button8
             // 
@@ -500,7 +513,7 @@ namespace book_management_program.Forms
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("한컴 고딕", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(14, 128);
+            this.label11.Location = new System.Drawing.Point(15, 128);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(76, 29);
             this.label11.TabIndex = 15;
@@ -519,7 +532,7 @@ namespace book_management_program.Forms
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("한컴 고딕", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(14, 44);
+            this.label10.Location = new System.Drawing.Point(15, 44);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(97, 29);
             this.label10.TabIndex = 13;
@@ -617,5 +630,6 @@ namespace book_management_program.Forms
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Button button9;
     }
 }
