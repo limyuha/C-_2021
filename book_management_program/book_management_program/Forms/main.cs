@@ -16,5 +16,16 @@ namespace book_management_program.Forms
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Point parentPoint = this.Location;
+
+            mypage mypage = new mypage();
+            mypage.StartPosition = FormStartPosition.Manual;
+            //mypage.Location = new Point(parentPoint.X+150, parentPoint.Y+45);
+            mypage.Location = new Point(parentPoint.X + 155, parentPoint.Y + 45);
+            mypage.Show();
+        }
     }
 }

@@ -32,6 +32,7 @@ namespace book_management_program.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -92,6 +93,7 @@ namespace book_management_program.Forms
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel2.Controls.Add(this.button8);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.label1);
@@ -103,6 +105,17 @@ namespace book_management_program.Forms
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(144, 844);
             this.panel2.TabIndex = 0;
+            // 
+            // button8
+            // 
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Location = new System.Drawing.Point(23, 383);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(121, 58);
+            this.button8.TabIndex = 5;
+            this.button8.Text = "로그아웃";
+            this.button8.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -120,7 +133,7 @@ namespace book_management_program.Forms
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(121, 58);
             this.button4.TabIndex = 4;
-            this.button4.Text = "로그아웃";
+            this.button4.Text = "이슈";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button3
@@ -131,7 +144,7 @@ namespace book_management_program.Forms
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(121, 58);
             this.button3.TabIndex = 3;
-            this.button3.Text = "이슈";
+            this.button3.Text = "도서 검색";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button2
@@ -142,8 +155,9 @@ namespace book_management_program.Forms
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(121, 58);
             this.button2.TabIndex = 2;
-            this.button2.Text = "도서 검색";
+            this.button2.Text = "마이페이지";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -153,7 +167,7 @@ namespace book_management_program.Forms
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 58);
             this.button1.TabIndex = 1;
-            this.button1.Text = "마이페이지";
+            this.button1.Text = "홈";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // panel3
@@ -169,9 +183,10 @@ namespace book_management_program.Forms
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(0, 20);
+            this.label2.Font = new System.Drawing.Font("한컴 고딕", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(0, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 25);
+            this.label2.Size = new System.Drawing.Size(93, 26);
             this.label2.TabIndex = 5;
             this.label2.Text = "대여 순위";
             // 
@@ -388,7 +403,7 @@ namespace book_management_program.Forms
             // columnHeader10
             // 
             this.columnHeader10.Text = "재고";
-            this.columnHeader10.Width = 149;
+            this.columnHeader10.Width = 148;
             // 
             // columnHeader11
             // 
@@ -571,5 +586,6 @@ namespace book_management_program.Forms
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button8;
     }
 }
