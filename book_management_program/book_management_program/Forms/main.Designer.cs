@@ -68,6 +68,9 @@ namespace book_management_program.Forms
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -394,6 +397,9 @@ namespace book_management_program.Forms
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button7);
+            this.groupBox1.Controls.Add(this.button6);
+            this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.label10);
@@ -407,7 +413,7 @@ namespace book_management_program.Forms
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(18, 76);
+            this.textBox1.Location = new System.Drawing.Point(22, 76);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(249, 31);
             this.textBox1.TabIndex = 0;
@@ -434,10 +440,52 @@ namespace book_management_program.Forms
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(18, 160);
+            this.textBox2.Location = new System.Drawing.Point(22, 160);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(249, 31);
             this.textBox2.TabIndex = 14;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("한컴 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(22, 245);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(249, 48);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "대여";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("한컴 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(22, 312);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(249, 48);
+            this.button6.TabIndex = 16;
+            this.button6.Text = "반납";
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.Red;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("한컴 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(22, 380);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(249, 48);
+            this.button7.TabIndex = 17;
+            this.button7.Text = "예약";
+            this.button7.UseVisualStyleBackColor = false;
             // 
             // main
             // 
@@ -516,5 +564,8 @@ namespace book_management_program.Forms
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button5;
     }
 }
