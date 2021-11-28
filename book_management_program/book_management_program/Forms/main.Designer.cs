@@ -32,9 +32,9 @@ namespace book_management_program.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
+            this.help_btn = new System.Windows.Forms.Button();
             this.logout_btn = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelSlide = new System.Windows.Forms.Panel();
             this.issue_btn = new System.Windows.Forms.Button();
             this.search_form_btn = new System.Windows.Forms.Button();
             this.mypage_btn = new System.Windows.Forms.Button();
@@ -96,9 +96,9 @@ namespace book_management_program.Forms
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.panel2.Controls.Add(this.button9);
+            this.panel2.Controls.Add(this.help_btn);
             this.panel2.Controls.Add(this.logout_btn);
-            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Controls.Add(this.panelSlide);
             this.panel2.Controls.Add(this.issue_btn);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.search_form_btn);
@@ -110,16 +110,17 @@ namespace book_management_program.Forms
             this.panel2.Size = new System.Drawing.Size(144, 844);
             this.panel2.TabIndex = 0;
             // 
-            // button9
+            // help_btn
             // 
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Location = new System.Drawing.Point(23, 447);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(121, 58);
-            this.button9.TabIndex = 6;
-            this.button9.Text = "도움말";
-            this.button9.UseVisualStyleBackColor = true;
+            this.help_btn.FlatAppearance.BorderSize = 0;
+            this.help_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.help_btn.Location = new System.Drawing.Point(23, 447);
+            this.help_btn.Name = "help_btn";
+            this.help_btn.Size = new System.Drawing.Size(121, 58);
+            this.help_btn.TabIndex = 6;
+            this.help_btn.Text = "도움말";
+            this.help_btn.UseVisualStyleBackColor = true;
+            this.help_btn.Click += new System.EventHandler(this.help_btn_Click);
             // 
             // logout_btn
             // 
@@ -132,13 +133,13 @@ namespace book_management_program.Forms
             this.logout_btn.Text = "로그아웃";
             this.logout_btn.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // panelSlide
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(1, 127);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(16, 58);
-            this.panel1.TabIndex = 2;
+            this.panelSlide.BackColor = System.Drawing.Color.White;
+            this.panelSlide.Location = new System.Drawing.Point(1, 127);
+            this.panelSlide.Name = "panelSlide";
+            this.panelSlide.Size = new System.Drawing.Size(16, 58);
+            this.panelSlide.TabIndex = 2;
             // 
             // issue_btn
             // 
@@ -186,6 +187,7 @@ namespace book_management_program.Forms
             this.home_btn.TabIndex = 1;
             this.home_btn.Text = "홈";
             this.home_btn.UseVisualStyleBackColor = true;
+            this.home_btn.Click += new System.EventHandler(this.home_btn_Click);
             // 
             // panel3
             // 
@@ -602,7 +604,7 @@ namespace book_management_program.Forms
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelSlide;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
@@ -632,6 +634,6 @@ namespace book_management_program.Forms
         private System.Windows.Forms.Button logout_btn;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button help_btn;
     }
 }
