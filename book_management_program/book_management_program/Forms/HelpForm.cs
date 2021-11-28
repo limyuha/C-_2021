@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace book_management_program.Forms
 {
-    public partial class issue_detail : Form
+    public partial class HelpForm : Form
     {
-        public issue_detail()
+        public HelpForm()
         {
             InitializeComponent();
         }

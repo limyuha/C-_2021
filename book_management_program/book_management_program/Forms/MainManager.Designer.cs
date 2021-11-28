@@ -1,7 +1,7 @@
 ﻿
 namespace book_management_program.Forms
 {
-    partial class main_manager
+    partial class MainManager
     {
         /// <summary>
         /// Required designer variable.

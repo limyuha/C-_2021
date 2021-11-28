@@ -11,16 +11,16 @@ using System.Windows.Forms;
 
 namespace book_management_program
 {
-    public partial class login : Form
+    public partial class LoginForm : Form
     {
-        public login()
+        public LoginForm()
         {
             InitializeComponent();
         }
 
         private void login_btn_Click(object sender, EventArgs e)
         {
-            main main = new main();
+            MainForm main = new MainForm();
             main.ShowDialog();
             this.Close(); //main 폼 닫으면 로그인 폼도 닫기
             /*
@@ -33,13 +33,13 @@ namespace book_management_program
 
         private void join_btn_Click(object sender, EventArgs e)
         {
-            join join = new join();
+            JoinForm join = new JoinForm();
             join.ShowDialog();
         }
 
         private void manager_btn_Click(object sender, EventArgs e)
         {
-            main_manager main_manager = new main_manager();
+            MainManager main_manager = new MainManager();
             main_manager.ShowDialog();
             this.Close();
         }

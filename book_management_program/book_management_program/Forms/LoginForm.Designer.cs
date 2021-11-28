@@ -1,7 +1,7 @@
 ﻿
 namespace book_management_program
 {
-    partial class login
+    partial class LoginForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -30,15 +30,15 @@ namespace book_management_program
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.manager_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.id_textBox = new System.Windows.Forms.TextBox();
+            this.id_label = new System.Windows.Forms.Label();
+            this.pw_label = new System.Windows.Forms.Label();
+            this.pw_textBox = new System.Windows.Forms.TextBox();
             this.login_btn = new System.Windows.Forms.Button();
             this.join_btn = new System.Windows.Forms.Button();
-            this.manager_btn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +52,21 @@ namespace book_management_program
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1378, 71);
             this.panel1.TabIndex = 0;
+            // 
+            // manager_btn
+            // 
+            this.manager_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.manager_btn.FlatAppearance.BorderSize = 0;
+            this.manager_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.manager_btn.Font = new System.Drawing.Font("한컴 고딕", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.manager_btn.ForeColor = System.Drawing.Color.White;
+            this.manager_btn.Location = new System.Drawing.Point(1254, 16);
+            this.manager_btn.Name = "manager_btn";
+            this.manager_btn.Size = new System.Drawing.Size(111, 40);
+            this.manager_btn.TabIndex = 8;
+            this.manager_btn.Text = "관리자";
+            this.manager_btn.UseVisualStyleBackColor = false;
+            this.manager_btn.Click += new System.EventHandler(this.manager_btn_Click);
             // 
             // label1
             // 
@@ -73,37 +88,37 @@ namespace book_management_program
             this.label2.TabIndex = 1;
             this.label2.Text = "로그인 먼저 해주세요.";
             // 
-            // textBox1
+            // id_textBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(550, 343);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(278, 31);
-            this.textBox1.TabIndex = 2;
+            this.id_textBox.Location = new System.Drawing.Point(550, 343);
+            this.id_textBox.Name = "id_textBox";
+            this.id_textBox.Size = new System.Drawing.Size(278, 31);
+            this.id_textBox.TabIndex = 2;
             // 
-            // label3
+            // id_label
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(550, 315);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 25);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "아이디";
+            this.id_label.AutoSize = true;
+            this.id_label.Location = new System.Drawing.Point(550, 315);
+            this.id_label.Name = "id_label";
+            this.id_label.Size = new System.Drawing.Size(66, 25);
+            this.id_label.TabIndex = 3;
+            this.id_label.Text = "아이디";
             // 
-            // label4
+            // pw_label
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(550, 414);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 25);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "비밀번호";
+            this.pw_label.AutoSize = true;
+            this.pw_label.Location = new System.Drawing.Point(550, 414);
+            this.pw_label.Name = "pw_label";
+            this.pw_label.Size = new System.Drawing.Size(84, 25);
+            this.pw_label.TabIndex = 5;
+            this.pw_label.Text = "비밀번호";
             // 
-            // textBox2
+            // pw_textBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(550, 442);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(278, 31);
-            this.textBox2.TabIndex = 4;
+            this.pw_textBox.Location = new System.Drawing.Point(550, 442);
+            this.pw_textBox.Name = "pw_textBox";
+            this.pw_textBox.Size = new System.Drawing.Size(278, 31);
+            this.pw_textBox.TabIndex = 4;
             // 
             // login_btn
             // 
@@ -135,22 +150,7 @@ namespace book_management_program
             this.join_btn.UseVisualStyleBackColor = false;
             this.join_btn.Click += new System.EventHandler(this.join_btn_Click);
             // 
-            // manager_btn
-            // 
-            this.manager_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.manager_btn.FlatAppearance.BorderSize = 0;
-            this.manager_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.manager_btn.Font = new System.Drawing.Font("한컴 고딕", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.manager_btn.ForeColor = System.Drawing.Color.White;
-            this.manager_btn.Location = new System.Drawing.Point(1254, 16);
-            this.manager_btn.Name = "manager_btn";
-            this.manager_btn.Size = new System.Drawing.Size(111, 40);
-            this.manager_btn.TabIndex = 8;
-            this.manager_btn.Text = "관리자";
-            this.manager_btn.UseVisualStyleBackColor = false;
-            this.manager_btn.Click += new System.EventHandler(this.manager_btn_Click);
-            // 
-            // login
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -159,16 +159,16 @@ namespace book_management_program
             this.ClientSize = new System.Drawing.Size(1378, 844);
             this.Controls.Add(this.join_btn);
             this.Controls.Add(this.login_btn);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.pw_label);
+            this.Controls.Add(this.pw_textBox);
+            this.Controls.Add(this.id_label);
+            this.Controls.Add(this.id_textBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "login";
+            this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
@@ -183,10 +183,10 @@ namespace book_management_program
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox id_textBox;
+        private System.Windows.Forms.Label id_label;
+        private System.Windows.Forms.Label pw_label;
+        private System.Windows.Forms.TextBox pw_textBox;
         private System.Windows.Forms.Button login_btn;
         private System.Windows.Forms.Button join_btn;
         private System.Windows.Forms.Button manager_btn;

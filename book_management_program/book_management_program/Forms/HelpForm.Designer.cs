@@ -1,7 +1,7 @@
 ﻿
 namespace book_management_program.Forms
 {
-    partial class help
+    partial class HelpForm
     {
         /// <summary>
         /// Required designer variable.

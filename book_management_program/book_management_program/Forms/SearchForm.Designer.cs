@@ -1,7 +1,7 @@
 ﻿
 namespace book_management_program.Forms
 {
-    partial class search_form
+    partial class SearchForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace book_management_program.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(search_form));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchForm));
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();

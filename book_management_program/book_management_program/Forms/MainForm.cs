@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace book_management_program.Forms
 {
-    public partial class main : Form
+    public partial class MainForm : Form
     {
-        public main()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -35,7 +35,7 @@ namespace book_management_program.Forms
                 formName.Close();
             }
 
-            home home = new home();
+            HomeForm home = new HomeForm();
             home.MdiParent = this;
             home.Show();
 
@@ -52,7 +52,7 @@ namespace book_management_program.Forms
 
             //Point parentPoint = this.Location; //main 폼 시작 위치 값
 
-            mypage mypage = new mypage();
+            MypageForm mypage = new MypageForm();
             //mypage.TopLevel = false;
 
             //Wmypage.StartPosition = FormStartPosition.Manual;
@@ -72,7 +72,7 @@ namespace book_management_program.Forms
 
             movePanelSlide(issue_btn);
 
-            issue issue = new issue();
+            IssueForm issue = new IssueForm();
             issue.MdiParent = this;
             issue.Show();
 
@@ -87,7 +87,7 @@ namespace book_management_program.Forms
 
             movePanelSlide(search_form_btn);
 
-            search_form search_form = new search_form();
+            SearchForm search_form = new SearchForm();
             search_form.MdiParent = this;
             search_form.Show();
 
@@ -102,7 +102,7 @@ namespace book_management_program.Forms
 
             movePanelSlide(help_btn);
 
-            help help = new help();
+            HelpForm help = new HelpForm();
             help.MdiParent = this;
             help.Show();
 
@@ -111,7 +111,7 @@ namespace book_management_program.Forms
 
         private void main_Load(object sender, EventArgs e)
         {
-            home home = new home();
+            HomeForm home = new HomeForm();
             home.MdiParent = this;
             //home.WindowState = FormWindowState.Maximized;
             //this.WindowState = FormWindowState.Maximized;

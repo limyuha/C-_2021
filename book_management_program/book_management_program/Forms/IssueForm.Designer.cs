@@ -1,7 +1,7 @@
 ﻿
 namespace book_management_program.Forms
 {
-    partial class issue
+    partial class IssueForm
     {
         /// <summary>
         /// Required designer variable.

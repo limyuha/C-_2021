@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace book_management_program.Forms
 {
-    public partial class main_manager : Form
+    public partial class MainManager : Form
     {
-        public main_manager()
+        public MainManager()
         {
             InitializeComponent();
         }
@@ -56,7 +56,7 @@ namespace book_management_program.Forms
                 formName.Close();
             }
 
-            memeber_manager memeber_manager = new memeber_manager();
+            MemeberManager memeber_manager = new MemeberManager();
             memeber_manager.MdiParent = this;
             memeber_manager.Show();
 
@@ -71,7 +71,7 @@ namespace book_management_program.Forms
                 formName.Close();
             }
 
-            issue_manager issue_manager = new issue_manager();
+            IssueManager issue_manager = new IssueManager();
             issue_manager.MdiParent = this;
             issue_manager.Show();
 

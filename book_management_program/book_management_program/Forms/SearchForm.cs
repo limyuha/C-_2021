@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace book_management_program.Forms
 {
-    public partial class mypage : Form
+    public partial class SearchForm : Form
     {
-        public mypage()
+        public SearchForm()
         {
             InitializeComponent();
         }

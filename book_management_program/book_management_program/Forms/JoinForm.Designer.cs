@@ -1,7 +1,7 @@
 ﻿
 namespace book_management_program.Forms
 {
-    partial class join
+    partial class JoinForm
     {
         /// <summary>
         /// Required designer variable.

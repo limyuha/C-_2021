@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace book_management_program.Forms
 {
-    public partial class join : Form
+    public partial class IssueManager : Form
     {
-        public join()
+        public IssueManager()
         {
             InitializeComponent();
-        }
-
-        private void close_btn_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

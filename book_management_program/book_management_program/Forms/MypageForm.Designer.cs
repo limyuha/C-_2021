@@ -1,7 +1,7 @@
 ﻿
 namespace book_management_program.Forms
 {
-    partial class mypage
+    partial class MypageForm
     {
         /// <summary>
         /// Required designer variable.

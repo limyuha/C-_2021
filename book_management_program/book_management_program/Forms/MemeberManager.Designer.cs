@@ -1,7 +1,7 @@
 ﻿
 namespace book_management_program.Forms
 {
-    partial class memeber_manager
+    partial class MemeberManager
     {
         /// <summary>
         /// Required designer variable.

@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace book_management_program.Forms
 {
-    public partial class issue : Form
+    public partial class IssueForm : Form
     {
-        public issue()
+        public IssueForm()
         {
             InitializeComponent();
         }
 
         private void issue_write_btn_Click(object sender, EventArgs e)
         {
-            issue_write issue_write = new issue_write();
+            IssueWriteForm issue_write = new IssueWriteForm();
             issue_write.ShowDialog();
         }
     }

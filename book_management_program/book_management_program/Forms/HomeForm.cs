@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace book_management_program.Forms
 {
-    public partial class issue_manager : Form
+    public partial class HomeForm : Form
     {
-        public issue_manager()
+        public HomeForm()
         {
             InitializeComponent();
         }

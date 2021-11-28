@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace book_management_program.Forms
 {
-    public partial class memeber_manager : Form
+    public partial class MemeberManager : Form
     {
-        public memeber_manager()
+        public MemeberManager()
         {
             InitializeComponent();
         }
