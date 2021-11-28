@@ -21,5 +21,21 @@ namespace book_management_program.Forms
         {
             this.Close();
         }
+
+        private void join_btn_Click(object sender, EventArgs e)
+        {
+            String id = id_textBox.Text;
+            String pwd = pw_textBox.Text;
+            if(id!="" && pwd != "")
+            {
+                //MemberManager.memInfoLookup(id, pwd);
+                MessageBox.Show("회원가입이 완료되었습니다.", "", MessageBoxButtons.OK);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("정보를 입력해주세요", "", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
+        }
     }
 }

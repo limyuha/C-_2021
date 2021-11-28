@@ -1,5 +1,5 @@
 ﻿
-namespace book_management_program
+namespace book_management_program.Forms
 {
     partial class LoginForm
     {

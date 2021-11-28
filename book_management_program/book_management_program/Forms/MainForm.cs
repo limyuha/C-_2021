@@ -13,9 +13,20 @@ namespace book_management_program.Forms
 {
     public partial class MainForm : Form
     {
+        public static string memberId //회원id
+        {
+            get; set;
+        }
+
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        public MainForm(string id)
+        {
+            InitializeComponent();
+            memberId = id; //회원id 지정
         }
 
         private void movePanelSlide(Control btn)
@@ -32,6 +43,7 @@ namespace book_management_program.Forms
 
             if (formName != null)
             {
+                formName.Hide();
                 formName.Close();
             }
 
@@ -47,6 +59,7 @@ namespace book_management_program.Forms
 
             if (formName != null)
             {
+                formName.Hide();
                 formName.Close();
             }
 
@@ -67,6 +80,7 @@ namespace book_management_program.Forms
         {
             if (formName != null)
             {
+                formName.Hide();
                 formName.Close();
             }
 
@@ -82,6 +96,7 @@ namespace book_management_program.Forms
         {
             if (formName != null)
             {
+                formName.Hide();
                 formName.Close();
             }
 
@@ -97,6 +112,7 @@ namespace book_management_program.Forms
         {
             if (formName != null)
             {
+                formName.Hide();
                 formName.Close();
             }
 
@@ -111,6 +127,8 @@ namespace book_management_program.Forms
 
         private void main_Load(object sender, EventArgs e)
         {
+            //label1.Text = memName(memberId) + " 님";
+
             HomeForm home = new HomeForm();
             home.MdiParent = this;
             //home.WindowState = FormWindowState.Maximized;
@@ -118,6 +136,20 @@ namespace book_management_program.Forms
             home.Show();
 
             formName = home;
+        }
+
+        private void logout_btn_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            this.Hide();
+            loginForm.ShowDialog();
+            Application.ExitThread(); //스레드 종료
+            //Application.Exit() → FormClosing → FormClosed
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.ExitThread(); //스레드 종료
         }
     }
 }
