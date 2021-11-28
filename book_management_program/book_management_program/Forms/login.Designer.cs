@@ -36,14 +36,16 @@ namespace book_management_program
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.login_btn = new System.Windows.Forms.Button();
+            this.join_btn = new System.Windows.Forms.Button();
+            this.manager_btn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.manager_btn);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -64,9 +66,10 @@ namespace book_management_program
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("한컴 고딕", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(593, 259);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(190, 25);
+            this.label2.Size = new System.Drawing.Size(199, 26);
             this.label2.TabIndex = 1;
             this.label2.Text = "로그인 먼저 해주세요.";
             // 
@@ -102,34 +105,50 @@ namespace book_management_program
             this.textBox2.Size = new System.Drawing.Size(278, 31);
             this.textBox2.TabIndex = 4;
             // 
-            // button1
+            // login_btn
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(550, 500);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(278, 40);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "로그인";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.login_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.login_btn.FlatAppearance.BorderSize = 0;
+            this.login_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.login_btn.Font = new System.Drawing.Font("한컴 고딕", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.login_btn.ForeColor = System.Drawing.Color.White;
+            this.login_btn.Location = new System.Drawing.Point(550, 500);
+            this.login_btn.Name = "login_btn";
+            this.login_btn.Size = new System.Drawing.Size(278, 40);
+            this.login_btn.TabIndex = 6;
+            this.login_btn.Text = "로그인";
+            this.login_btn.UseVisualStyleBackColor = false;
+            this.login_btn.Click += new System.EventHandler(this.login_btn_Click);
             // 
-            // button2
+            // join_btn
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(550, 546);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(278, 40);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "회원가입";
-            this.button2.UseVisualStyleBackColor = false;
+            this.join_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.join_btn.FlatAppearance.BorderSize = 0;
+            this.join_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.join_btn.Font = new System.Drawing.Font("한컴 고딕", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.join_btn.ForeColor = System.Drawing.Color.White;
+            this.join_btn.Location = new System.Drawing.Point(550, 546);
+            this.join_btn.Name = "join_btn";
+            this.join_btn.Size = new System.Drawing.Size(278, 40);
+            this.join_btn.TabIndex = 7;
+            this.join_btn.Text = "회원가입";
+            this.join_btn.UseVisualStyleBackColor = false;
+            this.join_btn.Click += new System.EventHandler(this.join_btn_Click);
+            // 
+            // manager_btn
+            // 
+            this.manager_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.manager_btn.FlatAppearance.BorderSize = 0;
+            this.manager_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.manager_btn.Font = new System.Drawing.Font("한컴 고딕", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.manager_btn.ForeColor = System.Drawing.Color.White;
+            this.manager_btn.Location = new System.Drawing.Point(1254, 16);
+            this.manager_btn.Name = "manager_btn";
+            this.manager_btn.Size = new System.Drawing.Size(111, 40);
+            this.manager_btn.TabIndex = 8;
+            this.manager_btn.Text = "관리자";
+            this.manager_btn.UseVisualStyleBackColor = false;
+            this.manager_btn.Click += new System.EventHandler(this.manager_btn_Click);
             // 
             // login
             // 
@@ -138,8 +157,8 @@ namespace book_management_program
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1378, 844);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.join_btn);
+            this.Controls.Add(this.login_btn);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label3);
@@ -168,8 +187,9 @@ namespace book_management_program
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button login_btn;
+        private System.Windows.Forms.Button join_btn;
+        private System.Windows.Forms.Button manager_btn;
     }
 }
 

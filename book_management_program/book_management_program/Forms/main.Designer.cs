@@ -44,9 +44,10 @@ namespace book_management_program.Forms
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("한컴 고딕", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(36, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 25);
+            this.label1.Size = new System.Drawing.Size(74, 26);
             this.label1.TabIndex = 1;
             this.label1.Text = "회원 님";
             // 
@@ -71,6 +72,7 @@ namespace book_management_program.Forms
             // 
             this.help_btn.FlatAppearance.BorderSize = 0;
             this.help_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.help_btn.Font = new System.Drawing.Font("한컴 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.help_btn.Location = new System.Drawing.Point(23, 447);
             this.help_btn.Name = "help_btn";
             this.help_btn.Size = new System.Drawing.Size(121, 58);
@@ -83,6 +85,7 @@ namespace book_management_program.Forms
             // 
             this.logout_btn.FlatAppearance.BorderSize = 0;
             this.logout_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logout_btn.Font = new System.Drawing.Font("한컴 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.logout_btn.Location = new System.Drawing.Point(23, 383);
             this.logout_btn.Name = "logout_btn";
             this.logout_btn.Size = new System.Drawing.Size(121, 58);
@@ -102,6 +105,7 @@ namespace book_management_program.Forms
             // 
             this.issue_btn.FlatAppearance.BorderSize = 0;
             this.issue_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.issue_btn.Font = new System.Drawing.Font("한컴 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.issue_btn.Location = new System.Drawing.Point(23, 319);
             this.issue_btn.Name = "issue_btn";
             this.issue_btn.Size = new System.Drawing.Size(121, 58);
@@ -114,6 +118,7 @@ namespace book_management_program.Forms
             // 
             this.search_form_btn.FlatAppearance.BorderSize = 0;
             this.search_form_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.search_form_btn.Font = new System.Drawing.Font("한컴 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.search_form_btn.Location = new System.Drawing.Point(23, 255);
             this.search_form_btn.Name = "search_form_btn";
             this.search_form_btn.Size = new System.Drawing.Size(121, 58);
@@ -126,6 +131,7 @@ namespace book_management_program.Forms
             // 
             this.mypage_btn.FlatAppearance.BorderSize = 0;
             this.mypage_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.mypage_btn.Font = new System.Drawing.Font("한컴 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.mypage_btn.Location = new System.Drawing.Point(23, 191);
             this.mypage_btn.Name = "mypage_btn";
             this.mypage_btn.Size = new System.Drawing.Size(121, 58);
@@ -138,6 +144,7 @@ namespace book_management_program.Forms
             // 
             this.home_btn.FlatAppearance.BorderSize = 0;
             this.home_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.home_btn.Font = new System.Drawing.Font("한컴 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.home_btn.Location = new System.Drawing.Point(0, 127);
             this.home_btn.Name = "home_btn";
             this.home_btn.Size = new System.Drawing.Size(144, 58);

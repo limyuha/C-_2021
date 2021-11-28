@@ -25,3 +25,8 @@ E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-wind
 E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.help.resources
 E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.issue_detail.resources
 E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.home.resources
+E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.join.resources
+E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.main_manager.resources
+E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.book_manager.resources
+E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.memeber_manager.resources
+E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.issue_manager.resources

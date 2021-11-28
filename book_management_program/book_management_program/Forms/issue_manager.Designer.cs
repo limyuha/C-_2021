@@ -1,7 +1,7 @@
 ﻿
 namespace book_management_program.Forms
 {
-    partial class issue
+    partial class issue_manager
     {
         /// <summary>
         /// Required designer variable.
@@ -29,25 +29,16 @@ namespace book_management_program.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
-            this.issue_write_btn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.issue_delete_btn = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("한컴 고딕", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(114, 61);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(184, 42);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "건의 및 이슈";
             // 
             // listView1
             // 
@@ -60,10 +51,10 @@ namespace book_management_program.Forms
             this.listView1.Font = new System.Drawing.Font("한컴 고딕", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(117, 120);
+            this.listView1.Location = new System.Drawing.Point(117, 127);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(1000, 650);
-            this.listView1.TabIndex = 1;
+            this.listView1.TabIndex = 5;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 
@@ -89,43 +80,60 @@ namespace book_management_program.Forms
             this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader4.Width = 100;
             // 
-            // issue_write_btn
+            // label1
             // 
-            this.issue_write_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.issue_write_btn.Font = new System.Drawing.Font("한컴 고딕", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.issue_write_btn.Location = new System.Drawing.Point(1005, 69);
-            this.issue_write_btn.Name = "issue_write_btn";
-            this.issue_write_btn.Size = new System.Drawing.Size(112, 45);
-            this.issue_write_btn.TabIndex = 2;
-            this.issue_write_btn.Text = "글작성";
-            this.issue_write_btn.UseVisualStyleBackColor = true;
-            this.issue_write_btn.Click += new System.EventHandler(this.issue_write_btn_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("한컴 고딕", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(115, 68);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(252, 42);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "건의 및 이슈 관리";
             // 
-            // button1
+            // issue_delete_btn
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("한컴 고딕", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(770, 69);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(229, 45);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "내가 작성한 글 보기";
-            this.button1.UseVisualStyleBackColor = true;
+            this.issue_delete_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.issue_delete_btn.Font = new System.Drawing.Font("한컴 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.issue_delete_btn.Location = new System.Drawing.Point(1044, 86);
+            this.issue_delete_btn.Name = "issue_delete_btn";
+            this.issue_delete_btn.Size = new System.Drawing.Size(70, 33);
+            this.issue_delete_btn.TabIndex = 6;
+            this.issue_delete_btn.Text = "삭제";
+            this.issue_delete_btn.UseVisualStyleBackColor = true;
             // 
-            // issue
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("한컴 고딕", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(915, 89);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(49, 29);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "No.";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(964, 87);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(70, 31);
+            this.textBox1.TabIndex = 20;
+            // 
+            // issue_manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1234, 844);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.issue_write_btn);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.issue_delete_btn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "issue";
+            this.Name = "issue_manager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "issue";
+            this.Text = "issue_manager";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,13 +141,14 @@ namespace book_management_program.Forms
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.Button issue_write_btn;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button issue_delete_btn;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

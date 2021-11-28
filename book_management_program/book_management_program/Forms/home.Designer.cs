@@ -202,7 +202,7 @@ namespace book_management_program.Forms
             this.panel7.Controls.Add(this.listView2);
             this.panel7.Location = new System.Drawing.Point(13, 355);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(900, 477);
+            this.panel7.Size = new System.Drawing.Size(893, 477);
             this.panel7.TabIndex = 14;
             // 
             // label9
@@ -228,7 +228,7 @@ namespace book_management_program.Forms
             this.listView2.HideSelection = false;
             this.listView2.Location = new System.Drawing.Point(0, 54);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(900, 423);
+            this.listView2.Size = new System.Drawing.Size(893, 423);
             this.listView2.TabIndex = 0;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
