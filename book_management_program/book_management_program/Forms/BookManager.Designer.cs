@@ -30,116 +30,116 @@ namespace book_management_program.Forms
         private void InitializeComponent()
         {
             this.panel7 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader8 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader9 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader10 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader11 = new System.Windows.Forms.ColumnHeader();
+            this.book_manager_label = new System.Windows.Forms.Label();
+            this.book_listView = new System.Windows.Forms.ListView();
+            this.book_number = new System.Windows.Forms.ColumnHeader();
+            this.book_name = new System.Windows.Forms.ColumnHeader();
+            this.book_writer = new System.Windows.Forms.ColumnHeader();
+            this.book_publisher = new System.Windows.Forms.ColumnHeader();
+            this.book_stock = new System.Windows.Forms.ColumnHeader();
+            this.book_rentsum = new System.Windows.Forms.ColumnHeader();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.book_delete_btn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.book_stock_textBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.book_publisher_textBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.book_writer_textBox = new System.Windows.Forms.TextBox();
+            this.stock_add_btn = new System.Windows.Forms.Button();
+            this.modify_btn = new System.Windows.Forms.Button();
+            this.rent_btn = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.book_name_textBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.book_number_textBox = new System.Windows.Forms.TextBox();
             this.panel7.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.label9);
-            this.panel7.Controls.Add(this.listView2);
+            this.panel7.Controls.Add(this.book_manager_label);
+            this.panel7.Controls.Add(this.book_listView);
             this.panel7.Location = new System.Drawing.Point(21, 21);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(893, 788);
             this.panel7.TabIndex = 15;
             // 
-            // label9
+            // book_manager_label
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("한컴 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(1, 21);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(108, 31);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "도서 관리";
+            this.book_manager_label.AutoSize = true;
+            this.book_manager_label.Font = new System.Drawing.Font("한컴 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.book_manager_label.Location = new System.Drawing.Point(1, 21);
+            this.book_manager_label.Name = "book_manager_label";
+            this.book_manager_label.Size = new System.Drawing.Size(108, 31);
+            this.book_manager_label.TabIndex = 6;
+            this.book_manager_label.Text = "도서 관리";
             // 
-            // listView2
+            // book_listView
             // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader3,
-            this.columnHeader5,
-            this.columnHeader8,
-            this.columnHeader9,
-            this.columnHeader10,
-            this.columnHeader11});
-            this.listView2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(0, 65);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(893, 723);
-            this.listView2.TabIndex = 0;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
+            this.book_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.book_number,
+            this.book_name,
+            this.book_writer,
+            this.book_publisher,
+            this.book_stock,
+            this.book_rentsum});
+            this.book_listView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.book_listView.HideSelection = false;
+            this.book_listView.Location = new System.Drawing.Point(0, 65);
+            this.book_listView.Name = "book_listView";
+            this.book_listView.Size = new System.Drawing.Size(893, 723);
+            this.book_listView.TabIndex = 0;
+            this.book_listView.UseCompatibleStateImageBehavior = false;
+            this.book_listView.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader3
+            // book_number
             // 
-            this.columnHeader3.Text = "도서 번호";
-            this.columnHeader3.Width = 150;
+            this.book_number.Text = "도서 번호";
+            this.book_number.Width = 150;
             // 
-            // columnHeader5
+            // book_name
             // 
-            this.columnHeader5.Text = "도서명";
-            this.columnHeader5.Width = 150;
+            this.book_name.Text = "도서명";
+            this.book_name.Width = 150;
             // 
-            // columnHeader8
+            // book_writer
             // 
-            this.columnHeader8.Text = "저자";
-            this.columnHeader8.Width = 150;
+            this.book_writer.Text = "저자";
+            this.book_writer.Width = 150;
             // 
-            // columnHeader9
+            // book_publisher
             // 
-            this.columnHeader9.Text = "출판사";
-            this.columnHeader9.Width = 150;
+            this.book_publisher.Text = "출판사";
+            this.book_publisher.Width = 150;
             // 
-            // columnHeader10
+            // book_stock
             // 
-            this.columnHeader10.Text = "재고";
-            this.columnHeader10.Width = 140;
+            this.book_stock.Text = "재고";
+            this.book_stock.Width = 140;
             // 
-            // columnHeader11
+            // book_rentsum
             // 
-            this.columnHeader11.Text = "대여량";
-            this.columnHeader11.Width = 150;
+            this.book_rentsum.Text = "대여량";
+            this.book_rentsum.Width = 150;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.book_delete_btn);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.book_stock_textBox);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.book_publisher_textBox);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.button7);
-            this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.book_writer_textBox);
+            this.groupBox1.Controls.Add(this.stock_add_btn);
+            this.groupBox1.Controls.Add(this.modify_btn);
+            this.groupBox1.Controls.Add(this.rent_btn);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.book_name_textBox);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.book_number_textBox);
             this.groupBox1.Location = new System.Drawing.Point(929, 21);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(293, 788);
@@ -147,19 +147,19 @@ namespace book_management_program.Forms
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "등록 / 수정 / 재고 추가 / 삭제";
             // 
-            // button1
+            // book_delete_btn
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("한컴 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(23, 694);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(249, 48);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "삭제";
-            this.button1.UseVisualStyleBackColor = false;
+            this.book_delete_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.book_delete_btn.FlatAppearance.BorderSize = 0;
+            this.book_delete_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.book_delete_btn.Font = new System.Drawing.Font("한컴 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.book_delete_btn.ForeColor = System.Drawing.Color.White;
+            this.book_delete_btn.Location = new System.Drawing.Point(23, 694);
+            this.book_delete_btn.Name = "book_delete_btn";
+            this.book_delete_btn.Size = new System.Drawing.Size(249, 48);
+            this.book_delete_btn.TabIndex = 20;
+            this.book_delete_btn.Text = "삭제";
+            this.book_delete_btn.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
@@ -171,13 +171,13 @@ namespace book_management_program.Forms
             this.label3.TabIndex = 17;
             this.label3.Text = "재고";
             // 
-            // textBox5
+            // book_stock_textBox
             // 
-            this.textBox5.BackColor = System.Drawing.Color.White;
-            this.textBox5.Location = new System.Drawing.Point(23, 422);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(249, 31);
-            this.textBox5.TabIndex = 16;
+            this.book_stock_textBox.BackColor = System.Drawing.Color.White;
+            this.book_stock_textBox.Location = new System.Drawing.Point(23, 422);
+            this.book_stock_textBox.Name = "book_stock_textBox";
+            this.book_stock_textBox.Size = new System.Drawing.Size(249, 31);
+            this.book_stock_textBox.TabIndex = 16;
             // 
             // label2
             // 
@@ -189,13 +189,13 @@ namespace book_management_program.Forms
             this.label2.TabIndex = 17;
             this.label2.Text = "출판사";
             // 
-            // textBox4
+            // book_publisher_textBox
             // 
-            this.textBox4.BackColor = System.Drawing.Color.White;
-            this.textBox4.Location = new System.Drawing.Point(23, 335);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(249, 31);
-            this.textBox4.TabIndex = 16;
+            this.book_publisher_textBox.BackColor = System.Drawing.Color.White;
+            this.book_publisher_textBox.Location = new System.Drawing.Point(23, 335);
+            this.book_publisher_textBox.Name = "book_publisher_textBox";
+            this.book_publisher_textBox.Size = new System.Drawing.Size(249, 31);
+            this.book_publisher_textBox.TabIndex = 16;
             // 
             // label1
             // 
@@ -207,55 +207,55 @@ namespace book_management_program.Forms
             this.label1.TabIndex = 19;
             this.label1.Text = "저자";
             // 
-            // textBox3
+            // book_writer_textBox
             // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(23, 249);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(249, 31);
-            this.textBox3.TabIndex = 18;
+            this.book_writer_textBox.BackColor = System.Drawing.Color.White;
+            this.book_writer_textBox.Location = new System.Drawing.Point(23, 249);
+            this.book_writer_textBox.Name = "book_writer_textBox";
+            this.book_writer_textBox.Size = new System.Drawing.Size(249, 31);
+            this.book_writer_textBox.TabIndex = 18;
             // 
-            // button7
+            // stock_add_btn
             // 
-            this.button7.BackColor = System.Drawing.Color.Red;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("한컴 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(23, 629);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(249, 48);
-            this.button7.TabIndex = 17;
-            this.button7.Text = "재고 추가";
-            this.button7.UseVisualStyleBackColor = false;
+            this.stock_add_btn.BackColor = System.Drawing.Color.Red;
+            this.stock_add_btn.FlatAppearance.BorderSize = 0;
+            this.stock_add_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.stock_add_btn.Font = new System.Drawing.Font("한컴 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.stock_add_btn.ForeColor = System.Drawing.Color.White;
+            this.stock_add_btn.Location = new System.Drawing.Point(23, 629);
+            this.stock_add_btn.Name = "stock_add_btn";
+            this.stock_add_btn.Size = new System.Drawing.Size(249, 48);
+            this.stock_add_btn.TabIndex = 17;
+            this.stock_add_btn.Text = "재고 추가";
+            this.stock_add_btn.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // modify_btn
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("한컴 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(23, 561);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(249, 48);
-            this.button6.TabIndex = 16;
-            this.button6.Text = "수정";
-            this.button6.UseVisualStyleBackColor = false;
+            this.modify_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.modify_btn.FlatAppearance.BorderSize = 0;
+            this.modify_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.modify_btn.Font = new System.Drawing.Font("한컴 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.modify_btn.ForeColor = System.Drawing.Color.White;
+            this.modify_btn.Location = new System.Drawing.Point(23, 561);
+            this.modify_btn.Name = "modify_btn";
+            this.modify_btn.Size = new System.Drawing.Size(249, 48);
+            this.modify_btn.TabIndex = 16;
+            this.modify_btn.Text = "수정";
+            this.modify_btn.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // rent_btn
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("한컴 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(23, 494);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(249, 48);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "등록";
-            this.button5.UseVisualStyleBackColor = false;
+            this.rent_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.rent_btn.FlatAppearance.BorderSize = 0;
+            this.rent_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rent_btn.Font = new System.Drawing.Font("한컴 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rent_btn.ForeColor = System.Drawing.Color.White;
+            this.rent_btn.Location = new System.Drawing.Point(23, 494);
+            this.rent_btn.Name = "rent_btn";
+            this.rent_btn.Size = new System.Drawing.Size(249, 48);
+            this.rent_btn.TabIndex = 9;
+            this.rent_btn.Text = "등록";
+            this.rent_btn.UseVisualStyleBackColor = false;
             // 
             // label11
             // 
@@ -267,13 +267,13 @@ namespace book_management_program.Forms
             this.label11.TabIndex = 15;
             this.label11.Text = "도서명";
             // 
-            // textBox2
+            // book_name_textBox
             // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(23, 160);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(249, 31);
-            this.textBox2.TabIndex = 14;
+            this.book_name_textBox.BackColor = System.Drawing.Color.White;
+            this.book_name_textBox.Location = new System.Drawing.Point(23, 160);
+            this.book_name_textBox.Name = "book_name_textBox";
+            this.book_name_textBox.Size = new System.Drawing.Size(249, 31);
+            this.book_name_textBox.TabIndex = 14;
             // 
             // label10
             // 
@@ -285,13 +285,13 @@ namespace book_management_program.Forms
             this.label10.TabIndex = 13;
             this.label10.Text = "도서번호";
             // 
-            // textBox1
+            // book_number_textBox
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(23, 76);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(249, 31);
-            this.textBox1.TabIndex = 0;
+            this.book_number_textBox.BackColor = System.Drawing.Color.White;
+            this.book_number_textBox.Location = new System.Drawing.Point(23, 76);
+            this.book_number_textBox.Name = "book_number_textBox";
+            this.book_number_textBox.Size = new System.Drawing.Size(249, 31);
+            this.book_number_textBox.TabIndex = 0;
             // 
             // book_manager
             // 
@@ -316,28 +316,28 @@ namespace book_management_program.Forms
         #endregion
 
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ListView listView2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.ColumnHeader columnHeader9;
-        private System.Windows.Forms.ColumnHeader columnHeader10;
-        private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.Label book_manager_label;
+        private System.Windows.Forms.ListView book_listView;
+        private System.Windows.Forms.ColumnHeader book_number;
+        private System.Windows.Forms.ColumnHeader book_name;
+        private System.Windows.Forms.ColumnHeader book_writer;
+        private System.Windows.Forms.ColumnHeader book_publisher;
+        private System.Windows.Forms.ColumnHeader book_stock;
+        private System.Windows.Forms.ColumnHeader book_rentsum;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button stock_add_btn;
+        private System.Windows.Forms.Button modify_btn;
+        private System.Windows.Forms.Button rent_btn;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox book_name_textBox;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox book_number_textBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox book_stock_textBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox book_publisher_textBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox book_writer_textBox;
+        private System.Windows.Forms.Button book_delete_btn;
     }
 }

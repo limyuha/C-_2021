@@ -29,65 +29,65 @@ namespace book_management_program.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
+            this.issue_label = new System.Windows.Forms.Label();
+            this.issue_listView = new System.Windows.Forms.ListView();
+            this.no = new System.Windows.Forms.ColumnHeader();
+            this.date = new System.Windows.Forms.ColumnHeader();
+            this.title = new System.Windows.Forms.ColumnHeader();
+            this.id = new System.Windows.Forms.ColumnHeader();
             this.issue_write_btn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // issue_label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("한컴 고딕", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(114, 61);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(184, 42);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "건의 및 이슈";
+            this.issue_label.AutoSize = true;
+            this.issue_label.Font = new System.Drawing.Font("한컴 고딕", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.issue_label.Location = new System.Drawing.Point(114, 61);
+            this.issue_label.Name = "issue_label";
+            this.issue_label.Size = new System.Drawing.Size(184, 42);
+            this.issue_label.TabIndex = 0;
+            this.issue_label.Text = "건의 및 이슈";
             // 
-            // listView1
+            // issue_listView
             // 
-            this.listView1.BackColor = System.Drawing.Color.White;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
-            this.listView1.Font = new System.Drawing.Font("한컴 고딕", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.listView1.GridLines = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(117, 120);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1000, 650);
-            this.listView1.TabIndex = 1;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.issue_listView.BackColor = System.Drawing.Color.White;
+            this.issue_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.no,
+            this.date,
+            this.title,
+            this.id});
+            this.issue_listView.Font = new System.Drawing.Font("한컴 고딕", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.issue_listView.GridLines = true;
+            this.issue_listView.HideSelection = false;
+            this.issue_listView.Location = new System.Drawing.Point(117, 120);
+            this.issue_listView.Name = "issue_listView";
+            this.issue_listView.Size = new System.Drawing.Size(1000, 650);
+            this.issue_listView.TabIndex = 1;
+            this.issue_listView.UseCompatibleStateImageBehavior = false;
+            this.issue_listView.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader1
+            // no
             // 
-            this.columnHeader1.Text = "No.";
+            this.no.Text = "No.";
             // 
-            // columnHeader2
+            // date
             // 
-            this.columnHeader2.Text = "작성일";
-            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader2.Width = 100;
+            this.date.Text = "작성일";
+            this.date.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.date.Width = 100;
             // 
-            // columnHeader3
+            // title
             // 
-            this.columnHeader3.Text = "제목";
-            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader3.Width = 740;
+            this.title.Text = "제목";
+            this.title.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.title.Width = 740;
             // 
-            // columnHeader4
+            // id
             // 
-            this.columnHeader4.Text = "작성자";
-            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader4.Width = 100;
+            this.id.Text = "작성자";
+            this.id.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.id.Width = 100;
             // 
             // issue_write_btn
             // 
@@ -112,7 +112,7 @@ namespace book_management_program.Forms
             this.button1.Text = "내가 작성한 글 보기";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // issue
+            // IssueForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -120,10 +120,10 @@ namespace book_management_program.Forms
             this.ClientSize = new System.Drawing.Size(1234, 844);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.issue_write_btn);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.issue_listView);
+            this.Controls.Add(this.issue_label);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "issue";
+            this.Name = "IssueForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "issue";
             this.ResumeLayout(false);
@@ -133,12 +133,12 @@ namespace book_management_program.Forms
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Label issue_label;
+        private System.Windows.Forms.ListView issue_listView;
+        private System.Windows.Forms.ColumnHeader no;
+        private System.Windows.Forms.ColumnHeader date;
+        private System.Windows.Forms.ColumnHeader title;
+        private System.Windows.Forms.ColumnHeader id;
         private System.Windows.Forms.Button issue_write_btn;
         private System.Windows.Forms.Button button1;
     }

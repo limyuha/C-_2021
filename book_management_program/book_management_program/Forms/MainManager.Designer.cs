@@ -33,7 +33,7 @@ namespace book_management_program.Forms
             this.logout_btn = new System.Windows.Forms.Button();
             this.panelSlide = new System.Windows.Forms.Panel();
             this.issue_manager_btn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.manager_label = new System.Windows.Forms.Label();
             this.memeber_manager_btn = new System.Windows.Forms.Button();
             this.book_manager_btn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
@@ -45,7 +45,7 @@ namespace book_management_program.Forms
             this.panel2.Controls.Add(this.logout_btn);
             this.panel2.Controls.Add(this.panelSlide);
             this.panel2.Controls.Add(this.issue_manager_btn);
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.manager_label);
             this.panel2.Controls.Add(this.memeber_manager_btn);
             this.panel2.Controls.Add(this.book_manager_btn);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -87,15 +87,15 @@ namespace book_management_program.Forms
             this.issue_manager_btn.UseVisualStyleBackColor = true;
             this.issue_manager_btn.Click += new System.EventHandler(this.issue_manager_btn_Click);
             // 
-            // label1
+            // manager_label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("한컴 고딕", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(36, 46);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 26);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "관리자님";
+            this.manager_label.AutoSize = true;
+            this.manager_label.Font = new System.Drawing.Font("한컴 고딕", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.manager_label.Location = new System.Drawing.Point(36, 46);
+            this.manager_label.Name = "manager_label";
+            this.manager_label.Size = new System.Drawing.Size(88, 26);
+            this.manager_label.TabIndex = 1;
+            this.manager_label.Text = "관리자님";
             // 
             // memeber_manager_btn
             // 
@@ -123,7 +123,7 @@ namespace book_management_program.Forms
             this.book_manager_btn.UseVisualStyleBackColor = true;
             this.book_manager_btn.Click += new System.EventHandler(this.book_manager_btn_Click);
             // 
-            // main_manager
+            // MainManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -133,7 +133,7 @@ namespace book_management_program.Forms
             this.IsMdiContainer = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "main_manager";
+            this.Name = "MainManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "main_manager";
             this.Load += new System.EventHandler(this.main_manager_Load);
@@ -149,7 +149,7 @@ namespace book_management_program.Forms
         private System.Windows.Forms.Button logout_btn;
         private System.Windows.Forms.Panel panelSlide;
         private System.Windows.Forms.Button issue_manager_btn;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label manager_label;
         private System.Windows.Forms.Button memeber_manager_btn;
         private System.Windows.Forms.Button book_manager_btn;
     }

@@ -29,7 +29,7 @@ namespace book_management_program.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.id_name_label = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.help_btn = new System.Windows.Forms.Button();
             this.logout_btn = new System.Windows.Forms.Button();
@@ -41,15 +41,15 @@ namespace book_management_program.Forms
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // id_name_label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("한컴 고딕", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(36, 46);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 26);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "회원 님";
+            this.id_name_label.AutoSize = true;
+            this.id_name_label.Font = new System.Drawing.Font("한컴 고딕", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.id_name_label.Location = new System.Drawing.Point(36, 46);
+            this.id_name_label.Name = "id_name_label";
+            this.id_name_label.Size = new System.Drawing.Size(74, 26);
+            this.id_name_label.TabIndex = 1;
+            this.id_name_label.Text = "회원 님";
             // 
             // panel2
             // 
@@ -58,7 +58,7 @@ namespace book_management_program.Forms
             this.panel2.Controls.Add(this.logout_btn);
             this.panel2.Controls.Add(this.panelSlide);
             this.panel2.Controls.Add(this.issue_btn);
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.id_name_label);
             this.panel2.Controls.Add(this.search_form_btn);
             this.panel2.Controls.Add(this.mypage_btn);
             this.panel2.Controls.Add(this.home_btn);
@@ -153,7 +153,7 @@ namespace book_management_program.Forms
             this.home_btn.UseVisualStyleBackColor = true;
             this.home_btn.Click += new System.EventHandler(this.home_btn_Click);
             // 
-            // main
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -165,7 +165,7 @@ namespace book_management_program.Forms
             this.IsMdiContainer = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "main";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Main";
             this.Load += new System.EventHandler(this.main_Load);
@@ -180,7 +180,7 @@ namespace book_management_program.Forms
         private System.Windows.Forms.Button search_form_btn;
         private System.Windows.Forms.Button mypage_btn;
         private System.Windows.Forms.Button home_btn;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label id_name_label;
         private System.Windows.Forms.Button issue_btn;
         private System.Windows.Forms.Panel panelSlide;
         private System.Windows.Forms.Button logout_btn;

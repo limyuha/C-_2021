@@ -30,3 +30,9 @@ E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-wind
 E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.MemeberManager.resources
 E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.MypageForm.resources
 E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.SearchForm.resources
+E:\C#_2021\book_management_program\book_management_program\bin\Debug\net5.0-windows\gl-ES\book_management_program.resources.dll
+E:\C#_2021\book_management_program\book_management_program\bin\Debug\net5.0-windows\gl\book_management_program.resources.dll
+E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.MemeberManager.gl-ES.resources
+E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.MemeberManager.gl.resources
+E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\gl-ES\book_management_program.resources.dll
+E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\gl\book_management_program.resources.dll
