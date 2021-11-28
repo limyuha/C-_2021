@@ -124,6 +124,7 @@ namespace book_management_program.Forms
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "issue";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "issue";
             this.ResumeLayout(false);
             this.PerformLayout();

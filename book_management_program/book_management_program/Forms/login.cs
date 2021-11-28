@@ -22,7 +22,7 @@ namespace book_management_program
         {
             main m = new main();
             m.ShowDialog();
-            this.Close(); //로그인 폼 닫기
+            //this.Close(); //main 폼 닫으면 로그인 폼도 닫기
             /*
             using (main main_form = new main())
             {
