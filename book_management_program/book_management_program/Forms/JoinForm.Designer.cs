@@ -38,6 +38,8 @@ namespace book_management_program.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.close_btn = new System.Windows.Forms.Button();
             this.join_btn = new System.Windows.Forms.Button();
+            this.tel_label = new System.Windows.Forms.Label();
+            this.tel_textBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,66 +49,59 @@ namespace book_management_program.Forms
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(965, 43);
+            this.panel1.Size = new System.Drawing.Size(1379, 72);
             this.panel1.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(8, 13);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(11, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 24);
+            this.label1.Size = new System.Drawing.Size(287, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "2021C 도서관리 프로그램";
             // 
             // pw_label
             // 
             this.pw_label.AutoSize = true;
-            this.pw_label.Location = new System.Drawing.Point(386, 248);
-            this.pw_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.pw_label.Location = new System.Drawing.Point(551, 353);
             this.pw_label.Name = "pw_label";
-            this.pw_label.Size = new System.Drawing.Size(55, 15);
+            this.pw_label.Size = new System.Drawing.Size(84, 25);
             this.pw_label.TabIndex = 12;
             this.pw_label.Text = "비밀번호";
             // 
             // pw_textBox
             // 
-            this.pw_textBox.Location = new System.Drawing.Point(385, 265);
-            this.pw_textBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pw_textBox.Location = new System.Drawing.Point(550, 382);
             this.pw_textBox.Name = "pw_textBox";
-            this.pw_textBox.Size = new System.Drawing.Size(196, 23);
+            this.pw_textBox.Size = new System.Drawing.Size(278, 31);
             this.pw_textBox.TabIndex = 11;
             // 
             // id_label
             // 
             this.id_label.AutoSize = true;
-            this.id_label.Location = new System.Drawing.Point(385, 189);
-            this.id_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.id_label.Location = new System.Drawing.Point(550, 255);
             this.id_label.Name = "id_label";
-            this.id_label.Size = new System.Drawing.Size(43, 15);
+            this.id_label.Size = new System.Drawing.Size(66, 25);
             this.id_label.TabIndex = 10;
             this.id_label.Text = "아이디";
             // 
             // id_textBox
             // 
-            this.id_textBox.Location = new System.Drawing.Point(385, 206);
-            this.id_textBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.id_textBox.Location = new System.Drawing.Point(550, 283);
             this.id_textBox.Name = "id_textBox";
-            this.id_textBox.Size = new System.Drawing.Size(196, 23);
+            this.id_textBox.Size = new System.Drawing.Size(278, 31);
             this.id_textBox.TabIndex = 9;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(453, 161);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(647, 208);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 17);
+            this.label2.Size = new System.Drawing.Size(72, 25);
             this.label2.TabIndex = 8;
             this.label2.Text = "회원가입";
             // 
@@ -117,10 +112,9 @@ namespace book_management_program.Forms
             this.close_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.close_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.close_btn.ForeColor = System.Drawing.Color.White;
-            this.close_btn.Location = new System.Drawing.Point(385, 327);
-            this.close_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.close_btn.Location = new System.Drawing.Point(551, 588);
             this.close_btn.Name = "close_btn";
-            this.close_btn.Size = new System.Drawing.Size(195, 24);
+            this.close_btn.Size = new System.Drawing.Size(279, 40);
             this.close_btn.TabIndex = 14;
             this.close_btn.Text = "취소";
             this.close_btn.UseVisualStyleBackColor = false;
@@ -133,21 +127,38 @@ namespace book_management_program.Forms
             this.join_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.join_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.join_btn.ForeColor = System.Drawing.Color.White;
-            this.join_btn.Location = new System.Drawing.Point(385, 299);
-            this.join_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.join_btn.Location = new System.Drawing.Point(551, 541);
             this.join_btn.Name = "join_btn";
-            this.join_btn.Size = new System.Drawing.Size(195, 24);
+            this.join_btn.Size = new System.Drawing.Size(279, 40);
             this.join_btn.TabIndex = 13;
             this.join_btn.Text = "회원가입";
             this.join_btn.UseVisualStyleBackColor = false;
             this.join_btn.Click += new System.EventHandler(this.join_btn_Click);
             // 
+            // tel_label
+            // 
+            this.tel_label.AutoSize = true;
+            this.tel_label.Location = new System.Drawing.Point(550, 448);
+            this.tel_label.Name = "tel_label";
+            this.tel_label.Size = new System.Drawing.Size(84, 25);
+            this.tel_label.TabIndex = 16;
+            this.tel_label.Text = "전화번호";
+            // 
+            // tel_textBox
+            // 
+            this.tel_textBox.Location = new System.Drawing.Point(549, 477);
+            this.tel_textBox.Name = "tel_textBox";
+            this.tel_textBox.Size = new System.Drawing.Size(278, 31);
+            this.tel_textBox.TabIndex = 15;
+            // 
             // JoinForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(965, 506);
+            this.ClientSize = new System.Drawing.Size(1379, 843);
+            this.Controls.Add(this.tel_label);
+            this.Controls.Add(this.tel_textBox);
             this.Controls.Add(this.close_btn);
             this.Controls.Add(this.join_btn);
             this.Controls.Add(this.pw_label);
@@ -156,7 +167,6 @@ namespace book_management_program.Forms
             this.Controls.Add(this.id_textBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "JoinForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "join";
@@ -178,5 +188,7 @@ namespace book_management_program.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button close_btn;
         private System.Windows.Forms.Button join_btn;
+        private System.Windows.Forms.Label tel_label;
+        private System.Windows.Forms.TextBox tel_textBox;
     }
 }
