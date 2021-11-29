@@ -27,9 +27,9 @@ namespace book_management_program.Util
 
             return_value = false;
 
-            string database = "c-_2021";
+            string database = "c2021";
             string server = "localhost";
-            string user = "root";
+            string user = "c2021";
             string password = "yuhan";
             connection = "server=" + server 
                 + ";user=" + user 

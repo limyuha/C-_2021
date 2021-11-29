@@ -21,14 +21,6 @@ namespace book_management_program.Forms
             InitializeComponent();
             this.id_textBox.Text = "";
             this.pw_textBox.Text = "";
-
-            /* 테스트 */
-           if ( MySql_Util.Instance.Insert_Sql("INSERT INTO conntest VALUES('test2',2345)"))
-            {
-                bool result = MySql_Util.Instance.Insert_Sql("SELECT * FROM conntest;");
-                Console.WriteLine(result+"");
-            }
-            
         }
 
         private string id, pwd; //사용자 입력 아이디, 비밀번호

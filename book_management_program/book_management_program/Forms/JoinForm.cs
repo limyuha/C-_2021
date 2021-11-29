@@ -1,4 +1,5 @@
-﻿using System;
+﻿using book_management_program.Manager;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,14 +23,22 @@ namespace book_management_program.Forms
             this.Close();
         }
 
+        private Model.Member member = new Model.Member();
+
         private void join_btn_Click(object sender, EventArgs e)
         {
             String id = id_textBox.Text;
             String pwd = pw_textBox.Text;
             if(id!="" && pwd != "")
             {
-                //MemberManager.memInfoLookup(id, pwd);
-                MessageBox.Show("회원가입이 완료되었습니다.", "", MessageBoxButtons.OK);
+                if (MemberManager.MemInfoInsert(member))
+                {
+                    MessageBox.Show("회원가입이 완료되었습니다.", "", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("회원가입에 실패했습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 this.Close();
             }
             else
