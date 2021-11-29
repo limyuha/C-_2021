@@ -74,3 +74,12 @@ C:\DevPrograms\Git_Folder\C-_2021\book_management_program\book_management_progra
 C:\DevPrograms\Git_Folder\C-_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.pdb
 C:\DevPrograms\Git_Folder\C-_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.genruntimeconfig.cache
 C:\DevPrograms\Git_Folder\C-_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.LoginForm.resources
+C:\DevPrograms\Git_Folder\C-_2021\book_management_program\book_management_program\bin\Debug\net5.0-windows\BouncyCastle.Crypto.dll
+C:\DevPrograms\Git_Folder\C-_2021\book_management_program\book_management_program\bin\Debug\net5.0-windows\Google.Protobuf.dll
+C:\DevPrograms\Git_Folder\C-_2021\book_management_program\book_management_program\bin\Debug\net5.0-windows\K4os.Compression.LZ4.dll
+C:\DevPrograms\Git_Folder\C-_2021\book_management_program\book_management_program\bin\Debug\net5.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\DevPrograms\Git_Folder\C-_2021\book_management_program\book_management_program\bin\Debug\net5.0-windows\K4os.Hash.xxHash.dll
+C:\DevPrograms\Git_Folder\C-_2021\book_management_program\book_management_program\bin\Debug\net5.0-windows\MySql.Data.dll
+C:\DevPrograms\Git_Folder\C-_2021\book_management_program\book_management_program\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
+C:\DevPrograms\Git_Folder\C-_2021\book_management_program\book_management_program\bin\Debug\net5.0-windows\ZstdNet.dll
+C:\DevPrograms\Git_Folder\C-_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.csproj.CopyComplete
