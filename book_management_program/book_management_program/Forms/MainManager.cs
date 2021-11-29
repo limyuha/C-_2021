@@ -77,5 +77,19 @@ namespace book_management_program.Forms
 
             formName = issue_manager;
         }
+
+        private void logout_btn_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            this.Hide();
+            loginForm.ShowDialog();
+            Application.ExitThread(); //스레드 종료
+            //Application.Exit() → FormClosing → FormClosed
+        }
+
+        private void MainManager_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.ExitThread(); //스레드 종료
+        }
     }
 }

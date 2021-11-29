@@ -9,6 +9,14 @@
       "book_management_program/1.0.0": {
         "runtime": {
           "book_management_program.dll": {}
+        },
+        "resources": {
+          "gl-ES/book_management_program.resources.dll": {
+            "locale": "gl-ES"
+          },
+          "gl/book_management_program.resources.dll": {
+            "locale": "gl"
+          }
         }
       }
     }

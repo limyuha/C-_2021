@@ -44,10 +44,11 @@ namespace book_management_program.Forms
             // id_name_label
             // 
             this.id_name_label.AutoSize = true;
-            this.id_name_label.Font = new System.Drawing.Font("한컴 고딕", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.id_name_label.Location = new System.Drawing.Point(36, 46);
+            this.id_name_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.id_name_label.Location = new System.Drawing.Point(25, 28);
+            this.id_name_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.id_name_label.Name = "id_name_label";
-            this.id_name_label.Size = new System.Drawing.Size(74, 26);
+            this.id_name_label.Size = new System.Drawing.Size(49, 17);
             this.id_name_label.TabIndex = 1;
             this.id_name_label.Text = "회원 님";
             // 
@@ -64,18 +65,20 @@ namespace book_management_program.Forms
             this.panel2.Controls.Add(this.home_btn);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(144, 850);
+            this.panel2.Size = new System.Drawing.Size(101, 510);
             this.panel2.TabIndex = 0;
             // 
             // help_btn
             // 
             this.help_btn.FlatAppearance.BorderSize = 0;
             this.help_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.help_btn.Font = new System.Drawing.Font("한컴 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.help_btn.Location = new System.Drawing.Point(23, 447);
+            this.help_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.help_btn.Location = new System.Drawing.Point(16, 268);
+            this.help_btn.Margin = new System.Windows.Forms.Padding(2);
             this.help_btn.Name = "help_btn";
-            this.help_btn.Size = new System.Drawing.Size(121, 58);
+            this.help_btn.Size = new System.Drawing.Size(85, 35);
             this.help_btn.TabIndex = 6;
             this.help_btn.Text = "도움말";
             this.help_btn.UseVisualStyleBackColor = true;
@@ -85,30 +88,34 @@ namespace book_management_program.Forms
             // 
             this.logout_btn.FlatAppearance.BorderSize = 0;
             this.logout_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logout_btn.Font = new System.Drawing.Font("한컴 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.logout_btn.Location = new System.Drawing.Point(23, 383);
+            this.logout_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.logout_btn.Location = new System.Drawing.Point(16, 230);
+            this.logout_btn.Margin = new System.Windows.Forms.Padding(2);
             this.logout_btn.Name = "logout_btn";
-            this.logout_btn.Size = new System.Drawing.Size(121, 58);
+            this.logout_btn.Size = new System.Drawing.Size(85, 35);
             this.logout_btn.TabIndex = 5;
             this.logout_btn.Text = "로그아웃";
             this.logout_btn.UseVisualStyleBackColor = true;
+            this.logout_btn.Click += new System.EventHandler(this.logout_btn_Click);
             // 
             // panelSlide
             // 
             this.panelSlide.BackColor = System.Drawing.Color.White;
-            this.panelSlide.Location = new System.Drawing.Point(1, 127);
+            this.panelSlide.Location = new System.Drawing.Point(1, 76);
+            this.panelSlide.Margin = new System.Windows.Forms.Padding(2);
             this.panelSlide.Name = "panelSlide";
-            this.panelSlide.Size = new System.Drawing.Size(16, 58);
+            this.panelSlide.Size = new System.Drawing.Size(11, 35);
             this.panelSlide.TabIndex = 2;
             // 
             // issue_btn
             // 
             this.issue_btn.FlatAppearance.BorderSize = 0;
             this.issue_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.issue_btn.Font = new System.Drawing.Font("한컴 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.issue_btn.Location = new System.Drawing.Point(23, 319);
+            this.issue_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.issue_btn.Location = new System.Drawing.Point(16, 191);
+            this.issue_btn.Margin = new System.Windows.Forms.Padding(2);
             this.issue_btn.Name = "issue_btn";
-            this.issue_btn.Size = new System.Drawing.Size(121, 58);
+            this.issue_btn.Size = new System.Drawing.Size(85, 35);
             this.issue_btn.TabIndex = 4;
             this.issue_btn.Text = "이슈";
             this.issue_btn.UseVisualStyleBackColor = true;
@@ -118,10 +125,11 @@ namespace book_management_program.Forms
             // 
             this.search_form_btn.FlatAppearance.BorderSize = 0;
             this.search_form_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.search_form_btn.Font = new System.Drawing.Font("한컴 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.search_form_btn.Location = new System.Drawing.Point(23, 255);
+            this.search_form_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.search_form_btn.Location = new System.Drawing.Point(16, 153);
+            this.search_form_btn.Margin = new System.Windows.Forms.Padding(2);
             this.search_form_btn.Name = "search_form_btn";
-            this.search_form_btn.Size = new System.Drawing.Size(121, 58);
+            this.search_form_btn.Size = new System.Drawing.Size(85, 35);
             this.search_form_btn.TabIndex = 3;
             this.search_form_btn.Text = "도서 검색";
             this.search_form_btn.UseVisualStyleBackColor = true;
@@ -131,10 +139,11 @@ namespace book_management_program.Forms
             // 
             this.mypage_btn.FlatAppearance.BorderSize = 0;
             this.mypage_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.mypage_btn.Font = new System.Drawing.Font("한컴 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mypage_btn.Location = new System.Drawing.Point(23, 191);
+            this.mypage_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mypage_btn.Location = new System.Drawing.Point(16, 115);
+            this.mypage_btn.Margin = new System.Windows.Forms.Padding(2);
             this.mypage_btn.Name = "mypage_btn";
-            this.mypage_btn.Size = new System.Drawing.Size(121, 58);
+            this.mypage_btn.Size = new System.Drawing.Size(85, 35);
             this.mypage_btn.TabIndex = 2;
             this.mypage_btn.Text = "마이페이지";
             this.mypage_btn.UseVisualStyleBackColor = true;
@@ -144,10 +153,11 @@ namespace book_management_program.Forms
             // 
             this.home_btn.FlatAppearance.BorderSize = 0;
             this.home_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.home_btn.Font = new System.Drawing.Font("한컴 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.home_btn.Location = new System.Drawing.Point(0, 127);
+            this.home_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.home_btn.Location = new System.Drawing.Point(0, 76);
+            this.home_btn.Margin = new System.Windows.Forms.Padding(2);
             this.home_btn.Name = "home_btn";
-            this.home_btn.Size = new System.Drawing.Size(144, 58);
+            this.home_btn.Size = new System.Drawing.Size(101, 35);
             this.home_btn.TabIndex = 1;
             this.home_btn.Text = "홈";
             this.home_btn.UseVisualStyleBackColor = true;
@@ -155,19 +165,21 @@ namespace book_management_program.Forms
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1384, 850);
+            this.ClientSize = new System.Drawing.Size(969, 510);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Main";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.main_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
