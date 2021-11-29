@@ -45,6 +45,8 @@ namespace book_management_program.Forms
             this.id_textBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.no_textBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tel_textBox = new System.Windows.Forms.TextBox();
             this.panel7.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -87,6 +89,8 @@ namespace book_management_program.Forms
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.tel_textBox);
             this.panel1.Controls.Add(this.member_delete_btn);
             this.panel1.Controls.Add(this.member_add_btn);
             this.panel1.Controls.Add(this.label2);
@@ -149,6 +153,17 @@ namespace book_management_program.Forms
             resources.ApplyResources(this.no_textBox, "no_textBox");
             this.no_textBox.Name = "no_textBox";
             // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
+            // 
+            // tel_textBox
+            // 
+            this.tel_textBox.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.tel_textBox, "tel_textBox");
+            this.tel_textBox.Name = "tel_textBox";
+            // 
             // MemeberManager
             // 
             resources.ApplyResources(this, "$this");
@@ -183,5 +198,7 @@ namespace book_management_program.Forms
         private System.Windows.Forms.TextBox no_textBox;
         private System.Windows.Forms.Button member_delete_btn;
         private System.Windows.Forms.Button member_add_btn;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tel_textBox;
     }
 }
