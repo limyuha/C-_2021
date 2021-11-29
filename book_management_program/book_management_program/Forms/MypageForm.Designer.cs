@@ -58,6 +58,9 @@ namespace book_management_program.Forms
             this.resv_bookname_textBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.resv_booknumber_textBox = new System.Windows.Forms.TextBox();
+            this.rent_extend_btn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -134,24 +137,27 @@ namespace book_management_program.Forms
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.rent_extend_btn);
             this.panel2.Controls.Add(this.return_btn);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.rent_bookname_textBox);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.rent_booknumber_textBox);
-            this.panel2.Location = new System.Drawing.Point(948, 110);
+            this.panel2.Location = new System.Drawing.Point(948, 27);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(259, 267);
+            this.panel2.Size = new System.Drawing.Size(259, 350);
             this.panel2.TabIndex = 1;
             // 
             // return_btn
             // 
-            this.return_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.return_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.return_btn.FlatAppearance.BorderSize = 0;
             this.return_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.return_btn.Font = new System.Drawing.Font("한컴 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.return_btn.ForeColor = System.Drawing.Color.White;
-            this.return_btn.Location = new System.Drawing.Point(9, 183);
+            this.return_btn.Location = new System.Drawing.Point(10, 287);
             this.return_btn.Name = "return_btn";
             this.return_btn.Size = new System.Drawing.Size(235, 48);
             this.return_btn.TabIndex = 21;
@@ -273,7 +279,7 @@ namespace book_management_program.Forms
             // 
             // rent_btn
             // 
-            this.rent_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.rent_btn.BackColor = System.Drawing.Color.Fuchsia;
             this.rent_btn.FlatAppearance.BorderSize = 0;
             this.rent_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rent_btn.Font = new System.Drawing.Font("한컴 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -308,7 +314,7 @@ namespace book_management_program.Forms
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("한컴 고딕", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(8, 13);
+            this.label4.Location = new System.Drawing.Point(7, 13);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 29);
             this.label4.TabIndex = 18;
@@ -322,6 +328,40 @@ namespace book_management_program.Forms
             this.resv_booknumber_textBox.ReadOnly = true;
             this.resv_booknumber_textBox.Size = new System.Drawing.Size(234, 31);
             this.resv_booknumber_textBox.TabIndex = 17;
+            // 
+            // rent_extend_btn
+            // 
+            this.rent_extend_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.rent_extend_btn.FlatAppearance.BorderSize = 0;
+            this.rent_extend_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rent_extend_btn.Font = new System.Drawing.Font("한컴 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rent_extend_btn.ForeColor = System.Drawing.Color.White;
+            this.rent_extend_btn.Location = new System.Drawing.Point(10, 221);
+            this.rent_extend_btn.Name = "rent_extend_btn";
+            this.rent_extend_btn.Size = new System.Drawing.Size(235, 48);
+            this.rent_extend_btn.TabIndex = 22;
+            this.rent_extend_btn.Text = "대여 연장";
+            this.rent_extend_btn.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("한컴 고딕", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(10, 167);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(166, 21);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "* 대여 연장은 1회 한정 ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("한컴 고딕", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(121, 188);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(122, 21);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "7일 연장 됩니다.";
             // 
             // MypageForm
             // 
@@ -380,5 +420,8 @@ namespace book_management_program.Forms
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox resv_booknumber_textBox;
         private System.Windows.Forms.Button rent_btn;
+        private System.Windows.Forms.Button rent_extend_btn;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label1;
     }
 }

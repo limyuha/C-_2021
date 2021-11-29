@@ -40,7 +40,7 @@ namespace book_management_program.Forms
             this.book_publisher = new System.Windows.Forms.ColumnHeader();
             this.book_stock = new System.Windows.Forms.ColumnHeader();
             this.book_rentsum = new System.Windows.Forms.ColumnHeader();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.search_textBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,12 +132,12 @@ namespace book_management_program.Forms
             this.book_rentsum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.book_rentsum.Width = 166;
             // 
-            // textBox1
+            // search_textBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(437, 64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(360, 31);
-            this.textBox1.TabIndex = 4;
+            this.search_textBox.Location = new System.Drawing.Point(437, 64);
+            this.search_textBox.Name = "search_textBox";
+            this.search_textBox.Size = new System.Drawing.Size(360, 31);
+            this.search_textBox.TabIndex = 4;
             // 
             // SearchForm
             // 
@@ -145,7 +145,7 @@ namespace book_management_program.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1234, 844);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.search_textBox);
             this.Controls.Add(this.search_listView);
             this.Controls.Add(this.search_btn);
             this.Controls.Add(this.pictureBox1);
@@ -172,6 +172,6 @@ namespace book_management_program.Forms
         private System.Windows.Forms.ColumnHeader book_publisher;
         private System.Windows.Forms.ColumnHeader book_stock;
         private System.Windows.Forms.ColumnHeader book_rentsum;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox search_textBox;
     }
 }
