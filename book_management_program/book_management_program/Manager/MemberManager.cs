@@ -1,4 +1,4 @@
-﻿using book_management_program.Util;
+﻿using static book_management_program.Util.MySql_Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ namespace book_management_program.Manager
         public static bool MemInfoInsert(Model.Member member)
         {
             //string sql = "INSERT INTO member VALUES(입력)";
-            //bool result = MySql_Util.Instance.Insert_Sql(sql);
+            //bool result = Instance.Insert_Sql(sql);
             //return result;
             return true;
         }

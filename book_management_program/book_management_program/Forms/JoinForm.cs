@@ -1,12 +1,6 @@
-﻿using book_management_program.Manager;
+﻿using book_management_program.Model;
+using book_management_program.Manager;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace book_management_program.Forms
@@ -23,14 +17,13 @@ namespace book_management_program.Forms
             this.Close();
         }
 
-        private Model.Member member = new Model.Member();
-
         private void join_btn_Click(object sender, EventArgs e)
         {
             String id = id_textBox.Text;
             String pwd = pw_textBox.Text;
             if(id!="" && pwd != "")
             {
+                Member member = new Member();
                 if (MemberManager.MemInfoInsert(member))
                 {
                     MessageBox.Show("회원가입이 완료되었습니다.", "", MessageBoxButtons.OK);
