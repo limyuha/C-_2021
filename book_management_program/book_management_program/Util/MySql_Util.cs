@@ -37,7 +37,7 @@ namespace book_management_program.Util
                 + ";password=" + password;
         }
 
-        public String Insert_Sql(String sql)
+        public bool Insert_Sql(String sql)
         {
             try
             {
@@ -47,17 +47,17 @@ namespace book_management_program.Util
                 if (sqlCmd.ExecuteNonQuery() == 1) // ExecuteNonQuery() : Insert,Delete 메소드
                 {
                     sqlConn.Close();
-                    return "true"; 
+                    return true; 
                 }
                 else
                 {
                     sqlConn.Close();
-                    return "flase:query";
+                    return false;
                 }
              }
             catch (Exception e)
             {
-                return "false:"+ e.ToString();
+                return false;
             }
         }
 
