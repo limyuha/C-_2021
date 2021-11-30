@@ -69,10 +69,10 @@ namespace book_management_program.Forms
             // book_manager_label
             // 
             this.book_manager_label.AutoSize = true;
-            this.book_manager_label.Font = new System.Drawing.Font("한컴 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.book_manager_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.book_manager_label.Location = new System.Drawing.Point(1, 21);
             this.book_manager_label.Name = "book_manager_label";
-            this.book_manager_label.Size = new System.Drawing.Size(108, 31);
+            this.book_manager_label.Size = new System.Drawing.Size(95, 29);
             this.book_manager_label.TabIndex = 6;
             this.book_manager_label.Text = "도서 관리";
             // 
@@ -152,7 +152,7 @@ namespace book_management_program.Forms
             this.book_delete_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.book_delete_btn.FlatAppearance.BorderSize = 0;
             this.book_delete_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.book_delete_btn.Font = new System.Drawing.Font("한컴 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.book_delete_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.book_delete_btn.ForeColor = System.Drawing.Color.White;
             this.book_delete_btn.Location = new System.Drawing.Point(23, 694);
             this.book_delete_btn.Name = "book_delete_btn";
@@ -164,10 +164,10 @@ namespace book_management_program.Forms
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("한컴 고딕", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(16, 390);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 29);
+            this.label3.Size = new System.Drawing.Size(46, 26);
             this.label3.TabIndex = 17;
             this.label3.Text = "재고";
             // 
@@ -182,10 +182,10 @@ namespace book_management_program.Forms
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("한컴 고딕", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(16, 303);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 29);
+            this.label2.Size = new System.Drawing.Size(63, 26);
             this.label2.TabIndex = 17;
             this.label2.Text = "출판사";
             // 
@@ -200,10 +200,10 @@ namespace book_management_program.Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("한컴 고딕", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(16, 217);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 29);
+            this.label1.Size = new System.Drawing.Size(46, 26);
             this.label1.TabIndex = 19;
             this.label1.Text = "저자";
             // 
@@ -220,7 +220,7 @@ namespace book_management_program.Forms
             this.stock_add_btn.BackColor = System.Drawing.Color.Red;
             this.stock_add_btn.FlatAppearance.BorderSize = 0;
             this.stock_add_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stock_add_btn.Font = new System.Drawing.Font("한컴 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.stock_add_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.stock_add_btn.ForeColor = System.Drawing.Color.White;
             this.stock_add_btn.Location = new System.Drawing.Point(23, 629);
             this.stock_add_btn.Name = "stock_add_btn";
@@ -234,7 +234,7 @@ namespace book_management_program.Forms
             this.modify_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.modify_btn.FlatAppearance.BorderSize = 0;
             this.modify_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.modify_btn.Font = new System.Drawing.Font("한컴 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.modify_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.modify_btn.ForeColor = System.Drawing.Color.White;
             this.modify_btn.Location = new System.Drawing.Point(23, 561);
             this.modify_btn.Name = "modify_btn";
@@ -248,7 +248,7 @@ namespace book_management_program.Forms
             this.rent_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.rent_btn.FlatAppearance.BorderSize = 0;
             this.rent_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rent_btn.Font = new System.Drawing.Font("한컴 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rent_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.rent_btn.ForeColor = System.Drawing.Color.White;
             this.rent_btn.Location = new System.Drawing.Point(23, 494);
             this.rent_btn.Name = "rent_btn";
@@ -256,14 +256,15 @@ namespace book_management_program.Forms
             this.rent_btn.TabIndex = 9;
             this.rent_btn.Text = "등록";
             this.rent_btn.UseVisualStyleBackColor = false;
+            this.rent_btn.Click += new System.EventHandler(this.rent_btn_Click);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("한컴 고딕", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label11.Location = new System.Drawing.Point(16, 128);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(76, 29);
+            this.label11.Size = new System.Drawing.Size(63, 26);
             this.label11.TabIndex = 15;
             this.label11.Text = "도서명";
             // 
@@ -278,10 +279,10 @@ namespace book_management_program.Forms
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("한컴 고딕", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label10.Location = new System.Drawing.Point(16, 44);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(97, 29);
+            this.label10.Size = new System.Drawing.Size(80, 26);
             this.label10.TabIndex = 13;
             this.label10.Text = "도서번호";
             // 
