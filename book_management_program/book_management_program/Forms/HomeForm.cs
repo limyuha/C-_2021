@@ -84,6 +84,9 @@ namespace book_management_program.Forms
             BooksThread = new Thread(BookList);//도서목록 업데이트
             BooksThread.IsBackground = true; //BackgroundThread : 메인스레드 종료시 같이 종료됨
             BooksThread.Start();
+
+            //검색 타입 설정
+            this.group_comboBox.SelectedIndex = 0;
         }
 
         /* 하루 대여량 */
@@ -252,6 +255,23 @@ namespace book_management_program.Forms
 
                 resume(); //BooksThread 재시작
             }
+            else
+            {
+                MessageBox.Show("타입 선택", "검색", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void all_btn_Click(object sender, EventArgs e)
+        {
+            ClearTxt();
+
+            List<string[]> books = new List<string[]>();
+            string[] row1 = { "재시작 도서 1", "도서명1", "저자1", "출판사1", "재고1", "대여중1" };
+            string[] row2 = { "재시작 도서 1", "도서명2", "저자2", "출판사2", "재고2", "대여중2" };
+            books.Add(row1); books.Add(row2);
+            BooksView(books);//검색 결과 리스트뷰에 결과 보여주기
+
+            resume(); //BooksThread 재시작
         }
     }
 }
