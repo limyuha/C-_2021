@@ -37,7 +37,7 @@ namespace book_management_program.Util
                 + ";password=" + password;
         }
 
-        public bool Insert_Sql(String sql)
+        public String Insert_Sql(String sql)
         {
             try
             {
@@ -47,21 +47,21 @@ namespace book_management_program.Util
                 if (sqlCmd.ExecuteNonQuery() == 1) // ExecuteNonQuery() : Insert,Delete 메소드
                 {
                     sqlConn.Close();
-                    return true; 
+                    return "true"; 
                 }
                 else
                 {
                     sqlConn.Close();
-                    return false;
+                    return "flase:query";
                 }
              }
             catch (Exception e)
             {
-                return false;
+                return "false:"+ e.ToString();
             }
         }
 
-        public void Select_Sql(String sql)
+        public string Select_Sql(String sql)
         {
             try
             {
@@ -91,10 +91,11 @@ namespace book_management_program.Util
 
                 mySqlDataReader.Close();
                 return_value = true;
+                return "true";
             }
             catch (Exception e)
             {
-                return_value = false;
+                return "false:" + e.ToString();
             }
             sqlConn.Close();
         }
