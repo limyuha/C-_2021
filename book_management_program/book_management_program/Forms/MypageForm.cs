@@ -1,4 +1,5 @@
-﻿using System;
+﻿using book_management_program.Manager;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,8 @@ namespace book_management_program.Forms
 {
     public partial class MypageForm : Form
     {
-
-        private string memberId = MainForm.memberId; //아이디
+        //아이디
+        private string memberId = MainForm.memberId; 
 
         /*
         private List<Book> rents; //대여 목록
@@ -172,5 +173,20 @@ namespace book_management_program.Forms
             }
         }
 
+        private void rent_extend_btn_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(rent_booknumber_textBox.Text))
+            {
+                string isbn = rent_booknumber_textBox.Text;
+                if (/*BookManager.RentExtCheck(memberId, rent_booknumber_textBox.Text)=="N"*/true)
+                {
+                    //BookManager.RentExtUpdate(mem_nm, isbn);
+                }
+            }
+            else
+            {
+                MessageBox.Show("책 정보가 필요합니다.", "연장", MessageBoxButtons.OK);
+            }
+        }
     }
 }

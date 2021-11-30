@@ -27,6 +27,9 @@ namespace book_management_program.Manager
         void RentListIn(string mem_nm, string isbn);
         void RentListDel(string mem_nm, string isbn);
 
+        string RentExtCheck(string mem_nm, string isbn);
+        void RentExtUpdate(string mem_nm, string isbn);
+
         void ResvListIn(string mem_nm, string isbn);
         void ResvListDel(string mem_nm, string isbn);
     }
