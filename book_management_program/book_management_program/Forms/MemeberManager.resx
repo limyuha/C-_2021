@@ -57,56 +57,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;member_manager_label.Name" xml:space="preserve">
-    <value>member_manager_label</value>
-  </data>
-  <data name="&gt;&gt;member_manager_label.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;member_manager_label.Parent" xml:space="preserve">
-    <value>panel7</value>
-  </data>
-  <data name="&gt;&gt;member_manager_label.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;member_manager_listView.Name" xml:space="preserve">
-    <value>member_manager_listView</value>
-  </data>
-  <data name="&gt;&gt;member_manager_listView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;member_manager_listView.Parent" xml:space="preserve">
-    <value>panel7</value>
-  </data>
-  <data name="&gt;&gt;member_manager_listView.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="panel7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>146, 100</value>
-  </data>
-  <data name="panel7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>550, 600</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="panel7.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;panel7.Name" xml:space="preserve">
-    <value>panel7</value>
-  </data>
-  <data name="&gt;&gt;panel7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel7.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel7.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="member_manager_label.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="member_manager_label.Font" type="System.Drawing.Font, System.Drawing">
     <value>한컴 고딕, 12pt</value>
   </data>
@@ -134,7 +89,40 @@
   <data name="&gt;&gt;member_manager_label.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="no.Text" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="no.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="id.Text" xml:space="preserve">
+    <value>아이디</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="id.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="id.Width" type="System.Int32, mscorlib">
+    <value>166</value>
+  </data>
+  <data name="pw.Text" xml:space="preserve">
+    <value>비밀번호</value>
+  </data>
+  <data name="pw.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="pw.Width" type="System.Int32, mscorlib">
+    <value>166</value>
+  </data>
+  <data name="tel.Text" xml:space="preserve">
+    <value>전화번호</value>
+  </data>
+  <data name="tel.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="tel.Width" type="System.Int32, mscorlib">
+    <value>166</value>
+  </data>
   <data name="member_manager_listView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
@@ -159,29 +147,26 @@
   <data name="&gt;&gt;member_manager_listView.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="no.Text" xml:space="preserve">
-    <value>회원 번호</value>
+  <data name="panel7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>146, 100</value>
   </data>
-  <data name="no.Width" type="System.Int32, mscorlib">
-    <value>150</value>
+  <data name="panel7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>550, 600</value>
   </data>
-  <data name="id.Text" xml:space="preserve">
-    <value>아이디</value>
+  <data name="panel7.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
   </data>
-  <data name="id.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
+  <data name="&gt;&gt;panel7.Name" xml:space="preserve">
+    <value>panel7</value>
   </data>
-  <data name="id.Width" type="System.Int32, mscorlib">
-    <value>200</value>
+  <data name="&gt;&gt;panel7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="pw.Text" xml:space="preserve">
-    <value>비밀번호</value>
+  <data name="&gt;&gt;panel7.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="pw.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="pw.Width" type="System.Int32, mscorlib">
-    <value>200</value>
+  <data name="&gt;&gt;panel7.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -502,6 +487,12 @@
     <value>pw</value>
   </data>
   <data name="&gt;&gt;pw.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tel.Name" xml:space="preserve">
+    <value>tel</value>
+  </data>
+  <data name="&gt;&gt;tel.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

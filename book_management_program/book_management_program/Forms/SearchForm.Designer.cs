@@ -33,14 +33,16 @@ namespace book_management_program.Forms
             this.group_comboBox = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.search_btn = new System.Windows.Forms.Button();
+            this.search_textBox = new System.Windows.Forms.TextBox();
             this.search_listView = new System.Windows.Forms.ListView();
             this.book_number = new System.Windows.Forms.ColumnHeader();
-            this.book_name = new System.Windows.Forms.ColumnHeader();
+            this.cat_no = new System.Windows.Forms.ColumnHeader();
             this.book_writer = new System.Windows.Forms.ColumnHeader();
             this.book_publisher = new System.Windows.Forms.ColumnHeader();
+            this.pub_dt = new System.Windows.Forms.ColumnHeader();
+            this.book_name = new System.Windows.Forms.ColumnHeader();
             this.book_stock = new System.Windows.Forms.ColumnHeader();
             this.book_rentsum = new System.Windows.Forms.ColumnHeader();
-            this.search_textBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,58 +82,6 @@ namespace book_management_program.Forms
             this.search_btn.Text = "검색";
             this.search_btn.UseVisualStyleBackColor = false;
             // 
-            // search_listView
-            // 
-            this.search_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.book_number,
-            this.book_name,
-            this.book_writer,
-            this.book_publisher,
-            this.book_stock,
-            this.book_rentsum});
-            this.search_listView.HideSelection = false;
-            this.search_listView.Location = new System.Drawing.Point(117, 145);
-            this.search_listView.Name = "search_listView";
-            this.search_listView.Size = new System.Drawing.Size(1000, 600);
-            this.search_listView.TabIndex = 3;
-            this.search_listView.UseCompatibleStateImageBehavior = false;
-            this.search_listView.View = System.Windows.Forms.View.Details;
-            // 
-            // book_number
-            // 
-            this.book_number.Text = "도서 번호";
-            this.book_number.Width = 166;
-            // 
-            // book_name
-            // 
-            this.book_name.Text = "도서명";
-            this.book_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.book_name.Width = 166;
-            // 
-            // book_writer
-            // 
-            this.book_writer.Text = "저자";
-            this.book_writer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.book_writer.Width = 166;
-            // 
-            // book_publisher
-            // 
-            this.book_publisher.Text = "출판사";
-            this.book_publisher.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.book_publisher.Width = 166;
-            // 
-            // book_stock
-            // 
-            this.book_stock.Text = "재고";
-            this.book_stock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.book_stock.Width = 166;
-            // 
-            // book_rentsum
-            // 
-            this.book_rentsum.Text = "대여량";
-            this.book_rentsum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.book_rentsum.Width = 166;
-            // 
             // search_textBox
             // 
             this.search_textBox.Location = new System.Drawing.Point(437, 64);
@@ -139,14 +89,81 @@ namespace book_management_program.Forms
             this.search_textBox.Size = new System.Drawing.Size(360, 31);
             this.search_textBox.TabIndex = 4;
             // 
+            // search_listView
+            // 
+            this.search_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.book_number,
+            this.cat_no,
+            this.book_writer,
+            this.book_publisher,
+            this.pub_dt,
+            this.book_name,
+            this.book_stock,
+            this.book_rentsum});
+            this.search_listView.FullRowSelect = true;
+            this.search_listView.HideSelection = false;
+            this.search_listView.Location = new System.Drawing.Point(117, 135);
+            this.search_listView.Name = "search_listView";
+            this.search_listView.Size = new System.Drawing.Size(1000, 600);
+            this.search_listView.TabIndex = 5;
+            this.search_listView.UseCompatibleStateImageBehavior = false;
+            this.search_listView.View = System.Windows.Forms.View.Details;
+            // 
+            // book_number
+            // 
+            this.book_number.Text = "ISBN";
+            this.book_number.Width = 125;
+            // 
+            // cat_no
+            // 
+            this.cat_no.Text = "분류";
+            this.cat_no.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cat_no.Width = 125;
+            // 
+            // book_writer
+            // 
+            this.book_writer.Text = "저자";
+            this.book_writer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.book_writer.Width = 125;
+            // 
+            // book_publisher
+            // 
+            this.book_publisher.Text = "출판사";
+            this.book_publisher.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.book_publisher.Width = 125;
+            // 
+            // pub_dt
+            // 
+            this.pub_dt.Text = "발행일";
+            this.pub_dt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pub_dt.Width = 125;
+            // 
+            // book_name
+            // 
+            this.book_name.Text = "도서명";
+            this.book_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.book_name.Width = 125;
+            // 
+            // book_stock
+            // 
+            this.book_stock.Text = "재고";
+            this.book_stock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.book_stock.Width = 125;
+            // 
+            // book_rentsum
+            // 
+            this.book_rentsum.Text = "대여량";
+            this.book_rentsum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.book_rentsum.Width = 125;
+            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1234, 844);
-            this.Controls.Add(this.search_textBox);
             this.Controls.Add(this.search_listView);
+            this.Controls.Add(this.search_textBox);
             this.Controls.Add(this.search_btn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.group_comboBox);
@@ -165,13 +182,15 @@ namespace book_management_program.Forms
         private System.Windows.Forms.ComboBox group_comboBox;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button search_btn;
+        private System.Windows.Forms.TextBox search_textBox;
         private System.Windows.Forms.ListView search_listView;
         private System.Windows.Forms.ColumnHeader book_number;
-        private System.Windows.Forms.ColumnHeader book_name;
+        private System.Windows.Forms.ColumnHeader cat_no;
         private System.Windows.Forms.ColumnHeader book_writer;
         private System.Windows.Forms.ColumnHeader book_publisher;
+        private System.Windows.Forms.ColumnHeader pub_dt;
+        private System.Windows.Forms.ColumnHeader book_name;
         private System.Windows.Forms.ColumnHeader book_stock;
         private System.Windows.Forms.ColumnHeader book_rentsum;
-        private System.Windows.Forms.TextBox search_textBox;
     }
 }

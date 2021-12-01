@@ -62,6 +62,10 @@ namespace book_management_program.Forms
             this.resv_bookname_textBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.resv_booknumber_textBox = new System.Windows.Forms.TextBox();
+            this.cat_no = new System.Windows.Forms.ColumnHeader();
+            this.pub_dt = new System.Windows.Forms.ColumnHeader();
+            this.resv_cat_no = new System.Windows.Forms.ColumnHeader();
+            this.resv_pub_dt = new System.Windows.Forms.ColumnHeader();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -82,9 +86,11 @@ namespace book_management_program.Forms
             this.rent_listView.BackColor = System.Drawing.Color.White;
             this.rent_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.rent_booknumber,
-            this.rent_bookname,
+            this.cat_no,
             this.rent_bookwrite,
             this.rent_publisher,
+            this.pub_dt,
+            this.rent_bookname,
             this.rent_date,
             this.rent_return});
             this.rent_listView.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -100,33 +106,33 @@ namespace book_management_program.Forms
             // 
             // rent_booknumber
             // 
-            this.rent_booknumber.Text = "도서번호";
-            this.rent_booknumber.Width = 150;
+            this.rent_booknumber.Text = "ISBN";
+            this.rent_booknumber.Width = 112;
             // 
             // rent_bookname
             // 
             this.rent_bookname.Text = "도서명";
-            this.rent_bookname.Width = 150;
+            this.rent_bookname.Width = 112;
             // 
             // rent_bookwrite
             // 
             this.rent_bookwrite.Text = "저자";
-            this.rent_bookwrite.Width = 150;
+            this.rent_bookwrite.Width = 112;
             // 
             // rent_publisher
             // 
             this.rent_publisher.Text = "출판사";
-            this.rent_publisher.Width = 150;
+            this.rent_publisher.Width = 112;
             // 
             // rent_date
             // 
             this.rent_date.Text = "대여일";
-            this.rent_date.Width = 150;
+            this.rent_date.Width = 112;
             // 
             // rent_return
             // 
             this.rent_return.Text = "반납일";
-            this.rent_return.Width = 150;
+            this.rent_return.Width = 112;
             // 
             // rent_book
             // 
@@ -266,9 +272,11 @@ namespace book_management_program.Forms
             this.resv_listView.BackColor = System.Drawing.Color.White;
             this.resv_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.resv_booknumber,
-            this.resv_bookname,
+            this.resv_cat_no,
             this.resv_bookwrite,
             this.resv_publisher,
+            this.resv_pub_dt,
+            this.resv_bookname,
             this.resv_rent});
             this.resv_listView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.resv_listView.FullRowSelect = true;
@@ -284,28 +292,28 @@ namespace book_management_program.Forms
             // 
             // resv_booknumber
             // 
-            this.resv_booknumber.Text = "도서번호";
-            this.resv_booknumber.Width = 180;
+            this.resv_booknumber.Text = "ISBN";
+            this.resv_booknumber.Width = 128;
             // 
             // resv_bookname
             // 
             this.resv_bookname.Text = "도서명";
-            this.resv_bookname.Width = 180;
+            this.resv_bookname.Width = 128;
             // 
             // resv_bookwrite
             // 
             this.resv_bookwrite.Text = "저자";
-            this.resv_bookwrite.Width = 180;
+            this.resv_bookwrite.Width = 128;
             // 
             // resv_publisher
             // 
             this.resv_publisher.Text = "출판사";
-            this.resv_publisher.Width = 180;
+            this.resv_publisher.Width = 128;
             // 
             // resv_rent
             // 
-            this.resv_rent.Text = "대여 가능/불가능";
-            this.resv_rent.Width = 180;
+            this.resv_rent.Text = "대여 가능";
+            this.resv_rent.Width = 128;
             // 
             // resv_book
             // 
@@ -382,6 +390,26 @@ namespace book_management_program.Forms
             this.resv_booknumber_textBox.Size = new System.Drawing.Size(234, 31);
             this.resv_booknumber_textBox.TabIndex = 17;
             // 
+            // cat_no
+            // 
+            this.cat_no.Text = "분류";
+            this.cat_no.Width = 112;
+            // 
+            // pub_dt
+            // 
+            this.pub_dt.Text = "발행일";
+            this.pub_dt.Width = 112;
+            // 
+            // resv_cat_no
+            // 
+            this.resv_cat_no.Text = "분류";
+            this.resv_cat_no.Width = 128;
+            // 
+            // resv_pub_dt
+            // 
+            this.resv_pub_dt.Text = "발행일";
+            this.resv_pub_dt.Width = 128;
+            // 
             // MypageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -444,5 +472,9 @@ namespace book_management_program.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button rent_extend_btn;
+        private System.Windows.Forms.ColumnHeader cat_no;
+        private System.Windows.Forms.ColumnHeader pub_dt;
+        private System.Windows.Forms.ColumnHeader resv_cat_no;
+        private System.Windows.Forms.ColumnHeader resv_pub_dt;
     }
 }
