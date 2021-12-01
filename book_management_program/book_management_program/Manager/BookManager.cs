@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient;
 
 namespace book_management_program.Manager
 {
@@ -45,7 +46,28 @@ namespace book_management_program.Manager
 
         public List<Book> BookInfoList()
         {
-            throw new NotImplementedException();
+            string sql = "SELECT isbn, book_nm, author, pub, stock FROM bookinfo";
+
+            List<Book> books = new List<Book>();
+
+            Book book;
+
+            MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql);
+
+            if (result.HasRows)
+            {
+                while (result.Read())
+                {
+                    book = new Book();
+                    book.Isbn = result.GetString(0);
+                    book.Book_nm = result.GetString(1);
+                    book.Author = result.GetString(2);
+                    book.Pub = result.GetString(3);
+                    book.Stock = result.GetInt32(4);
+                    books.Add(book);
+                }
+            }
+            return books;
         }
 
         public void BookRent(string isbn)

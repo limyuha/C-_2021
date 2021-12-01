@@ -72,16 +72,18 @@ namespace book_management_program.Util
                 var dataTable = new DataTable();
                 sqlCmd = new MySqlCommand(sql, sqlConn);
                 MySqlDataReader mySqlDataReader = sqlCmd.ExecuteReader();  // Select 결과
-                dataTable.Load(mySqlDataReader);
 
                 result = mySqlDataReader;
+
+                return result;
+                sqlConn.Close();
             }
             catch (Exception e)
             {
-
+                return null;
+                sqlConn.Close();
             }
-            sqlConn.Close();
-            return result;
+            
         }
     }
 }

@@ -188,5 +188,10 @@ namespace book_management_program.Forms
                 MessageBox.Show("책 정보가 필요합니다.", "연장", MessageBoxButtons.OK);
             }
         }
+
+        private void resv_listView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
