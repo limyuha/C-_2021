@@ -20,7 +20,11 @@ namespace book_management_program.Forms
         public book_manager()
         {
             InitializeComponent();
+            ListViewConn();
+        }
 
+        private void ListViewConn()
+        {
             List<Book> list = new List<Book>();
             BookManager bookmanager = new BookManager();
 
@@ -53,6 +57,7 @@ namespace book_management_program.Forms
             book.Stock = int.Parse(this.book_stock_textBox.Text);
 
             bookmanager.BookInfoInsert(book);
+            ListViewConn();
         }
     }
 }
