@@ -39,6 +39,10 @@ namespace book_management_program.Forms
             this.rent_return = new System.Windows.Forms.ColumnHeader();
             this.rent_book = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.rent_extend_btn = new System.Windows.Forms.Button();
             this.return_btn = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.rent_bookname_textBox = new System.Windows.Forms.TextBox();
@@ -58,10 +62,6 @@ namespace book_management_program.Forms
             this.resv_bookname_textBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.resv_booknumber_textBox = new System.Windows.Forms.TextBox();
-            this.rent_extend_btn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -154,6 +154,51 @@ namespace book_management_program.Forms
             this.panel2.Size = new System.Drawing.Size(259, 350);
             this.panel2.TabIndex = 1;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("맑은 고딕", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(119, 197);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(125, 21);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "7일 연장됩니다.";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("맑은 고딕", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(40, 165);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(178, 21);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "* 대여 연장은 1회 한정";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("맑은 고딕", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(9, 175);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(178, 21);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "* 대여 연장은 1회 한정";
+            // 
+            // rent_extend_btn
+            // 
+            this.rent_extend_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.rent_extend_btn.FlatAppearance.BorderSize = 0;
+            this.rent_extend_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rent_extend_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rent_extend_btn.ForeColor = System.Drawing.Color.White;
+            this.rent_extend_btn.Location = new System.Drawing.Point(9, 228);
+            this.rent_extend_btn.Name = "rent_extend_btn";
+            this.rent_extend_btn.Size = new System.Drawing.Size(234, 48);
+            this.rent_extend_btn.TabIndex = 22;
+            this.rent_extend_btn.Text = "대여 연장";
+            this.rent_extend_btn.UseVisualStyleBackColor = false;
+            this.rent_extend_btn.Click += new System.EventHandler(this.rent_extend_btn_Click);
+            // 
             // return_btn
             // 
             this.return_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -234,6 +279,7 @@ namespace book_management_program.Forms
             this.resv_listView.TabIndex = 1;
             this.resv_listView.UseCompatibleStateImageBehavior = false;
             this.resv_listView.View = System.Windows.Forms.View.Details;
+            this.resv_listView.SelectedIndexChanged += new System.EventHandler(this.resv_listView_SelectedIndexChanged);
             this.resv_listView.Click += new System.EventHandler(this.resv_listView_Click);
             // 
             // resv_booknumber
@@ -335,50 +381,6 @@ namespace book_management_program.Forms
             this.resv_booknumber_textBox.ReadOnly = true;
             this.resv_booknumber_textBox.Size = new System.Drawing.Size(234, 31);
             this.resv_booknumber_textBox.TabIndex = 17;
-            // 
-            // rent_extend_btn
-            // 
-            this.rent_extend_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.rent_extend_btn.FlatAppearance.BorderSize = 0;
-            this.rent_extend_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rent_extend_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rent_extend_btn.ForeColor = System.Drawing.Color.White;
-            this.rent_extend_btn.Location = new System.Drawing.Point(9, 228);
-            this.rent_extend_btn.Name = "rent_extend_btn";
-            this.rent_extend_btn.Size = new System.Drawing.Size(234, 48);
-            this.rent_extend_btn.TabIndex = 22;
-            this.rent_extend_btn.Text = "대여 연장";
-            this.rent_extend_btn.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("맑은 고딕", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(9, 175);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 21);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "* 대여 연장은 1회 한정";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("맑은 고딕", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(40, 165);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(178, 21);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "* 대여 연장은 1회 한정";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("맑은 고딕", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(118, 196);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(125, 21);
-            this.label5.TabIndex = 25;
-            this.label5.Text = "7일 연장됩니다.";
             // 
             // MypageForm
             // 

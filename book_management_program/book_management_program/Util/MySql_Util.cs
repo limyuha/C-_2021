@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace book_management_program.Util
 {
@@ -21,6 +22,7 @@ namespace book_management_program.Util
         private MySqlConnection sqlConn;
         private MySqlCommand sqlCmd;
         private bool return_value;
+        private MySqlDataReader result;
 
         public MySql_Util()
         {
@@ -31,9 +33,9 @@ namespace book_management_program.Util
             string server = "localhost";
             string user = "c2021";
             string password = "yuhan";
-            connection = "server=" + server 
-                + ";user=" + user 
-                + ";database=" + database 
+            connection = "server=" + server
+                + ";user=" + user
+                + ";database=" + database
                 + ";password=" + password;
         }
 
@@ -47,21 +49,21 @@ namespace book_management_program.Util
                 if (sqlCmd.ExecuteNonQuery() == 1) // ExecuteNonQuery() : Insert,Delete 메소드
                 {
                     sqlConn.Close();
-                    return true; 
+                    return true;
                 }
                 else
                 {
                     sqlConn.Close();
                     return false;
                 }
-             }
+            }
             catch (Exception e)
             {
                 return false;
             }
         }
 
-        public void Select_Sql(String sql)
+        public MySqlDataReader Select_Sql(String sql)
         {
             try
             {
@@ -70,33 +72,66 @@ namespace book_management_program.Util
                 var dataTable = new DataTable();
                 sqlCmd = new MySqlCommand(sql, sqlConn);
                 MySqlDataReader mySqlDataReader = sqlCmd.ExecuteReader();  // Select 결과
-                dataTable.Load(mySqlDataReader);
 
-                /*
-                StringBuilder output = new StringBuilder();
-                foreach(DataColumn column in dataTable.Columns)
-                {
-                    output.AppendFormat("{0}", column);
-                }
-                output.AppendLine();
+                result = mySqlDataReader;
 
-                foreach (DataRow page in dataTable.Rows)
-                {
-                    foreach(DataColumn column in dataTable.Columns)
-                    {
-                        output.AppendFormat("{0}", page[column]);
-                    }
-                    output.AppendLine();
-                }*/
-
-                mySqlDataReader.Close();
-                return_value = true;
+                return result;
+                sqlConn.Close();
             }
             catch (Exception e)
             {
-                return_value = false;
+                return null;
+                sqlConn.Close();
             }
-            sqlConn.Close();
+            
+        }
+
+        public bool Update_Sql(String sql)
+        {
+            try
+            {
+                sqlConn = new MySqlConnection(connection);
+                sqlConn.Open();
+                sqlCmd = new MySqlCommand(sql, sqlConn);
+                if (sqlCmd.ExecuteNonQuery() == 1) // ExecuteNonQuery() : Insert,Delete 메소드
+                {
+                    sqlConn.Close();
+                    return true;
+                }
+                else
+                {
+                    sqlConn.Close();
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool Delete_Sql(String sql)
+        {
+            try
+            {
+                sqlConn = new MySqlConnection(connection);
+                sqlConn.Open();
+                sqlCmd = new MySqlCommand(sql, sqlConn);
+                if (sqlCmd.ExecuteNonQuery() == 1) // ExecuteNonQuery() : Insert,Delete 메소드
+                {
+                    sqlConn.Close();
+                    return true;
+                }
+                else
+                {
+                    sqlConn.Close();
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
     }
 }
