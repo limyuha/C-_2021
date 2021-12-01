@@ -85,5 +85,53 @@ namespace book_management_program.Util
             }
             
         }
+
+        public bool Update_Sql(String sql)
+        {
+            try
+            {
+                sqlConn = new MySqlConnection(connection);
+                sqlConn.Open();
+                sqlCmd = new MySqlCommand(sql, sqlConn);
+                if (sqlCmd.ExecuteNonQuery() == 1) // ExecuteNonQuery() : Insert,Delete 메소드
+                {
+                    sqlConn.Close();
+                    return true;
+                }
+                else
+                {
+                    sqlConn.Close();
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool Delete_Sql(String sql)
+        {
+            try
+            {
+                sqlConn = new MySqlConnection(connection);
+                sqlConn.Open();
+                sqlCmd = new MySqlCommand(sql, sqlConn);
+                if (sqlCmd.ExecuteNonQuery() == 1) // ExecuteNonQuery() : Insert,Delete 메소드
+                {
+                    sqlConn.Close();
+                    return true;
+                }
+                else
+                {
+                    sqlConn.Close();
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
     }
 }

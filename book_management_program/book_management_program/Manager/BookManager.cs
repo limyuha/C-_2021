@@ -18,12 +18,23 @@ namespace book_management_program.Manager
             throw new NotImplementedException();
         }
 
+        // BookManager.cs 도서 삭제 버튼 기능
         public void BookInfoDelete(string isbn)
         {
-            throw new NotImplementedException();
+            string sql = "DELETE FROM bookinfo WHERE isbn = " + isbn;
+
+            if (MySql_Util.Instance.Delete_Sql(sql) == true)
+            {
+                MessageBox.Show("삭제 완료", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("삭제 에러", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
 
-        // BookManager.cs 등록 버튼
+        // BookManager.cs 도서 등록 버튼 기능
         public void BookInfoInsert(Book book)
         {
             string sql = "INSERT INTO bookinfo (isbn, book_nm, author, pub, stock) VALUES ('"
@@ -40,10 +51,10 @@ namespace book_management_program.Manager
             else
             {
                 MessageBox.Show("등록 에러", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
         }
 
+        // BookManager.cs 도서 리스트 기능
         public List<Book> BookInfoList()
         {
             string sql = "SELECT isbn, book_nm, author, pub, stock FROM bookinfo";
@@ -68,6 +79,25 @@ namespace book_management_program.Manager
                 }
             }
             return books;
+        }
+
+        public void BookInfoUpdate(Book book)
+        {
+            string sql = "UPDATE bookinfo SET book_nm = '" + 
+                book.Book_nm + "', author = '" + 
+                book.Author + "', pub = '" +
+                book.Pub + "', stock = '" +
+                book.Stock + "' WHERE isbn = '" + book.Isbn + "'";
+
+            if (MySql_Util.Instance.Update_Sql(sql) == true)
+            {
+                MessageBox.Show("수정 완료", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("수정 에러", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         public void BookRent(string isbn)

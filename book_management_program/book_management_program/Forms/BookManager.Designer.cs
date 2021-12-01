@@ -78,6 +78,7 @@ namespace book_management_program.Forms
             // 
             // book_listView
             // 
+            this.book_listView.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.book_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.book_number,
             this.book_name,
@@ -86,6 +87,7 @@ namespace book_management_program.Forms
             this.book_stock,
             this.book_rentsum});
             this.book_listView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.book_listView.FullRowSelect = true;
             this.book_listView.HideSelection = false;
             this.book_listView.Location = new System.Drawing.Point(0, 65);
             this.book_listView.Name = "book_listView";
@@ -93,6 +95,7 @@ namespace book_management_program.Forms
             this.book_listView.TabIndex = 0;
             this.book_listView.UseCompatibleStateImageBehavior = false;
             this.book_listView.View = System.Windows.Forms.View.Details;
+            this.book_listView.ItemActivate += new System.EventHandler(this.book_listView_ItemActivate);
             // 
             // book_number
             // 
@@ -160,6 +163,7 @@ namespace book_management_program.Forms
             this.book_delete_btn.TabIndex = 20;
             this.book_delete_btn.Text = "삭제";
             this.book_delete_btn.UseVisualStyleBackColor = false;
+            this.book_delete_btn.Click += new System.EventHandler(this.book_delete_btn_Click);
             // 
             // label3
             // 
@@ -242,6 +246,7 @@ namespace book_management_program.Forms
             this.modify_btn.TabIndex = 16;
             this.modify_btn.Text = "수정";
             this.modify_btn.UseVisualStyleBackColor = false;
+            this.modify_btn.Click += new System.EventHandler(this.modify_btn_Click);
             // 
             // rent_btn
             // 
@@ -289,6 +294,7 @@ namespace book_management_program.Forms
             // book_number_textBox
             // 
             this.book_number_textBox.BackColor = System.Drawing.Color.White;
+            this.book_number_textBox.Enabled = false;
             this.book_number_textBox.Location = new System.Drawing.Point(23, 76);
             this.book_number_textBox.Name = "book_number_textBox";
             this.book_number_textBox.Size = new System.Drawing.Size(249, 31);
