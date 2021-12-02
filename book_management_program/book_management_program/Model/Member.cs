@@ -8,19 +8,34 @@ namespace book_management_program.Model
 {
     class Member
     {
-        private int mem_no;
         private string mem_nm;
         private string pw;
-        private string jumin_no;
         private string mem_grade;
-        private string address;
         private string phone_no;
 
 
-        public Member() 
-        { 
-
+        public string Mem_nm
+        {
+            get { return mem_nm; }
+            set { mem_nm = value; }
         }
 
+        public string Pw
+        {
+            get { return pw; }
+            set { pw = value; }
+        }
+
+        public string Mem_grade
+        {
+            get { return mem_grade; }
+            set { mem_grade = value; }
+        }
+
+        public string Phone_no
+        {
+            get { return phone_no; }
+            set { phone_no = value; }
+        }
     }
 }
