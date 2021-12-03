@@ -18,7 +18,7 @@ namespace book_management_program.Manager
         public static MemberManager Member
         {
             get { return memberManager; }
-            set { Member = memberManager; }
+            set { memberManager = value; }
         }
 
         public void MemInfoInsert(Member member)

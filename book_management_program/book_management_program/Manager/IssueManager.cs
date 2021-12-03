@@ -16,7 +16,7 @@ namespace book_management_program.Manager
         public static IssueManager Issue
         {
             get { return issueManager; }
-            set { Issue = issueManager; }
+            set { issueManager = value; }
         }
 
         public void IssueDelete(int issue_no)

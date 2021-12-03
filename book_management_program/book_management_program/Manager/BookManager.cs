@@ -16,7 +16,7 @@ namespace book_management_program.Manager
         public static BookManager Book
         {
             get { return bookManager; }
-            set { Book = bookManager; }
+            set { bookManager = value; }
         }
 
         public int BookCount()
