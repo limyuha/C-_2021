@@ -14,7 +14,20 @@ namespace book_management_program.Manager
     {
         public int BookCount()
         {
-            throw new NotImplementedException();
+            string sql = "SELECT stock FROM bookinfo ;";
+            int count = 0;
+
+            MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql);
+
+            if (result.HasRows)
+            {
+                while (result.Read())
+                {
+                    count += result.GetInt32(0);
+                }
+
+            }
+            return count;
         }
 
         // BookManager.cs 도서 삭제 버튼 기능
@@ -82,8 +95,8 @@ namespace book_management_program.Manager
 
         public void BookInfoUpdate(Book book)
         {
-            string sql = "UPDATE bookinfo SET book_nm = '" + 
-                book.Book_nm + "', author = '" + 
+            string sql = "UPDATE bookinfo SET book_nm = '" +
+                book.Book_nm + "', author = '" +
                 book.Author + "', pub = '" +
                 book.Pub + "', stock = '" +
                 book.Stock + "' WHERE isbn = '" + book.Isbn + "'";
@@ -99,12 +112,12 @@ namespace book_management_program.Manager
 
         }
 
-        public void BookRent(string mem_nm , string isbn)
+        public void BookRent(string mem_nm, string isbn)
         {
-            
+
             //재고 -1 update  , rental테이블에 insert
             //한번에 여러개 대여는?
-            
+
             string sql = $"INSERT INTO rental VALUES(NULL , '{isbn}' , '{mem_nm}' , '{System.DateTime.Today.ToShortDateString()}', NULL , 'N' ;";
             List<Book> books = BookSearch("isbn", isbn);
             string temp = books[6].ToString();
@@ -124,7 +137,7 @@ namespace book_management_program.Manager
         public List<Book> BookRentRanking()
         {
             string sql = $"SELECT count(*) count , isbn,book_nm,author,pub FROM bookinfo group by isbn order by count ; ";
-            
+
             List<Book> books = new List<Book>();
             Book book;
             MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql);
@@ -140,14 +153,14 @@ namespace book_management_program.Manager
                     book.Author = result.GetString(3);
                     book.Pub = result.GetString(4);
                     books.Add(book);
-                    
+
                 }
-                
+
             }
             return books;
         }
 
-        public void BookResvCancel(string mem_nm , string isbn)
+        public void BookResvCancel(string mem_nm, string isbn)
         {
             string sql = $"DELETE FROM reserve WHERE mem_nm ='{mem_nm}' && isbn='{isbn}' ;  ";
 
@@ -161,7 +174,7 @@ namespace book_management_program.Manager
             }
         }
 
-        public void BookResvUpdate(string mem_nm , string isbn)
+        public void BookResvUpdate(string mem_nm, string isbn)
         {
             string sql = $"UPDATE reserve SET res_dt='{System.DateTime.Now}' WHERE mem_nm = '{mem_nm}' , isbn= '{isbn}'; ";
 
@@ -176,7 +189,7 @@ namespace book_management_program.Manager
 
         }
 
-        public void BookReturn(string mem_nm , string isbn)
+        public void BookReturn(string mem_nm, string isbn)
         {
             //rental update , bookinfo 재고 + 1
             //의논필요
@@ -203,10 +216,10 @@ namespace book_management_program.Manager
             Book book;
 
             string sql = $"SELECT isbn,cat_nm,author,pub,pub_dt,book_nm,stock FROM bookinfo,category WHERE {type} = '{search}' && bookinfo.cat_no = category.cat_no;";
-            
+
 
             MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql);
-            
+
             if (result.HasRows)
             {
                 while (result.Read())
@@ -219,7 +232,7 @@ namespace book_management_program.Manager
                     book.Pub_dt = result.GetDateTime(4);
                     book.Book_nm = result.GetString(5);
                     book.Stock = result.GetInt32(6);
-                    
+
                     //대여량
                     string sql2 = $"SELECT COUNT(rent_dt) FROM rental WHERE isbn = (SELECT isbn FROM bookinfo WHERE isbn = '{book.Isbn}' )  ;";
                     MySqlDataReader result2 = MySql_Util.Instance.Select_Sql(sql2);
@@ -228,7 +241,7 @@ namespace book_management_program.Manager
                     {
                         while (result2.Read())
                         {
-                            book.Count = result2.GetInt32(0);
+                            book.Rent_cnt = result2.GetInt32(0);
                         }
                     }
                     books.Add(book);
@@ -305,7 +318,6 @@ namespace book_management_program.Manager
         public void ResvListIn(string mem_nm, string isbn)
         {
             List<Book> resvBooks = new List<Book>();
-            List<string> rental = new List<string>();
             Book book;
 
             string sql = $"SELECT isbn,cat_nm,author,pub,pub_dt,book_nm,stock " +
@@ -326,7 +338,7 @@ namespace book_management_program.Manager
                     book.Pub = result.GetString(3);
                     book.Pub_dt = result.GetDateTime(4);
                     book.Book_nm = result.GetString(5);
-                    if(result.GetInt32(6) == 0)
+                    if (result.GetInt32(6) == 0)
                     {
                         book.Rent_ck = "No";
                     }
@@ -368,8 +380,8 @@ namespace book_management_program.Manager
         public int TodayRentSum()
         {
             string sql = $"SELECT COUNT(*) FROM rental WHERE rent_dt = '{System.DateTime.Today.ToShortDateString()}' ; ";
-            int rentSum = 0 ;
-            
+            int rentSum = 0;
+
 
             MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql);
 

@@ -16,7 +16,7 @@ namespace book_management_program.Model
         private DateTime pub_dt;
         private string book_nm;
         private int stock;
-        private int count;
+        private int rent_cnt;
         private DateTime rent_dt;
         private DateTime return_dt;
         private string rent_ck;
@@ -29,7 +29,7 @@ namespace book_management_program.Model
         public DateTime Pub_dt { get => pub_dt; set => pub_dt = value; }
         public string Book_nm { get => book_nm; set => book_nm = value; }
         public int Stock { get => stock; set => stock = value; }
-        public int Count { get => count; set => count = value; }
+        public int Rent_cnt { get => rent_cnt; set => rent_cnt = value; }
         public DateTime Rent_dt { get => rent_dt; set => rent_dt = value; }
         public DateTime Return_dt { get => return_dt; set => return_dt = value; }
         public string Rent_ck { get => rent_ck; set => rent_ck = value; }
