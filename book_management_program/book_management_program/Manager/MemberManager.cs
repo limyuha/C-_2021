@@ -115,9 +115,7 @@ namespace book_management_program.Manager
                 Member member = new Member();
                 string sql = $"SELECT mem_nm, pw FROM member WHERE mem_nm = '{id}' ;";
                 MySqlDataReader result = Instance.Select_Sql(sql);
-                if (result.HasRows)
-                {
-                    if (id == result.GetString(0) && password == result.GetString(1))
+                    if (id.Equals(result.GetString(0)) && password.Equals(result.GetString(1)))
                     {
                         member.Mem_nm = id;
                         member.Pw = password;
@@ -127,8 +125,6 @@ namespace book_management_program.Manager
                     {
                         return false;
                     }
-                }
-                return true;
             }
             catch
             {

@@ -33,6 +33,7 @@ namespace book_management_program.Forms
 
             if (id != "" && pwd != "")
             {   //회원 로그인 체크
+                MessageBox.Show(MemberManager.Member.MemLogin(id, pwd).ToString());
                 if (MemberManager.Member.MemLogin(id,pwd))
                 {
                     MainForm mainform = new MainForm(id);

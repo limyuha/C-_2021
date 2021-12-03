@@ -19,12 +19,9 @@ namespace book_management_program.Forms
         private System.Timers.Timer TimerEvent; //하루 대여량 업데이트 Timer 생성
         private delegate void OnDelegateTodayrentsum(int sum);//하루 대여량 출력 delegate
         private OnDelegateTodayrentsum OnTodayRentSum = null;
-        int trsum = 0;/*테스트용*/
-
 
         public static Thread BooksThread;//도서목록 업데이트
-        //private delegate void BooksUpdateDelegate(List<Book> books); // 도서목록 출력 delegate
-        private delegate void BooksUpdateDelegate(List<string[]> books); /*테스트용*/
+        private delegate void BooksUpdateDelegate(List<Book> books); // 도서목록 출력 delegate
         private BooksUpdateDelegate UpBooks = null;
 
         //BooksThread 제어
@@ -38,40 +35,40 @@ namespace book_management_program.Forms
             _pauseEvent.Set();
         }
 
-        /*
+        
         private List<Book> ranking; //대여 순위
-        private List<Book> books; //도서 목록*/
+        private List<Book> books; //도서 목록
 
         private int num = -1; //도서목록에서 선택된 행 번호
 
         public HomeForm()
         {
             InitializeComponent();
-            //this.rent_sum_labels.Text = BookManager.todayRentSum();
-            this.rent_sum_labels.Text = "0";/*테스트용*/
+
+            this.rent_sum_labels.Text = BookManager.Book.TodayRentSum().ToString();
             OnTodayRentSum = new OnDelegateTodayrentsum(SumView);
-            /*
-            ranking = BookManager.bookRentRanking();
-            books = BookManager.bookInfoList();*/
+
+            ranking = BookManager.Book.BookRentRanking();
+            books = BookManager.Book.BookInfoList();
         }
 
         private void HomeForm_Load(object sender, EventArgs e)
         {
-            /* 도서 대여 랭킹 : ranking_listView 
+            /* 도서 대여 랭킹 : ranking_listView */
             int r = 0;
             foreach (var book in ranking)
             {
                 r++; //순위
-                string[] row = { r.ToString(), book.도서번호, book.도서명, book.저자, book.출판사};
+                string[] row = { r.ToString(), book.Isbn, book.Book_nm, book.Author, book.Pub };
                 var lvItem = new ListViewItem(row);
                 this.ranking_listView.Items.Add(lvItem);
-            }*/
+            }
 
             /* 장서량 */
-            //this.book_count_labels.Text = BookManager.bookCount();
+            this.book_count_labels.Text = BookManager.Book.BookCount().ToString();
 
             /* 기간 대여량 */
-            //this.rent_avg_labels.Text = BookManager.termRentAvg();
+            this.rent_avg_labels.Text = BookManager.Book.TermRentAvg().ToString();
 
             /* 하루 대여량 - 3초 간격으로 업데이트*/
             TimerEvent = new System.Timers.Timer(3000);
@@ -92,13 +89,11 @@ namespace book_management_program.Forms
         /* 하루 대여량 */
         private void TodayRentsUpdate(object sender, ElapsedEventArgs e)
         {
-            //rent_sum_labels.Text = todayRentSum();
-            trsum += 50; /*테스트용*/
-            Invoke(OnTodayRentSum, trsum);
+            Invoke(OnTodayRentSum);
         }
         private void SumView (int sum)
         {
-            rent_sum_labels.Text = trsum.ToString();
+            this.rent_sum_labels.Text = BookManager.Book.TodayRentSum().ToString();
             TimerEvent.Enabled = true; //반복 가능
         }
 
@@ -107,11 +102,9 @@ namespace book_management_program.Forms
         {   int b = 0;
             while (_pauseEvent.WaitOne())
             {
-                //books = BookManager.bookInfoList();
-                List<string[]> books = new List<string[]>();
-                string[] row1 = { "도서번호" + (++b), "도서명1", "저자1", "출판사1", "재고1", "대여중1" };
-                string[] row2 = { "도서번호" + (++b), "도서명2", "저자2", "출판사2", "재고2", "대여중2" };
-                books.Add(row1); books.Add(row2);
+                books.Clear();
+                books = BookManager.Book.BookInfoList();
+
                 if(IsHandleCreated)
                 {
                     if(InvokeRequired)
@@ -120,12 +113,13 @@ namespace book_management_program.Forms
                 Thread.Sleep(10000);
             }
         }
-        private void BooksView(List<string[]> books)
+        private void BooksView(List<Book> books)
         {
             this.book_listView.Items.Clear();
             foreach (var book in books)
             {
-                var lvItem = new ListViewItem(book);
+                string[] row = { book.Isbn, book.Cat_no.ToString(), book.Author, book.Pub, book.Pub_dt.ToString(), book.Book_nm, book.Stock.ToString(), "0" };
+                var lvItem = new ListViewItem(row);
                 this.book_listView.Items.Add(lvItem);
             }
         }
@@ -237,21 +231,16 @@ namespace book_management_program.Forms
                 if (!(BooksThread == null)) //BooksThread 중단
                     pause();
 
-                //BookManager.bookSearch(type, search);
-                List<string[]> books = new List<string[]>();
-                string[] row1 = { "테스트 도서 1", "도서명1", "저자1", "출판사1", "재고1", "대여중1" };
-                string[] row2 = { "테스트 도서 1", "도서명2", "저자2", "출판사2", "재고2", "대여중2" };
-                books.Add(row1); books.Add(row2);
+                books.Clear();
+                books = BookManager.Book.BookSearch(type, search);
                 BooksView(books);//검색 결과 리스트뷰에 결과 보여주기
 
             }
             else if (string.IsNullOrWhiteSpace(search))
             {
-                List<string[]> books = new List<string[]>();
-                string[] row1 = { "재시작 도서 1", "도서명1", "저자1", "출판사1", "재고1", "대여중1" };
-                string[] row2 = { "재시작 도서 1", "도서명2", "저자2", "출판사2", "재고2", "대여중2" };
-                books.Add(row1); books.Add(row2);
-                BooksView(books);//검색 결과 리스트뷰에 결과 보여주기
+                books.Clear();
+                books = BookManager.Book.BookInfoList();
+                BooksView(books);//도서 목록 리스트뷰에 결과 보여주기
 
                 resume(); //BooksThread 재시작
             }
@@ -265,11 +254,9 @@ namespace book_management_program.Forms
         {
             ClearTxt();
 
-            List<string[]> books = new List<string[]>();
-            string[] row1 = { "재시작 도서 1", "도서명1", "저자1", "출판사1", "재고1", "대여중1" };
-            string[] row2 = { "재시작 도서 1", "도서명2", "저자2", "출판사2", "재고2", "대여중2" };
-            books.Add(row1); books.Add(row2);
-            BooksView(books);//검색 결과 리스트뷰에 결과 보여주기
+            books.Clear();
+            books = BookManager.Book.BookInfoList();
+            BooksView(books);//도서 목록 리스트뷰에 결과 보여주기
 
             resume(); //BooksThread 재시작
         }
