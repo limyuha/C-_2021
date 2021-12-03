@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace book_management_program.Manager
 {
@@ -109,28 +110,47 @@ namespace book_management_program.Manager
 
         public bool MemLogin(string id, string password)
         {
+            bool islogin = false;
 
             try
             {
                 Member member = new Member();
                 string sql = $"SELECT mem_nm, pw FROM member WHERE mem_nm = '{id}' ;";
+                /*
                 MySqlDataReader result = Instance.Select_Sql(sql);
+                MessageBox.Show("id: " + id + "==" + result.GetString(0));
+                MessageBox.Show("password: " + password + "==" + result.GetString(1));
+                if (result.HasRows)
+                {
+                    MessageBox.Show("id: " + id + "==" + result.GetString(0));
+                    MessageBox.Show("password: " + password + "==" + result.GetString(1));
                     if (id.Equals(result.GetString(0)) && password.Equals(result.GetString(1)))
                     {
                         member.Mem_nm = id;
                         member.Pw = password;
-                        return true;
+                        islogin = true;
                     }
                     else
                     {
-                        return false;
+                        islogin = false;
                     }
-            }
-            catch
-            {
-                return false;
-            }
+                }*/
 
+                DataSet ds = MySql_Util.Instance.Select_Sqlw(sql);
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    MessageBox.Show("id: " + id + "==" + row["mem_nm"]);
+                    MessageBox.Show("pw: " + password + "==" + row["pw"]);
+                    if(password.Equals(row["pw"])) islogin = true;
+                }
+
+                return islogin;
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                return islogin;
+            }
 
         }
 

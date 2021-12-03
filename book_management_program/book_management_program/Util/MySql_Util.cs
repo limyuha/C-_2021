@@ -65,27 +65,51 @@ namespace book_management_program.Util
 
         public MySqlDataReader Select_Sql(String sql)
         {
+            var dataTable = new DataTable();
             try
             {
                 sqlConn = new MySqlConnection(connection);
                 sqlConn.Open();
-                var dataTable = new DataTable();
                 sqlCmd = new MySqlCommand(sql, sqlConn);
                 MySqlDataReader mySqlDataReader = sqlCmd.ExecuteReader();  // Select 결과
 
                 result = mySqlDataReader;
                 
-                sqlConn.Close();
+                //sqlConn.Close();
                 return result;
                 
             }
             catch (Exception e)
             {
-                sqlConn.Close();
+                //sqlConn.Close();
                 return null; 
             }
-            
         }
+
+        public DataSet Select_Sqlw(String sql)
+        {
+            try
+            {
+                sqlConn = new MySqlConnection(connection);
+                sqlConn.Open();
+                var dataTable = new DataTable();
+
+                MySqlDataAdapter adpt = new MySqlDataAdapter(sql, sqlConn);
+                DataSet ds = new DataSet();
+                adpt.Fill(ds, "Tab1");
+
+                //sqlConn.Close();
+                return ds;
+
+            }
+            catch (Exception e)
+            {
+                sqlConn.Close();
+                return null;
+            }
+
+        }
+
 
         public bool Update_Sql(String sql)
         {
