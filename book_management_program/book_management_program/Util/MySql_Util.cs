@@ -74,14 +74,15 @@ namespace book_management_program.Util
                 MySqlDataReader mySqlDataReader = sqlCmd.ExecuteReader();  // Select 결과
 
                 result = mySqlDataReader;
-
-                return result;
+                
                 sqlConn.Close();
+                return result;
+                
             }
             catch (Exception e)
             {
-                return null;
                 sqlConn.Close();
+                return null; 
             }
             
         }

@@ -1,11 +1,11 @@
 ﻿using static book_management_program.Util.MySql_Util;
 using System;
+using book_management_program.Model;
+using book_management_program.Util;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using book_management_program.Model;
-using book_management_program.Util;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -13,21 +13,19 @@ namespace book_management_program.Manager
 {
     class MemberManager : IMemberManager
     {
-        /* 회원 정보 등록 */
-        public static bool MemInfoInsert(Model.Member member)
+
+        private static MemberManager memberManager = new MemberManager();
+        public static MemberManager Member
         {
-            //string sql = "INSERT INTO member VALUES(입력)";
-            //bool result = Instance.Insert_Sql(sql);
-            //return result;
-            return true;
+            get { return memberManager; }
+            set { Member = memberManager; }
         }
 
-        public void MemInfoInsert()
+        public void MemInfoInsert(Member member)
         {
-            Member member = new Member();
-            string sql = $"INSERT INTO issue VALUES ( '{member.Mem_nm}' , '{member.Pw}' , 'NOR' , '{member.Phone_no}'  ) ;";
+            string sql = $"INSERT INTO member VALUES ( '{member.Mem_nm}' , '{member.Pw}' , 'NOR' , '{member.Phone_no}') ;";
 
-            if (MySql_Util.Instance.Update_Sql(sql) == true)
+            if (Instance.Insert_Sql(sql) == true)
             {
                 MessageBox.Show("삽입 완료", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -116,7 +114,7 @@ namespace book_management_program.Manager
             {
                 Member member = new Member();
                 string sql = $"SELECT mem_nm, pw FROM member WHERE mem_nm = '{id}' ;";
-                MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql);
+                MySqlDataReader result = Instance.Select_Sql(sql);
                 if (result.HasRows)
                 {
                     if (id == result.GetString(0) && password == result.GetString(1))

@@ -1,4 +1,5 @@
 ﻿using book_management_program.Forms;
+using book_management_program.Manager;
 using book_management_program.Util;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,7 @@ namespace book_management_program.Forms
 
             if (id != "" && pwd != "")
             {   //회원 로그인 체크
-                if (/*memLogin(id,pwd)*/true)
+                if (MemberManager.Member.MemLogin(id,pwd))
                 {
                     MainForm mainform = new MainForm(id);
                     this.Hide(); //1.login 폼 숨김
@@ -63,7 +64,7 @@ namespace book_management_program.Forms
 
             if (id != "" && pwd != "")
             {   //관리자 로그인 체크
-                if (/*adminLogin(id,pwd)*/true)
+                if (MemberManager.Member.MemLogin(id, pwd))
                 {
                     MainManager main_manager = new MainManager();
                     this.Hide(); //1.login 폼 숨김

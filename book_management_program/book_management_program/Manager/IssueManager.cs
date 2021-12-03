@@ -12,6 +12,13 @@ namespace book_management_program.Manager
 {
     class IssueManager : IIssueManager
     {
+        private static IssueManager issueManager = new IssueManager();
+        public static IssueManager Issue
+        {
+            get { return issueManager; }
+            set { Issue = issueManager; }
+        }
+
         public void IssueDelete(int issue_no)
         {
             string sql = $"DELETE FROM issue WHERE issue_no ='{issue_no}' ;  ";

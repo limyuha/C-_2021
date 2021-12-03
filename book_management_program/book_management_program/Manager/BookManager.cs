@@ -12,6 +12,13 @@ namespace book_management_program.Manager
 {
     class BookManager : IBookManager
     {
+        private static BookManager bookManager = new BookManager();
+        public static BookManager Book
+        {
+            get { return bookManager; }
+            set { Book = bookManager; }
+        }
+
         public int BookCount()
         {
             string sql = "SELECT stock FROM bookinfo ;";
