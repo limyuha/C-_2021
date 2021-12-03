@@ -36,6 +36,7 @@ namespace book_management_program.Forms
                 MessageBox.Show(MemberManager.Member.MemLogin(id, pwd).ToString());
                 if (MemberManager.Member.MemLogin(id,pwd))
                 {
+                    MessageBox.Show("ID : " + id + "님 환영합니다.");
                     MainForm mainform = new MainForm(id);
                     this.Hide(); //1.login 폼 숨김
                     mainform.ShowDialog(); //2. main 폼 보이기

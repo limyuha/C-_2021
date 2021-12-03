@@ -89,6 +89,7 @@ namespace book_management_program.Forms
             this.book_listView.TabIndex = 7;
             this.book_listView.UseCompatibleStateImageBehavior = false;
             this.book_listView.View = System.Windows.Forms.View.Details;
+            this.book_listView.ItemActivate += new System.EventHandler(this.book_listView_ItemActivate);
             // 
             // book_number
             // 

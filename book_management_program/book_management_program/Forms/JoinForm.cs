@@ -23,6 +23,7 @@ namespace book_management_program.Forms
             String id = id_textBox.Text;
             String pwd = pw_textBox.Text;
             String phone = tel_textBox.Text;
+
             if (string.IsNullOrWhiteSpace(id) || string.IsNullOrWhiteSpace(pwd) || string.IsNullOrWhiteSpace(phone))
             {
 

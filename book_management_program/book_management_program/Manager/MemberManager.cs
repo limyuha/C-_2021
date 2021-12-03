@@ -24,7 +24,11 @@ namespace book_management_program.Manager
 
         public void MemInfoInsert(Member member)
         {
-            string sql = $"INSERT INTO member VALUES ( '{member.Mem_nm}' , '{member.Pw}' , 'NOR' , '{member.Phone_no}') ;";
+            string sql = "INSERT INTO member (mem_nm, pw, phone_no) VALUES ('"
+                + member.Mem_nm + "', '"
+                + member.Pw + "', '"
+                + member.Phone_no + "')";
+
 
             if (Instance.Insert_Sql(sql) == true)
             {
@@ -139,11 +143,8 @@ namespace book_management_program.Manager
                 DataSet ds = MySql_Util.Instance.Select_Sqlw(sql);
                 foreach (DataRow row in ds.Tables[0].Rows)
                 {
-                    MessageBox.Show("id: " + id + "==" + row["mem_nm"]);
-                    MessageBox.Show("pw: " + password + "==" + row["pw"]);
                     if(password.Equals(row["pw"])) islogin = true;
                 }
-
                 return islogin;
             }
             catch(Exception e)
