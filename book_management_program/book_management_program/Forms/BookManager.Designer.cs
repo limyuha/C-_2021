@@ -30,6 +30,15 @@ namespace book_management_program.Forms
         private void InitializeComponent()
         {
             this.panel7 = new System.Windows.Forms.Panel();
+            this.book_listView = new System.Windows.Forms.ListView();
+            this.book_number = new System.Windows.Forms.ColumnHeader();
+            this.cat_no = new System.Windows.Forms.ColumnHeader();
+            this.book_writer = new System.Windows.Forms.ColumnHeader();
+            this.book_publisher = new System.Windows.Forms.ColumnHeader();
+            this.pub_dt = new System.Windows.Forms.ColumnHeader();
+            this.book_name = new System.Windows.Forms.ColumnHeader();
+            this.book_stock = new System.Windows.Forms.ColumnHeader();
+            this.book_rentsum = new System.Windows.Forms.ColumnHeader();
             this.book_manager_label = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.book_delete_btn = new System.Windows.Forms.Button();
@@ -46,15 +55,6 @@ namespace book_management_program.Forms
             this.book_name_textBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.book_number_textBox = new System.Windows.Forms.TextBox();
-            this.book_listView = new System.Windows.Forms.ListView();
-            this.book_number = new System.Windows.Forms.ColumnHeader();
-            this.cat_no = new System.Windows.Forms.ColumnHeader();
-            this.book_writer = new System.Windows.Forms.ColumnHeader();
-            this.book_publisher = new System.Windows.Forms.ColumnHeader();
-            this.pub_dt = new System.Windows.Forms.ColumnHeader();
-            this.book_name = new System.Windows.Forms.ColumnHeader();
-            this.book_stock = new System.Windows.Forms.ColumnHeader();
-            this.book_rentsum = new System.Windows.Forms.ColumnHeader();
             this.panel7.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +67,75 @@ namespace book_management_program.Forms
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(893, 788);
             this.panel7.TabIndex = 15;
+            // 
+            // book_listView
+            // 
+            this.book_listView.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.book_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.book_number,
+            this.cat_no,
+            this.book_writer,
+            this.book_publisher,
+            this.pub_dt,
+            this.book_name,
+            this.book_stock,
+            this.book_rentsum});
+            this.book_listView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.book_listView.FullRowSelect = true;
+            this.book_listView.HideSelection = false;
+            this.book_listView.Location = new System.Drawing.Point(0, 65);
+            this.book_listView.Name = "book_listView";
+            this.book_listView.Size = new System.Drawing.Size(893, 723);
+            this.book_listView.TabIndex = 7;
+            this.book_listView.UseCompatibleStateImageBehavior = false;
+            this.book_listView.View = System.Windows.Forms.View.Details;
+            // 
+            // book_number
+            // 
+            this.book_number.Text = "ISBN";
+            this.book_number.Width = 110;
+            // 
+            // cat_no
+            // 
+            this.cat_no.Text = "분류";
+            this.cat_no.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cat_no.Width = 110;
+            // 
+            // book_writer
+            // 
+            this.book_writer.Text = "저자";
+            this.book_writer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.book_writer.Width = 110;
+            // 
+            // book_publisher
+            // 
+            this.book_publisher.Text = "출판사";
+            this.book_publisher.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.book_publisher.Width = 130;
+            // 
+            // pub_dt
+            // 
+            this.pub_dt.Text = "발행일";
+            this.pub_dt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pub_dt.Width = 110;
+            // 
+            // book_name
+            // 
+            this.book_name.Text = "도서명";
+            this.book_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.book_name.Width = 158;
+            // 
+            // book_stock
+            // 
+            this.book_stock.Text = "재고";
+            this.book_stock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.book_stock.Width = 80;
+            // 
+            // book_rentsum
+            // 
+            this.book_rentsum.Text = "대여량";
+            this.book_rentsum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.book_rentsum.Width = 80;
             // 
             // book_manager_label
             // 
@@ -250,74 +319,6 @@ namespace book_management_program.Forms
             this.book_number_textBox.Name = "book_number_textBox";
             this.book_number_textBox.Size = new System.Drawing.Size(249, 31);
             this.book_number_textBox.TabIndex = 0;
-            // 
-            // book_listView
-            // 
-            this.book_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.book_number,
-            this.cat_no,
-            this.book_writer,
-            this.book_publisher,
-            this.pub_dt,
-            this.book_name,
-            this.book_stock,
-            this.book_rentsum});
-            this.book_listView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.book_listView.FullRowSelect = true;
-            this.book_listView.HideSelection = false;
-            this.book_listView.Location = new System.Drawing.Point(0, 65);
-            this.book_listView.Name = "book_listView";
-            this.book_listView.Size = new System.Drawing.Size(893, 723);
-            this.book_listView.TabIndex = 7;
-            this.book_listView.UseCompatibleStateImageBehavior = false;
-            this.book_listView.View = System.Windows.Forms.View.Details;
-            // 
-            // book_number
-            // 
-            this.book_number.Text = "ISBN";
-            this.book_number.Width = 110;
-            // 
-            // cat_no
-            // 
-            this.cat_no.Text = "분류";
-            this.cat_no.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.cat_no.Width = 110;
-            // 
-            // book_writer
-            // 
-            this.book_writer.Text = "저자";
-            this.book_writer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.book_writer.Width = 110;
-            // 
-            // book_publisher
-            // 
-            this.book_publisher.Text = "출판사";
-            this.book_publisher.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.book_publisher.Width = 130;
-            // 
-            // pub_dt
-            // 
-            this.pub_dt.Text = "발행일";
-            this.pub_dt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.pub_dt.Width = 110;
-            // 
-            // book_name
-            // 
-            this.book_name.Text = "도서명";
-            this.book_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.book_name.Width = 158;
-            // 
-            // book_stock
-            // 
-            this.book_stock.Text = "재고";
-            this.book_stock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.book_stock.Width = 80;
-            // 
-            // book_rentsum
-            // 
-            this.book_rentsum.Text = "대여량";
-            this.book_rentsum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.book_rentsum.Width = 80;
             // 
             // book_manager
             // 
