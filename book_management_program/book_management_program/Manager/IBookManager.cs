@@ -13,10 +13,10 @@ namespace book_management_program.Manager
         void BookInfoDelete(String isbn);                   // BookManager.cs 도서 삭제 버튼 기능
         void BookInfoUpdate(Book book);
         List<Book> BookInfoList();                          // BookManager.cs 도서 리스트 기능
-        void BookRent(String isbn);
-        void BookReturn(String isbn);
-        void BookResvUpdate(String isbn);
-        void BookResvCancel(String isbn);
+        void BookRent(String mem_nm , String isbn);
+        void BookReturn(String mem_nm , String isbn);
+        void BookResvUpdate(String mem_nm , String isbn);
+        void BookResvCancel(String mem_nm , String isbn);
         List<Book> BookSearch(String type, String search);  //type = 검색 기준 : 도서명-book_nm, 저자-author, 출판사-pub
 
         int TodayRentSum();
