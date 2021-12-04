@@ -14,7 +14,7 @@ namespace book_management_program.Forms
     public partial class MypageForm : Form
     {
         //아이디
-        private string memberId = MainForm.memberId; 
+        private int memberNo = MainForm.Mem_no; 
 
         /*
         private List<Book> rents; //대여 목록

@@ -15,8 +15,6 @@ namespace book_management_program.Forms
 {
     public partial class LoginForm : Form
     {
-        
-
         public LoginForm()
         {
             InitializeComponent();

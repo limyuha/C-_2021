@@ -76,7 +76,7 @@ namespace book_management_program.Manager
         // BookManager.cs 도서 리스트 기능
         public List<Book> BookInfoList()
         {
-            string sql = "SELECT isbn, book_nm, author, pub, stock FROM bookinfo";
+            string sql = "SELECT isbn, cat_nm, author, pub, pub_dt, book_nm, stock FROM bookinfo,category WHERE bookinfo.cat_no = category.cat_no;";
 
             List<Book> books = new List<Book>();
 
@@ -90,10 +90,12 @@ namespace book_management_program.Manager
                 {
                     book = new Book();
                     book.Isbn = result.GetString(0);
-                    book.Book_nm = result.GetString(1);
+                    book.Cat_nm = result.GetString(1);
                     book.Author = result.GetString(2);
                     book.Pub = result.GetString(3);
-                    book.Stock = result.GetInt32(4);
+                    book.Pub_dt = result.GetDateTime(4);
+                    book.Book_nm = result.GetString(5);
+                    book.Stock = result.GetInt32(6);
                     books.Add(book);
                 }
             }
@@ -119,13 +121,13 @@ namespace book_management_program.Manager
 
         }
 
-        public void BookRent(string mem_nm, string isbn)
+        public void BookRent(int mem_no, string isbn)
         {
 
             //재고 -1 update  , rental테이블에 insert
             //한번에 여러개 대여는?
 
-            string sql = $"INSERT INTO rental VALUES(NULL , '{isbn}' , '{mem_nm}' , '{System.DateTime.Today.ToShortDateString()}', NULL , 'N' ;";
+            string sql = $"INSERT INTO rental VALUES(NULL , '{isbn}' , {mem_no} , '{System.DateTime.Today.ToShortDateString()}', NULL , 'N' ;";
             List<Book> books = BookSearch("isbn", isbn);
             string temp = books[6].ToString();
             int stock = int.Parse(temp) - 1;
@@ -167,9 +169,10 @@ namespace book_management_program.Manager
             return books;
         }
 
-        public void BookResvCancel(string mem_nm, string isbn)
+        /*
+        public void BookResvCancel(string mem_no, string isbn)
         {
-            string sql = $"DELETE FROM reserve WHERE mem_nm ='{mem_nm}' && isbn='{isbn}' ;  ";
+            string sql = $"DELETE FROM reserve WHERE mem_no ='{mem_no}' && isbn='{isbn}' ;  ";
 
             if (MySql_Util.Instance.Delete_Sql(sql) == true)
             {
@@ -179,11 +182,13 @@ namespace book_management_program.Manager
             {
                 MessageBox.Show("취소 에러", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+        }*/
 
-        public void BookResvUpdate(string mem_nm, string isbn)
+        /*
+        public void BookResvUpdate(string mem_no, string isbn)
         {
-            string sql = $"UPDATE reserve SET res_dt='{System.DateTime.Now}' WHERE mem_nm = '{mem_nm}' , isbn= '{isbn}'; ";
+
+            string sql = $"UPDATE reserve SET res_dt='{System.DateTime.Now}' WHERE mem_no = '{mem_no}' , isbn= '{isbn}'; ";
 
             if (MySql_Util.Instance.Update_Sql(sql) == true)
             {
@@ -194,13 +199,13 @@ namespace book_management_program.Manager
                 MessageBox.Show("수정 에러", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-        }
+        }*/
 
-        public void BookReturn(string mem_nm, string isbn)
+        public void BookReturn(int mem_no, string isbn)
         {
             //rental update , bookinfo 재고 + 1
             //의논필요
-            string sql = $"UPDATE rental SET return_dt='{System.DateTime.Today.ToShortDateString()}' WHERE mem_nm = '{mem_nm}' , isbn= '{isbn}' ; ";
+            string sql = $"UPDATE rental SET return_dt='{System.DateTime.Today.ToShortDateString()}' WHERE mem_no = {mem_no} , isbn= '{isbn}' ; ";
             List<Book> books = BookSearch("isbn", isbn);
             string temp = books[6].ToString();
             int stock = int.Parse(temp) + 1;
@@ -222,11 +227,11 @@ namespace book_management_program.Manager
             List<Book> books = new List<Book>();
             Book book;
 
-            string sql = $"SELECT isbn,cat_nm,author,pub,pub_dt,book_nm,stock FROM bookinfo,category WHERE {type} = '{search}' && bookinfo.cat_no = category.cat_no;";
+            string sql = $"SELECT isbn,cat_nm,author,pub,pub_dt,book_nm,stock FROM bookinfo,category WHERE {type} LIKE '%{search}%' && bookinfo.cat_no = category.cat_no;";
 
 
             MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql);
-
+            MessageBox.Show(""+ result.HasRows);
             if (result.HasRows)
             {
                 while (result.Read())
@@ -239,7 +244,7 @@ namespace book_management_program.Manager
                     book.Pub_dt = result.GetDateTime(4);
                     book.Book_nm = result.GetString(5);
                     book.Stock = result.GetInt32(6);
-
+                    /*
                     //대여량
                     string sql2 = $"SELECT COUNT(rent_dt) FROM rental WHERE isbn = (SELECT isbn FROM bookinfo WHERE isbn = '{book.Isbn}' )  ;";
                     MySqlDataReader result2 = MySql_Util.Instance.Select_Sql(sql2);
@@ -250,7 +255,7 @@ namespace book_management_program.Manager
                         {
                             book.Rent_cnt = result2.GetInt32(0);
                         }
-                    }
+                    }*/
                     books.Add(book);
                 }
 
@@ -258,15 +263,15 @@ namespace book_management_program.Manager
             return books;
         }
 
-        public string RentExtCheck(string mem_nm, string isbn)
+        public string RentExtCheck(int mem_no, string isbn)
         {
             throw new NotImplementedException();
         }
 
-        public void RentExtUpdate(string mem_nm, string isbn)
+        public void RentExtUpdate(int mem_no, string isbn)
         {
             //rental ext update
-            string sql = $"UPDATE rental SET ext='Y' WHERE mem_nm = '{mem_nm}' , isbn= '{isbn}'; ";
+            string sql = $"UPDATE rental SET ext='Y' WHERE mem_no = {mem_no} , isbn= '{isbn}'; ";
             if (MySql_Util.Instance.Update_Sql(sql) == true)
             {
                 MessageBox.Show("수정 완료", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -277,19 +282,19 @@ namespace book_management_program.Manager
             }
         }
 
-        public void RentListDel(string mem_nm, string isbn)
+        public void RentListDel(int mem_no, string isbn)
         {
             throw new NotImplementedException();
             //db에 삭제하면서 validate로 새로고침해도될듯?
         }
 
-        public void RentListIn(string mem_nm, string isbn)
+        public void RentListIn(int mem_no, string isbn)
         {
             List<Book> rentBooks = new List<Book>();
             Book book;
 
             string sql = $"SELECT isbn,cat_nm,author,pub,pub_dt,book_nm,rent_dt,return_dt " +
-                $"FROM bookinfo,category,rental WHERE bookinfo.mem_nm='{mem_nm}' && rental.mem_nm= '{mem_nm}' " +
+                $"FROM bookinfo,category,rental WHERE bookinfo.mem_no={mem_no} && rental.mem_no= {mem_no}" +
                 $"&& rental.isbn = '{isbn}' &&bookinfo.cat_no = category.cat_no ;";
 
 
@@ -316,48 +321,60 @@ namespace book_management_program.Manager
             }
         }
 
-        public void ResvListDel(string mem_nm, string isbn)
+        public bool ResvListDel(int mem_no, string isbn)
         {
-            throw new NotImplementedException();
+            string sql = $"DELETE FROM reserve WHERE mem_no = {mem_no} && isbn='{isbn}' ;  ";
+
+            if (MySql_Util.Instance.Delete_Sql(sql) == true)
+            {
+                MessageBox.Show("취소 완료", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("취소 에러", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             //db에 삭제하면서 validate로 새로고침해도될듯?
         }
 
-        public void ResvListIn(string mem_nm, string isbn)
+        public bool MemResvCheck(int mem_no, string isbn)
         {
-            List<Book> resvBooks = new List<Book>();
-            Book book;
-
-            string sql = $"SELECT isbn,cat_nm,author,pub,pub_dt,book_nm,stock " +
-                $"FROM bookinfo,category WHERE bookinfo.mem_nm='{mem_nm}'  " +
-                $"&& bookinfo.cat_no = category.cat_no ;";
-
-
-            MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql);
-
+            /* 도서 예약 여부 확인 */
+            String sql_listcheck = $"SELECT isbn FROM reserve WHERE mem_no={mem_no} && isbn='{isbn}';";
+            MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql_listcheck);
             if (result.HasRows)
             {
-                while (result.Read())
-                {
-                    book = new Book();
-                    book.Isbn = result.GetString(0);
-                    book.Cat_nm = result.GetString(1);
-                    book.Author = result.GetString(2);
-                    book.Pub = result.GetString(3);
-                    book.Pub_dt = result.GetDateTime(4);
-                    book.Book_nm = result.GetString(5);
-                    if (result.GetInt32(6) == 0)
-                    {
-                        book.Rent_ck = "No";
-                    }
-                    else
-                    {
-                        book.Rent_ck = "Yes";
-                    }
-
-                    resvBooks.Add(book);
-                }
-
+                return true;
             }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool ResvListIn(int mem_no, string isbn)
+        {
+            if(MemResvCheck(mem_no, isbn))
+            {
+                return false;
+            }
+            else
+            {
+                String strDt = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                string sql = $"INSERT INTO reserve VALUES({mem_no},'{isbn}', '{strDt}');";
+                if (MySql_Util.Instance.Insert_Sql(sql))
+                {
+                    MessageBox.Show("예약 완료", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("삽입 에러", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+            
         }
 
         public float TermRentAvg()

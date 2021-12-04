@@ -1,4 +1,6 @@
-﻿using System;
+﻿using book_management_program.Manager;
+using book_management_program.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +15,8 @@ namespace book_management_program.Forms
 {
     public partial class MainForm : Form
     {
-        public static string memberId //회원id
+        private Member member;
+        public static int Mem_no //회원id
         {
             get; set;
         }
@@ -26,7 +29,22 @@ namespace book_management_program.Forms
         public MainForm(string id)
         {
             InitializeComponent();
-            memberId = id; //회원id 지정
+
+            member = MemberManager.Member.MemInfoLookup(id); //회원 정보 조회
+            Mem_no = member.Mem_no;
+        }
+
+        private void main_Load(object sender, EventArgs e)
+        {
+            id_name_label.Text = member.Mem_nm + " 님";
+
+            HomeForm home = new HomeForm();
+            home.MdiParent = this;
+            //home.WindowState = FormWindowState.Maximized;
+            //this.WindowState = FormWindowState.Maximized;
+            home.Show();
+
+            formName = home;
         }
 
         private void movePanelSlide(Control btn)
@@ -125,19 +143,6 @@ namespace book_management_program.Forms
             formName = help;
         }
 
-        private void main_Load(object sender, EventArgs e)
-        {
-            //label1.Text = memName(memberId) + " 님";
-
-            HomeForm home = new HomeForm();
-            home.MdiParent = this;
-            //home.WindowState = FormWindowState.Maximized;
-            //this.WindowState = FormWindowState.Maximized;
-            home.Show();
-
-            formName = home;
-        }
-
         private void logout_btn_Click(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm();
@@ -151,5 +156,6 @@ namespace book_management_program.Forms
         {
             Application.ExitThread(); //스레드 종료
         }
+
     }
 }
