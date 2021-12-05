@@ -24,7 +24,6 @@ E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-wind
 E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.IssueManager.resources
 E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.IssueWriteForm.resources
 E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.JoinForm.resources
-E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.LoginForm.resources
 E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.MainForm.resources
 E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.MainManager.resources
 E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.MemeberManager.resources
@@ -130,3 +129,13 @@ C:\Projects\C#\CTeam\C-_2021\book_management_program\book_management_program\obj
 C:\Projects\C#\CTeam\C-_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.pdb
 C:\Projects\C#\CTeam\C-_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.genruntimeconfig.cache
 C:\Projects\C#\CTeam\C-_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.csproj.AssemblyReference.cache
+E:\C#_2021\book_management_program\book_management_program\bin\Debug\net5.0-windows\BouncyCastle.Crypto.dll
+E:\C#_2021\book_management_program\book_management_program\bin\Debug\net5.0-windows\Google.Protobuf.dll
+E:\C#_2021\book_management_program\book_management_program\bin\Debug\net5.0-windows\K4os.Compression.LZ4.dll
+E:\C#_2021\book_management_program\book_management_program\bin\Debug\net5.0-windows\K4os.Compression.LZ4.Streams.dll
+E:\C#_2021\book_management_program\book_management_program\bin\Debug\net5.0-windows\K4os.Hash.xxHash.dll
+E:\C#_2021\book_management_program\book_management_program\bin\Debug\net5.0-windows\MySql.Data.dll
+E:\C#_2021\book_management_program\book_management_program\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
+E:\C#_2021\book_management_program\book_management_program\bin\Debug\net5.0-windows\ZstdNet.dll
+E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.LoginForm.resources
+E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.csproj.CopyComplete
