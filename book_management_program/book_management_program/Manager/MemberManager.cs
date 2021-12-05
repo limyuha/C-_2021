@@ -24,10 +24,13 @@ namespace book_management_program.Manager
 
         public void MemInfoInsert(Member member)
         {
-            string sql = "INSERT INTO member (mem_nm, pw, phone_no) VALUES ('"
+
+            string sql = "INSERT INTO member (mem_nm, pw, phone_no, overdue) VALUES ('"
                 + member.Mem_nm + "', '"
                 + member.Pw + "', '"
-                + member.Phone_no + "')";
+                + member.Phone_no + "', '"
+                + "2000-01-01"
+                + "')";
 
 
             if (Instance.Insert_Sql(sql) == true)
@@ -45,23 +48,23 @@ namespace book_management_program.Manager
         public Member MemInfoLookup(string mem_nm)
         {
             Member member = new Member();
-            string sql = $"SELECT mem_nm FROM member WHERE mem_nm = '{mem_nm}' ;";
+            string sql = $"SELECT mem_no, mem_nm FROM member WHERE mem_nm = '{mem_nm}' ;";
             MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql);
 
             if (result.HasRows)
             {
                 while (result.Read())
                 {
-                    
-                    member.Mem_nm = result.GetString(0);
+                    member.Mem_no = result.GetInt32(0);
+                    member.Mem_nm = result.GetString(1);
                 }
             }
             return member;
         }
 
-        public List<Issue> MemIssueList(string mem_nm)
+        public List<Issue> MemIssueList(int mem_no)
         {
-            string sql = $"SELECT issue_no, mem_nm , issue_dt , issue_sub , issue_text FROM member WHERE mem_nm = '{mem_nm}' ;";
+            string sql = $"SELECT issue_no, mem_nm , issue_dt , issue_sub , issue_text FROM member WHERE mem_nm = '{mem_no}' ;";
 
             List<Issue> issues = new List<Issue>();
 
@@ -153,13 +156,13 @@ namespace book_management_program.Manager
 
         }
 
-        public List<Book> MemRentList(string mem_nm)
+        public List<Book> MemRentList(int mem_no)
         {
             List<Book> rentBooks = new List<Book>();
             Book book;
 
             string sql = $"SELECT isbn,cat_nm,author,pub,pub_dt,book_nm,rent_dt,return_dt " +
-                $"FROM bookinfo,category,rental WHERE bookinfo.mem_nm={mem_nm} && rental.mem_no= {mem_nm} " +
+                $"FROM bookinfo,category,rental WHERE bookinfo.mem_nm={mem_no} && rental.mem_no= {mem_no} " +
                 $" &&bookinfo.cat_no = category.cat_no ;";
 
 
@@ -187,10 +190,10 @@ namespace book_management_program.Manager
             return rentBooks;
         }
 
-        public int MemRentListCnt(string mem_nm)
+        public int MemRentListCnt(int mem_no)
         {
             int count = 0;
-            string sql = $" SELECT count(*) FROM rental WHERE mem_nm = {mem_nm} && return_dt IS NULL ;";
+            string sql = $" SELECT count(*) FROM rental WHERE mem_no = {mem_no} && return_dt IS NULL ;";
             MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql);
             if (result.HasRows)
             {
@@ -199,13 +202,13 @@ namespace book_management_program.Manager
             return count;
         }
 
-        public List<Book> MemResvList(string mem_nm)
+        public List<Book> MemResvList(int mem_no)
         {
             List<Book> resvBooks = new List<Book>();
             Book book;
 
             string sql = $"SELECT isbn,cat_nm,author,pub,pub_dt,book_nm,stock " +
-                $"FROM bookinfo,category WHERE bookinfo.mem_nm={mem_nm}  " +
+                $"FROM bookinfo,category WHERE bookinfo.mem_no={mem_no}  " +
                 $"&& bookinfo.cat_no = category.cat_no ;";
 
 
@@ -238,10 +241,10 @@ namespace book_management_program.Manager
             return resvBooks;
         }
 
-        public int memResvListcnt(string mem_nm)
+        public int memResvListcnt(int mem_no)
         {
             int count = 0;
-            string sql = $" SELECT count(*) FROM reserve WHERE mem_nm = {mem_nm}  ;";
+            string sql = $" SELECT count(*) FROM reserve WHERE mem_no = {mem_no}  ;";
             MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql);
             if (result.HasRows)
             {

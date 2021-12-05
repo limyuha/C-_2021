@@ -88,7 +88,10 @@ namespace book_management_program.Forms
 
             /* 대여중&예약중 상태 확인 */
             //대여중 체크
-            rent_checkBox.Checked = BookManager.Book.MemRentCheck(MainForm.Mem_no, this.booknumber_textBox.Text);
+            if(BookManager.Book.MemRentCheck(MainForm.Mem_no, this.booknumber_textBox.Text) > 0)
+            {
+                rent_checkBox.Checked = true;
+            }
             //예약중 체크
             resv_checkBox.Checked = BookManager.Book.MemResvCheck(MainForm.Mem_no, this.booknumber_textBox.Text);
         }
@@ -106,7 +109,7 @@ namespace book_management_program.Forms
             if (this.booknumber_textBox.Text != "" && this.bookname_textBox.Text != "")
             {
                 if(BookManager.Book.BookRent(MainForm.Mem_no, this.booknumber_textBox.Text)){
-                    MessageBox.Show("대여 완료되었습니다.\n대여기간 : " + DateTime.Now.ToString("yyyy-MM-dd")
+                    MessageBox.Show("대여기간 : " + DateTime.Now.ToString("yyyy-MM-dd")
                                     + " ~ " + (DateTime.Now.AddDays(7).ToString("yyyy-MM-dd")), "대여", MessageBoxButtons.OK);
                     ClearTxt();
                     updateView();
@@ -124,7 +127,7 @@ namespace book_management_program.Forms
             {
                 /* DB에서 해당 책이 대여 목록에 존재하는지 확인해야함! */
                 BookManager.Book.BookReturn(MainForm.Mem_no, this.booknumber_textBox.Text);
-                MessageBox.Show("반납 완료되었습니다.", "반납", MessageBoxButtons.OK);
+                //MessageBox.Show("반납 완료되었습니다.", "반납", MessageBoxButtons.OK);
                 ClearTxt();
                 updateView();
             }
