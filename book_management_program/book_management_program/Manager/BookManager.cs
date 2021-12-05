@@ -249,7 +249,7 @@ namespace book_management_program.Manager
             string overDt = System.DateTime.Now.AddDays(over).ToString("yyyy-MM-dd");
             MessageBox.Show("*최종 반납 연체일 : " + overDt, "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
            
-            if (over > 0) // 도서목록에 연체 있음
+            if (over > 0) // 연체 있음
             {
                 //현재 회원 연체일 조회
                 String sql_memoverdue = $"SELECT overdue FROM member WHERE mem_no={mem_no};";
@@ -380,23 +380,6 @@ namespace book_management_program.Manager
             return books;
         }
 
-        /* 도서 대여 연장 여부 체크 */
-        public string RentExtCheck(int rent_no)
-        {
-            string extcheck = "";
-            String sql_listcheck = $"SELECT ext FROM rental WHERE rent_no={rent_no};";
-            MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql_listcheck);
-            if (result.HasRows)
-            {
-                extcheck=result.GetString(0);
-                return extcheck;
-            }
-            else
-            {
-                return null;
-            }
-        }
-
         /* 도서 대여 연장 */
         public bool RentExtUpdate(int mem_no, string isbn)
         {
@@ -410,7 +393,8 @@ namespace book_management_program.Manager
                 {
                     if (result.GetString(1)=="N")
                     {
-                        string sql = $"UPDATE rental SET ext='Y' WHERE rent_no = {result.GetInt32(0)}; ";
+                        String todayDt = System.DateTime.Now.ToString("yyyy-MM-dd"); // 오늘 날짜
+                        string sql = $"UPDATE rental SET ext='Y', rent_dt='{todayDt}' WHERE rent_no = {result.GetInt32(0)}; ";
                         if (MySql_Util.Instance.Update_Sql(sql) == true)
                         {
                             MessageBox.Show("연장 완료", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);

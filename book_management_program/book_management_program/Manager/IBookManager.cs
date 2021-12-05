@@ -27,7 +27,6 @@ namespace book_management_program.Manager
             int BookCount();
             List<Book> BookRentRanking();
 
-            string RentExtCheck(int rent_no);
             bool RentExtUpdate(int mem_no, string isbn);
 
             bool ResvListIn(int mem_no, string isbn);

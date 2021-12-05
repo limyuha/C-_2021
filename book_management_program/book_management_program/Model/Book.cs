@@ -8,6 +8,7 @@ namespace book_management_program.Model
 {
     class Book
     {
+        private int rent_no;
         private string isbn;
         private int cat_no;
         private string cat_nm;
@@ -33,5 +34,6 @@ namespace book_management_program.Model
         public DateTime Rent_dt { get => rent_dt; set => rent_dt = value; }
         public DateTime Return_dt { get => return_dt; set => return_dt = value; }
         public string Rent_ck { get => rent_ck; set => rent_ck = value; }
+        public int Rent_no { get => rent_no; set => rent_no = value; }
     }
 }

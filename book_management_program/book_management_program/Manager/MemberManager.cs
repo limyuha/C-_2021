@@ -22,6 +22,7 @@ namespace book_management_program.Manager
             set { memberManager = value; }
         }
 
+        /* 회원 가입 */
         public void MemInfoInsert(Member member)
         {
 
@@ -44,7 +45,7 @@ namespace book_management_program.Manager
         }
 
 
-
+        /* 회원 정보 조회 */
         public Member MemInfoLookup(string mem_nm)
         {
             Member member = new Member();
@@ -62,6 +63,7 @@ namespace book_management_program.Manager
             return member;
         }
 
+        /* 회원의 작성 글 목록 */
         public List<Issue> MemIssueList(int mem_no)
         {
             string sql = $"SELECT issue_no, mem_nm , issue_dt , issue_sub , issue_text FROM member WHERE mem_nm = '{mem_no}' ;";
@@ -88,6 +90,7 @@ namespace book_management_program.Manager
             return issues;
         }
 
+        /* 회원 목록 */
         public List<Member> MemList()
         {
             string sql = $"SELECT mem_nm, pw, mem_grade, phone_no FROM member ;";
@@ -113,6 +116,7 @@ namespace book_management_program.Manager
             return members;
         }
 
+        /* 회원 로그인 */
         public bool MemLogin(string id, string password)
         {
             bool islogin = false;
@@ -156,14 +160,16 @@ namespace book_management_program.Manager
 
         }
 
+        /* 회원의 대여 도서 목록 */
         public List<Book> MemRentList(int mem_no)
         {
             List<Book> rentBooks = new List<Book>();
             Book book;
 
-            string sql = $"SELECT isbn,cat_nm,author,pub,pub_dt,book_nm,rent_dt,return_dt " +
-                $"FROM bookinfo,category,rental WHERE bookinfo.mem_nm={mem_no} && rental.mem_no= {mem_no} " +
-                $" &&bookinfo.cat_no = category.cat_no ;";
+            string sql = $"SELECT rent_no, rental.isbn, cat_nm, author, pub,pub_dt, book_nm, rent_dt, return_dt " +
+                $"FROM bookinfo,category,rental WHERE rental.mem_no= {mem_no}" +
+                $"&& rental.isbn = bookinfo.isbn &&bookinfo.cat_no = category.cat_no &&rental.return_dt='2000-01-01';";
+
 
 
             MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql);
@@ -173,14 +179,15 @@ namespace book_management_program.Manager
                 while (result.Read())
                 {
                     book = new Book();
-                    book.Isbn = result.GetString(0);
-                    book.Cat_nm = result.GetString(1);
-                    book.Author = result.GetString(2);
-                    book.Pub = result.GetString(3);
-                    book.Pub_dt = result.GetDateTime(4);
-                    book.Book_nm = result.GetString(5);
-                    book.Rent_dt = result.GetDateTime(6);
-                    book.Return_dt = result.GetDateTime(7);
+                    book.Rent_no = result.GetInt32(0);
+                    book.Isbn = result.GetString(1);
+                    book.Cat_nm = result.GetString(2);
+                    book.Author = result.GetString(3);
+                    book.Pub = result.GetString(4);
+                    book.Pub_dt = result.GetDateTime(5);
+                    book.Book_nm = result.GetString(6);
+                    book.Rent_dt = result.GetDateTime(7);
+                    book.Return_dt = result.GetDateTime(8);
 
 
                     rentBooks.Add(book);
@@ -190,6 +197,7 @@ namespace book_management_program.Manager
             return rentBooks;
         }
 
+        /* 회원 대여 도서 개수 */
         public int MemRentListCnt(int mem_no)
         {
             int count = 0;
@@ -202,18 +210,18 @@ namespace book_management_program.Manager
             return count;
         }
 
+        /* 회원 예약 도서 목록 */
         public List<Book> MemResvList(int mem_no)
         {
             List<Book> resvBooks = new List<Book>();
             Book book;
 
-            string sql = $"SELECT isbn,cat_nm,author,pub,pub_dt,book_nm,stock " +
-                $"FROM bookinfo,category WHERE bookinfo.mem_no={mem_no}  " +
-                $"&& bookinfo.cat_no = category.cat_no ;";
+            string sql = $"SELECT reserve.isbn,cat_nm,author,pub,pub_dt,book_nm,stock " +
+                $"FROM bookinfo,category,reserve WHERE reserve.mem_no={mem_no}" +
+                $"&& reserve.isbn = bookinfo.isbn&& bookinfo.cat_no = category.cat_no ;";
 
 
             MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql);
-
             if (result.HasRows)
             {
                 while (result.Read())
@@ -227,11 +235,11 @@ namespace book_management_program.Manager
                     book.Book_nm = result.GetString(5);
                     if (result.GetInt32(6) == 0)
                     {
-                        book.Rent_ck = "No";
+                        book.Rent_ck = "대여불가";
                     }
                     else
                     {
-                        book.Rent_ck = "Yes";
+                        book.Rent_ck = "재고있음";
                     }
 
                     resvBooks.Add(book);
@@ -241,6 +249,7 @@ namespace book_management_program.Manager
             return resvBooks;
         }
 
+        /* 회원 예약 도서 개수 */
         public int memResvListcnt(int mem_no)
         {
             int count = 0;

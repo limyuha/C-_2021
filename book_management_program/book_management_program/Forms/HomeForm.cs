@@ -55,6 +55,7 @@ namespace book_management_program.Forms
         
         private void updateView ()
         {
+            this.book_listView.Items.Clear();
             //하루 대여량
             this.rent_sum_labels.Text = BookManager.Book.TodayRentSum().ToString();
             //책 정보 목록
