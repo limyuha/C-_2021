@@ -104,15 +104,24 @@ namespace book_management_program.Forms
             resv_checkBox.Checked = false;
         }
 
+        /* 대여 버튼 */
         private void rent_btn_Click(object sender, EventArgs e)
         {
             if (this.booknumber_textBox.Text != "" && this.bookname_textBox.Text != "")
             {
-                if(BookManager.Book.BookRent(MainForm.Mem_no, this.booknumber_textBox.Text)){
-                    MessageBox.Show("대여기간 : " + DateTime.Now.ToString("yyyy-MM-dd")
-                                    + " ~ " + (DateTime.Now.AddDays(7).ToString("yyyy-MM-dd")), "대여", MessageBoxButtons.OK);
-                    ClearTxt();
-                    updateView();
+                if (MainForm.IsOverdued) // 연체 중 : true-대여 가능 / false-대여불가
+                {
+                    if (BookManager.Book.BookRent(MainForm.Mem_no, this.booknumber_textBox.Text))
+                    {
+                        MessageBox.Show("대여기간 : " + DateTime.Now.ToString("yyyy-MM-dd")
+                                        + " ~ " + (DateTime.Now.AddDays(7).ToString("yyyy-MM-dd")), "대여", MessageBoxButtons.OK);
+                        ClearTxt();
+                        updateView();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("연체 중, 대여 불가", "대여", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             } 
             else
@@ -121,13 +130,13 @@ namespace book_management_program.Forms
             }
         }
 
+        /* 반납 버튼 */
         private void return_btn_Click(object sender, EventArgs e)
         {
             if (this.booknumber_textBox.Text != "" && this.bookname_textBox.Text != "")
             {
-                /* DB에서 해당 책이 대여 목록에 존재하는지 확인해야함! */
-                BookManager.Book.BookReturn(MainForm.Mem_no, this.booknumber_textBox.Text);
-                //MessageBox.Show("반납 완료되었습니다.", "반납", MessageBoxButtons.OK);
+                //반납 처리
+                bool returnresult = BookManager.Book.BookReturn(MainForm.Mem_no, this.booknumber_textBox.Text);
                 ClearTxt();
                 updateView();
             }

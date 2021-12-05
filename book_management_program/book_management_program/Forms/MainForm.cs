@@ -16,10 +16,16 @@ namespace book_management_program.Forms
     public partial class MainForm : Form
     {
         private Member member;
+        private bool isOverdued; 
         public static int Mem_no //회원id
         {
             get; set;
         }
+        public static bool IsOverdued //연체중 : true-대여 가능 / false-대여불가
+        {
+            get; set;
+        }
+
 
         public MainForm()
         {
@@ -32,6 +38,11 @@ namespace book_management_program.Forms
 
             member = MemberManager.Member.MemInfoLookup(id); //회원 정보 조회
             Mem_no = member.Mem_no;
+
+            MemberManager.Member.MemOverdueCheck(Mem_no); //대여 목록 연체 검사
+            IsOverdued = MemberManager.Member.MemOverdueUpdate(Mem_no); //회원 연체 상태 체크
+            MessageBox.Show("회원 연체 상태"+ IsOverdued);
+
         }
 
         private void main_Load(object sender, EventArgs e)

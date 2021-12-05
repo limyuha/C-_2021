@@ -254,8 +254,130 @@ namespace book_management_program.Manager
         }
 
 
-        //string sql = "SELECT * FROM conntest;"
-        //MySql_Util.Instance.Select_Sql(sql);
+        /* 1. 회원 대여 목록 연체 검사 - 처리 >> 로그인 시, 반납 시 */
+        public void MemOverdueCheck(int mem_no)
+        {
+            MessageBox.Show("회원번호 : " + mem_no, "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            //return_dt 반납일이 if ("2000-01-01 오전 12:00:00" != result.GetString(0)) 기본값이 아니면 "반납 완료"
+            //기본값 2000-01-01 "대여중" 일 때
+            //2.연체된 책 검사
+            //그중 가장 오래된 연체로 연체일 지정
+
+            String todayDt = System.DateTime.Now.ToString("yyyy-MM-dd"); //오늘 날짜
+            MessageBox.Show("오늘 날짜 : " + todayDt, "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            int over = 0; //연체 일 수
+            //도서 대여 목록 - rent_dt & return_dt 목록 가져오기
+            String sql_overcheck = $"SELECT rent_no, rent_dt, return_dt FROM rental WHERE mem_no={mem_no};";
+            MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql_overcheck);
+            if (result.HasRows)
+            {
+                while (result.Read())
+                {
+                    String rentDt = result.GetString(1); //대여 날짜
+                    MessageBox.Show("대여 번호 : " + result.GetString(0) + "대여 날짜 : " + rentDt + ", 반납 여부 : " + result.GetString(2));
+
+                    if ("2000-01-01 오전 12:00:00" == result.GetString(2)) //"대여중"인 도서에서 == "반납 안한" 도서 
+                    {
+                        /* 연체일 체크 */
+                        String sql_over = $"SELECT TIMESTAMPDIFF(DAY, '{rentDt}', '{todayDt}');"; // if(결과 > 0) = 연체일
+                        MySqlDataReader overresult = MySql_Util.Instance.Select_Sql(sql_over);
+                        if (overresult.HasRows)
+                        {
+                            while (overresult.Read())
+                            {
+                                if (overresult.GetInt32(0) - 7 > over)
+                                {
+                                    over = overresult.GetInt32(0) - 7;
+                                    MessageBox.Show("연체일 검사 : " + over);
+                                }
+                            }
+                        }
+                    }
+                }
+                MessageBox.Show("*최종 반납 연체일 : " + over, "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            if (over > 0) // 도서목록에 연체 있음
+            {
+                /* 회원 연체일 업데이트 */
+                String overdueDt = System.DateTime.Now.AddDays(over).ToString("yyyy-MM-dd");
+
+                //현재 회원 연체일 조회
+               String sql_memoverdue = $"SELECT overdue FROM member WHERE mem_no={mem_no};";
+                MySqlDataReader result2 = MySql_Util.Instance.Select_Sql(sql_memoverdue);
+                if (result2.HasRows)
+                {
+                    while (result2.Read())
+                    {
+                        MessageBox.Show("기존 회원 연체일 : " + result2.GetString(0) + "\n변경 연체일 : " + overdueDt);
+                        /* 회원 연체일 업데이트 */
+                        // 현재 연채일 < 새로운 연체일
+                        if (string.Compare(result2.GetString(0), overdueDt) < 0)
+                        {
+                            String sql = $"Update member Set overdue='{overdueDt}' where mem_no={mem_no}";
+                            MySql_Util.Instance.Update_Sql(sql);
+                            MessageBox.Show("연체일 변경\n연체일 : " + overdueDt, "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+            }
+        }
+
+        /* 2. 회원 연체 상태 체크 >> 로그인 시, 대여 시 */
+        public bool MemOverdueUpdate(int mem_no)
+        {
+            bool isOver = false;
+
+            String sql_overcheck = $"SELECT overdue FROM member WHERE mem_no={mem_no};";
+            MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql_overcheck);
+            if (result.HasRows) //NullReferenceException
+            {
+                while (result.Read())
+                {
+                    MessageBox.Show(result.GetString(0));
+
+                    if ("2000-01-01 오전 12:00:00" == result.GetString(0))
+                    {
+                        isOver = true; //연체 아님 - 대여 가능
+                        break;
+                    }
+                    else
+                    {
+                        //연체중 - 대여 불가
+                        /* overdue 업데이트 검사 */
+                        String todayDt = System.DateTime.Now.ToString("yyyy-MM-dd"); //오늘 날짜
+                        if (string.Compare(todayDt, result.GetString(0)) > 0) // 연체일 < 현재 : 연체 풀림 true
+                        {
+                            string sql = $"UPDATE member SET overdue='2000-01-01' WHERE mem_no = {mem_no}; ";
+                            if (MySql_Util.Instance.Update_Sql(sql))
+                            {
+                                MessageBox.Show("연체 풀림", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                isOver = true;
+                                break;
+                            }
+                            else
+                            {
+                                MessageBox.Show("연체 에러", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else //연체일 > 현재 : 연체 중 false
+                        {
+                            MessageBox.Show("연체중", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            isOver = false;
+                            break;
+                        }
+                    }
+                }
+                return isOver;
+            }
+            else
+            {
+                return isOver;
+            }
+        }
+
 
     }
 }
