@@ -23,7 +23,7 @@ namespace book_management_program.Manager
         public int BookCount()
         {
             string sql = "SELECT stock FROM bookinfo ;";
-            string sql2 = $"SELECT COUNT(*) FROM rental;";
+            string sql2 = $"SELECT COUNT(*) FROM rental WHERE return_dt = '2000-01-01';";
             int count = 0;
 
             MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql);
@@ -161,52 +161,88 @@ namespace book_management_program.Manager
             }
         }
 
-            
+        /* 도서 대여 */
         public bool BookRent(int mem_no, string isbn)
         {
             //재고 -1 update  , rental테이블에 insert
             //한번에 여러개 대여는?
             //MessageBox.Show("mem_no="+ mem_no + ", isbn="+ isbn);
-            if(RentStockCheck(isbn)>0)
-            { 
-                //재고 있을 때 대여 가능
-                String rentDt = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                String returnDt = System.DateTime.Now.AddDays(7).ToString("yyyy-MM-dd HH:mm:ss");
-                //MessageBox.Show("rentDt=" + rentDt + "~ returnDt=" + returnDt);
-                string sql = $"INSERT INTO rental(isbn, mem_no, rent_dt, return_dt, ext) VALUES('{isbn}' , {mem_no} , '{rentDt}', '{returnDt}', 'N') ;";
-                //MessageBox.Show("sql=" + sql);
-
-                int stock= RentStockCheck(isbn)-1;
-                //MessageBox.Show("stock=" + stock);
-                string sql2 = $"UPDATE bookinfo SET stock={stock} WHERE isbn= '{isbn}'; ";
-                //MessageBox.Show("sql2=" + sql2);
-                if (MySql_Util.Instance.Insert_Sql(sql) && MySql_Util.Instance.Update_Sql(sql2))
+            if(MemOverdueCheck(mem_no))
+            {
+                if (RentStockCheck(isbn) > 0)
                 {
-                    MessageBox.Show("대여 완료", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return true;
+                    //재고 있을 때 대여 가능
+                    String rentDt = System.DateTime.Now.ToString("yyyy-MM-dd");
+                    string sql = $"INSERT INTO rental(isbn, mem_no, rent_dt, return_dt, ext) VALUES('{isbn}' , {mem_no} , '{rentDt}', '2000-01-01', 'N') ;";
+                    //MessageBox.Show("sql=" + sql);
+
+                    int stock = RentStockCheck(isbn) - 1;
+                    //MessageBox.Show("stock=" + stock);
+                    string sql2 = $"UPDATE bookinfo SET stock={stock} WHERE isbn= '{isbn}'; ";
+                    //MessageBox.Show("sql2=" + sql2);
+                    if (MySql_Util.Instance.Insert_Sql(sql) && MySql_Util.Instance.Update_Sql(sql2))
+                    {
+                        MessageBox.Show("대여 완료", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("대여 에러", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("대여 에러", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("대여 에러 : 재고 없음", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show("대여 에러 : 재고 없음", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
 
-        public bool MemRentCheck(int mem_no, string isbn)
+        /* 회원 연체 상태 체크 */
+        public bool MemOverdueCheck(int mem_no)
         {
-            /* 도서 대여 여부 확인 */
-            String sql_listcheck = $"SELECT rent_no FROM rental WHERE mem_no={mem_no} && isbn='{isbn}' ORDER BY rent_dt ASC;";
-            MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql_listcheck);
-            if (result.HasRows)
-            {   
-                //대여중
-                return true;
+            String sql_overcheck = $"SELECT overdue FROM member WHERE mem_no={mem_no};";
+            MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql_overcheck);
+            if (result.HasRows) //NullReferenceException
+            {
+                while (result.Read())
+                {
+                    MessageBox.Show(result.GetString(0));
+
+                    if ("2000-01-01 오전 12:00:00" == result.GetString(0)) 
+                    {
+                        return true; //연체 아님 - 대여 가능
+                    }
+                    else
+                    {
+                        String todayDt = System.DateTime.Now.ToString("yyyy-MM-dd");
+                        if (string.Compare(todayDt, result.GetString(0)) > 0) //연체일 < 현재 : 연체 풀림
+                        {
+                            string sql = $"UPDATE member SET overdue='2000-01-01' WHERE mem_no = {mem_no}; ";
+                            if (MySql_Util.Instance.Update_Sql(sql))
+                            {
+                                MessageBox.Show("연체 풀림", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                return true;
+                            }
+                            else
+                            {
+                                MessageBox.Show("연체 에러", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return false;
+                            }
+                        }
+                        else //연체일 > 현재 : 연체 중
+                        {
+                            MessageBox.Show("연체중", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return false;
+                        }
+                    }
+                }
+                return false;
             }
             else
             {
@@ -214,37 +250,105 @@ namespace book_management_program.Manager
             }
         }
 
-        public bool BookReturn(int mem_no, string isbn)
+        /* 도서 연체 처리 */
+        public void RentOverdue(int rent_no)
         {
-            //rental update , bookinfo 재고 + 1
-            //의논필요
-            //String rentDt = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            //string sql = $"UPDATE rental SET return_dt='{System.DateTime.Today.ToShortDateString()}' WHERE mem_no = {mem_no} , isbn= '{isbn}' ; ";
-            bool isSuccess = false; 
-            if (MemRentCheck(mem_no, isbn))
+            MessageBox.Show("대여번호 : " + rent_no, "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            String sql_overcheck = $"SELECT mem_no, rent_dt FROM rental WHERE rent_no={rent_no};";
+
+            MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql_overcheck);
+            if (result.HasRows)
             {
-                //대여중일 때
-                String sql_listcheck = $"SELECT rent_no FROM rental WHERE mem_no={mem_no} && isbn='{isbn}' ORDER BY rent_dt ASC ;";
-                MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql_listcheck);
-                if (result.HasRows)
+                while (result.Read())
                 {
-                    while (result.Read())
+                    String todayDt = System.DateTime.Now.ToString("yyyy-MM-dd");
+                    MessageBox.Show("오늘 날짜 : " + todayDt, "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    String rentDt = result.GetString(1);
+                    MessageBox.Show("대여 날짜 : " + rentDt, "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    //연체일 체크
+                    int over = -7;
+                    String sql_over = $"SELECT TIMESTAMPDIFF(DAY, '{rentDt}', '{todayDt}');"; 
+                     MySqlDataReader overresult = MySql_Util.Instance.Select_Sql(sql_over);
+                    if (overresult.HasRows)
                     {
-                        //가장 먼저 대여한 것 하나만 반납
-                        string sql = $"DELETE FROM rental WHERE rent_no = {result.GetString(0)};";
+                        while (overresult.Read())
+                        {
+                            over += overresult.GetInt32(0);
+                        }
+                    }
+                    MessageBox.Show("반납 연체일 : " + over, "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    if (over > 0) //연체
+                    {
+                        //회원 연체일 업데이트
+                        String overdueDt = System.DateTime.Now.AddDays(over).ToString("yyyy-MM-dd");
+                        string sql = $"UPDATE member SET overdue='{overdueDt}' WHERE mem_no = {result.GetInt32(0)}; ";
                         if (MySql_Util.Instance.Update_Sql(sql))
                         {
-                            MessageBox.Show("반납 완료 : 삭제", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            isSuccess = true;
+                            MessageBox.Show("연체되었습니다.\n연체일 : " + overdueDt, "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             break;
                         }
                         else
                         {
-                            MessageBox.Show("반납 에러 : 삭제", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            isSuccess = false;
+                            MessageBox.Show("연체 에러", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             break;
                         }
                     }
+                }
+            }
+        }
+
+        /* 회원의 도서 대여 여부 확인 */
+        public int MemRentCheck(int mem_no, string isbn)
+        {
+            int rent = 0;
+            String sql_listcheck = $"SELECT rent_no FROM rental WHERE mem_no={mem_no} && isbn='{isbn}' && return_dt='2000-01-01' ORDER BY rent_dt ASC;";
+            MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql_listcheck);
+            if (result.HasRows)
+            {
+                while (result.Read())
+                {
+                    //대여중
+                    rent = result.GetInt32(0);
+                    break;
+                }
+
+            }
+            else
+            {
+            }
+
+            return rent;
+        }
+
+        /* 도서 반납 */
+        public bool BookReturn(int mem_no, string isbn)
+        {
+            //rental update , bookinfo 재고 + 1
+            //의논필요
+            String returnDt = System.DateTime.Now.ToString("yyyy-MM-dd");
+            bool isSuccess = false;
+
+            int rent_no = MemRentCheck(mem_no, isbn);
+            if (rent_no > 0) //대여중일 때
+            {
+                MessageBox.Show("회원 번호 : " + mem_no);
+                MessageBox.Show("책 번호 : " + isbn);
+
+                //가장 먼저 대여한 것 하나만 반납
+                MessageBox.Show("대여 번호 : " + rent_no);
+                string sql = $"UPDATE rental SET return_dt='{returnDt}'  WHERE rent_no = {rent_no}; ";
+                if (MySql_Util.Instance.Update_Sql(sql))
+                {
+                    RentOverdue(rent_no); //연체 체크
+                    MessageBox.Show("반납 완료\n반납일 : " + returnDt, "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    isSuccess = true;
+                }
+                else
+                {
+                    MessageBox.Show("반납 에러 : sql", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    isSuccess = false;
                 }
 
                 int stock = RentStockCheck(isbn)+1;
@@ -268,7 +372,7 @@ namespace book_management_program.Manager
             }
         }
 
-
+        /* 도서 대여 순위 */
         public List<Book> BookRentRanking()
         {
             string sql = $"SELECT count(*) count , isbn,book_nm,author,pub FROM bookinfo group by isbn order by count ; ";
@@ -327,7 +431,7 @@ namespace book_management_program.Manager
 
         }*/
 
-        
+        /* 도서 검색 */
         public List<Book> BookSearch(string type, string search)
         {
             List<Book> books = new List<Book>();
@@ -368,9 +472,9 @@ namespace book_management_program.Manager
             return books;
         }
 
+        /* 도서 대여 연장 여부 체크 */
         public string RentExtCheck(int rent_no)
         {
-            /* 도서 대여 연장 여부 확인 */
             string extcheck = "";
             String sql_listcheck = $"SELECT ext FROM rental WHERE rent_no={rent_no};";
             MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql_listcheck);
@@ -385,10 +489,11 @@ namespace book_management_program.Manager
             }
         }
 
+        /* 도서 대여 연장 */
         public bool RentExtUpdate(int mem_no, string isbn)
         {
             //rental ext update
-            /* 도서 연장 가능 여부 확인 */
+            // 도서 연장 가능 여부 확인
             String sql_extcheck = $"SELECT rent_no, ext FROM rental WHERE mem_no={mem_no} && isbn='{isbn}' ORDER BY rent_dt ASC;";
             MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql_extcheck);
             if (result.HasRows)
@@ -455,6 +560,7 @@ namespace book_management_program.Manager
             }
         }*/
 
+        /* 도서 대여 연장 */
         public bool ResvListDel(int mem_no, string isbn)
         {
             string sql = $"DELETE FROM reserve WHERE mem_no = {mem_no} && isbn='{isbn}' ;  ";
@@ -472,9 +578,9 @@ namespace book_management_program.Manager
             //db에 삭제하면서 validate로 새로고침해도될듯?
         }
 
+        /* 도서 예약 여부 확인 */
         public bool MemResvCheck(int mem_no, string isbn)
         {
-            /* 도서 예약 여부 확인 */
             String sql_listcheck = $"SELECT isbn FROM reserve WHERE mem_no={mem_no} && isbn='{isbn}';";
             MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql_listcheck);
             if (result.HasRows)
@@ -487,6 +593,7 @@ namespace book_management_program.Manager
             }
         }
 
+        /* 도서 예약 */
         public bool ResvListIn(int mem_no, string isbn)
         {
             if(MemResvCheck(mem_no, isbn))
@@ -495,8 +602,8 @@ namespace book_management_program.Manager
             }
             else
             {
-                String strDt = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                string sql = $"INSERT INTO reserve VALUES({mem_no},'{isbn}', '{strDt}');";
+                String resvDt = System.DateTime.Now.ToString("yyyy-MM-dd");
+                string sql = $"INSERT INTO reserve VALUES({mem_no},'{isbn}', '{resvDt}');";
                 if (MySql_Util.Instance.Insert_Sql(sql))
                 {
                     MessageBox.Show("예약 완료", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -511,6 +618,7 @@ namespace book_management_program.Manager
             
         }
 
+        /* 기간 내 도서 대여량 평균 */
         public float TermRentAvg()
         {
             string dt1Mm = DateTime.Now.AddMonths(-1).ToShortDateString();
@@ -535,6 +643,7 @@ namespace book_management_program.Manager
             return rentAvg;
         }
 
+        /* 오늘 도서 대여량 */
         public int TodayRentSum()
         {
             string sql = $"SELECT COUNT(*) FROM rental WHERE rent_dt = '{System.DateTime.Today.ToShortDateString()}' ; ";
@@ -553,9 +662,5 @@ namespace book_management_program.Manager
             return rentSum;
         }
 
-        public string RentExtCheck(int mem_no, string isbn)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

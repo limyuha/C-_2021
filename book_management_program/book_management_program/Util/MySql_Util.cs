@@ -36,7 +36,8 @@ namespace book_management_program.Util
             connection = "server=" + server
                 + ";user=" + user
                 + ";database=" + database
-                + ";password=" + password;
+                + ";password=" + password
+                + ";Allow Zero Datetime=True";
         }
 
         public bool Insert_Sql(String sql)
