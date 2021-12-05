@@ -59,6 +59,7 @@ namespace book_management_program.Util
             }
             catch (Exception e)
             {
+                MessageBox.Show(e.ToString());
                 return false;
             }
         }
@@ -74,13 +75,14 @@ namespace book_management_program.Util
                 MySqlDataReader mySqlDataReader = sqlCmd.ExecuteReader();  // Select 결과
 
                 result = mySqlDataReader;
-                
+
                 //sqlConn.Close();
                 return result;
                 
             }
             catch (Exception e)
             {
+                MessageBox.Show(e.ToString());
                 //sqlConn.Close();
                 return null; 
             }
@@ -104,6 +106,7 @@ namespace book_management_program.Util
             }
             catch (Exception e)
             {
+                MessageBox.Show(e.ToString());
                 sqlConn.Close();
                 return null;
             }
@@ -131,6 +134,7 @@ namespace book_management_program.Util
             }
             catch (Exception e)
             {
+                MessageBox.Show(e.ToString());
                 return false;
             }
         }
@@ -155,6 +159,7 @@ namespace book_management_program.Util
             }
             catch (Exception e)
             {
+                MessageBox.Show(e.ToString());
                 return false;
             }
         }

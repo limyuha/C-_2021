@@ -43,6 +43,10 @@
             "MySql.Data": {
               "target": "Package",
               "version": "[8.0.27, )"
+            },
+            "System.Collections.NonGeneric": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             }
           },
           "imports": [
