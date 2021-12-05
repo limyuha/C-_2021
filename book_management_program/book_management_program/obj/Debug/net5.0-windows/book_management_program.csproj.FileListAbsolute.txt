@@ -50,7 +50,6 @@ C:\DevPrograms\Git_Folder\C-_2021\book_management_program\book_management_progra
 C:\DevPrograms\Git_Folder\C-_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.HomeForm.resources
 C:\DevPrograms\Git_Folder\C-_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.IssueDetailForm.resources
 C:\DevPrograms\Git_Folder\C-_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.IssueForm.resources
-C:\DevPrograms\Git_Folder\C-_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.IssueManager.resources
 C:\DevPrograms\Git_Folder\C-_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.IssueWriteForm.resources
 C:\DevPrograms\Git_Folder\C-_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.JoinForm.resources
 C:\DevPrograms\Git_Folder\C-_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.MainForm.resources
@@ -139,3 +138,4 @@ E:\C#_2021\book_management_program\book_management_program\bin\Debug\net5.0-wind
 E:\C#_2021\book_management_program\book_management_program\bin\Debug\net5.0-windows\ZstdNet.dll
 E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.LoginForm.resources
 E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.csproj.CopyComplete
+C:\DevPrograms\Git_Folder\C-_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.IssueManagerForm.resources

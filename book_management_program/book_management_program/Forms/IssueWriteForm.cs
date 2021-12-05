@@ -14,9 +14,12 @@ namespace book_management_program.Forms
 {
     public partial class IssueWriteForm : Form
     {
+        
+
         public IssueWriteForm()
         {
             InitializeComponent();
+
         }
 
         /* 등록 버튼 */
@@ -29,10 +32,17 @@ namespace book_management_program.Forms
             {
                 Issue issue = new Issue();
                 issue.Mem_no = MainForm.Mem_no;
-                issue.Issue_dt = "";
-                issue.Issue_title = title;
+                issue.Issue_title = title.TrimStart();
                 issue.Issue_text = content;
                 IssueManager.Issue.IssueInsert(issue);
+
+                this.DialogResult = DialogResult.OK; 
+
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("제목과 내용 작성할 것");
             }
         }
     }

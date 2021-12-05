@@ -9,7 +9,8 @@ namespace book_management_program.Model
     class Issue
     {
         private int issue_no;
-        private string mem_no;
+        private int mem_no;
+        private string mem_nm;
         private DateTime issue_dt;
         private string issue_title;
         private string issue_text;
@@ -19,7 +20,7 @@ namespace book_management_program.Model
             get { return issue_no; }
             set { issue_no = value; }
         }
-        public string Mem_no
+        public int Mem_no
         {
             get { return mem_no; }
             set { mem_no = value; }
@@ -39,5 +40,7 @@ namespace book_management_program.Model
             get { return issue_text; }
             set { issue_text = value; }
         }
+
+        public string Mem_nm { get => mem_nm; set => mem_nm = value; }
     }
 }

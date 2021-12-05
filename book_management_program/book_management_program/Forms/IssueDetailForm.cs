@@ -1,4 +1,6 @@
-﻿using System;
+﻿using book_management_program.Manager;
+using book_management_program.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,13 @@ namespace book_management_program.Forms
 {
     public partial class IssueDetailForm : Form
     {
-        public IssueDetailForm()
+        public IssueDetailForm(int num)
         {
             InitializeComponent();
+
+            Issue issue = IssueManager.Issue.IssueSelect(num);
+            title_textBox.Text = issue.Issue_title;
+            context_textBox.Text = issue.Issue_text;
         }
     }
 }

@@ -71,7 +71,7 @@ namespace book_management_program.Forms
                 formName.Close();
             }
 
-            IssueManager issue_manager = new IssueManager();
+            IssueManagerForm issue_manager = new IssueManagerForm();
             issue_manager.MdiParent = this;
             issue_manager.Show();
 

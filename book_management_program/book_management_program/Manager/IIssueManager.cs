@@ -13,6 +13,6 @@ namespace book_management_program.Manager
         void IssueDelete(int issue_no);
 
         List<Issue> IssueList();
-
+        List<Issue> IssueList(int mem_no);
     }
 }

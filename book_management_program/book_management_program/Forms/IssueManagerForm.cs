@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace book_management_program.Forms
 {
-    public partial class IssueManager : Form
+    public partial class IssueManagerForm : Form
     {
-        public IssueManager()
+        public IssueManagerForm()
         {
             InitializeComponent();
         }
+
     }
 }
