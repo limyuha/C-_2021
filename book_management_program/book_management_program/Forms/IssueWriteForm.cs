@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using book_management_program.Model;
+using book_management_program.Manager;
 
 namespace book_management_program.Forms
 {
@@ -15,6 +17,23 @@ namespace book_management_program.Forms
         public IssueWriteForm()
         {
             InitializeComponent();
+        }
+
+        /* 등록 버튼 */
+        private void add_btn_Click(object sender, EventArgs e)
+        {
+            string title = title_textBox.Text; //제목
+            string content = context_textBox.Text; //내용
+
+            if (title!="" && content!="")
+            {
+                Issue issue = new Issue();
+                issue.Mem_no = MainForm.Mem_no;
+                issue.Issue_dt = "";
+                issue.Issue_title = title;
+                issue.Issue_text = content;
+                IssueManager.Issue.IssueInsert(issue);
+            }
         }
     }
 }

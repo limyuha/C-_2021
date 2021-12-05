@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Timers;
 using book_management_program.Model;
 using book_management_program.Manager;
 
@@ -97,7 +96,8 @@ namespace book_management_program.Forms
             resv_checkBox.Checked = BookManager.Book.MemResvCheck(MainForm.Mem_no, this.booknumber_textBox.Text);
         }
 
-        private void ClearTxt() //선택한 도서 정보 지우기
+        /* 선택한 도서 정보 지우기*/
+        private void ClearTxt() 
         {
             this.booknumber_textBox.Text = "";
             this.bookname_textBox.Text = "";
@@ -147,6 +147,7 @@ namespace book_management_program.Forms
             }
         }
 
+        /* 예약 버튼 */
         private void resv_btn_Click(object sender, EventArgs e)
         {
             if (this.booknumber_textBox.Text != "" && this.bookname_textBox.Text != "")
@@ -171,6 +172,7 @@ namespace book_management_program.Forms
             }
         }
 
+        /* 검색 버튼 */
         private void search_btn_Click(object sender, EventArgs e)
         {
             ClearTxt();
@@ -198,7 +200,7 @@ namespace book_management_program.Forms
             {
                 //books.Clear();
 
-                books = BookManager.Book.BookSearch(type, search);
+                books = BookManager.Book.BookSearch(type, search.TrimStart());
                 BooksView(books);//검색 결과 리스트뷰에 결과 보여주기
 
             }
@@ -215,6 +217,7 @@ namespace book_management_program.Forms
             }
         }
 
+        /* 전체 보기 버튼 */
         private void all_btn_Click(object sender, EventArgs e)
         {
             ClearTxt();

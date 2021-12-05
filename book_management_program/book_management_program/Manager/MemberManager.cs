@@ -80,9 +80,9 @@ namespace book_management_program.Manager
                 {
                     issue = new Issue();
                     issue.Issue_no = result.GetInt32(0);
-                    issue.Mem_nm = result.GetString(1);
+                    issue.Mem_no = result.GetString(1);
                     issue.Issue_dt = result.GetDateTime(2);
-                    issue.Issue_sub = result.GetString(3);
+                    issue.Issue_title = result.GetString(3);
                     issue.Issue_text = result.GetString(4);
                     issues.Add(issue);
                 }

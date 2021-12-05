@@ -54,18 +54,20 @@ namespace book_management_program.Forms
             "도서명",
             "저자",
             "출판사"});
-            this.group_comboBox.Location = new System.Drawing.Point(336, 63);
+            this.group_comboBox.Location = new System.Drawing.Point(235, 38);
+            this.group_comboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.group_comboBox.Name = "group_comboBox";
-            this.group_comboBox.Size = new System.Drawing.Size(95, 33);
+            this.group_comboBox.Size = new System.Drawing.Size(68, 23);
             this.group_comboBox.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(297, 62);
+            this.pictureBox1.Location = new System.Drawing.Point(208, 37);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(33, 33);
+            this.pictureBox1.Size = new System.Drawing.Size(23, 20);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -75,18 +77,21 @@ namespace book_management_program.Forms
             this.search_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.search_btn.FlatAppearance.BorderSize = 0;
             this.search_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.search_btn.Location = new System.Drawing.Point(803, 62);
+            this.search_btn.Location = new System.Drawing.Point(562, 37);
+            this.search_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.search_btn.Name = "search_btn";
-            this.search_btn.Size = new System.Drawing.Size(112, 34);
+            this.search_btn.Size = new System.Drawing.Size(78, 20);
             this.search_btn.TabIndex = 2;
             this.search_btn.Text = "검색";
             this.search_btn.UseVisualStyleBackColor = false;
+            this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
             // 
             // search_textBox
             // 
-            this.search_textBox.Location = new System.Drawing.Point(437, 64);
+            this.search_textBox.Location = new System.Drawing.Point(306, 38);
+            this.search_textBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.search_textBox.Name = "search_textBox";
-            this.search_textBox.Size = new System.Drawing.Size(360, 31);
+            this.search_textBox.Size = new System.Drawing.Size(253, 23);
             this.search_textBox.TabIndex = 4;
             // 
             // search_listView
@@ -102,9 +107,10 @@ namespace book_management_program.Forms
             this.book_rentsum});
             this.search_listView.FullRowSelect = true;
             this.search_listView.HideSelection = false;
-            this.search_listView.Location = new System.Drawing.Point(117, 135);
+            this.search_listView.Location = new System.Drawing.Point(82, 81);
+            this.search_listView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.search_listView.Name = "search_listView";
-            this.search_listView.Size = new System.Drawing.Size(1000, 600);
+            this.search_listView.Size = new System.Drawing.Size(701, 362);
             this.search_listView.TabIndex = 5;
             this.search_listView.UseCompatibleStateImageBehavior = false;
             this.search_listView.View = System.Windows.Forms.View.Details;
@@ -158,16 +164,17 @@ namespace book_management_program.Forms
             // 
             // SearchForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1234, 844);
+            this.ClientSize = new System.Drawing.Size(864, 506);
             this.Controls.Add(this.search_listView);
             this.Controls.Add(this.search_textBox);
             this.Controls.Add(this.search_btn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.group_comboBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SearchForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "search_form";

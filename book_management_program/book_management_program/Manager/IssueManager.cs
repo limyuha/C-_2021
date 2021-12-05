@@ -19,6 +19,7 @@ namespace book_management_program.Manager
             set { issueManager = value; }
         }
 
+        /* 글 삭제 */
         public void IssueDelete(int issue_no)
         {
             string sql = $"DELETE FROM issue WHERE issue_no ='{issue_no}' ;  ";
@@ -33,10 +34,11 @@ namespace book_management_program.Manager
             }
         }
 
+        /* 글 등록 */
         public void IssueInsert(Issue issue)
         {
-            string sql = $"INSERT INTO issue VALUES ( '{issue.Issue_no}' , '{issue.Mem_nm}' , '{System.DateTime.Now.ToShortDateString()}' , " +
-                $"'{issue.Issue_sub}' , '{issue.Issue_text}' ) ;";
+            string sql = $"INSERT INTO issue VALUES ( '{issue.Issue_no}' , '{issue.Mem_no}' , '{System.DateTime.Now.ToShortDateString()}' , " +
+                $"'{issue.Issue_title}' , '{issue.Issue_text}' ) ;";
 
             if (MySql_Util.Instance.Update_Sql(sql) == true)
             {
@@ -48,6 +50,7 @@ namespace book_management_program.Manager
             }
         }
 
+        /* 글 목록 조회 */
         public List<Issue> IssueList()
         {
             string sql = "SELECT isbn, book_nm, author, pub, stock FROM bookinfo";
@@ -65,9 +68,9 @@ namespace book_management_program.Manager
                 {
                     issue = new Issue();
                     issue.Issue_no = result.GetInt32(0);
-                    issue.Mem_nm = result.GetString(1);
+                    issue.Mem_no = result.GetString(1);
                     issue.Issue_dt = result.GetDateTime(2);
-                    issue.Issue_sub = result.GetString(3);
+                    issue.Issue_title = result.GetString(3);
                     issue.Issue_text = result.GetString(4);
                     issues.Add(issue);
                 }
