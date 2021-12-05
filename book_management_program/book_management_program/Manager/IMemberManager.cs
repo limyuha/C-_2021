@@ -14,12 +14,12 @@ namespace book_management_program.Manager
         Member MemInfoLookup(string mem_nm);
         List<Member> MemList();
 
-        int MemRentListCnt(int mem_no);
-        List<Book> MemRentList(int mem_no);
+        int MemRentListCnt(string mem_nm);
+        List<Book> MemRentList(string mem_nm);
 
-        int memResvListcnt(int mem_no);
-        List<Book> MemResvList(int mem_no);
+        int memResvListcnt(string mem_nm);
+        List<Book> MemResvList(string mem_nm);
 
-        List<Issue> MemIssueList(int mem_no);
+        List<Issue> MemIssueList(string mem_nm);
     }
 }
