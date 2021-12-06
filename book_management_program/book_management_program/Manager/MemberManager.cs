@@ -93,7 +93,7 @@ namespace book_management_program.Manager
         /* 회원 목록 */
         public List<Member> MemList()
         {
-            string sql = $"SELECT mem_nm, pw, mem_grade, phone_no FROM member ;";
+            string sql = $"SELECT mem_no,mem_nm, pw, mem_grade, phone_no FROM member ;";
 
             List<Member> members = new List<Member>();
 
@@ -106,14 +106,30 @@ namespace book_management_program.Manager
                 while (result.Read())
                 {
                     member = new Member();
-                    member.Mem_nm = result.GetString(0);
-                    member.Pw = result.GetString(1);
-                    member.Mem_grade = result.GetString(2);
-                    member.Phone_no = result.GetString(3);
+                    member.Mem_no = result.GetInt32(0);
+                    member.Mem_nm = result.GetString(1);
+                    member.Pw = result.GetString(2);
+                    member.Mem_grade = result.GetString(3);
+                    member.Phone_no = result.GetString(4);
                     members.Add(member);
                 }
             }
             return members;
+        }
+        /*회원 삭제 */
+        public void MemInfoDelete(int mem_no)
+        {
+            string sql = "DELETE FROM member WHERE mem_no =" + mem_no;
+
+            if (MySql_Util.Instance.Update_Sql(sql) == true)
+            {
+                MessageBox.Show("삭제 완료", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("삭제 에러", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
 
         /* 회원 로그인 */

@@ -66,12 +66,8 @@ namespace book_management_program.Manager
         // BookManager.cs 도서 등록 버튼 기능
         public void BookInfoInsert(Book book)
         {
-            string sql = "INSERT INTO bookinfo (isbn, book_nm, author, pub, stock) VALUES ('"
-                + book.Isbn + "', '"
-                + book.Book_nm + "', '"
-                + book.Author + "', '"
-                + book.Pub + "', '"
-                + book.Stock + "')";
+            string sql = $"INSERT INTO bookinfo (isbn,book_nm,author,pub,pub_dt,stock) VALUES (" +
+                $"'{book.Isbn}','{book.Book_nm}','{book.Author}','{book.Pub}','{book.Pub_dt}','{book.Stock}'); ";
 
             if (MySql_Util.Instance.Update_Sql(sql) == true)
             {

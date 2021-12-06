@@ -34,16 +34,23 @@ namespace book_management_program.Forms
 
             this.book_listView.Items.Clear();
 
+            this.book_listView.BeginUpdate();
             foreach (Book book in list)
             {
                 item = new ListViewItem(book.Isbn.ToString());
-                item.SubItems.Add(book.Book_nm.ToString());
+                item.SubItems.Add(book.Cat_nm.ToString());
                 item.SubItems.Add(book.Author.ToString());
                 item.SubItems.Add(book.Pub.ToString());
+                item.SubItems.Add(book.Pub_dt.ToString());
+                item.SubItems.Add(book.Book_nm.ToString());
                 item.SubItems.Add(book.Stock.ToString());
+                item.SubItems.Add("0");
+
 
                 this.book_listView.Items.Add(item);
             }
+            this.book_listView.EndUpdate();
+            Invalidate();
         }
 
         private void rent_btn_Click(object sender, EventArgs e)
@@ -66,7 +73,7 @@ namespace book_management_program.Forms
                 book.Author = this.book_writer_textBox.Text;
                 book.Pub = this.book_publisher_textBox.Text;
                 book.Stock = int.Parse(this.book_stock_textBox.Text);
-
+                book.Pub_dt = DateTime.Parse(DateTime.Now.ToShortDateString());
                 bookmanager.BookInfoInsert(book);
                 ListViewConn();
             }
@@ -100,10 +107,10 @@ namespace book_management_program.Forms
                 where = book_listView.SelectedIndices[0];
 
                 this.book_number_textBox.Text = book_listView.Items[where].SubItems[0].Text;
-                this.book_name_textBox.Text = book_listView.Items[where].SubItems[1].Text;
+                this.book_name_textBox.Text = book_listView.Items[where].SubItems[5].Text;
                 this.book_writer_textBox.Text = book_listView.Items[where].SubItems[2].Text;
                 this.book_publisher_textBox.Text = book_listView.Items[where].SubItems[3].Text;
-                this.book_stock_textBox.Text = book_listView.Items[where].SubItems[4].Text;
+                this.book_stock_textBox.Text = book_listView.Items[where].SubItems[6].Text;
 
                 this.book_number_textBox.Enabled = false;
             }
