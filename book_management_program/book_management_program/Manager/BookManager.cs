@@ -66,8 +66,8 @@ namespace book_management_program.Manager
         // BookManager.cs 도서 등록 버튼 기능
         public void BookInfoInsert(Book book)
         {
-            string sql = $"INSERT INTO bookinfo (isbn,book_nm,author,pub,pub_dt,stock) VALUES (" +
-                $"'{book.Isbn}','{book.Book_nm}','{book.Author}','{book.Pub}','{book.Pub_dt}','{book.Stock}'); ";
+            string sql = $"INSERT INTO bookinfo (isbn,cat_no,book_nm,author,pub,pub_dt,stock) VALUES (" +
+                $"'{book.Isbn}','{book.Cat_no}','{book.Book_nm}','{book.Author}','{book.Pub}','{System.DateTime.Now.ToString("yyyy-MM-dd")}','{book.Stock}'); ";
 
             if (MySql_Util.Instance.Update_Sql(sql) == true)
             {
@@ -508,6 +508,30 @@ namespace book_management_program.Manager
                 }
             }
             return rentSum;
+        }
+
+        public int RentSum(string isbn)
+        {
+            string sql = $"SELECT COUNT(*) FROM rental WHERE isbn = '{isbn}';";
+            int brentSum = 0;
+
+            MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql);
+            if (result.HasRows)
+            {
+                while (result.Read())
+                {
+                    brentSum = result.GetInt32(0);
+                }
+            }
+            return brentSum;
+
+        }
+
+        public void StockAdd(string isbn, int stock)
+        {
+            string sql = $"UPDATE bookinfo SET stock={stock} WHERE isbn = '{isbn}';  ";
+            MySql_Util.Instance.Update_Sql(sql);
+
         }
 
     }
