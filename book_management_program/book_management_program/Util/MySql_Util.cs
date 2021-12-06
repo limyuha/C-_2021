@@ -41,42 +41,12 @@ namespace book_management_program.Util
                 + ";Allow Zero Datetime=True";
         }
 
-        /*
-        public bool Insert_Sql(String sql)
-        {
-            try
-            {
-                sqlConn = new MySqlConnection(connection);
-                sqlConn.Open();
-                sqlCmd = new MySqlCommand(sql, sqlConn);
-                if (sqlCmd.ExecuteNonQuery() == 1) // ExecuteNonQuery() : Insert,Delete 메소드
-                {
-                    sqlConn.Close();
-                    return true;
-                }
-                else
-                {
-                    sqlConn.Close();
-                    return false;
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString());
-                return false;
-            }
-        }*/
-
         /* 데이터 Select */
         public MySqlDataReader Select_Sql(String sql)
         {
             var dataTable = new DataTable();
             try
             {
-                if (sqlConn != null)
-                {
-                    sqlConn.Close();
-                }
                 sqlConn = new MySqlConnection(connection);
                 sqlConn.Open();
                 sqlCmd = new MySqlCommand(sql, sqlConn);
@@ -127,6 +97,35 @@ namespace book_management_program.Util
 
         }
 
+        /* 관리자 : 도서 리스트 Select */
+        public MySqlDataReader BSelect_Sql(String sql)
+        {
+            var dataTable = new DataTable();
+            try
+            {
+                if (sqlConn != null)
+                {
+                    sqlConn.Close();
+                }
+                sqlConn = new MySqlConnection(connection);
+                sqlConn.Open();
+                sqlCmd = new MySqlCommand(sql, sqlConn);
+                MySqlDataReader mySqlDataReader = sqlCmd.ExecuteReader();  // Select 결과
+
+                result = mySqlDataReader;
+
+                //sqlConn.Close();
+                return result;
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                sqlConn.Close();
+                return null;
+            }
+        }
+
         /* Insert, Delete, Update 문 */
         public bool Update_Sql(String sql)
         {
@@ -153,31 +152,6 @@ namespace book_management_program.Util
                 return false;
             }
         }
-
-        /*
-        public bool Delete_Sql(String sql)
-        {
-            try
-            {
-                sqlConn = new MySqlConnection(connection);
-                sqlConn.Open();
-                sqlCmd = new MySqlCommand(sql, sqlConn);
-                if (sqlCmd.ExecuteNonQuery() == 1) // ExecuteNonQuery() : Insert,Delete 메소드
-                {
-                    sqlConn.Close();
-                    return true;
-                }
-                else
-                {
-                    sqlConn.Close();
-                    return false;
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString());
-                return false;
-            }
-        }*/
+        
     }
 }
