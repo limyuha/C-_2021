@@ -58,7 +58,7 @@ namespace book_management_program.Forms
             if (isChecked == 0)
             {
                 //회원 게시글 불러오기
-                List<Issue> issues = IssueManager.Issue.IssueList(MainForm.Mem_no);
+                List<Issue> issues = MemberManager.Member.MemIssueList(MainForm.Mem_no);
                 IssueListView(issues);
 
                 button1.Text = "전체 글 보기";

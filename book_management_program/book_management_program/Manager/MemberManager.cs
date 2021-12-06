@@ -34,7 +34,7 @@ namespace book_management_program.Manager
                 + "')";
 
 
-            if (Instance.Insert_Sql(sql) == true)
+            if (Instance.Update_Sql(sql) == true)
             {
                 MessageBox.Show("삽입 완료", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -66,11 +66,12 @@ namespace book_management_program.Manager
         /* 회원의 작성 글 목록 */
         public List<Issue> MemIssueList(int mem_no)
         {
-            string sql = $"SELECT issue_no, mem_nm , issue_dt , issue_sub , issue_text FROM member WHERE mem_nm = '{mem_no}' ;";
+            string sql = $"SELECT issue_no, Issue_dt, mem_nm, Issue_title FROM issue,member where issue.mem_no=member.mem_no && issue.mem_no={mem_no} ORDER BY issue_no";
 
             List<Issue> issues = new List<Issue>();
 
             Issue issue;
+            Member member = new Member();
 
             MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql);
 
@@ -80,10 +81,9 @@ namespace book_management_program.Manager
                 {
                     issue = new Issue();
                     issue.Issue_no = result.GetInt32(0);
-                    issue.Mem_no = result.GetInt32(1);
-                    issue.Issue_dt = result.GetDateTime(2);
+                    issue.Issue_dt = result.GetDateTime(1);
+                    issue.Mem_nm = result.GetString(2);
                     issue.Issue_title = result.GetString(3);
-                    issue.Issue_text = result.GetString(4);
                     issues.Add(issue);
                 }
             }

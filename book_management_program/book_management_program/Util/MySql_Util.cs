@@ -24,6 +24,7 @@ namespace book_management_program.Util
         private bool return_value;
         private MySqlDataReader result;
 
+        /* DB연동 정보 */
         public MySql_Util()
         {
 
@@ -40,6 +41,7 @@ namespace book_management_program.Util
                 + ";Allow Zero Datetime=True";
         }
 
+        /*
         public bool Insert_Sql(String sql)
         {
             try
@@ -63,8 +65,9 @@ namespace book_management_program.Util
                 MessageBox.Show(e.ToString());
                 return false;
             }
-        }
+        }*/
 
+        /* 데이터 Select */
         public MySqlDataReader Select_Sql(String sql)
         {
             var dataTable = new DataTable();
@@ -89,6 +92,7 @@ namespace book_management_program.Util
             }
         }
 
+        /* 로그인 Select */
         public DataSet Select_Sqlw(String sql)
         {
             try
@@ -114,7 +118,7 @@ namespace book_management_program.Util
 
         }
 
-
+        /* Insert, Delete, Update 문 */
         public bool Update_Sql(String sql)
         {
             try
@@ -122,7 +126,7 @@ namespace book_management_program.Util
                 sqlConn = new MySqlConnection(connection);
                 sqlConn.Open();
                 sqlCmd = new MySqlCommand(sql, sqlConn);
-                if (sqlCmd.ExecuteNonQuery() == 1) // ExecuteNonQuery() : Insert,Delete 메소드
+                if (sqlCmd.ExecuteNonQuery() == 1) // ExecuteNonQuery() : Insert,Delete,Update 메소드
                 {
                     sqlConn.Close();
                     return true;
@@ -140,6 +144,7 @@ namespace book_management_program.Util
             }
         }
 
+        /*
         public bool Delete_Sql(String sql)
         {
             try
@@ -163,6 +168,6 @@ namespace book_management_program.Util
                 MessageBox.Show(e.ToString());
                 return false;
             }
-        }
+        }*/
     }
 }

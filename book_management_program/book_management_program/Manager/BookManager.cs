@@ -52,7 +52,7 @@ namespace book_management_program.Manager
         {
             string sql = "DELETE FROM bookinfo WHERE isbn = " + isbn;
 
-            if (MySql_Util.Instance.Delete_Sql(sql) == true)
+            if (MySql_Util.Instance.Update_Sql(sql) == true)
             {
                 MessageBox.Show("삭제 완료", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -73,7 +73,7 @@ namespace book_management_program.Manager
                 + book.Pub + "', '"
                 + book.Stock + "')";
 
-            if (MySql_Util.Instance.Insert_Sql(sql) == true)
+            if (MySql_Util.Instance.Update_Sql(sql) == true)
             {
                 MessageBox.Show("등록 완료", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -177,7 +177,7 @@ namespace book_management_program.Manager
                 //MessageBox.Show("stock=" + stock);
                 string sql2 = $"UPDATE bookinfo SET stock={stock} WHERE isbn= '{isbn}'; ";
                 //MessageBox.Show("sql2=" + sql2);
-                if (MySql_Util.Instance.Insert_Sql(sql) && MySql_Util.Instance.Update_Sql(sql2))
+                if (MySql_Util.Instance.Update_Sql(sql) && MySql_Util.Instance.Update_Sql(sql2))
                 {
                     MessageBox.Show("대여 완료", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return true;
@@ -418,7 +418,7 @@ namespace book_management_program.Manager
         {
             string sql = $"DELETE FROM reserve WHERE mem_no = {mem_no} && isbn='{isbn}' ;  ";
 
-            if (MySql_Util.Instance.Delete_Sql(sql) == true)
+            if (MySql_Util.Instance.Update_Sql(sql) == true)
             {
                 MessageBox.Show("취소 완료", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return true;
@@ -456,7 +456,7 @@ namespace book_management_program.Manager
             {
                 String resvDt = System.DateTime.Now.ToString("yyyy-MM-dd");
                 string sql = $"INSERT INTO reserve VALUES({mem_no},'{isbn}', '{resvDt}');";
-                if (MySql_Util.Instance.Insert_Sql(sql))
+                if (MySql_Util.Instance.Update_Sql(sql))
                 {
                     MessageBox.Show("예약 완료", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return true;

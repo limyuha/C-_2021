@@ -24,7 +24,7 @@ namespace book_management_program.Manager
         {
             string sql = $"DELETE FROM issue WHERE issue_no ='{issue_no}' ;  ";
 
-            if (MySql_Util.Instance.Delete_Sql(sql) == true)
+            if (MySql_Util.Instance.Update_Sql(sql) == true)
             {
                 MessageBox.Show("삭제 완료", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -53,33 +53,6 @@ namespace book_management_program.Manager
         public List<Issue> IssueList()
         {
             string sql = "SELECT issue_no, Issue_dt, mem_nm, Issue_title FROM issue,member where issue.mem_no=member.mem_no ORDER BY issue_no";
-
-            List<Issue> issues = new List<Issue>();
-
-            Issue issue;
-            Member member = new Member();
-
-            MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql);
-
-            if (result.HasRows)
-            {
-                while (result.Read())
-                {
-                    issue = new Issue();
-                    issue.Issue_no = result.GetInt32(0);
-                    issue.Issue_dt = result.GetDateTime(1);
-                    issue.Mem_nm = result.GetString(2);
-                    issue.Issue_title = result.GetString(3);
-                    issues.Add(issue);
-                }
-            }
-            return issues;
-        }
-
-        /* 회원 글 목록 조회 */
-        public List<Issue> IssueList(int mem_no)
-        {
-            string sql = $"SELECT issue_no, Issue_dt, mem_nm, Issue_title FROM issue,member where issue.mem_no=member.mem_no && issue.mem_no={mem_no} ORDER BY issue_no";
 
             List<Issue> issues = new List<Issue>();
 
