@@ -47,7 +47,6 @@ namespace book_management_program.Forms
                
             }
             this.book_listView.EndUpdate();
-            Invalidate();
         }
 
         private void rent_btn_Click(object sender, EventArgs e)
