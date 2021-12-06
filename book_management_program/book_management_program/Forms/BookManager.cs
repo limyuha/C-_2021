@@ -17,25 +17,37 @@ namespace book_management_program.Forms
     {
         private BookManager bookmanager = new BookManager();
 
-        private List<Book> books; //도서 목록
-
         public book_manager()
         {
             InitializeComponent();
-            BooksView(books);
+            ListViewConn();
         }
 
-
-
-        private void BooksView(List<Book> books)
+        private void ListViewConn()
         {
+            List<Book> list = new List<Book>();
+            BookManager bookmanager = new BookManager();
+
+            list = bookmanager.BookInfoList();
+
+            //ListViewItem item;
+
+
             this.book_listView.Items.Clear();
-            foreach (var book in books)
+
+            this.book_listView.BeginUpdate();
+            foreach (Book book in list)
             {
-                string[] row = { book.Isbn, book.Cat_nm, book.Author, book.Pub, book.Pub_dt.ToString(), book.Book_nm, book.Stock.ToString() };
+                int rentSum = 0;
+                rentSum = bookmanager.RentSum(book.Isbn);
+                string[] row = { book.Isbn, book.Cat_nm, book.Author, book.Pub, book.Pub_dt.ToString(), book.Book_nm, book.Stock.ToString(),rentSum.ToString() };
                 var lvItem = new ListViewItem(row);
                 this.book_listView.Items.Add(lvItem);
+
+               
             }
+            this.book_listView.EndUpdate();
+            Invalidate();
         }
 
         private void rent_btn_Click(object sender, EventArgs e)
@@ -61,6 +73,7 @@ namespace book_management_program.Forms
                 book.Stock = int.Parse(this.book_stock_textBox.Text);
                 book.Pub_dt = DateTime.Now.ToString("yyyy-MM-dd").ToString();
                 bookmanager.BookInfoInsert(book);
+                ListViewConn();
             }
         }
 
@@ -75,13 +88,13 @@ namespace book_management_program.Forms
             book.Stock = int.Parse(this.book_stock_textBox.Text);
 
             bookmanager.BookInfoUpdate(book);
-            BooksView(books);
+            ListViewConn();
         }
 
         private void book_delete_btn_Click(object sender, EventArgs e)
         {
             bookmanager.BookInfoDelete(this.book_number_textBox.Text);
-            BooksView(books);
+            ListViewConn();
         }
 
         private void book_listView_ItemActivate(object sender, EventArgs e)
@@ -109,7 +122,7 @@ namespace book_management_program.Forms
             
                 
             bookmanager.StockAdd(isbn,stock);
-            BooksView(books);
+            ListViewConn();
             this.book_stock_textBox.Text = stock.ToString();
 
         }
