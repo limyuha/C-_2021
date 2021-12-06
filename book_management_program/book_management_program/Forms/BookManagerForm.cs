@@ -22,7 +22,45 @@ namespace book_management_program.Forms
         public book_manager_Form()
         {
             InitializeComponent();
+            //ListViewConn();
         }
+        /*
+        private void ListViewConn()
+        {
+            List<Book> list = new List<Book>();
+            BookManager bookmanager = new BookManager();
+
+            list = bookmanager.BookInfoList();
+
+            //ListViewItem item;
+
+
+            this.book_listView.Items.Clear();
+
+            this.book_listView.BeginUpdate();
+            foreach (Book book in list)
+            {
+                int rentSum = 0;
+                rentSum = bookmanager.RentSum(book.Isbn);
+                string[] row = { book.Isbn, book.Cat_nm, book.Author, book.Pub, book.Pub_dt.ToString("yyyy-MM-dd"), book.Book_nm, book.Stock.ToString(),rentSum.ToString() };
+                var lvItem = new ListViewItem(row);
+                this.book_listView.Items.Add(lvItem);*/
+
+                /*
+                item = new ListViewItem(book.Isbn.ToString());
+                item.SubItems.Add(book.Cat_nm.ToString());
+                item.SubItems.Add(book.Author.ToString());
+                item.SubItems.Add(book.Pub.ToString());
+                item.SubItems.Add(book.Pub_dt.ToString());
+                item.SubItems.Add(book.Book_nm.ToString());
+                item.SubItems.Add(book.Stock.ToString());
+                item.SubItems.Add("0");
+                this.book_listView.Items.Add(item);
+                
+            }
+            this.book_listView.EndUpdate();
+            Invalidate();
+        }*/
 
         private void rent_btn_Click(object sender, EventArgs e)
         {
@@ -45,8 +83,9 @@ namespace book_management_program.Forms
                 book.Cat_no = 1;
                 book.Pub = this.book_publisher_textBox.Text;
                 book.Stock = int.Parse(this.book_stock_textBox.Text);
-                book.Pub_dt = DateTime.Now.ToString("yyyy-MM-dd").ToString();
+                book.Pub_dt = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd"));
                 BookManager.Book.BookInfoInsert(book);
+                //ListViewConn();
             }
         }
 

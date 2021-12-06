@@ -90,6 +90,7 @@ namespace book_management_program.Util
             }
             catch (Exception e)
             {
+                MessageBox.Show(e.ToString());
                 sqlConn.Close();
                 return null; 
             }
@@ -112,7 +113,7 @@ namespace book_management_program.Util
                 DataSet ds = new DataSet();
                 adpt.Fill(ds, "Tab1");
 
-                //sqlConn.Close();
+                sqlConn.Close();
                 return ds;
 
             }
