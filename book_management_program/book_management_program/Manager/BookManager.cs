@@ -99,7 +99,7 @@ namespace book_management_program.Manager
                     book.Cat_nm = result.GetString(1);
                     book.Author = result.GetString(2);
                     book.Pub = result.GetString(3);
-                    book.Pub_dt = result.GetDateTime(4);
+                    book.Pub_dt = result.GetString(4);
                     book.Book_nm = result.GetString(5);
                     book.Stock = result.GetInt32(6);
                     books.Add(book);
@@ -366,7 +366,7 @@ namespace book_management_program.Manager
                     book.Cat_nm = result.GetString(1);
                     book.Author = result.GetString(2);
                     book.Pub = result.GetString(3);
-                    book.Pub_dt = result.GetDateTime(4);
+                    book.Pub_dt = result.GetString(4);
                     book.Book_nm = result.GetString(5);
                     book.Stock = result.GetInt32(6);
                     books.Add(book);

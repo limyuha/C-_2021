@@ -42,7 +42,7 @@ namespace book_management_program.Forms
             List<Book> rentbooks = MemberManager.Member.MemRentList(MainForm.Mem_no); //대여목록 불러오기
                 foreach (var book in rentbooks)
             {
-                string[] row = { book.Rent_no.ToString(), book.Isbn, book.Cat_nm, book.Author, book.Pub, book.Pub_dt.ToString("yyyy-MM-dd"), book.Book_nm, book.Rent_dt.ToString("yyyy-MM-dd") };
+                string[] row = { book.Rent_no.ToString(), book.Isbn, book.Cat_nm, book.Author, book.Pub, book.Pub_dt.ToString(), book.Book_nm, book.Rent_dt.ToString("yyyy-MM-dd") };
                 var lvItem = new ListViewItem(row);
                 this.rent_listView.Items.Add(lvItem);
             }
@@ -107,7 +107,7 @@ namespace book_management_program.Forms
             List<Book> resrvbooks = MemberManager.Member.MemResvList(MainForm.Mem_no); //예약목록 불러오기
             foreach (var book in resrvbooks)
             {
-                string[] row = {book.Isbn, book.Cat_nm, book.Author, book.Pub, book.Pub_dt.ToString("yyyy-MM-dd"), book.Book_nm, book.Rent_ck };
+                string[] row = {book.Isbn, book.Cat_nm, book.Author, book.Pub, book.Pub_dt.ToString(), book.Book_nm, book.Rent_ck };
                 var lvItem = new ListViewItem(row);
                 this.resv_listView.Items.Add(lvItem);
             }

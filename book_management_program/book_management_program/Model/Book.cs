@@ -14,7 +14,7 @@ namespace book_management_program.Model
         private string cat_nm;
         private string author;
         private string pub;
-        private DateTime pub_dt;
+        private string pub_dt;
         private string book_nm;
         private int stock;
         private int rent_cnt;
@@ -27,7 +27,7 @@ namespace book_management_program.Model
         public string Cat_nm { get => cat_nm; set => cat_nm = value; }
         public string Author { get => author; set => author = value; }
         public string Pub { get => pub; set => pub = value; }
-        public DateTime Pub_dt { get => pub_dt; set => pub_dt = value; }
+        public string Pub_dt { get => pub_dt; set => pub_dt = value; }
         public string Book_nm { get => book_nm; set => book_nm = value; }
         public int Stock { get => stock; set => stock = value; }
         public int Rent_cnt { get => rent_cnt; set => rent_cnt = value; }

@@ -200,7 +200,7 @@ namespace book_management_program.Manager
                     book.Cat_nm = result.GetString(2);
                     book.Author = result.GetString(3);
                     book.Pub = result.GetString(4);
-                    book.Pub_dt = result.GetDateTime(5);
+                    book.Pub_dt = result.GetString(5);
                     book.Book_nm = result.GetString(6);
                     book.Rent_dt = result.GetDateTime(7);
                     book.Return_dt = result.GetDateTime(8);
@@ -247,7 +247,7 @@ namespace book_management_program.Manager
                     book.Cat_nm = result.GetString(1);
                     book.Author = result.GetString(2);
                     book.Pub = result.GetString(3);
-                    book.Pub_dt = result.GetDateTime(4);
+                    book.Pub_dt = result.GetString(4);
                     book.Book_nm = result.GetString(5);
                     if (result.GetInt32(6) == 0)
                     {

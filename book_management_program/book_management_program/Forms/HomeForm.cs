@@ -67,7 +67,7 @@ namespace book_management_program.Forms
             this.book_listView.Items.Clear();
             foreach (var book in books)
             {
-                string[] row = { book.Isbn, book.Cat_nm, book.Author, book.Pub, book.Pub_dt.ToString("yyyy-MM-dd"), book.Book_nm, book.Stock.ToString() };
+                string[] row = { book.Isbn, book.Cat_nm, book.Author, book.Pub, book.Pub_dt.ToString(), book.Book_nm, book.Stock.ToString() };
                 var lvItem = new ListViewItem(row);
                 this.book_listView.Items.Add(lvItem);
             }
@@ -225,6 +225,11 @@ namespace book_management_program.Forms
             //books.Clear();
             books = BookManager.Book.BookInfoList();
             BooksView(books);//도서 목록 리스트뷰에 결과 보여주기
+        }
+
+        private void book_listView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
