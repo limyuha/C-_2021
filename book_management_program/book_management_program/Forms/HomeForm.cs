@@ -44,7 +44,7 @@ namespace book_management_program.Forms
             /* 기간 대여량 */
             this.rent_avg_labels.Text = BookManager.Book.TermRentAvg().ToString();
 
-            //
+            //화면 업데이트
             updateView();
 
             //검색 타입 설정
@@ -54,7 +54,7 @@ namespace book_management_program.Forms
         
         private void updateView ()
         {
-            this.book_listView.Items.Clear();
+            //this.book_listView.Items.Clear();
             //하루 대여량
             this.rent_sum_labels.Text = BookManager.Book.TodayRentSum().ToString();
             //책 정보 목록
@@ -67,14 +67,10 @@ namespace book_management_program.Forms
             this.book_listView.Items.Clear();
             foreach (var book in books)
             {
-                string[] row = { book.Isbn, book.Cat_nm, book.Author, book.Pub, book.Pub_dt.ToString("yyyy-MM-dd"), book.Book_nm, book.Stock.ToString() };
+                string[] row = { book.Isbn, book.Cat_nm, book.Author, book.Pub, book.Pub_dt.ToString(), book.Book_nm, book.Stock.ToString() };
                 var lvItem = new ListViewItem(row);
                 this.book_listView.Items.Add(lvItem);
             }
-        }
-
-        private void HomeForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
         }
 
         private void book_listView_Click(object sender, EventArgs e)
@@ -108,7 +104,7 @@ namespace book_management_program.Forms
         /* 대여 버튼 */
         private void rent_btn_Click(object sender, EventArgs e)
         {
-            if (this.booknumber_textBox.Text != "" && this.bookname_textBox.Text != "")
+            if (!string.IsNullOrWhiteSpace(this.booknumber_textBox.Text) && !string.IsNullOrWhiteSpace(this.bookname_textBox.Text))
             {
                 if (MainForm.IsOverdued) // 연체 중 : true-대여 가능 / false-대여불가
                 {
@@ -134,7 +130,7 @@ namespace book_management_program.Forms
         /* 반납 버튼 */
         private void return_btn_Click(object sender, EventArgs e)
         {
-            if (this.booknumber_textBox.Text != "" && this.bookname_textBox.Text != "")
+            if (!string.IsNullOrWhiteSpace(this.booknumber_textBox.Text) && !string.IsNullOrWhiteSpace(this.bookname_textBox.Text))
             {
                 //반납 처리
                 bool returnresult = BookManager.Book.BookReturn(MainForm.Mem_no, this.booknumber_textBox.Text);
@@ -150,7 +146,7 @@ namespace book_management_program.Forms
         /* 예약 버튼 */
         private void resv_btn_Click(object sender, EventArgs e)
         {
-            if (this.booknumber_textBox.Text != "" && this.bookname_textBox.Text != "")
+            if (!string.IsNullOrWhiteSpace(this.booknumber_textBox.Text) && !string.IsNullOrWhiteSpace(this.bookname_textBox.Text))
             {
                 if (resv_checkBox.Checked)
                 {
@@ -196,7 +192,7 @@ namespace book_management_program.Forms
                 }
             }
 
-            if (type!="" && string.IsNullOrWhiteSpace(search)==false)
+            if (!string.IsNullOrWhiteSpace(type) && !string.IsNullOrWhiteSpace(search))
             {
                 //books.Clear();
 
@@ -225,6 +221,11 @@ namespace book_management_program.Forms
             //books.Clear();
             books = BookManager.Book.BookInfoList();
             BooksView(books);//도서 목록 리스트뷰에 결과 보여주기
+        }
+
+        private void book_listView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

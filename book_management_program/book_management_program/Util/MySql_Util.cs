@@ -73,6 +73,10 @@ namespace book_management_program.Util
             var dataTable = new DataTable();
             try
             {
+                if (sqlConn != null)
+                {
+                    sqlConn.Close();
+                }
                 sqlConn = new MySqlConnection(connection);
                 sqlConn.Open();
                 sqlCmd = new MySqlCommand(sql, sqlConn);
@@ -86,8 +90,7 @@ namespace book_management_program.Util
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString());
-                //sqlConn.Close();
+                sqlConn.Close();
                 return null; 
             }
         }
@@ -97,6 +100,10 @@ namespace book_management_program.Util
         {
             try
             {
+                if (sqlConn != null)
+                {
+                    sqlConn.Close();
+                }
                 sqlConn = new MySqlConnection(connection);
                 sqlConn.Open();
                 var dataTable = new DataTable();
@@ -111,6 +118,7 @@ namespace book_management_program.Util
             }
             catch (Exception e)
             {
+
                 MessageBox.Show(e.ToString());
                 sqlConn.Close();
                 return null;
@@ -140,6 +148,7 @@ namespace book_management_program.Util
             catch (Exception e)
             {
                 MessageBox.Show(e.ToString());
+                sqlConn.Close();
                 return false;
             }
         }

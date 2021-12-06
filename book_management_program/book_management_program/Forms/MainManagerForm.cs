@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace book_management_program.Forms
 {
-    public partial class MainManager : Form
+    public partial class MainManagerForm : Form
     {
-        public MainManager()
+        public MainManagerForm()
         {
             InitializeComponent();
         }
@@ -24,9 +24,15 @@ namespace book_management_program.Forms
 
         Form formName = null;
 
+        private void closeForm()
+        {
+            formName.Hide();
+            formName.Close();
+        }
+
         private void main_manager_Load(object sender, EventArgs e)
         {
-            book_manager book_manager = new book_manager();
+            book_manager_Form book_manager = new book_manager_Form();
             book_manager.MdiParent = this;
             book_manager.Show();
 
@@ -38,10 +44,10 @@ namespace book_management_program.Forms
             movePanelSlide(book_manager_btn);
             if (formName != null)
             {
-                formName.Close();
+                closeForm();
             }
 
-            book_manager book_manager = new book_manager();
+            book_manager_Form book_manager = new book_manager_Form();
             book_manager.MdiParent = this;
             book_manager.Show();
 
@@ -53,10 +59,10 @@ namespace book_management_program.Forms
             movePanelSlide(memeber_manager_btn);
             if (formName != null)
             {
-                formName.Close();
+                closeForm();
             }
 
-            MemeberManager memeber_manager = new MemeberManager();
+            MemeberManagerForm memeber_manager = new MemeberManagerForm();
             memeber_manager.MdiParent = this;
             memeber_manager.Show();
 
@@ -68,7 +74,7 @@ namespace book_management_program.Forms
             movePanelSlide(issue_manager_btn);
             if (formName != null)
             {
-                formName.Close();
+                closeForm();
             }
 
             IssueManagerForm issue_manager = new IssueManagerForm();

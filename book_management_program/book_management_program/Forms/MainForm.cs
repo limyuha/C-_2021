@@ -51,8 +51,6 @@ namespace book_management_program.Forms
 
             HomeForm home = new HomeForm();
             home.MdiParent = this;
-            //home.WindowState = FormWindowState.Maximized;
-            //this.WindowState = FormWindowState.Maximized;
             home.Show();
 
             formName = home;
@@ -66,14 +64,19 @@ namespace book_management_program.Forms
 
         Form formName = null;
 
+        private void closeForm()
+        {
+            formName.Hide();
+            formName.Close();
+        }
+
         private void home_btn_Click(object sender, EventArgs e)
         {
             movePanelSlide(home_btn);
 
             if (formName != null)
             {
-                formName.Hide();
-                formName.Close();
+                closeForm();
             }
 
             HomeForm home = new HomeForm();
@@ -88,8 +91,7 @@ namespace book_management_program.Forms
 
             if (formName != null)
             {
-                formName.Hide();
-                formName.Close();
+                closeForm();
             }
 
             //Point parentPoint = this.Location; //main 폼 시작 위치 값
@@ -109,8 +111,7 @@ namespace book_management_program.Forms
         {
             if (formName != null)
             {
-                formName.Hide();
-                formName.Close();
+                closeForm();
             }
 
             movePanelSlide(issue_btn);
@@ -125,8 +126,7 @@ namespace book_management_program.Forms
         {
             if (formName != null)
             {
-                formName.Hide();
-                formName.Close();
+                closeForm();
             }
 
             movePanelSlide(search_form_btn);
@@ -141,8 +141,7 @@ namespace book_management_program.Forms
         {
             if (formName != null)
             {
-                formName.Hide();
-                formName.Close();
+                closeForm();
             }
 
             movePanelSlide(help_btn);

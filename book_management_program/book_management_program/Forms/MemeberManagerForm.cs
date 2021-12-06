@@ -12,11 +12,11 @@ using book_management_program.Manager;
 
 namespace book_management_program.Forms
 {
-    public partial class MemeberManager : Form
+    public partial class MemeberManagerForm : Form
     {
         private MemberManager membermanager = new MemberManager();
 
-        public MemeberManager()
+        public MemeberManagerForm()
         {
             InitializeComponent();
             ListViewConn();

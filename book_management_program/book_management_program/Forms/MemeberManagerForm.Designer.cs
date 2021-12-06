@@ -1,7 +1,7 @@
 ﻿
 namespace book_management_program.Forms
 {
-    partial class MemeberManager
+    partial class MemeberManagerForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace book_management_program.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemeberManager));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemeberManagerForm));
             this.panel7 = new System.Windows.Forms.Panel();
             this.member_manager_label = new System.Windows.Forms.Label();
             this.member_manager_listView = new System.Windows.Forms.ListView();
