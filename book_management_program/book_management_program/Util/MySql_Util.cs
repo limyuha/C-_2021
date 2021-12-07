@@ -32,8 +32,10 @@ namespace book_management_program.Util
 
             string database = "c2021";
             string server = "localhost";
-            string user = "c2021";
-            string password = "yuhan";
+            //string user = "c2021";
+            //string password = "yuhan";
+            string user = "jspid";
+            string password = "jsppass";
             connection = "server=" + server
                 + ";user=" + user
                 + ";database=" + database

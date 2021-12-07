@@ -50,7 +50,7 @@ namespace book_management_program.Forms
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1379, 72);
+            this.panel1.Size = new System.Drawing.Size(2178, 72);
             this.panel1.TabIndex = 1;
             // 
             // label1
@@ -66,7 +66,7 @@ namespace book_management_program.Forms
             // pw_label
             // 
             this.pw_label.AutoSize = true;
-            this.pw_label.Location = new System.Drawing.Point(551, 353);
+            this.pw_label.Location = new System.Drawing.Point(951, 657);
             this.pw_label.Name = "pw_label";
             this.pw_label.Size = new System.Drawing.Size(84, 25);
             this.pw_label.TabIndex = 12;
@@ -74,7 +74,7 @@ namespace book_management_program.Forms
             // 
             // pw_textBox
             // 
-            this.pw_textBox.Location = new System.Drawing.Point(550, 382);
+            this.pw_textBox.Location = new System.Drawing.Point(950, 686);
             this.pw_textBox.Name = "pw_textBox";
             this.pw_textBox.Size = new System.Drawing.Size(278, 31);
             this.pw_textBox.TabIndex = 11;
@@ -82,7 +82,7 @@ namespace book_management_program.Forms
             // id_label
             // 
             this.id_label.AutoSize = true;
-            this.id_label.Location = new System.Drawing.Point(550, 255);
+            this.id_label.Location = new System.Drawing.Point(950, 559);
             this.id_label.Name = "id_label";
             this.id_label.Size = new System.Drawing.Size(66, 25);
             this.id_label.TabIndex = 10;
@@ -90,7 +90,7 @@ namespace book_management_program.Forms
             // 
             // id_textBox
             // 
-            this.id_textBox.Location = new System.Drawing.Point(550, 283);
+            this.id_textBox.Location = new System.Drawing.Point(950, 587);
             this.id_textBox.Name = "id_textBox";
             this.id_textBox.Size = new System.Drawing.Size(278, 31);
             this.id_textBox.TabIndex = 9;
@@ -98,10 +98,10 @@ namespace book_management_program.Forms
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(647, 208);
+            this.label2.Font = new System.Drawing.Font("한컴 고딕", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(1047, 512);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 25);
+            this.label2.Size = new System.Drawing.Size(88, 26);
             this.label2.TabIndex = 8;
             this.label2.Text = "회원가입";
             // 
@@ -112,7 +112,7 @@ namespace book_management_program.Forms
             this.close_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.close_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.close_btn.ForeColor = System.Drawing.Color.White;
-            this.close_btn.Location = new System.Drawing.Point(551, 588);
+            this.close_btn.Location = new System.Drawing.Point(951, 892);
             this.close_btn.Name = "close_btn";
             this.close_btn.Size = new System.Drawing.Size(279, 40);
             this.close_btn.TabIndex = 14;
@@ -127,7 +127,7 @@ namespace book_management_program.Forms
             this.join_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.join_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.join_btn.ForeColor = System.Drawing.Color.White;
-            this.join_btn.Location = new System.Drawing.Point(551, 541);
+            this.join_btn.Location = new System.Drawing.Point(951, 845);
             this.join_btn.Name = "join_btn";
             this.join_btn.Size = new System.Drawing.Size(279, 40);
             this.join_btn.TabIndex = 13;
@@ -138,7 +138,7 @@ namespace book_management_program.Forms
             // tel_label
             // 
             this.tel_label.AutoSize = true;
-            this.tel_label.Location = new System.Drawing.Point(550, 448);
+            this.tel_label.Location = new System.Drawing.Point(950, 752);
             this.tel_label.Name = "tel_label";
             this.tel_label.Size = new System.Drawing.Size(84, 25);
             this.tel_label.TabIndex = 16;
@@ -146,7 +146,7 @@ namespace book_management_program.Forms
             // 
             // tel_textBox
             // 
-            this.tel_textBox.Location = new System.Drawing.Point(549, 477);
+            this.tel_textBox.Location = new System.Drawing.Point(949, 781);
             this.tel_textBox.Name = "tel_textBox";
             this.tel_textBox.Size = new System.Drawing.Size(278, 31);
             this.tel_textBox.TabIndex = 15;
@@ -156,7 +156,7 @@ namespace book_management_program.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1379, 843);
+            this.ClientSize = new System.Drawing.Size(2178, 1444);
             this.Controls.Add(this.tel_label);
             this.Controls.Add(this.tel_textBox);
             this.Controls.Add(this.close_btn);

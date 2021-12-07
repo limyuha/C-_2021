@@ -36,6 +36,7 @@ namespace book_management_program.Forms
             this.no = new System.Windows.Forms.ColumnHeader();
             this.id = new System.Windows.Forms.ColumnHeader();
             this.pw = new System.Windows.Forms.ColumnHeader();
+            this.tel = new System.Windows.Forms.ColumnHeader();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.tel_textBox = new System.Windows.Forms.TextBox();
@@ -47,7 +48,6 @@ namespace book_management_program.Forms
             this.id_textBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.no_textBox = new System.Windows.Forms.TextBox();
-            this.tel = new System.Windows.Forms.ColumnHeader();
             this.panel7.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -88,6 +88,10 @@ namespace book_management_program.Forms
             // pw
             // 
             resources.ApplyResources(this.pw, "pw");
+            // 
+            // tel
+            // 
+            resources.ApplyResources(this.tel, "tel");
             // 
             // panel1
             // 
@@ -166,11 +170,7 @@ namespace book_management_program.Forms
             resources.ApplyResources(this.no_textBox, "no_textBox");
             this.no_textBox.Name = "no_textBox";
             // 
-            // tel
-            // 
-            resources.ApplyResources(this.tel, "tel");
-            // 
-            // MemeberManager
+            // MemeberManagerForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -178,7 +178,7 @@ namespace book_management_program.Forms
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel7);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "MemeberManager";
+            this.Name = "MemeberManagerForm";
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel1.ResumeLayout(false);

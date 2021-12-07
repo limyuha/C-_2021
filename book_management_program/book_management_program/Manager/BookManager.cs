@@ -370,7 +370,7 @@ namespace book_management_program.Manager
         /* 도서 대여 순위 */
         public List<Book> BookRentRanking()
         {
-            string sql = $"SELECT count(*) count , isbn,book_nm,author,pub FROM bookinfo group by isbn order by count ; ";
+            string sql = $"SELECT count(*) count , isbn,book_nm,author,pub FROM bookinfo group by isbn order by count limit 10; ";
 
             List<Book> books = new List<Book>();
             Book book;

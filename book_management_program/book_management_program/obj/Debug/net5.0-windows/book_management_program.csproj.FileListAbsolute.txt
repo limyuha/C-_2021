@@ -16,7 +16,6 @@ E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-wind
 E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.pdb
 E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.genruntimeconfig.cache
 E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Properties.Resources.resources
-E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.book_manager.resources
 E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.HelpForm.resources
 E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.HomeForm.resources
 E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.IssueDetailForm.resources
@@ -24,14 +23,10 @@ E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-wind
 E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.IssueWriteForm.resources
 E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.JoinForm.resources
 E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.MainForm.resources
-E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.MainManager.resources
-E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.MemeberManager.resources
 E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.MypageForm.resources
 E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.SearchForm.resources
 E:\C#_2021\book_management_program\book_management_program\bin\Debug\net5.0-windows\gl-ES\book_management_program.resources.dll
 E:\C#_2021\book_management_program\book_management_program\bin\Debug\net5.0-windows\gl\book_management_program.resources.dll
-E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.MemeberManager.gl-ES.resources
-E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.MemeberManager.gl.resources
 E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\gl-ES\book_management_program.resources.dll
 E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\gl\book_management_program.resources.dll
 C:\DevPrograms\Git_Folder\C-_2021\book_management_program\book_management_program\bin\Debug\net5.0-windows\book_management_program.exe
@@ -139,3 +134,8 @@ C:\DevPrograms\Git_Folder\C-_2021\book_management_program\book_management_progra
 C:\DevPrograms\Git_Folder\C-_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.MemeberManagerForm.resources
 C:\DevPrograms\Git_Folder\C-_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.MemeberManagerForm.gl-ES.resources
 C:\DevPrograms\Git_Folder\C-_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.MemeberManagerForm.gl.resources
+E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.book_manager_Form.resources
+E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.MainManagerForm.resources
+E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.MemeberManagerForm.resources
+E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.MemeberManagerForm.gl-ES.resources
+E:\C#_2021\book_management_program\book_management_program\obj\Debug\net5.0-windows\book_management_program.Forms.MemeberManagerForm.gl.resources

@@ -180,11 +180,5 @@ namespace book_management_program.Forms
                 ResvListView();
             }
         }
-
-        private void resv_listView_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

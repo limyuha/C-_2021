@@ -51,9 +51,9 @@ namespace book_management_program.Forms
             this.issue_manager_listView.Font = new System.Drawing.Font("한컴 고딕", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.issue_manager_listView.GridLines = true;
             this.issue_manager_listView.HideSelection = false;
-            this.issue_manager_listView.Location = new System.Drawing.Point(117, 127);
+            this.issue_manager_listView.Location = new System.Drawing.Point(167, 199);
             this.issue_manager_listView.Name = "issue_manager_listView";
-            this.issue_manager_listView.Size = new System.Drawing.Size(1000, 650);
+            this.issue_manager_listView.Size = new System.Drawing.Size(1700, 1044);
             this.issue_manager_listView.TabIndex = 5;
             this.issue_manager_listView.UseCompatibleStateImageBehavior = false;
             this.issue_manager_listView.View = System.Windows.Forms.View.Details;
@@ -66,25 +66,25 @@ namespace book_management_program.Forms
             // 
             this.date.Text = "작성일";
             this.date.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.date.Width = 100;
+            this.date.Width = 250;
             // 
             // title
             // 
             this.title.Text = "제목";
             this.title.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.title.Width = 740;
+            this.title.Width = 1200;
             // 
             // id
             // 
             this.id.Text = "작성자";
             this.id.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.id.Width = 100;
+            this.id.Width = 180;
             // 
             // issue_manager_label
             // 
             this.issue_manager_label.AutoSize = true;
             this.issue_manager_label.Font = new System.Drawing.Font("한컴 고딕", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.issue_manager_label.Location = new System.Drawing.Point(115, 68);
+            this.issue_manager_label.Location = new System.Drawing.Point(167, 154);
             this.issue_manager_label.Name = "issue_manager_label";
             this.issue_manager_label.Size = new System.Drawing.Size(252, 42);
             this.issue_manager_label.TabIndex = 4;
@@ -94,7 +94,7 @@ namespace book_management_program.Forms
             // 
             this.issue_delete_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.issue_delete_btn.Font = new System.Drawing.Font("한컴 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.issue_delete_btn.Location = new System.Drawing.Point(1044, 86);
+            this.issue_delete_btn.Location = new System.Drawing.Point(1795, 151);
             this.issue_delete_btn.Name = "issue_delete_btn";
             this.issue_delete_btn.Size = new System.Drawing.Size(70, 33);
             this.issue_delete_btn.TabIndex = 6;
@@ -105,7 +105,7 @@ namespace book_management_program.Forms
             // 
             this.no_label.AutoSize = true;
             this.no_label.Font = new System.Drawing.Font("한컴 고딕", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.no_label.Location = new System.Drawing.Point(915, 89);
+            this.no_label.Location = new System.Drawing.Point(1666, 154);
             this.no_label.Name = "no_label";
             this.no_label.Size = new System.Drawing.Size(49, 29);
             this.no_label.TabIndex = 21;
@@ -114,24 +114,24 @@ namespace book_management_program.Forms
             // no_textBox
             // 
             this.no_textBox.BackColor = System.Drawing.Color.White;
-            this.no_textBox.Location = new System.Drawing.Point(964, 87);
+            this.no_textBox.Location = new System.Drawing.Point(1715, 152);
             this.no_textBox.Name = "no_textBox";
             this.no_textBox.Size = new System.Drawing.Size(70, 31);
             this.no_textBox.TabIndex = 20;
             // 
-            // IssueManager
+            // IssueManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1234, 844);
+            this.ClientSize = new System.Drawing.Size(2034, 1443);
             this.Controls.Add(this.no_label);
             this.Controls.Add(this.no_textBox);
             this.Controls.Add(this.issue_manager_listView);
             this.Controls.Add(this.issue_manager_label);
             this.Controls.Add(this.issue_delete_btn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "IssueManager";
+            this.Name = "IssueManagerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "issue_manager";
             this.ResumeLayout(false);
