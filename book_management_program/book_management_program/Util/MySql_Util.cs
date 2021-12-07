@@ -99,7 +99,7 @@ namespace book_management_program.Util
 
         }
 
-        /* 관리자 : 도서 리스트 Select */
+        /* 관리자 : 도서 리스트 Select 
         public MySqlDataReader BSelect_Sql(String sql)
         {
             var dataTable = new DataTable();
@@ -126,7 +126,7 @@ namespace book_management_program.Util
                 sqlConn.Close();
                 return null;
             }
-        }
+        }*/
 
         /* Insert, Delete, Update 문 */
         public bool Update_Sql(String sql)

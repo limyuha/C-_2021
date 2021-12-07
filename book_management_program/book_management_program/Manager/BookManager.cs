@@ -110,13 +110,13 @@ namespace book_management_program.Manager
 
         public List<Book> BookInfoListM()
         {
-            string sql = "SELECT isbn, cat_nm, author, pub, pub_dt, book_nm, stock FROM bookinfo,category WHERE bookinfo.cat_no = category.cat_no;";
+            string sql = "SELECT bookinfo.isbn, cat_nm, author, pub, pub_dt, book_nm, stock, COUNT(rental.isbn) FROM bookinfo left OUTER JOIN rental ON bookinfo.isbn = rental.isbn INNER JOIN category ON bookinfo.cat_no = category.cat_no GROUP BY bookinfo.isbn, cat_nm, author, pub, pub_dt, book_nm, stock";
 
             List<Book> books = new List<Book>();
 
             Book book;
 
-            MySqlDataReader result = MySql_Util.Instance.BSelect_Sql(sql);
+            MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql);
 
             if (result.HasRows)
             {
@@ -130,12 +130,14 @@ namespace book_management_program.Manager
                     book.Pub_dt = result.GetString(4);
                     book.Book_nm = result.GetString(5);
                     book.Stock = result.GetInt32(6);
+                    book.Rent_sum = result.GetInt32(7);
                     books.Add(book);
                 }
             }
             return books;
         }
 
+        /*
         //도서 대여량
         public int RentSum(string isbn)
         {
@@ -152,7 +154,7 @@ namespace book_management_program.Manager
             }
             return brentSum;
 
-        }
+        }*/
 
         //도서 정보 수정
         public void BookInfoUpdate(Book book)

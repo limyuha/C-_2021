@@ -64,6 +64,7 @@ namespace book_management_program.Forms
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.group_comboBox = new System.Windows.Forms.ComboBox();
             this.search_btn = new System.Windows.Forms.Button();
+            this.rent_sum = new System.Windows.Forms.ColumnHeader();
             this.panel7.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -88,7 +89,8 @@ namespace book_management_program.Forms
             this.book_publisher,
             this.pub_dt,
             this.book_name,
-            this.book_stock});
+            this.book_stock,
+            this.rent_sum});
             this.book_listView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.book_listView.FullRowSelect = true;
             this.book_listView.HideSelection = false;
@@ -484,5 +486,6 @@ namespace book_management_program.Forms
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox group_comboBox;
         private System.Windows.Forms.Button search_btn;
+        private System.Windows.Forms.ColumnHeader rent_sum;
     }
 }
