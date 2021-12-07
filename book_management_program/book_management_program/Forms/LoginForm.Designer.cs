@@ -82,7 +82,7 @@ namespace book_management_program.Forms
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("한컴 고딕", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(990, 559);
+            this.label2.Location = new System.Drawing.Point(990, 459);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(199, 26);
             this.label2.TabIndex = 1;
@@ -90,7 +90,7 @@ namespace book_management_program.Forms
             // 
             // id_textBox
             // 
-            this.id_textBox.Location = new System.Drawing.Point(950, 643);
+            this.id_textBox.Location = new System.Drawing.Point(950, 543);
             this.id_textBox.Name = "id_textBox";
             this.id_textBox.Size = new System.Drawing.Size(278, 31);
             this.id_textBox.TabIndex = 2;
@@ -98,7 +98,7 @@ namespace book_management_program.Forms
             // id_label
             // 
             this.id_label.AutoSize = true;
-            this.id_label.Location = new System.Drawing.Point(950, 615);
+            this.id_label.Location = new System.Drawing.Point(950, 515);
             this.id_label.Name = "id_label";
             this.id_label.Size = new System.Drawing.Size(66, 25);
             this.id_label.TabIndex = 3;
@@ -107,7 +107,7 @@ namespace book_management_program.Forms
             // pw_label
             // 
             this.pw_label.AutoSize = true;
-            this.pw_label.Location = new System.Drawing.Point(950, 714);
+            this.pw_label.Location = new System.Drawing.Point(950, 614);
             this.pw_label.Name = "pw_label";
             this.pw_label.Size = new System.Drawing.Size(84, 25);
             this.pw_label.TabIndex = 5;
@@ -115,7 +115,7 @@ namespace book_management_program.Forms
             // 
             // pw_textBox
             // 
-            this.pw_textBox.Location = new System.Drawing.Point(950, 742);
+            this.pw_textBox.Location = new System.Drawing.Point(950, 642);
             this.pw_textBox.Name = "pw_textBox";
             this.pw_textBox.Size = new System.Drawing.Size(278, 31);
             this.pw_textBox.TabIndex = 4;
@@ -127,7 +127,7 @@ namespace book_management_program.Forms
             this.login_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.login_btn.Font = new System.Drawing.Font("한컴 고딕", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.login_btn.ForeColor = System.Drawing.Color.White;
-            this.login_btn.Location = new System.Drawing.Point(950, 800);
+            this.login_btn.Location = new System.Drawing.Point(950, 700);
             this.login_btn.Name = "login_btn";
             this.login_btn.Size = new System.Drawing.Size(278, 40);
             this.login_btn.TabIndex = 6;
@@ -142,7 +142,7 @@ namespace book_management_program.Forms
             this.join_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.join_btn.Font = new System.Drawing.Font("한컴 고딕", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.join_btn.ForeColor = System.Drawing.Color.White;
-            this.join_btn.Location = new System.Drawing.Point(950, 846);
+            this.join_btn.Location = new System.Drawing.Point(950, 746);
             this.join_btn.Name = "join_btn";
             this.join_btn.Size = new System.Drawing.Size(278, 40);
             this.join_btn.TabIndex = 7;
@@ -152,11 +152,10 @@ namespace book_management_program.Forms
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(2178, 1444);
+            this.ClientSize = new System.Drawing.Size(2178, 1244);
             this.Controls.Add(this.join_btn);
             this.Controls.Add(this.login_btn);
             this.Controls.Add(this.pw_label);

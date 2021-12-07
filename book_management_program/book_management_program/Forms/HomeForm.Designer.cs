@@ -92,7 +92,7 @@ namespace book_management_program.Forms
             this.groupBox1.Controls.Add(this.bookname_textBox);
             this.groupBox1.Controls.Add(this.booknumber_label);
             this.groupBox1.Controls.Add(this.booknumber_textBox);
-            this.groupBox1.Location = new System.Drawing.Point(33, 531);
+            this.groupBox1.Location = new System.Drawing.Point(32, 457);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1971, 120);
             this.groupBox1.TabIndex = 11;
@@ -211,9 +211,9 @@ namespace book_management_program.Forms
             // 
             this.panel7.Controls.Add(this.book_label);
             this.panel7.Controls.Add(this.book_listView);
-            this.panel7.Location = new System.Drawing.Point(32, 657);
+            this.panel7.Location = new System.Drawing.Point(32, 577);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1972, 756);
+            this.panel7.Size = new System.Drawing.Size(1972, 637);
             this.panel7.TabIndex = 14;
             // 
             // book_label
@@ -239,9 +239,9 @@ namespace book_management_program.Forms
             this.book_listView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.book_listView.FullRowSelect = true;
             this.book_listView.HideSelection = false;
-            this.book_listView.Location = new System.Drawing.Point(0, 40);
+            this.book_listView.Location = new System.Drawing.Point(0, 42);
             this.book_listView.Name = "book_listView";
-            this.book_listView.Size = new System.Drawing.Size(1972, 716);
+            this.book_listView.Size = new System.Drawing.Size(1972, 595);
             this.book_listView.TabIndex = 0;
             this.book_listView.UseCompatibleStateImageBehavior = false;
             this.book_listView.View = System.Windows.Forms.View.Details;
@@ -294,7 +294,7 @@ namespace book_management_program.Forms
             this.panel6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel6.BackgroundImage")));
             this.panel6.Controls.Add(this.rent_avg_labels);
             this.panel6.Controls.Add(this.rent_avg_label);
-            this.panel6.Location = new System.Drawing.Point(1410, 230);
+            this.panel6.Location = new System.Drawing.Point(1410, 212);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(593, 172);
             this.panel6.TabIndex = 12;
@@ -329,7 +329,7 @@ namespace book_management_program.Forms
             this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
             this.panel5.Controls.Add(this.rent_sum_labels);
             this.panel5.Controls.Add(this.rent_sum_label);
-            this.panel5.Location = new System.Drawing.Point(1732, 32);
+            this.panel5.Location = new System.Drawing.Point(1732, 14);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(271, 150);
             this.panel5.TabIndex = 13;
@@ -365,7 +365,7 @@ namespace book_management_program.Forms
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel4.Controls.Add(this.book_count_labels);
             this.panel4.Controls.Add(this.book_count_label);
-            this.panel4.Location = new System.Drawing.Point(1411, 32);
+            this.panel4.Location = new System.Drawing.Point(1411, 14);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(271, 150);
             this.panel4.TabIndex = 10;
@@ -400,7 +400,7 @@ namespace book_management_program.Forms
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.ranking_label);
             this.panel3.Controls.Add(this.ranking_listView);
-            this.panel3.Location = new System.Drawing.Point(32, 32);
+            this.panel3.Location = new System.Drawing.Point(32, 14);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1353, 370);
             this.panel3.TabIndex = 9;
@@ -464,7 +464,7 @@ namespace book_management_program.Forms
             // 
             // search_textBox
             // 
-            this.search_textBox.Location = new System.Drawing.Point(509, 481);
+            this.search_textBox.Location = new System.Drawing.Point(468, 419);
             this.search_textBox.Name = "search_textBox";
             this.search_textBox.Size = new System.Drawing.Size(1016, 31);
             this.search_textBox.TabIndex = 18;
@@ -474,7 +474,7 @@ namespace book_management_program.Forms
             this.search_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.search_btn.FlatAppearance.BorderSize = 0;
             this.search_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.search_btn.Location = new System.Drawing.Point(1533, 479);
+            this.search_btn.Location = new System.Drawing.Point(1492, 417);
             this.search_btn.Name = "search_btn";
             this.search_btn.Size = new System.Drawing.Size(111, 33);
             this.search_btn.TabIndex = 17;
@@ -486,7 +486,7 @@ namespace book_management_program.Forms
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(356, 481);
+            this.pictureBox1.Location = new System.Drawing.Point(315, 419);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -502,7 +502,7 @@ namespace book_management_program.Forms
             "도서명",
             "저자",
             "분류"});
-            this.group_comboBox.Location = new System.Drawing.Point(392, 480);
+            this.group_comboBox.Location = new System.Drawing.Point(351, 418);
             this.group_comboBox.Name = "group_comboBox";
             this.group_comboBox.Size = new System.Drawing.Size(111, 33);
             this.group_comboBox.TabIndex = 15;
@@ -512,7 +512,7 @@ namespace book_management_program.Forms
             this.all_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.all_btn.FlatAppearance.BorderSize = 0;
             this.all_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.all_btn.Location = new System.Drawing.Point(1650, 479);
+            this.all_btn.Location = new System.Drawing.Point(1609, 417);
             this.all_btn.Name = "all_btn";
             this.all_btn.Size = new System.Drawing.Size(111, 33);
             this.all_btn.TabIndex = 19;
@@ -522,10 +522,9 @@ namespace book_management_program.Forms
             // 
             // HomeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(2034, 1443);
+            this.ClientSize = new System.Drawing.Size(2034, 1243);
             this.Controls.Add(this.all_btn);
             this.Controls.Add(this.search_textBox);
             this.Controls.Add(this.pictureBox1);
