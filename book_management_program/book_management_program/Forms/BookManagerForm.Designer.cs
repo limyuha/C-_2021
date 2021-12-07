@@ -422,8 +422,7 @@ namespace book_management_program.Forms
             // 
             // book_manager_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(2034, 1443);
             this.Controls.Add(this.all_btn);

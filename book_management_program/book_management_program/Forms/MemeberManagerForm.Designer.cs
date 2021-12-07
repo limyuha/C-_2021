@@ -172,9 +172,9 @@ namespace book_management_program.Forms
             // 
             // MemeberManagerForm
             // 
-            resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this, "$this");
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel7);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

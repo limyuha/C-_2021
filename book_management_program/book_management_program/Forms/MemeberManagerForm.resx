@@ -89,7 +89,40 @@
   <data name="&gt;&gt;member_manager_label.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="no.Text" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="no.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="id.Text" xml:space="preserve">
+    <value>아이디</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="id.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="id.Width" type="System.Int32, mscorlib">
+    <value>370</value>
+  </data>
+  <data name="pw.Text" xml:space="preserve">
+    <value>비밀번호</value>
+  </data>
+  <data name="pw.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="pw.Width" type="System.Int32, mscorlib">
+    <value>370</value>
+  </data>
+  <data name="tel.Text" xml:space="preserve">
+    <value>전화번호</value>
+  </data>
+  <data name="tel.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="tel.Width" type="System.Int32, mscorlib">
+    <value>400</value>
+  </data>
   <data name="member_manager_listView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
@@ -134,39 +167,6 @@
   </data>
   <data name="&gt;&gt;panel7.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="no.Text" xml:space="preserve">
-    <value>No</value>
-  </data>
-  <data name="no.Width" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="id.Text" xml:space="preserve">
-    <value>아이디</value>
-  </data>
-  <data name="id.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="id.Width" type="System.Int32, mscorlib">
-    <value>370</value>
-  </data>
-  <data name="pw.Text" xml:space="preserve">
-    <value>비밀번호</value>
-  </data>
-  <data name="pw.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="pw.Width" type="System.Int32, mscorlib">
-    <value>370</value>
-  </data>
-  <data name="tel.Text" xml:space="preserve">
-    <value>전화번호</value>
-  </data>
-  <data name="tel.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="tel.Width" type="System.Int32, mscorlib">
-    <value>400</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -459,9 +459,6 @@
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>10, 25</value>
-  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>2034, 1443</value>
   </data>
