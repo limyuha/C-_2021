@@ -93,7 +93,7 @@ namespace book_management_program.Manager
         /* 회원 목록 */
         public List<Member> MemList()
         {
-            string sql = $"SELECT mem_nm, pw, mem_grade, phone_no FROM member ;";
+            string sql = $"SELECT mem_no,mem_nm, pw, mem_grade, phone_no FROM member ;";
 
             List<Member> members = new List<Member>();
 
@@ -106,14 +106,30 @@ namespace book_management_program.Manager
                 while (result.Read())
                 {
                     member = new Member();
-                    member.Mem_nm = result.GetString(0);
-                    member.Pw = result.GetString(1);
-                    member.Mem_grade = result.GetString(2);
-                    member.Phone_no = result.GetString(3);
+                    member.Mem_no = result.GetInt32(0);
+                    member.Mem_nm = result.GetString(1);
+                    member.Pw = result.GetString(2);
+                    member.Mem_grade = result.GetString(3);
+                    member.Phone_no = result.GetString(4);
                     members.Add(member);
                 }
             }
             return members;
+        }
+        /*회원 삭제 */
+        public void MemInfoDelete(int mem_no)
+        {
+            string sql = "DELETE FROM member WHERE mem_no =" + mem_no;
+
+            if (MySql_Util.Instance.Update_Sql(sql) == true)
+            {
+                MessageBox.Show("삭제 완료", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("삭제 에러", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
 
         /* 회원 로그인 */
@@ -184,7 +200,7 @@ namespace book_management_program.Manager
                     book.Cat_nm = result.GetString(2);
                     book.Author = result.GetString(3);
                     book.Pub = result.GetString(4);
-                    book.Pub_dt = result.GetDateTime(5);
+                    book.Pub_dt = result.GetString(5);
                     book.Book_nm = result.GetString(6);
                     book.Rent_dt = result.GetDateTime(7);
                     book.Return_dt = result.GetDateTime(8);
@@ -231,7 +247,7 @@ namespace book_management_program.Manager
                     book.Cat_nm = result.GetString(1);
                     book.Author = result.GetString(2);
                     book.Pub = result.GetString(3);
-                    book.Pub_dt = result.GetDateTime(4);
+                    book.Pub_dt = result.GetString(4);
                     book.Book_nm = result.GetString(5);
                     if (result.GetInt32(6) == 0)
                     {

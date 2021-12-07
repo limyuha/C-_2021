@@ -42,7 +42,7 @@ namespace book_management_program.Forms
             List<Book> rentbooks = MemberManager.Member.MemRentList(MainForm.Mem_no); //대여목록 불러오기
                 foreach (var book in rentbooks)
             {
-                string[] row = { book.Rent_no.ToString(), book.Isbn, book.Cat_nm, book.Author, book.Pub, book.Pub_dt.ToString("yyyy-MM-dd"), book.Book_nm, book.Rent_dt.ToString("yyyy-MM-dd") };
+                string[] row = { book.Rent_no.ToString(), book.Isbn, book.Cat_nm, book.Author, book.Pub, book.Pub_dt.ToString(), book.Book_nm, book.Rent_dt.ToString("yyyy-MM-dd") };
                 var lvItem = new ListViewItem(row);
                 this.rent_listView.Items.Add(lvItem);
             }
@@ -62,7 +62,7 @@ namespace book_management_program.Forms
         /* 대여 연장 버튼 */
         private void rent_extend_btn_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(this.rent_booknumber_textBox.Text)==false && string.IsNullOrWhiteSpace(rent_booknumber_textBox.Text) == false)
+            if (!string.IsNullOrWhiteSpace(this.rent_booknumber_textBox.Text) && !string.IsNullOrWhiteSpace(rent_booknumber_textBox.Text))
             {
                 if (MainForm.IsOverdued) //대여 가능도 체크
                 {
@@ -83,7 +83,7 @@ namespace book_management_program.Forms
         /* 반납 버튼 */
         private void return_btn_Click(object sender, EventArgs e)
         {
-            if (this.rent_booknumber_textBox.Text != "" && this.rent_bookname_textBox.Text != "")
+            if (!string.IsNullOrWhiteSpace(this.rent_booknumber_textBox.Text) && !string.IsNullOrWhiteSpace(this.rent_bookname_textBox.Text))
             {
                 //반납 처리
                 bool returnresult = BookManager.Book.BookReturn(MainForm.Mem_no, this.rent_booknumber_textBox.Text);
@@ -107,7 +107,7 @@ namespace book_management_program.Forms
             List<Book> resrvbooks = MemberManager.Member.MemResvList(MainForm.Mem_no); //예약목록 불러오기
             foreach (var book in resrvbooks)
             {
-                string[] row = {book.Isbn, book.Cat_nm, book.Author, book.Pub, book.Pub_dt.ToString("yyyy-MM-dd"), book.Book_nm, book.Rent_ck };
+                string[] row = {book.Isbn, book.Cat_nm, book.Author, book.Pub, book.Pub_dt.ToString(), book.Book_nm, book.Rent_ck };
                 var lvItem = new ListViewItem(row);
                 this.resv_listView.Items.Add(lvItem);
             }

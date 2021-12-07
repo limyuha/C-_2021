@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="Forms\BookManager.cs">
+    <Compile Update="Forms\BookManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\HelpForm.cs">
@@ -31,10 +31,10 @@
     <Compile Update="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\MainManager.cs">
+    <Compile Update="Forms\MainManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\MemeberManager.cs">
+    <Compile Update="Forms\MemeberManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\MypageForm.cs">
@@ -45,7 +45,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Update="Forms\MemeberManager.resx">
+    <EmbeddedResource Update="Forms\MemeberManagerForm.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

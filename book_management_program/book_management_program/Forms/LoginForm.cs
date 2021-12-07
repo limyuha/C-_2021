@@ -29,10 +29,9 @@ namespace book_management_program.Forms
             id = this.id_textBox.Text;
             pwd = this.pw_textBox.Text;
 
-            if (id != "" && pwd != "")
+            if (!string.IsNullOrWhiteSpace(id) && !string.IsNullOrWhiteSpace(pwd))
             {   //회원 로그인 체크
-                MessageBox.Show(MemberManager.Member.MemLogin(id, pwd).ToString());
-                if (MemberManager.Member.MemLogin(id,pwd))
+                if (MemberManager.Member.MemLogin(id.TrimStart(),pwd.TrimStart()))
                 {
                     MessageBox.Show("ID : " + id + "님 환영합니다.");
                     MainForm mainform = new MainForm(id);
@@ -62,11 +61,11 @@ namespace book_management_program.Forms
             id = this.id_textBox.Text;
             pwd = this.pw_textBox.Text;
 
-            if (id != "" && pwd != "")
+            if (!string.IsNullOrWhiteSpace(id) && !string.IsNullOrWhiteSpace(pwd))
             {   //관리자 로그인 체크
-                if (MemberManager.Member.MemLogin(id, pwd))
+                if (MemberManager.Member.MemLogin(id.TrimStart(), pwd.TrimStart()))
                 {
-                    MainManager main_manager = new MainManager();
+                    MainManagerForm main_manager = new MainManagerForm();
                     this.Hide(); //1.login 폼 숨김
                     main_manager.ShowDialog(); //2. main_manager 폼 보이기
                     this.Close(); //3. login 폼 닫기

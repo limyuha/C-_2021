@@ -27,7 +27,7 @@ namespace book_management_program.Forms
             this.search_listView.Items.Clear();
             foreach (var book in books)
             {
-                string[] row = { book.Isbn, book.Cat_nm, book.Author, book.Pub, book.Pub_dt.ToString("yyyy-MM-dd"), book.Book_nm, book.Stock.ToString() };
+                string[] row = { book.Isbn, book.Cat_nm, book.Author, book.Pub, book.Pub_dt.ToString(), book.Book_nm, book.Stock.ToString() };
                 var lvItem = new ListViewItem(row);
                 this.search_listView.Items.Add(lvItem);
             }

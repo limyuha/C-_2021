@@ -28,7 +28,7 @@ namespace book_management_program.Forms
             string title = title_textBox.Text; //제목
             string content = context_textBox.Text; //내용
 
-            if (title!="" && content!="")
+            if (!string.IsNullOrWhiteSpace(title) && !string.IsNullOrWhiteSpace(content)) 
             {
                 Issue issue = new Issue();
                 issue.Mem_no = MainForm.Mem_no;

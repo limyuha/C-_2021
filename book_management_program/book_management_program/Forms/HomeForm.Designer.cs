@@ -44,9 +44,11 @@ namespace book_management_program.Forms
             this.book_label = new System.Windows.Forms.Label();
             this.book_listView = new System.Windows.Forms.ListView();
             this.book_number = new System.Windows.Forms.ColumnHeader();
-            this.book_name = new System.Windows.Forms.ColumnHeader();
+            this.cat_no = new System.Windows.Forms.ColumnHeader();
             this.book_writer = new System.Windows.Forms.ColumnHeader();
             this.book_publisher = new System.Windows.Forms.ColumnHeader();
+            this.pub_dt = new System.Windows.Forms.ColumnHeader();
+            this.book_name = new System.Windows.Forms.ColumnHeader();
             this.book_stock = new System.Windows.Forms.ColumnHeader();
             this.book_rentsum = new System.Windows.Forms.ColumnHeader();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -71,8 +73,6 @@ namespace book_management_program.Forms
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.group_comboBox = new System.Windows.Forms.ComboBox();
             this.all_btn = new System.Windows.Forms.Button();
-            this.cat_no = new System.Windows.Forms.ColumnHeader();
-            this.pub_dt = new System.Windows.Forms.ColumnHeader();
             this.groupBox1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -246,6 +246,7 @@ namespace book_management_program.Forms
             this.book_listView.TabIndex = 0;
             this.book_listView.UseCompatibleStateImageBehavior = false;
             this.book_listView.View = System.Windows.Forms.View.Details;
+            this.book_listView.SelectedIndexChanged += new System.EventHandler(this.book_listView_SelectedIndexChanged);
             this.book_listView.Click += new System.EventHandler(this.book_listView_Click);
             // 
             // book_number
@@ -253,11 +254,11 @@ namespace book_management_program.Forms
             this.book_number.Text = "ISBN";
             this.book_number.Width = 110;
             // 
-            // book_name
+            // cat_no
             // 
-            this.book_name.Text = "도서명";
-            this.book_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.book_name.Width = 158;
+            this.cat_no.Text = "분류";
+            this.cat_no.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cat_no.Width = 110;
             // 
             // book_writer
             // 
@@ -270,6 +271,18 @@ namespace book_management_program.Forms
             this.book_publisher.Text = "출판사";
             this.book_publisher.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.book_publisher.Width = 130;
+            // 
+            // pub_dt
+            // 
+            this.pub_dt.Text = "발행일";
+            this.pub_dt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pub_dt.Width = 110;
+            // 
+            // book_name
+            // 
+            this.book_name.Text = "도서명";
+            this.book_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.book_name.Width = 158;
             // 
             // book_stock
             // 
@@ -513,18 +526,6 @@ namespace book_management_program.Forms
             this.all_btn.UseVisualStyleBackColor = false;
             this.all_btn.Click += new System.EventHandler(this.all_btn_Click);
             // 
-            // cat_no
-            // 
-            this.cat_no.Text = "분류";
-            this.cat_no.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.cat_no.Width = 110;
-            // 
-            // pub_dt
-            // 
-            this.pub_dt.Text = "발행일";
-            this.pub_dt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.pub_dt.Width = 110;
-            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -546,7 +547,6 @@ namespace book_management_program.Forms
             this.Name = "HomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "home";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HomeForm_FormClosing);
             this.Load += new System.EventHandler(this.HomeForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

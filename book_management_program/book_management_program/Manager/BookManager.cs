@@ -66,12 +66,8 @@ namespace book_management_program.Manager
         // BookManager.cs 도서 등록 버튼 기능
         public void BookInfoInsert(Book book)
         {
-            string sql = "INSERT INTO bookinfo (isbn, book_nm, author, pub, stock) VALUES ('"
-                + book.Isbn + "', '"
-                + book.Book_nm + "', '"
-                + book.Author + "', '"
-                + book.Pub + "', '"
-                + book.Stock + "')";
+            string sql = $"INSERT INTO bookinfo (isbn,cat_no,book_nm,author,pub,pub_dt,stock) VALUES (" +
+                $"'{book.Isbn}','{book.Cat_no}','{book.Book_nm}','{book.Author}','{book.Pub}','{System.DateTime.Now.ToString("yyyy-MM-dd")}','{book.Stock}'); ";
 
             if (MySql_Util.Instance.Update_Sql(sql) == true)
             {
@@ -103,7 +99,7 @@ namespace book_management_program.Manager
                     book.Cat_nm = result.GetString(1);
                     book.Author = result.GetString(2);
                     book.Pub = result.GetString(3);
-                    book.Pub_dt = result.GetDateTime(4);
+                    book.Pub_dt = result.GetString(4);
                     book.Book_nm = result.GetString(5);
                     book.Stock = result.GetInt32(6);
                     books.Add(book);
@@ -112,6 +108,53 @@ namespace book_management_program.Manager
             return books;
         }
 
+        public List<Book> BookInfoListM()
+        {
+            string sql = "SELECT isbn, cat_nm, author, pub, pub_dt, book_nm, stock FROM bookinfo,category WHERE bookinfo.cat_no = category.cat_no;";
+
+            List<Book> books = new List<Book>();
+
+            Book book;
+
+            MySqlDataReader result = MySql_Util.Instance.BSelect_Sql(sql);
+
+            if (result.HasRows)
+            {
+                while (result.Read())
+                {
+                    book = new Book();
+                    book.Isbn = result.GetString(0);
+                    book.Cat_nm = result.GetString(1);
+                    book.Author = result.GetString(2);
+                    book.Pub = result.GetString(3);
+                    book.Pub_dt = result.GetString(4);
+                    book.Book_nm = result.GetString(5);
+                    book.Stock = result.GetInt32(6);
+                    books.Add(book);
+                }
+            }
+            return books;
+        }
+
+        //도서 대여량
+        public int RentSum(string isbn)
+        {
+            string sql = $"SELECT COUNT(*) FROM rental WHERE isbn = '{isbn}';";
+            int brentSum = 0;
+
+            MySqlDataReader result = MySql_Util.Instance.BSelect_Sql(sql);
+            if (result.HasRows)
+            {
+                while (result.Read())
+                {
+                    brentSum = result.GetInt32(0);
+                }
+            }
+            return brentSum;
+
+        }
+
+        //도서 정보 수정
         public void BookInfoUpdate(Book book)
         {
             string sql = "UPDATE bookinfo SET book_nm = '" +
@@ -370,7 +413,7 @@ namespace book_management_program.Manager
                     book.Cat_nm = result.GetString(1);
                     book.Author = result.GetString(2);
                     book.Pub = result.GetString(3);
-                    book.Pub_dt = result.GetDateTime(4);
+                    book.Pub_dt = result.GetString(4);
                     book.Book_nm = result.GetString(5);
                     book.Stock = result.GetInt32(6);
                     books.Add(book);
@@ -512,6 +555,14 @@ namespace book_management_program.Manager
                 }
             }
             return rentSum;
+        }
+
+
+        public void StockAdd(string isbn, int stock)
+        {
+            string sql = $"UPDATE bookinfo SET stock={stock} WHERE isbn = '{isbn}';  ";
+            MySql_Util.Instance.Update_Sql(sql);
+
         }
 
     }
