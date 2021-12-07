@@ -256,7 +256,7 @@ namespace book_management_program.Manager
             return rent;
         }
 
-        /* 도서 연체 처리 */
+        /* 도서 연체 처리
         public void RentOverdueUpdate(int mem_no, int rent_no)
         {
             MessageBox.Show("대여번호 : " + rent_no, "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -270,9 +270,9 @@ namespace book_management_program.Manager
                 while (result.Read())
                 {
                     String todayDt = System.DateTime.Now.ToString("yyyy-MM-dd"); //오늘 날짜
-                    String rentDt = result.GetString(1); //대여 날짜
+                    String rentDt = result.GetString(1); //대여 날짜 */
 
-                    /* 연체일 체크 */
+                    /* 연체일 체크
                     String sql_over = $"SELECT TIMESTAMPDIFF(DAY, '{rentDt}', '{todayDt}');"; // if(결과 > 0) = 연체일
                     MySqlDataReader overresult = MySql_Util.Instance.Select_Sql(sql_over);
                     if (overresult.HasRows)
@@ -287,7 +287,7 @@ namespace book_management_program.Manager
                         }
                     }
                 }
-            }
+            } 
             
             string overDt = System.DateTime.Now.AddDays(over).ToString("yyyy-MM-dd");
             MessageBox.Show("*최종 반납 연체일 : " + overDt, "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -299,9 +299,9 @@ namespace book_management_program.Manager
                 MySqlDataReader result2 = MySql_Util.Instance.Select_Sql(sql_memoverdue);
                 if (result2.HasRows)
                 {
-                    while (result2.Read())
-                    {
-                        /* 회원 연체일 업데이트 */
+                    while (result2.Read()) 
+                    {*/
+                        /* 회원 연체일 업데이트
                         // 현재 연채일 < 새로운 연체일
                         if (string.Compare(result2.GetString(0), overDt) < 0)
                         {
@@ -312,7 +312,7 @@ namespace book_management_program.Manager
                     }
                 }
             }
-        }
+        }*/
 
         /* 도서 반납 */
         public bool BookReturn(int mem_no, string isbn)
@@ -335,7 +335,7 @@ namespace book_management_program.Manager
                 string sql = $"UPDATE rental SET return_dt='{todayDt}'  WHERE rent_no = {rent_no}; ";
                 if (MySql_Util.Instance.Update_Sql(sql))
                 {
-                    RentOverdueUpdate(mem_no, rent_no);
+                    //RentOverdueUpdate(mem_no, rent_no);
                     MessageBox.Show("반납 완료\n반납일 : " + todayDt, "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     isSuccess = true;
                 }

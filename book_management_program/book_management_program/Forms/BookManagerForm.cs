@@ -97,5 +97,22 @@ namespace book_management_program.Forms
             this.book_stock_textBox.Text = stock.ToString();
 
         }
+
+        private void book_manager_Form_Load(object sender, EventArgs e)
+        {
+            this.book_listView.Items.Clear();
+            list = BookManager.Book.BookInfoListM();
+             
+            //ListViewItem item;
+
+            foreach (Book book in list)
+            {
+                rentSum = BookManager.Book.RentSum(book.Isbn);
+                string[] row = { book.Isbn, book.Cat_nm, book.Author, book.Pub, book.Pub_dt.ToString(), book.Book_nm, book.Stock.ToString(), rentSum.ToString() };
+                var lvItem = new ListViewItem(row);
+                this.book_listView.Items.Add(lvItem);
+            }
+
+        }
     }
 }
