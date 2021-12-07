@@ -23,7 +23,7 @@ namespace book_management_program.Manager
             List<Book> BookSearch(String type, String search);  //type = 검색 기준 : 도서명-book_nm, 저자-author, 출판사-pub
 
             int TodayRentSum();
-            int RentSum(string isbn);
+            //int RentSum(string isbn);
             float TermRentAvg();
             int BookCount();
             List<Book> BookRentRanking();

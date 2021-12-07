@@ -110,13 +110,13 @@ namespace book_management_program.Manager
 
         public List<Book> BookInfoListM()
         {
-            string sql = "SELECT isbn, cat_nm, author, pub, pub_dt, book_nm, stock FROM bookinfo,category WHERE bookinfo.cat_no = category.cat_no;";
+            string sql = "SELECT bookinfo.isbn, cat_nm, author, pub, pub_dt, book_nm, stock, COUNT(rent .isbn) FROM bookinfo left OUTER JOIN (SELECT * FROM rental where return_dt like '2000-01-01 00:00:00') rent ON bookinfo.isbn = rent.isbn INNER JOIN category ON bookinfo.cat_no = category.cat_no GROUP BY bookinfo.isbn, cat_nm, author, pub, pub_dt, book_nm, stock";
 
             List<Book> books = new List<Book>();
 
             Book book;
 
-            MySqlDataReader result = MySql_Util.Instance.BSelect_Sql(sql);
+            MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql);
 
             if (result.HasRows)
             {
@@ -130,12 +130,14 @@ namespace book_management_program.Manager
                     book.Pub_dt = result.GetString(4);
                     book.Book_nm = result.GetString(5);
                     book.Stock = result.GetInt32(6);
+                    book.Rent_sum = result.GetInt32(7);
                     books.Add(book);
                 }
             }
             return books;
         }
 
+        /*
         //도서 대여량
         public int RentSum(string isbn)
         {
@@ -152,7 +154,7 @@ namespace book_management_program.Manager
             }
             return brentSum;
 
-        }
+        }*/
 
         //도서 정보 수정
         public void BookInfoUpdate(Book book)
@@ -256,7 +258,7 @@ namespace book_management_program.Manager
             return rent;
         }
 
-        /* 도서 연체 처리 */
+        /* 도서 연체 처리
         public void RentOverdueUpdate(int mem_no, int rent_no)
         {
             MessageBox.Show("대여번호 : " + rent_no, "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -270,9 +272,9 @@ namespace book_management_program.Manager
                 while (result.Read())
                 {
                     String todayDt = System.DateTime.Now.ToString("yyyy-MM-dd"); //오늘 날짜
-                    String rentDt = result.GetString(1); //대여 날짜
+                    String rentDt = result.GetString(1); //대여 날짜 */
 
-                    /* 연체일 체크 */
+                    /* 연체일 체크
                     String sql_over = $"SELECT TIMESTAMPDIFF(DAY, '{rentDt}', '{todayDt}');"; // if(결과 > 0) = 연체일
                     MySqlDataReader overresult = MySql_Util.Instance.Select_Sql(sql_over);
                     if (overresult.HasRows)
@@ -287,7 +289,7 @@ namespace book_management_program.Manager
                         }
                     }
                 }
-            }
+            } 
             
             string overDt = System.DateTime.Now.AddDays(over).ToString("yyyy-MM-dd");
             MessageBox.Show("*최종 반납 연체일 : " + overDt, "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -299,9 +301,9 @@ namespace book_management_program.Manager
                 MySqlDataReader result2 = MySql_Util.Instance.Select_Sql(sql_memoverdue);
                 if (result2.HasRows)
                 {
-                    while (result2.Read())
-                    {
-                        /* 회원 연체일 업데이트 */
+                    while (result2.Read()) 
+                    {*/
+                        /* 회원 연체일 업데이트
                         // 현재 연채일 < 새로운 연체일
                         if (string.Compare(result2.GetString(0), overDt) < 0)
                         {
@@ -312,7 +314,7 @@ namespace book_management_program.Manager
                     }
                 }
             }
-        }
+        }*/
 
         /* 도서 반납 */
         public bool BookReturn(int mem_no, string isbn)
@@ -335,7 +337,7 @@ namespace book_management_program.Manager
                 string sql = $"UPDATE rental SET return_dt='{todayDt}'  WHERE rent_no = {rent_no}; ";
                 if (MySql_Util.Instance.Update_Sql(sql))
                 {
-                    RentOverdueUpdate(mem_no, rent_no);
+                    //RentOverdueUpdate(mem_no, rent_no);
                     MessageBox.Show("반납 완료\n반납일 : " + todayDt, "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     isSuccess = true;
                 }
