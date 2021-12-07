@@ -65,7 +65,7 @@ namespace book_management_program.Forms
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(144, 1250);
+            this.panel2.Size = new System.Drawing.Size(144, 950);
             this.panel2.TabIndex = 0;
             // 
             // help_btn
@@ -159,7 +159,7 @@ namespace book_management_program.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(2184, 1250);
+            this.ClientSize = new System.Drawing.Size(2184, 950);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
