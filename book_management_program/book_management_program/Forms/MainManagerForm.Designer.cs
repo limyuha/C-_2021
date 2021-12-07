@@ -128,7 +128,7 @@ namespace book_management_program.Forms
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(2184, 950);
+            this.ClientSize = new System.Drawing.Size(1884, 950);
             this.Controls.Add(this.panel2);
             this.IsMdiContainer = true;
             this.MaximizeBox = false;

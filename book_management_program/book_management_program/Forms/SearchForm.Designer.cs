@@ -56,7 +56,7 @@ namespace book_management_program.Forms
             "도서명",
             "저자",
             "분류"});
-            this.group_comboBox.Location = new System.Drawing.Point(267, 12);
+            this.group_comboBox.Location = new System.Drawing.Point(178, 13);
             this.group_comboBox.Name = "group_comboBox";
             this.group_comboBox.Size = new System.Drawing.Size(132, 33);
             this.group_comboBox.TabIndex = 0;
@@ -65,7 +65,7 @@ namespace book_management_program.Forms
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(231, 14);
+            this.pictureBox1.Location = new System.Drawing.Point(142, 15);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -77,7 +77,7 @@ namespace book_management_program.Forms
             this.search_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.search_btn.FlatAppearance.BorderSize = 0;
             this.search_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.search_btn.Location = new System.Drawing.Point(1463, 13);
+            this.search_btn.Location = new System.Drawing.Point(1374, 14);
             this.search_btn.Name = "search_btn";
             this.search_btn.Size = new System.Drawing.Size(111, 33);
             this.search_btn.TabIndex = 2;
@@ -87,7 +87,7 @@ namespace book_management_program.Forms
             // 
             // search_textBox
             // 
-            this.search_textBox.Location = new System.Drawing.Point(405, 13);
+            this.search_textBox.Location = new System.Drawing.Point(316, 14);
             this.search_textBox.Name = "search_textBox";
             this.search_textBox.Size = new System.Drawing.Size(1052, 31);
             this.search_textBox.TabIndex = 4;
@@ -104,9 +104,9 @@ namespace book_management_program.Forms
             this.book_stock});
             this.search_listView.FullRowSelect = true;
             this.search_listView.HideSelection = false;
-            this.search_listView.Location = new System.Drawing.Point(115, 142);
+            this.search_listView.Location = new System.Drawing.Point(54, 125);
             this.search_listView.Name = "search_listView";
-            this.search_listView.Size = new System.Drawing.Size(1805, 744);
+            this.search_listView.Size = new System.Drawing.Size(1626, 744);
             this.search_listView.TabIndex = 5;
             this.search_listView.UseCompatibleStateImageBehavior = false;
             this.search_listView.View = System.Windows.Forms.View.Details;
@@ -120,19 +120,16 @@ namespace book_management_program.Forms
             // 
             this.cat_no.Text = "분류";
             this.cat_no.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.cat_no.Width = 100;
             // 
             // book_writer
             // 
             this.book_writer.Text = "저자";
-            this.book_writer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.book_writer.Width = 280;
+            this.book_writer.Width = 230;
             // 
             // book_publisher
             // 
             this.book_publisher.Text = "출판사";
-            this.book_publisher.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.book_publisher.Width = 280;
+            this.book_publisher.Width = 230;
             // 
             // pub_dt
             // 
@@ -143,8 +140,7 @@ namespace book_management_program.Forms
             // book_name
             // 
             this.book_name.Text = "도서명";
-            this.book_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.book_name.Width = 880;
+            this.book_name.Width = 840;
             // 
             // book_stock
             // 
@@ -159,16 +155,16 @@ namespace book_management_program.Forms
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.search_textBox);
             this.panel1.Controls.Add(this.search_btn);
-            this.panel1.Location = new System.Drawing.Point(115, 57);
+            this.panel1.Location = new System.Drawing.Point(54, 64);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1805, 55);
+            this.panel1.Size = new System.Drawing.Size(1626, 55);
             this.panel1.TabIndex = 6;
             // 
             // SearchForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(2034, 943);
+            this.ClientSize = new System.Drawing.Size(1734, 943);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.search_listView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

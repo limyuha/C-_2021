@@ -86,6 +86,5 @@ namespace book_management_program.Forms
                 issueDetailForm.ShowDialog();
             }
         }
-
     }
 }

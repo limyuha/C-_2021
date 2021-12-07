@@ -30,6 +30,7 @@ namespace book_management_program.Forms
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.rent_listView = new System.Windows.Forms.ListView();
             this.rent_no = new System.Windows.Forms.ColumnHeader();
             this.rent_booknumber = new System.Windows.Forms.ColumnHeader();
@@ -42,7 +43,6 @@ namespace book_management_program.Forms
             this.return_date = new System.Windows.Forms.ColumnHeader();
             this.rent_book = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.rent_extend_btn = new System.Windows.Forms.Button();
             this.return_btn = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
@@ -88,12 +88,23 @@ namespace book_management_program.Forms
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.rent_listView);
             this.panel1.Controls.Add(this.rent_book);
-            this.panel1.Location = new System.Drawing.Point(35, 189);
+            this.panel1.Location = new System.Drawing.Point(30, 170);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1964, 350);
+            this.panel1.Size = new System.Drawing.Size(1675, 350);
             this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("맑은 고딕", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(180, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(299, 21);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "* 대여 연장은 1회 한정 7일 연장됩니다.";
             // 
             // rent_listView
             // 
@@ -113,7 +124,7 @@ namespace book_management_program.Forms
             this.rent_listView.HideSelection = false;
             this.rent_listView.Location = new System.Drawing.Point(0, 37);
             this.rent_listView.Name = "rent_listView";
-            this.rent_listView.Size = new System.Drawing.Size(1964, 313);
+            this.rent_listView.Size = new System.Drawing.Size(1675, 313);
             this.rent_listView.TabIndex = 1;
             this.rent_listView.UseCompatibleStateImageBehavior = false;
             this.rent_listView.View = System.Windows.Forms.View.Details;
@@ -135,19 +146,16 @@ namespace book_management_program.Forms
             // 
             this.cat_no.Text = "분류";
             this.cat_no.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.cat_no.Width = 100;
             // 
             // rent_bookwrite
             // 
             this.rent_bookwrite.Text = "저자";
-            this.rent_bookwrite.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.rent_bookwrite.Width = 240;
+            this.rent_bookwrite.Width = 230;
             // 
             // rent_publisher
             // 
             this.rent_publisher.Text = "출판사";
-            this.rent_publisher.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.rent_publisher.Width = 240;
+            this.rent_publisher.Width = 230;
             // 
             // pub_dt
             // 
@@ -158,8 +166,7 @@ namespace book_management_program.Forms
             // rent_bookname
             // 
             this.rent_bookname.Text = "도서명";
-            this.rent_bookname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.rent_bookname.Width = 920;
+            this.rent_bookname.Width = 690;
             // 
             // rent_date
             // 
@@ -185,27 +192,16 @@ namespace book_management_program.Forms
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.rent_extend_btn);
             this.panel2.Controls.Add(this.return_btn);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.rent_bookname_textBox);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.rent_booknumber_textBox);
-            this.panel2.Location = new System.Drawing.Point(218, 110);
+            this.panel2.Location = new System.Drawing.Point(68, 105);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1598, 100);
+            this.panel2.Size = new System.Drawing.Size(1598, 64);
             this.panel2.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("맑은 고딕", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(10, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(299, 21);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "* 대여 연장은 1회 한정 7일 연장됩니다.";
             // 
             // rent_extend_btn
             // 
@@ -214,7 +210,7 @@ namespace book_management_program.Forms
             this.rent_extend_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rent_extend_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.rent_extend_btn.ForeColor = System.Drawing.Color.White;
-            this.rent_extend_btn.Location = new System.Drawing.Point(1106, 37);
+            this.rent_extend_btn.Location = new System.Drawing.Point(1115, 12);
             this.rent_extend_btn.Name = "rent_extend_btn";
             this.rent_extend_btn.Size = new System.Drawing.Size(234, 40);
             this.rent_extend_btn.TabIndex = 22;
@@ -229,7 +225,7 @@ namespace book_management_program.Forms
             this.return_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.return_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.return_btn.ForeColor = System.Drawing.Color.White;
-            this.return_btn.Location = new System.Drawing.Point(1346, 37);
+            this.return_btn.Location = new System.Drawing.Point(1356, 12);
             this.return_btn.Name = "return_btn";
             this.return_btn.Size = new System.Drawing.Size(234, 40);
             this.return_btn.TabIndex = 21;
@@ -241,7 +237,7 @@ namespace book_management_program.Forms
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(216, 52);
+            this.label11.Location = new System.Drawing.Point(226, 20);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(63, 26);
             this.label11.TabIndex = 20;
@@ -250,7 +246,7 @@ namespace book_management_program.Forms
             // rent_bookname_textBox
             // 
             this.rent_bookname_textBox.BackColor = System.Drawing.Color.White;
-            this.rent_bookname_textBox.Location = new System.Drawing.Point(285, 47);
+            this.rent_bookname_textBox.Location = new System.Drawing.Point(295, 17);
             this.rent_bookname_textBox.Name = "rent_bookname_textBox";
             this.rent_bookname_textBox.ReadOnly = true;
             this.rent_bookname_textBox.Size = new System.Drawing.Size(803, 31);
@@ -260,7 +256,7 @@ namespace book_management_program.Forms
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(10, 52);
+            this.label10.Location = new System.Drawing.Point(21, 19);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(80, 26);
             this.label10.TabIndex = 18;
@@ -269,7 +265,7 @@ namespace book_management_program.Forms
             // rent_booknumber_textBox
             // 
             this.rent_booknumber_textBox.BackColor = System.Drawing.Color.White;
-            this.rent_booknumber_textBox.Location = new System.Drawing.Point(96, 49);
+            this.rent_booknumber_textBox.Location = new System.Drawing.Point(107, 16);
             this.rent_booknumber_textBox.Name = "rent_booknumber_textBox";
             this.rent_booknumber_textBox.ReadOnly = true;
             this.rent_booknumber_textBox.Size = new System.Drawing.Size(92, 31);
@@ -279,9 +275,9 @@ namespace book_management_program.Forms
             // 
             this.panel3.Controls.Add(this.resv_listView);
             this.panel3.Controls.Add(this.resv_book);
-            this.panel3.Location = new System.Drawing.Point(35, 579);
+            this.panel3.Location = new System.Drawing.Point(31, 579);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1964, 350);
+            this.panel3.Size = new System.Drawing.Size(1672, 350);
             this.panel3.TabIndex = 2;
             // 
             // resv_listView
@@ -300,7 +296,7 @@ namespace book_management_program.Forms
             this.resv_listView.HideSelection = false;
             this.resv_listView.Location = new System.Drawing.Point(0, 37);
             this.resv_listView.Name = "resv_listView";
-            this.resv_listView.Size = new System.Drawing.Size(1964, 313);
+            this.resv_listView.Size = new System.Drawing.Size(1672, 313);
             this.resv_listView.TabIndex = 1;
             this.resv_listView.UseCompatibleStateImageBehavior = false;
             this.resv_listView.View = System.Windows.Forms.View.Details;
@@ -310,25 +306,22 @@ namespace book_management_program.Forms
             // resv_booknumber
             // 
             this.resv_booknumber.Text = "ISBN";
-            this.resv_booknumber.Width = 100;
+            this.resv_booknumber.Width = 80;
             // 
             // resv_cat_no
             // 
             this.resv_cat_no.Text = "분류";
             this.resv_cat_no.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.resv_cat_no.Width = 100;
             // 
             // resv_bookwrite
             // 
             this.resv_bookwrite.Text = "저자";
-            this.resv_bookwrite.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.resv_bookwrite.Width = 260;
+            this.resv_bookwrite.Width = 230;
             // 
             // resv_publisher
             // 
             this.resv_publisher.Text = "출판사";
-            this.resv_publisher.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.resv_publisher.Width = 260;
+            this.resv_publisher.Width = 230;
             // 
             // resv_pub_dt
             // 
@@ -339,14 +332,13 @@ namespace book_management_program.Forms
             // resv_bookname
             // 
             this.resv_bookname.Text = "도서명";
-            this.resv_bookname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.resv_bookname.Width = 1010;
+            this.resv_bookname.Width = 840;
             // 
             // resv_rent
             // 
             this.resv_rent.Text = "대여 가능";
             this.resv_rent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.resv_rent.Width = 119;
+            this.resv_rent.Width = 110;
             // 
             // resv_book
             // 
@@ -366,7 +358,7 @@ namespace book_management_program.Forms
             this.panel4.Controls.Add(this.resv_bookname_textBox);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.resv_booknumber_textBox);
-            this.panel4.Location = new System.Drawing.Point(218, 546);
+            this.panel4.Location = new System.Drawing.Point(78, 526);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1598, 52);
             this.panel4.TabIndex = 22;
@@ -453,9 +445,9 @@ namespace book_management_program.Forms
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.pw_box);
-            this.groupBox1.Location = new System.Drawing.Point(218, 11);
+            this.groupBox1.Location = new System.Drawing.Point(68, 11);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1598, 99);
+            this.groupBox1.Size = new System.Drawing.Size(1598, 76);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "내 정보";
@@ -463,7 +455,7 @@ namespace book_management_program.Forms
             // over_date_box
             // 
             this.over_date_box.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.over_date_box.Location = new System.Drawing.Point(558, 42);
+            this.over_date_box.Location = new System.Drawing.Point(544, 33);
             this.over_date_box.Name = "over_date_box";
             this.over_date_box.ReadOnly = true;
             this.over_date_box.Size = new System.Drawing.Size(92, 31);
@@ -473,7 +465,7 @@ namespace book_management_program.Forms
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(489, 45);
+            this.label2.Location = new System.Drawing.Point(475, 32);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 26);
             this.label2.TabIndex = 35;
@@ -483,7 +475,7 @@ namespace book_management_program.Forms
             // 
             this.id_label.AutoSize = true;
             this.id_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.id_label.Location = new System.Drawing.Point(25, 45);
+            this.id_label.Location = new System.Drawing.Point(27, 34);
             this.id_label.Name = "id_label";
             this.id_label.Size = new System.Drawing.Size(63, 26);
             this.id_label.TabIndex = 34;
@@ -496,9 +488,9 @@ namespace book_management_program.Forms
             this.modify_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.modify_btn.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.modify_btn.ForeColor = System.Drawing.Color.White;
-            this.modify_btn.Location = new System.Drawing.Point(1388, 31);
+            this.modify_btn.Location = new System.Drawing.Point(1362, 26);
             this.modify_btn.Name = "modify_btn";
-            this.modify_btn.Size = new System.Drawing.Size(164, 44);
+            this.modify_btn.Size = new System.Drawing.Size(218, 44);
             this.modify_btn.TabIndex = 33;
             this.modify_btn.Text = "수정하기";
             this.modify_btn.UseVisualStyleBackColor = false;
@@ -507,7 +499,7 @@ namespace book_management_program.Forms
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(1019, 41);
+            this.label8.Location = new System.Drawing.Point(1008, 32);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(80, 26);
             this.label8.TabIndex = 32;
@@ -516,7 +508,7 @@ namespace book_management_program.Forms
             // tel_box
             // 
             this.tel_box.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.tel_box.Location = new System.Drawing.Point(1105, 36);
+            this.tel_box.Location = new System.Drawing.Point(1094, 32);
             this.tel_box.Name = "tel_box";
             this.tel_box.Size = new System.Drawing.Size(238, 31);
             this.tel_box.TabIndex = 31;
@@ -524,7 +516,7 @@ namespace book_management_program.Forms
             // over_sum_box
             // 
             this.over_sum_box.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.over_sum_box.Location = new System.Drawing.Point(377, 42);
+            this.over_sum_box.Location = new System.Drawing.Point(359, 34);
             this.over_sum_box.Name = "over_sum_box";
             this.over_sum_box.ReadOnly = true;
             this.over_sum_box.Size = new System.Drawing.Size(92, 31);
@@ -534,7 +526,7 @@ namespace book_management_program.Forms
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(308, 45);
+            this.label7.Location = new System.Drawing.Point(290, 34);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(63, 26);
             this.label7.TabIndex = 29;
@@ -543,7 +535,7 @@ namespace book_management_program.Forms
             // rent_box
             // 
             this.rent_box.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.rent_box.Location = new System.Drawing.Point(195, 42);
+            this.rent_box.Location = new System.Drawing.Point(174, 34);
             this.rent_box.Name = "rent_box";
             this.rent_box.ReadOnly = true;
             this.rent_box.Size = new System.Drawing.Size(92, 31);
@@ -553,7 +545,7 @@ namespace book_management_program.Forms
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(126, 45);
+            this.label6.Location = new System.Drawing.Point(105, 34);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 26);
             this.label6.TabIndex = 27;
@@ -563,7 +555,7 @@ namespace book_management_program.Forms
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(675, 43);
+            this.label5.Location = new System.Drawing.Point(660, 34);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 26);
             this.label5.TabIndex = 26;
@@ -572,7 +564,7 @@ namespace book_management_program.Forms
             // pw_box
             // 
             this.pw_box.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.pw_box.Location = new System.Drawing.Point(761, 38);
+            this.pw_box.Location = new System.Drawing.Point(746, 35);
             this.pw_box.Name = "pw_box";
             this.pw_box.Size = new System.Drawing.Size(238, 31);
             this.pw_box.TabIndex = 25;
@@ -581,7 +573,7 @@ namespace book_management_program.Forms
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(2034, 943);
+            this.ClientSize = new System.Drawing.Size(1734, 943);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
