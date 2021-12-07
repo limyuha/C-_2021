@@ -56,6 +56,11 @@ namespace book_management_program.Forms
             join.ShowDialog();
         }
 
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void manager_btn_Click(object sender, EventArgs e)
         {
             id = this.id_textBox.Text;
