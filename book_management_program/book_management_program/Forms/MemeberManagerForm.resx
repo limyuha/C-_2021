@@ -127,10 +127,10 @@
     <value>Bottom</value>
   </data>
   <data name="member_manager_listView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 68</value>
+    <value>0, 55</value>
   </data>
   <data name="member_manager_listView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1195, 1170</value>
+    <value>1195, 699</value>
   </data>
   <data name="member_manager_listView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -148,10 +148,10 @@
     <value>1</value>
   </data>
   <data name="panel7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>223, 102</value>
+    <value>223, 94</value>
   </data>
   <data name="panel7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1195, 1238</value>
+    <value>1195, 754</value>
   </data>
   <data name="panel7.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -436,7 +436,7 @@
     <value>9</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1451, 421</value>
+    <value>1461, 171</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>361, 600</value>
@@ -459,11 +459,8 @@
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>144, 144</value>
-  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>2034, 1443</value>
+    <value>2034, 943</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>Manual</value>

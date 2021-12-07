@@ -90,9 +90,9 @@ namespace book_management_program.Forms
             // 
             this.panel1.Controls.Add(this.rent_listView);
             this.panel1.Controls.Add(this.rent_book);
-            this.panel1.Location = new System.Drawing.Point(35, 238);
+            this.panel1.Location = new System.Drawing.Point(35, 189);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1964, 534);
+            this.panel1.Size = new System.Drawing.Size(1964, 350);
             this.panel1.TabIndex = 0;
             // 
             // rent_listView
@@ -111,9 +111,9 @@ namespace book_management_program.Forms
             this.rent_listView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.rent_listView.FullRowSelect = true;
             this.rent_listView.HideSelection = false;
-            this.rent_listView.Location = new System.Drawing.Point(0, 42);
+            this.rent_listView.Location = new System.Drawing.Point(0, 37);
             this.rent_listView.Name = "rent_listView";
-            this.rent_listView.Size = new System.Drawing.Size(1964, 492);
+            this.rent_listView.Size = new System.Drawing.Size(1964, 313);
             this.rent_listView.TabIndex = 1;
             this.rent_listView.UseCompatibleStateImageBehavior = false;
             this.rent_listView.View = System.Windows.Forms.View.Details;
@@ -192,7 +192,7 @@ namespace book_management_program.Forms
             this.panel2.Controls.Add(this.rent_bookname_textBox);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.rent_booknumber_textBox);
-            this.panel2.Location = new System.Drawing.Point(218, 159);
+            this.panel2.Location = new System.Drawing.Point(218, 110);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1598, 100);
             this.panel2.TabIndex = 1;
@@ -201,7 +201,7 @@ namespace book_management_program.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("맑은 고딕", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(10, 12);
+            this.label1.Location = new System.Drawing.Point(10, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(299, 21);
             this.label1.TabIndex = 23;
@@ -216,7 +216,7 @@ namespace book_management_program.Forms
             this.rent_extend_btn.ForeColor = System.Drawing.Color.White;
             this.rent_extend_btn.Location = new System.Drawing.Point(1106, 37);
             this.rent_extend_btn.Name = "rent_extend_btn";
-            this.rent_extend_btn.Size = new System.Drawing.Size(234, 48);
+            this.rent_extend_btn.Size = new System.Drawing.Size(234, 40);
             this.rent_extend_btn.TabIndex = 22;
             this.rent_extend_btn.Text = "대여 연장";
             this.rent_extend_btn.UseVisualStyleBackColor = false;
@@ -231,7 +231,7 @@ namespace book_management_program.Forms
             this.return_btn.ForeColor = System.Drawing.Color.White;
             this.return_btn.Location = new System.Drawing.Point(1346, 37);
             this.return_btn.Name = "return_btn";
-            this.return_btn.Size = new System.Drawing.Size(234, 48);
+            this.return_btn.Size = new System.Drawing.Size(234, 40);
             this.return_btn.TabIndex = 21;
             this.return_btn.Text = "반납";
             this.return_btn.UseVisualStyleBackColor = false;
@@ -279,9 +279,9 @@ namespace book_management_program.Forms
             // 
             this.panel3.Controls.Add(this.resv_listView);
             this.panel3.Controls.Add(this.resv_book);
-            this.panel3.Location = new System.Drawing.Point(35, 875);
+            this.panel3.Location = new System.Drawing.Point(35, 579);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1964, 531);
+            this.panel3.Size = new System.Drawing.Size(1964, 350);
             this.panel3.TabIndex = 2;
             // 
             // resv_listView
@@ -298,9 +298,9 @@ namespace book_management_program.Forms
             this.resv_listView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.resv_listView.FullRowSelect = true;
             this.resv_listView.HideSelection = false;
-            this.resv_listView.Location = new System.Drawing.Point(0, 39);
+            this.resv_listView.Location = new System.Drawing.Point(0, 37);
             this.resv_listView.Name = "resv_listView";
-            this.resv_listView.Size = new System.Drawing.Size(1964, 492);
+            this.resv_listView.Size = new System.Drawing.Size(1964, 313);
             this.resv_listView.TabIndex = 1;
             this.resv_listView.UseCompatibleStateImageBehavior = false;
             this.resv_listView.View = System.Windows.Forms.View.Details;
@@ -366,9 +366,9 @@ namespace book_management_program.Forms
             this.panel4.Controls.Add(this.resv_bookname_textBox);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.resv_booknumber_textBox);
-            this.panel4.Location = new System.Drawing.Point(218, 798);
+            this.panel4.Location = new System.Drawing.Point(218, 546);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1598, 100);
+            this.panel4.Size = new System.Drawing.Size(1598, 52);
             this.panel4.TabIndex = 22;
             // 
             // resvDel_btn
@@ -378,9 +378,9 @@ namespace book_management_program.Forms
             this.resvDel_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.resvDel_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.resvDel_btn.ForeColor = System.Drawing.Color.White;
-            this.resvDel_btn.Location = new System.Drawing.Point(1346, 28);
+            this.resvDel_btn.Location = new System.Drawing.Point(1346, 2);
             this.resvDel_btn.Name = "resvDel_btn";
-            this.resvDel_btn.Size = new System.Drawing.Size(234, 48);
+            this.resvDel_btn.Size = new System.Drawing.Size(234, 40);
             this.resvDel_btn.TabIndex = 23;
             this.resvDel_btn.Text = "삭제";
             this.resvDel_btn.UseVisualStyleBackColor = false;
@@ -393,9 +393,9 @@ namespace book_management_program.Forms
             this.rent_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rent_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.rent_btn.ForeColor = System.Drawing.Color.White;
-            this.rent_btn.Location = new System.Drawing.Point(1106, 28);
+            this.rent_btn.Location = new System.Drawing.Point(1105, 2);
             this.rent_btn.Name = "rent_btn";
-            this.rent_btn.Size = new System.Drawing.Size(234, 48);
+            this.rent_btn.Size = new System.Drawing.Size(234, 40);
             this.rent_btn.TabIndex = 23;
             this.rent_btn.Text = "대여";
             this.rent_btn.UseVisualStyleBackColor = false;
@@ -405,7 +405,7 @@ namespace book_management_program.Forms
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(216, 35);
+            this.label3.Location = new System.Drawing.Point(216, 11);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 26);
             this.label3.TabIndex = 20;
@@ -414,7 +414,7 @@ namespace book_management_program.Forms
             // resv_bookname_textBox
             // 
             this.resv_bookname_textBox.BackColor = System.Drawing.Color.White;
-            this.resv_bookname_textBox.Location = new System.Drawing.Point(285, 38);
+            this.resv_bookname_textBox.Location = new System.Drawing.Point(285, 9);
             this.resv_bookname_textBox.Name = "resv_bookname_textBox";
             this.resv_bookname_textBox.ReadOnly = true;
             this.resv_bookname_textBox.Size = new System.Drawing.Size(803, 31);
@@ -424,7 +424,7 @@ namespace book_management_program.Forms
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(10, 38);
+            this.label4.Location = new System.Drawing.Point(11, 12);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 26);
             this.label4.TabIndex = 18;
@@ -433,7 +433,7 @@ namespace book_management_program.Forms
             // resv_booknumber_textBox
             // 
             this.resv_booknumber_textBox.BackColor = System.Drawing.Color.White;
-            this.resv_booknumber_textBox.Location = new System.Drawing.Point(96, 35);
+            this.resv_booknumber_textBox.Location = new System.Drawing.Point(97, 9);
             this.resv_booknumber_textBox.Name = "resv_booknumber_textBox";
             this.resv_booknumber_textBox.ReadOnly = true;
             this.resv_booknumber_textBox.Size = new System.Drawing.Size(92, 31);
@@ -453,7 +453,7 @@ namespace book_management_program.Forms
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.pw_box);
-            this.groupBox1.Location = new System.Drawing.Point(218, 36);
+            this.groupBox1.Location = new System.Drawing.Point(218, 11);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1598, 99);
             this.groupBox1.TabIndex = 23;
@@ -579,10 +579,9 @@ namespace book_management_program.Forms
             // 
             // MypageForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(2034, 1443);
+            this.ClientSize = new System.Drawing.Size(2034, 943);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -592,6 +591,7 @@ namespace book_management_program.Forms
             this.Name = "MypageForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "mypage";
+            this.Load += new System.EventHandler(this.MypageForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

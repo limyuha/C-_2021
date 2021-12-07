@@ -43,7 +43,7 @@ namespace book_management_program.Forms
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("한컴 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(186, 151);
+            this.label1.Location = new System.Drawing.Point(186, 182);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(295, 31);
             this.label1.TabIndex = 0;
@@ -54,7 +54,7 @@ namespace book_management_program.Forms
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("한컴 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(186, 205);
+            this.label2.Location = new System.Drawing.Point(186, 236);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(1123, 31);
             this.label2.TabIndex = 1;
@@ -65,7 +65,7 @@ namespace book_management_program.Forms
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("한컴 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(186, 254);
+            this.label3.Location = new System.Drawing.Point(186, 285);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(553, 31);
             this.label3.TabIndex = 2;
@@ -76,7 +76,7 @@ namespace book_management_program.Forms
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("한컴 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(186, 933);
+            this.label4.Location = new System.Drawing.Point(186, 599);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(249, 31);
             this.label4.TabIndex = 3;
@@ -87,7 +87,7 @@ namespace book_management_program.Forms
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("한컴 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(186, 987);
+            this.label5.Location = new System.Drawing.Point(186, 653);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(625, 31);
             this.label5.TabIndex = 4;
@@ -100,7 +100,7 @@ namespace book_management_program.Forms
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.Font = new System.Drawing.Font("한컴 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.label6.Location = new System.Drawing.Point(186, 881);
+            this.label6.Location = new System.Drawing.Point(186, 547);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(128, 38);
             this.label6.TabIndex = 5;
@@ -113,7 +113,7 @@ namespace book_management_program.Forms
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label7.Font = new System.Drawing.Font("한컴 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.label7.Location = new System.Drawing.Point(186, 100);
+            this.label7.Location = new System.Drawing.Point(186, 131);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(180, 38);
             this.label7.TabIndex = 6;
@@ -121,10 +121,9 @@ namespace book_management_program.Forms
             // 
             // HelpForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(2034, 1443);
+            this.ClientSize = new System.Drawing.Size(2034, 943);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);

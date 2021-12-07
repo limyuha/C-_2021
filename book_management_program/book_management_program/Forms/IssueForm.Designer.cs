@@ -43,7 +43,7 @@ namespace book_management_program.Forms
             // 
             this.issue_label.AutoSize = true;
             this.issue_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.issue_label.Location = new System.Drawing.Point(167, 148);
+            this.issue_label.Location = new System.Drawing.Point(167, 81);
             this.issue_label.Name = "issue_label";
             this.issue_label.Size = new System.Drawing.Size(162, 37);
             this.issue_label.TabIndex = 0;
@@ -61,9 +61,9 @@ namespace book_management_program.Forms
             this.issue_listView.FullRowSelect = true;
             this.issue_listView.GridLines = true;
             this.issue_listView.HideSelection = false;
-            this.issue_listView.Location = new System.Drawing.Point(167, 199);
+            this.issue_listView.Location = new System.Drawing.Point(167, 121);
             this.issue_listView.Name = "issue_listView";
-            this.issue_listView.Size = new System.Drawing.Size(1700, 1044);
+            this.issue_listView.Size = new System.Drawing.Size(1700, 701);
             this.issue_listView.TabIndex = 1;
             this.issue_listView.UseCompatibleStateImageBehavior = false;
             this.issue_listView.View = System.Windows.Forms.View.Details;
@@ -95,7 +95,7 @@ namespace book_management_program.Forms
             // 
             this.issue_write_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.issue_write_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.issue_write_btn.Location = new System.Drawing.Point(1752, 140);
+            this.issue_write_btn.Location = new System.Drawing.Point(1756, 70);
             this.issue_write_btn.Name = "issue_write_btn";
             this.issue_write_btn.Size = new System.Drawing.Size(111, 45);
             this.issue_write_btn.TabIndex = 2;
@@ -107,7 +107,7 @@ namespace book_management_program.Forms
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(1516, 140);
+            this.button1.Location = new System.Drawing.Point(1520, 70);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(229, 45);
             this.button1.TabIndex = 3;
@@ -117,10 +117,9 @@ namespace book_management_program.Forms
             // 
             // IssueForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(2034, 1443);
+            this.ClientSize = new System.Drawing.Size(2034, 943);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.issue_write_btn);
             this.Controls.Add(this.issue_listView);

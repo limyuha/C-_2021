@@ -22,10 +22,5 @@ namespace book_management_program.Forms
             title_textBox.Text = issue.Issue_title;
             context_textBox.Text = issue.Issue_text;
         }
-
-        private void context_textBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

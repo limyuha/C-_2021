@@ -75,7 +75,7 @@ namespace book_management_program.Forms
             this.panel7.Controls.Add(this.book_manager_label);
             this.panel7.Location = new System.Drawing.Point(22, 300);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1979, 1111);
+            this.panel7.Size = new System.Drawing.Size(1979, 613);
             this.panel7.TabIndex = 15;
             // 
             // book_listView
@@ -94,7 +94,7 @@ namespace book_management_program.Forms
             this.book_listView.HideSelection = false;
             this.book_listView.Location = new System.Drawing.Point(0, 32);
             this.book_listView.Name = "book_listView";
-            this.book_listView.Size = new System.Drawing.Size(1979, 1079);
+            this.book_listView.Size = new System.Drawing.Size(1979, 581);
             this.book_listView.TabIndex = 7;
             this.book_listView.UseCompatibleStateImageBehavior = false;
             this.book_listView.View = System.Windows.Forms.View.Details;
@@ -296,6 +296,7 @@ namespace book_management_program.Forms
             this.stock_add_btn.TabIndex = 17;
             this.stock_add_btn.Text = "재고 추가";
             this.stock_add_btn.UseVisualStyleBackColor = false;
+            this.stock_add_btn.Click += new System.EventHandler(this.stock_add_btn_Click);
             // 
             // modify_btn
             // 
@@ -422,10 +423,9 @@ namespace book_management_program.Forms
             // 
             // book_manager_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(2034, 1443);
+            this.ClientSize = new System.Drawing.Size(2034, 943);
             this.Controls.Add(this.all_btn);
             this.Controls.Add(this.search_textBox);
             this.Controls.Add(this.pictureBox1);
@@ -437,8 +437,6 @@ namespace book_management_program.Forms
             this.Name = "book_manager_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "book_manager";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.book_manager_Form_FormClosing);
-            this.Load += new System.EventHandler(this.book_manager_Form_Load);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.groupBox1.ResumeLayout(false);

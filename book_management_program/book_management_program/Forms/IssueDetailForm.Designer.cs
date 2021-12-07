@@ -56,7 +56,6 @@ namespace book_management_program.Forms
             this.context_textBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.context_textBox.Size = new System.Drawing.Size(802, 523);
             this.context_textBox.TabIndex = 3;
-            this.context_textBox.TextChanged += new System.EventHandler(this.context_textBox_TextChanged);
             // 
             // context_label
             // 
@@ -89,8 +88,7 @@ namespace book_management_program.Forms
             // 
             // IssueDetailForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(978, 744);
             this.Controls.Add(this.panel1);

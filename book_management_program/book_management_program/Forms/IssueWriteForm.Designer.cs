@@ -53,7 +53,7 @@ namespace book_management_program.Forms
             // 
             this.title_textBox.Location = new System.Drawing.Point(94, 55);
             this.title_textBox.Name = "title_textBox";
-            this.title_textBox.Size = new System.Drawing.Size(490, 31);
+            this.title_textBox.Size = new System.Drawing.Size(802, 31);
             this.title_textBox.TabIndex = 1;
             // 
             // context_label
@@ -101,8 +101,7 @@ namespace book_management_program.Forms
             // 
             // IssueWriteForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(978, 744);
             this.Controls.Add(this.add_btn);

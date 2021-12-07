@@ -41,7 +41,6 @@ namespace book_management_program.Forms
             this.booknumber_label = new System.Windows.Forms.Label();
             this.booknumber_textBox = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.book_label = new System.Windows.Forms.Label();
             this.book_listView = new System.Windows.Forms.ListView();
             this.book_number = new System.Windows.Forms.ColumnHeader();
             this.cat_no = new System.Windows.Forms.ColumnHeader();
@@ -209,22 +208,11 @@ namespace book_management_program.Forms
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.book_label);
             this.panel7.Controls.Add(this.book_listView);
-            this.panel7.Location = new System.Drawing.Point(31, 441);
+            this.panel7.Location = new System.Drawing.Point(32, 439);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1972, 493);
+            this.panel7.Size = new System.Drawing.Size(1972, 462);
             this.panel7.TabIndex = 14;
-            // 
-            // book_label
-            // 
-            this.book_label.AutoSize = true;
-            this.book_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.book_label.Location = new System.Drawing.Point(1, 8);
-            this.book_label.Name = "book_label";
-            this.book_label.Size = new System.Drawing.Size(51, 29);
-            this.book_label.TabIndex = 6;
-            this.book_label.Text = "도서";
             // 
             // book_listView
             // 
@@ -239,7 +227,7 @@ namespace book_management_program.Forms
             this.book_listView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.book_listView.FullRowSelect = true;
             this.book_listView.HideSelection = false;
-            this.book_listView.Location = new System.Drawing.Point(0, 40);
+            this.book_listView.Location = new System.Drawing.Point(0, 9);
             this.book_listView.Name = "book_listView";
             this.book_listView.Size = new System.Drawing.Size(1972, 453);
             this.book_listView.TabIndex = 0;
@@ -432,7 +420,6 @@ namespace book_management_program.Forms
             this.ranking_listView.TabIndex = 0;
             this.ranking_listView.UseCompatibleStateImageBehavior = false;
             this.ranking_listView.View = System.Windows.Forms.View.Details;
-            this.ranking_listView.SelectedIndexChanged += new System.EventHandler(this.ranking_listView_SelectedIndexChanged);
             // 
             // ranking_no
             // 
@@ -545,7 +532,6 @@ namespace book_management_program.Forms
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -573,7 +559,6 @@ namespace book_management_program.Forms
         private System.Windows.Forms.Label booknumber_label;
         private System.Windows.Forms.TextBox booknumber_textBox;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label book_label;
         private System.Windows.Forms.ListView book_listView;
         private System.Windows.Forms.ColumnHeader book_number;
         private System.Windows.Forms.ColumnHeader book_name;

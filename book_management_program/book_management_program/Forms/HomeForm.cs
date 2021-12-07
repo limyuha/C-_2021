@@ -222,10 +222,5 @@ namespace book_management_program.Forms
             books = BookManager.Book.BookInfoList();
             BooksView(books);//도서 목록 리스트뷰에 결과 보여주기
         }
-
-        private void ranking_listView_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

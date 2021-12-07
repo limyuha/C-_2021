@@ -104,9 +104,9 @@ namespace book_management_program.Forms
             this.book_stock});
             this.search_listView.FullRowSelect = true;
             this.search_listView.HideSelection = false;
-            this.search_listView.Location = new System.Drawing.Point(115, 133);
+            this.search_listView.Location = new System.Drawing.Point(115, 142);
             this.search_listView.Name = "search_listView";
-            this.search_listView.Size = new System.Drawing.Size(1805, 1176);
+            this.search_listView.Size = new System.Drawing.Size(1805, 744);
             this.search_listView.TabIndex = 5;
             this.search_listView.UseCompatibleStateImageBehavior = false;
             this.search_listView.View = System.Windows.Forms.View.Details;
@@ -168,7 +168,7 @@ namespace book_management_program.Forms
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(2034, 1443);
+            this.ClientSize = new System.Drawing.Size(2034, 943);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.search_listView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
