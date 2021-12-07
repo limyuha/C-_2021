@@ -110,7 +110,7 @@ namespace book_management_program.Manager
 
         public List<Book> BookInfoListM()
         {
-            string sql = "SELECT bookinfo.isbn, cat_nm, author, pub, pub_dt, book_nm, stock, COUNT(rental.isbn) FROM bookinfo left OUTER JOIN rental ON bookinfo.isbn = rental.isbn INNER JOIN category ON bookinfo.cat_no = category.cat_no GROUP BY bookinfo.isbn, cat_nm, author, pub, pub_dt, book_nm, stock";
+            string sql = "SELECT bookinfo.isbn, cat_nm, author, pub, pub_dt, book_nm, stock, COUNT(rent .isbn) FROM bookinfo left OUTER JOIN (SELECT * FROM rental where return_dt like '2000-01-01 00:00:00') rent ON bookinfo.isbn = rent.isbn INNER JOIN category ON bookinfo.cat_no = category.cat_no GROUP BY bookinfo.isbn, cat_nm, author, pub, pub_dt, book_nm, stock";
 
             List<Book> books = new List<Book>();
 
