@@ -37,6 +37,8 @@ namespace book_management_program.Forms
                 this.book_writer_textBox.Clear();
                 this.book_publisher_textBox.Clear();
                 this.book_stock_textBox.Clear();
+                this.cat_no_textBox.Clear();
+                this.pub_dt_textBox.Clear();
             }
             else
             {
@@ -183,6 +185,17 @@ namespace book_management_program.Forms
         private void all_btn_Click(object sender, EventArgs e)
         {
             BookList();
+        }
+
+        private void label4_DoubleClick(object sender, EventArgs e)
+        {
+            this.book_number_textBox.Clear();
+            this.book_name_textBox.Clear();
+            this.book_writer_textBox.Clear();
+            this.book_publisher_textBox.Clear();
+            this.book_stock_textBox.Clear();
+            this.cat_no_textBox.Clear();
+            this.pub_dt_textBox.Clear();
         }
     }
 }

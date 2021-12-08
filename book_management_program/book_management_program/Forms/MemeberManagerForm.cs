@@ -148,5 +148,13 @@ namespace book_management_program.Forms
                 this.tel_textBox.Enabled = false;
             }
         }
+
+        private void label4_DoubleClick(object sender, EventArgs e)
+        {
+            this.no_textBox.Clear();
+            this.id_textBox.Clear();
+            this.pw_textBox.Clear();
+            this.tel_textBox.Clear();
+        }
     }
 }

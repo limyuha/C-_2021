@@ -65,6 +65,7 @@ namespace book_management_program.Forms
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.group_comboBox = new System.Windows.Forms.ComboBox();
             this.search_btn = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel7.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -151,12 +152,13 @@ namespace book_management_program.Forms
             this.book_manager_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.book_manager_label.Location = new System.Drawing.Point(0, 0);
             this.book_manager_label.Name = "book_manager_label";
-            this.book_manager_label.Size = new System.Drawing.Size(95, 29);
+            this.book_manager_label.Size = new System.Drawing.Size(61, 20);
             this.book_manager_label.TabIndex = 6;
             this.book_manager_label.Text = "도서 관리";
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.pub_dt_label);
             this.groupBox1.Controls.Add(this.pub_dt_textBox);
             this.groupBox1.Controls.Add(this.cat_no_label);
@@ -188,7 +190,7 @@ namespace book_management_program.Forms
             this.pub_dt_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.pub_dt_label.Location = new System.Drawing.Point(251, 43);
             this.pub_dt_label.Name = "pub_dt_label";
-            this.pub_dt_label.Size = new System.Drawing.Size(63, 26);
+            this.pub_dt_label.Size = new System.Drawing.Size(47, 18);
             this.pub_dt_label.TabIndex = 24;
             this.pub_dt_label.Text = "발행일";
             // 
@@ -197,7 +199,7 @@ namespace book_management_program.Forms
             this.pub_dt_textBox.BackColor = System.Drawing.Color.White;
             this.pub_dt_textBox.Location = new System.Drawing.Point(255, 72);
             this.pub_dt_textBox.Name = "pub_dt_textBox";
-            this.pub_dt_textBox.Size = new System.Drawing.Size(142, 31);
+            this.pub_dt_textBox.Size = new System.Drawing.Size(142, 23);
             this.pub_dt_textBox.TabIndex = 23;
             // 
             // cat_no_label
@@ -206,7 +208,7 @@ namespace book_management_program.Forms
             this.cat_no_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cat_no_label.Location = new System.Drawing.Point(133, 43);
             this.cat_no_label.Name = "cat_no_label";
-            this.cat_no_label.Size = new System.Drawing.Size(46, 26);
+            this.cat_no_label.Size = new System.Drawing.Size(34, 18);
             this.cat_no_label.TabIndex = 22;
             this.cat_no_label.Text = "분류";
             // 
@@ -215,7 +217,7 @@ namespace book_management_program.Forms
             this.cat_no_textBox.BackColor = System.Drawing.Color.White;
             this.cat_no_textBox.Location = new System.Drawing.Point(135, 72);
             this.cat_no_textBox.Name = "cat_no_textBox";
-            this.cat_no_textBox.Size = new System.Drawing.Size(89, 31);
+            this.cat_no_textBox.Size = new System.Drawing.Size(89, 23);
             this.cat_no_textBox.TabIndex = 21;
             // 
             // book_delete_btn
@@ -239,7 +241,7 @@ namespace book_management_program.Forms
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(1293, 43);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 26);
+            this.label3.Size = new System.Drawing.Size(34, 18);
             this.label3.TabIndex = 17;
             this.label3.Text = "재고";
             // 
@@ -248,7 +250,7 @@ namespace book_management_program.Forms
             this.book_stock_textBox.BackColor = System.Drawing.Color.White;
             this.book_stock_textBox.Location = new System.Drawing.Point(1297, 72);
             this.book_stock_textBox.Name = "book_stock_textBox";
-            this.book_stock_textBox.Size = new System.Drawing.Size(64, 31);
+            this.book_stock_textBox.Size = new System.Drawing.Size(64, 23);
             this.book_stock_textBox.TabIndex = 16;
             // 
             // label2
@@ -257,7 +259,7 @@ namespace book_management_program.Forms
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(853, 43);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 26);
+            this.label2.Size = new System.Drawing.Size(47, 18);
             this.label2.TabIndex = 17;
             this.label2.Text = "출판사";
             // 
@@ -266,7 +268,7 @@ namespace book_management_program.Forms
             this.book_publisher_textBox.BackColor = System.Drawing.Color.White;
             this.book_publisher_textBox.Location = new System.Drawing.Point(857, 72);
             this.book_publisher_textBox.Name = "book_publisher_textBox";
-            this.book_publisher_textBox.Size = new System.Drawing.Size(409, 31);
+            this.book_publisher_textBox.Size = new System.Drawing.Size(409, 23);
             this.book_publisher_textBox.TabIndex = 16;
             // 
             // label1
@@ -275,7 +277,7 @@ namespace book_management_program.Forms
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(424, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 26);
+            this.label1.Size = new System.Drawing.Size(34, 18);
             this.label1.TabIndex = 19;
             this.label1.Text = "저자";
             // 
@@ -284,7 +286,7 @@ namespace book_management_program.Forms
             this.book_writer_textBox.BackColor = System.Drawing.Color.White;
             this.book_writer_textBox.Location = new System.Drawing.Point(428, 72);
             this.book_writer_textBox.Name = "book_writer_textBox";
-            this.book_writer_textBox.Size = new System.Drawing.Size(398, 31);
+            this.book_writer_textBox.Size = new System.Drawing.Size(398, 23);
             this.book_writer_textBox.TabIndex = 18;
             // 
             // stock_add_btn
@@ -338,7 +340,7 @@ namespace book_management_program.Forms
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label11.Location = new System.Drawing.Point(16, 113);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(63, 26);
+            this.label11.Size = new System.Drawing.Size(47, 18);
             this.label11.TabIndex = 15;
             this.label11.Text = "도서명";
             // 
@@ -347,7 +349,7 @@ namespace book_management_program.Forms
             this.book_name_textBox.BackColor = System.Drawing.Color.White;
             this.book_name_textBox.Location = new System.Drawing.Point(23, 145);
             this.book_name_textBox.Name = "book_name_textBox";
-            this.book_name_textBox.Size = new System.Drawing.Size(1338, 31);
+            this.book_name_textBox.Size = new System.Drawing.Size(1338, 23);
             this.book_name_textBox.TabIndex = 14;
             // 
             // label10
@@ -356,7 +358,7 @@ namespace book_management_program.Forms
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label10.Location = new System.Drawing.Point(21, 43);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(80, 26);
+            this.label10.Size = new System.Drawing.Size(60, 18);
             this.label10.TabIndex = 13;
             this.label10.Text = "도서번호";
             // 
@@ -366,7 +368,7 @@ namespace book_management_program.Forms
             this.book_number_textBox.Enabled = false;
             this.book_number_textBox.Location = new System.Drawing.Point(23, 72);
             this.book_number_textBox.Name = "book_number_textBox";
-            this.book_number_textBox.Size = new System.Drawing.Size(81, 31);
+            this.book_number_textBox.Size = new System.Drawing.Size(81, 23);
             this.book_number_textBox.TabIndex = 0;
             // 
             // all_btn
@@ -386,7 +388,7 @@ namespace book_management_program.Forms
             // 
             this.search_textBox.Location = new System.Drawing.Point(318, 253);
             this.search_textBox.Name = "search_textBox";
-            this.search_textBox.Size = new System.Drawing.Size(1016, 31);
+            this.search_textBox.Size = new System.Drawing.Size(1016, 23);
             this.search_textBox.TabIndex = 23;
             // 
             // pictureBox1
@@ -411,7 +413,7 @@ namespace book_management_program.Forms
             "분류"});
             this.group_comboBox.Location = new System.Drawing.Point(201, 252);
             this.group_comboBox.Name = "group_comboBox";
-            this.group_comboBox.Size = new System.Drawing.Size(111, 33);
+            this.group_comboBox.Size = new System.Drawing.Size(111, 23);
             this.group_comboBox.TabIndex = 20;
             // 
             // search_btn
@@ -426,6 +428,17 @@ namespace book_management_program.Forms
             this.search_btn.Text = "검색";
             this.search_btn.UseVisualStyleBackColor = false;
             this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.label4.Location = new System.Drawing.Point(1318, 113);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 15);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "지우기";
+            this.label4.DoubleClick += new System.EventHandler(this.label4_DoubleClick);
             // 
             // book_manager_Form
             // 
@@ -491,5 +504,6 @@ namespace book_management_program.Forms
         private System.Windows.Forms.ComboBox group_comboBox;
         private System.Windows.Forms.Button search_btn;
         private System.Windows.Forms.ColumnHeader rent_sum;
+        private System.Windows.Forms.Label label4;
     }
 }

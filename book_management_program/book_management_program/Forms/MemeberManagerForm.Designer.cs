@@ -48,6 +48,7 @@ namespace book_management_program.Forms
             this.id_textBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.no_textBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel7.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -98,6 +99,7 @@ namespace book_management_program.Forms
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.tel_textBox);
             this.panel1.Controls.Add(this.member_delete_btn);
@@ -175,6 +177,13 @@ namespace book_management_program.Forms
             resources.ApplyResources(this.no_textBox, "no_textBox");
             this.no_textBox.Name = "no_textBox";
             // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.label4.Name = "label4";
+            this.label4.DoubleClick += new System.EventHandler(this.label4_DoubleClick);
+            // 
             // MemeberManagerForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -212,5 +221,6 @@ namespace book_management_program.Forms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tel_textBox;
         private System.Windows.Forms.ColumnHeader tel;
+        private System.Windows.Forms.Label label4;
     }
 }
