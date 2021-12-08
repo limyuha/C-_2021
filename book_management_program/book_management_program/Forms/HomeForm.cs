@@ -180,6 +180,9 @@ namespace book_management_program.Forms
             {
                 switch (group_comboBox.SelectedItem.ToString())
                 {
+                    case "ISBN":
+                        type = "isbn";
+                        break;
                     case "도서명":
                         type = "book_nm";
                         break;
@@ -188,6 +191,9 @@ namespace book_management_program.Forms
                         break;
                     case "출판사":
                         type = "pub";
+                        break;
+                    case "분류":
+                        type = "cat_no";
                         break;
                 }
             }

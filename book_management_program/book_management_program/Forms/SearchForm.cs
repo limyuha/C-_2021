@@ -14,6 +14,9 @@ namespace book_management_program.Forms
 {
     public partial class SearchForm : Form
     {
+
+        private List<Book> list = new List<Book>();
+
         public SearchForm()
         {
             InitializeComponent();
@@ -43,6 +46,9 @@ namespace book_management_program.Forms
             {
                 switch (group_comboBox.SelectedItem.ToString())
                 {
+                    case "ISBN":
+                        type = "isbn";
+                        break;
                     case "도서명":
                         type = "book_nm";
                         break;
@@ -51,6 +57,9 @@ namespace book_management_program.Forms
                         break;
                     case "출판사":
                         type = "pub";
+                        break;
+                    case "분류":
+                        type = "cat_no";
                         break;
                 }
             }
@@ -74,6 +83,25 @@ namespace book_management_program.Forms
             {
                 MessageBox.Show("타입 선택", "검색", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void BooksList()
+        {
+            this.search_listView.Items.Clear();
+
+            list = BookManager.Book.BookInfoListM();
+
+            foreach (var book in list)
+            {
+                string[] row = { book.Isbn, book.Cat_nm, book.Author, book.Pub, book.Pub_dt.ToString(), book.Book_nm, book.Stock.ToString() };
+                var lvItem = new ListViewItem(row);
+                this.search_listView.Items.Add(lvItem);
+            }
+        }
+
+        private void SearchForm_Load(object sender, EventArgs e)
+        {
+            BooksList();
         }
     }
 }

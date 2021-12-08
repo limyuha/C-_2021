@@ -20,6 +20,7 @@ namespace book_management_program.Forms
         {
             InitializeComponent();
             ListViewConn();
+            this.no_textBox.Enabled = false;
         }
 
         private void ListViewConn()
@@ -50,16 +51,35 @@ namespace book_management_program.Forms
 
         private void member_add_btn_Click(object sender, EventArgs e)
         {
-            Member member = new Member();
+            if (this.id_textBox.Enabled == false)
+            {
+                this.no_textBox.Clear();
+                this.id_textBox.Clear();
+                this.pw_textBox.Clear();
+                this.tel_textBox.Clear();
 
-            member.Mem_no = Int32.Parse(this.no_textBox.Text);
-            member.Mem_nm = this.id_textBox.Text;
-            member.Pw = this.pw_textBox.Text;
-            member.Mem_grade = "NOR";
-            member.Phone_no = this.tel_textBox.Text;
-            member.Overdue = DateTime.Parse(DateTime.Now.ToShortDateString());
+                this.id_textBox.Enabled = true;
+                this.pw_textBox.Enabled = true;
+                this.tel_textBox.Enabled = true;
+            }
+            else
+            {
+                if (string.IsNullOrWhiteSpace(this.id_textBox.Text) || string.IsNullOrWhiteSpace(this.pw_textBox.Text) || string.IsNullOrWhiteSpace(this.tel_textBox.Text))
+                {
 
-            membermanager.MemInfoInsert(member);
+                    MessageBox.Show("정보를 입력해주세요", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    Member member = new Member();
+                    member.Mem_nm = this.id_textBox.Text.ToString();
+                    member.Pw = this.pw_textBox.Text.ToString();
+                    member.Phone_no = this.tel_textBox.Text.ToString();
+
+                    MemberManager.Member.MemInfoInsert(member);
+                }
+            }
+
             ListViewConn();
         }
 
@@ -104,6 +124,25 @@ namespace book_management_program.Forms
                     this.member_add_btn.Enabled = false;
                 }
 
+            }
+        }
+
+        private void member_manager_listView_ItemActivate_1(object sender, EventArgs e)
+        {
+            int where = 0;
+
+            if (member_manager_listView.SelectedIndices.Count > 0)
+            {
+                where = member_manager_listView.SelectedIndices[0];
+
+                this.no_textBox.Text = member_manager_listView.Items[where].SubItems[0].Text;
+                this.id_textBox.Text = member_manager_listView.Items[where].SubItems[1].Text;
+                this.pw_textBox.Text = member_manager_listView.Items[where].SubItems[2].Text;
+                this.tel_textBox.Text = member_manager_listView.Items[where].SubItems[3].Text;
+
+                this.id_textBox.Enabled = false;
+                this.pw_textBox.Enabled = false;
+                this.tel_textBox.Enabled = false;
             }
         }
     }
