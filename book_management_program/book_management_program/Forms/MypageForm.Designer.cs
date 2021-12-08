@@ -102,7 +102,7 @@ namespace book_management_program.Forms
             this.label1.Font = new System.Drawing.Font("맑은 고딕", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(180, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(299, 21);
+            this.label1.Size = new System.Drawing.Size(204, 13);
             this.label1.TabIndex = 23;
             this.label1.Text = "* 대여 연장은 1회 한정 7일 연장됩니다.";
             // 
@@ -186,7 +186,7 @@ namespace book_management_program.Forms
             this.rent_book.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.rent_book.Location = new System.Drawing.Point(-3, 2);
             this.rent_book.Name = "rent_book";
-            this.rent_book.Size = new System.Drawing.Size(177, 32);
+            this.rent_book.Size = new System.Drawing.Size(127, 24);
             this.rent_book.TabIndex = 0;
             this.rent_book.Text = "내가 대여한 도서";
             // 
@@ -239,7 +239,7 @@ namespace book_management_program.Forms
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label11.Location = new System.Drawing.Point(226, 20);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(63, 26);
+            this.label11.Size = new System.Drawing.Size(47, 18);
             this.label11.TabIndex = 20;
             this.label11.Text = "도서명";
             // 
@@ -249,7 +249,7 @@ namespace book_management_program.Forms
             this.rent_bookname_textBox.Location = new System.Drawing.Point(295, 17);
             this.rent_bookname_textBox.Name = "rent_bookname_textBox";
             this.rent_bookname_textBox.ReadOnly = true;
-            this.rent_bookname_textBox.Size = new System.Drawing.Size(803, 31);
+            this.rent_bookname_textBox.Size = new System.Drawing.Size(803, 23);
             this.rent_bookname_textBox.TabIndex = 19;
             // 
             // label10
@@ -258,7 +258,7 @@ namespace book_management_program.Forms
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label10.Location = new System.Drawing.Point(21, 19);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(80, 26);
+            this.label10.Size = new System.Drawing.Size(60, 18);
             this.label10.TabIndex = 18;
             this.label10.Text = "도서번호";
             // 
@@ -268,7 +268,7 @@ namespace book_management_program.Forms
             this.rent_booknumber_textBox.Location = new System.Drawing.Point(107, 16);
             this.rent_booknumber_textBox.Name = "rent_booknumber_textBox";
             this.rent_booknumber_textBox.ReadOnly = true;
-            this.rent_booknumber_textBox.Size = new System.Drawing.Size(92, 31);
+            this.rent_booknumber_textBox.Size = new System.Drawing.Size(92, 23);
             this.rent_booknumber_textBox.TabIndex = 17;
             // 
             // panel3
@@ -346,7 +346,7 @@ namespace book_management_program.Forms
             this.resv_book.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.resv_book.Location = new System.Drawing.Point(-3, 2);
             this.resv_book.Name = "resv_book";
-            this.resv_book.Size = new System.Drawing.Size(177, 32);
+            this.resv_book.Size = new System.Drawing.Size(127, 24);
             this.resv_book.TabIndex = 0;
             this.resv_book.Text = "내가 예약한 도서";
             // 
@@ -399,7 +399,7 @@ namespace book_management_program.Forms
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(216, 11);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 26);
+            this.label3.Size = new System.Drawing.Size(47, 18);
             this.label3.TabIndex = 20;
             this.label3.Text = "도서명";
             // 
@@ -409,7 +409,7 @@ namespace book_management_program.Forms
             this.resv_bookname_textBox.Location = new System.Drawing.Point(285, 9);
             this.resv_bookname_textBox.Name = "resv_bookname_textBox";
             this.resv_bookname_textBox.ReadOnly = true;
-            this.resv_bookname_textBox.Size = new System.Drawing.Size(803, 31);
+            this.resv_bookname_textBox.Size = new System.Drawing.Size(803, 23);
             this.resv_bookname_textBox.TabIndex = 19;
             // 
             // label4
@@ -418,7 +418,7 @@ namespace book_management_program.Forms
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(11, 12);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 26);
+            this.label4.Size = new System.Drawing.Size(60, 18);
             this.label4.TabIndex = 18;
             this.label4.Text = "도서번호";
             // 
@@ -428,7 +428,7 @@ namespace book_management_program.Forms
             this.resv_booknumber_textBox.Location = new System.Drawing.Point(97, 9);
             this.resv_booknumber_textBox.Name = "resv_booknumber_textBox";
             this.resv_booknumber_textBox.ReadOnly = true;
-            this.resv_booknumber_textBox.Size = new System.Drawing.Size(92, 31);
+            this.resv_booknumber_textBox.Size = new System.Drawing.Size(92, 23);
             this.resv_booknumber_textBox.TabIndex = 17;
             // 
             // groupBox1
@@ -458,7 +458,7 @@ namespace book_management_program.Forms
             this.over_date_box.Location = new System.Drawing.Point(544, 33);
             this.over_date_box.Name = "over_date_box";
             this.over_date_box.ReadOnly = true;
-            this.over_date_box.Size = new System.Drawing.Size(92, 31);
+            this.over_date_box.Size = new System.Drawing.Size(92, 23);
             this.over_date_box.TabIndex = 36;
             // 
             // label2
@@ -467,9 +467,9 @@ namespace book_management_program.Forms
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(475, 32);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 26);
+            this.label2.Size = new System.Drawing.Size(47, 18);
             this.label2.TabIndex = 35;
-            this.label2.Text = "연체량";
+            this.label2.Text = "연체일";
             // 
             // id_label
             // 
@@ -477,7 +477,7 @@ namespace book_management_program.Forms
             this.id_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.id_label.Location = new System.Drawing.Point(27, 34);
             this.id_label.Name = "id_label";
-            this.id_label.Size = new System.Drawing.Size(63, 26);
+            this.id_label.Size = new System.Drawing.Size(47, 18);
             this.id_label.TabIndex = 34;
             this.id_label.Text = "아이디";
             // 
@@ -501,7 +501,7 @@ namespace book_management_program.Forms
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.Location = new System.Drawing.Point(1008, 32);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 26);
+            this.label8.Size = new System.Drawing.Size(60, 18);
             this.label8.TabIndex = 32;
             this.label8.Text = "전화번호";
             // 
@@ -510,7 +510,7 @@ namespace book_management_program.Forms
             this.tel_box.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.tel_box.Location = new System.Drawing.Point(1094, 32);
             this.tel_box.Name = "tel_box";
-            this.tel_box.Size = new System.Drawing.Size(238, 31);
+            this.tel_box.Size = new System.Drawing.Size(238, 23);
             this.tel_box.TabIndex = 31;
             // 
             // over_sum_box
@@ -519,7 +519,7 @@ namespace book_management_program.Forms
             this.over_sum_box.Location = new System.Drawing.Point(359, 34);
             this.over_sum_box.Name = "over_sum_box";
             this.over_sum_box.ReadOnly = true;
-            this.over_sum_box.Size = new System.Drawing.Size(92, 31);
+            this.over_sum_box.Size = new System.Drawing.Size(92, 23);
             this.over_sum_box.TabIndex = 30;
             // 
             // label7
@@ -528,7 +528,7 @@ namespace book_management_program.Forms
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.Location = new System.Drawing.Point(290, 34);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(63, 26);
+            this.label7.Size = new System.Drawing.Size(47, 18);
             this.label7.TabIndex = 29;
             this.label7.Text = "연체량";
             // 
@@ -538,7 +538,7 @@ namespace book_management_program.Forms
             this.rent_box.Location = new System.Drawing.Point(174, 34);
             this.rent_box.Name = "rent_box";
             this.rent_box.ReadOnly = true;
-            this.rent_box.Size = new System.Drawing.Size(92, 31);
+            this.rent_box.Size = new System.Drawing.Size(92, 23);
             this.rent_box.TabIndex = 28;
             // 
             // label6
@@ -547,7 +547,7 @@ namespace book_management_program.Forms
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.Location = new System.Drawing.Point(105, 34);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 26);
+            this.label6.Size = new System.Drawing.Size(47, 18);
             this.label6.TabIndex = 27;
             this.label6.Text = "대여량";
             // 
@@ -557,7 +557,7 @@ namespace book_management_program.Forms
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(660, 34);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 26);
+            this.label5.Size = new System.Drawing.Size(60, 18);
             this.label5.TabIndex = 26;
             this.label5.Text = "패스워드";
             // 
@@ -566,7 +566,7 @@ namespace book_management_program.Forms
             this.pw_box.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.pw_box.Location = new System.Drawing.Point(746, 35);
             this.pw_box.Name = "pw_box";
-            this.pw_box.Size = new System.Drawing.Size(238, 31);
+            this.pw_box.Size = new System.Drawing.Size(238, 23);
             this.pw_box.TabIndex = 25;
             // 
             // MypageForm
