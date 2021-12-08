@@ -380,6 +380,7 @@ namespace book_management_program.Forms
             this.all_btn.TabIndex = 24;
             this.all_btn.Text = "전체보기";
             this.all_btn.UseVisualStyleBackColor = false;
+            this.all_btn.Click += new System.EventHandler(this.all_btn_Click);
             // 
             // search_textBox
             // 
@@ -424,6 +425,7 @@ namespace book_management_program.Forms
             this.search_btn.TabIndex = 22;
             this.search_btn.Text = "검색";
             this.search_btn.UseVisualStyleBackColor = false;
+            this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
             // 
             // book_manager_Form
             // 

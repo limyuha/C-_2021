@@ -80,7 +80,7 @@ namespace book_management_program.Forms
         {
             if (this.issue_listView.SelectedItems.Count > 0)
             {
-                MessageBox.Show(this.issue_listView.SelectedItems[0].SubItems[0].ToString() );
+                //MessageBox.Show(this.issue_listView.SelectedItems[0].SubItems[0].ToString() );
                 int num = int.Parse (this.issue_listView.SelectedItems[0].SubItems[0].Text); // issue_no
                 IssueDetailForm issueDetailForm = new IssueDetailForm(num);
                 issueDetailForm.ShowDialog();

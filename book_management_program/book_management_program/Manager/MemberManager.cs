@@ -366,13 +366,13 @@ namespace book_management_program.Manager
         {
             bool isOver = false;
 
-            String sql_overcheck = $"SELECT member.overdue, rental.overcheck FROM rental, member WHERE member.mem_no={mem_no} && member.mem_no = rental.mem_no;";
+            String sql_overcheck = $"SELECT overdue FROM member WHERE member.mem_no={mem_no};";
             MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql_overcheck);
             if (result.HasRows) //NullReferenceException
             {
                 while (result.Read())
                 {
-                    if (result.GetInt32(1)==0)
+                    if (result.GetString(0)=="2000-01-01")
                     {
                         isOver = true; //연체 아님 - 대여 가능
                         break;

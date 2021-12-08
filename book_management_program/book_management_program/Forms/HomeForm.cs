@@ -88,6 +88,10 @@ namespace book_management_program.Forms
             {
                 rent_checkBox.Checked = true;
             }
+            else
+            {
+                rent_checkBox.Checked = false;
+            }
             //예약중 체크
             resv_checkBox.Checked = BookManager.Book.MemResvCheck(MainForm.Mem_no, this.booknumber_textBox.Text);
         }
