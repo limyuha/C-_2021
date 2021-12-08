@@ -15,21 +15,29 @@ namespace book_management_program.Forms
     public partial class MypageForm : Form
     {
         //아이디
-        private int memberNo = MainForm.Mem_no; 
-
-        /*
-        private List<Book> rents; //대여 목록
-        private List<Book> resevs; //예약 목록*/
+        private Member member;
+        private int overcnt = 0;
 
         private int num = -1; //도서목록에서 선택된 행 번호
 
         public MypageForm()
         {
             InitializeComponent();
+            member = MemberManager.Member.MemInfoLookup(MainForm.Mem_no);
         }
 
         private void MypageForm_Load(object sender, EventArgs e)
         {
+            //회원 정보
+            id_label.Text = member.Mem_nm;
+            this.rent_box.Text = MemberManager.Member.MemRentListCnt(MainForm.Mem_no).ToString(); //대여량
+            if (member.Overdue!= "2000-01-01")
+            {
+                this.over_date_box.Text = member.Overdue; //연체일
+            }
+            this.pw_box.Text = member.Pw;
+            this.tel_box.Text = member.Phone_no;
+
             RentListView();//대여 목록 불러오기
             ResvListView(); //예약목록 불러오기
         }
@@ -40,12 +48,18 @@ namespace book_management_program.Forms
         {
             this.rent_listView.Items.Clear();
             List<Book> rentbooks = MemberManager.Member.MemRentList(MainForm.Mem_no); //대여목록 불러오기
-                foreach (var book in rentbooks)
+            foreach (var book in rentbooks)
             {
-                string[] row = { book.Rent_no.ToString(), book.Isbn, book.Cat_nm, book.Author, book.Pub, book.Pub_dt.ToString(), book.Book_nm, book.Rent_dt.ToString("yyyy-MM-dd") };
+                if (book.Overcheck>0)
+                {
+                    overcnt++;
+                }
+                string[] row = { book.Rent_no.ToString(), book.Isbn, book.Cat_nm, book.Author, book.Pub, book.Pub_dt.ToString(), book.Book_nm, book.Rent_dt, Convert.ToDateTime(book.Rent_dt).AddDays(7).ToString("yyyy-MM-dd") };
                 var lvItem = new ListViewItem(row);
                 this.rent_listView.Items.Add(lvItem);
             }
+            this.rent_box.Text = MemberManager.Member.MemRentListCnt(MainForm.Mem_no).ToString(); //대여량
+            this.over_sum_box.Text = overcnt.ToString(); //연체량
         }
 
         /* 대여 도서 선택 */
@@ -178,6 +192,25 @@ namespace book_management_program.Forms
                 BookManager.Book.ResvListDel(MainForm.Mem_no, this.resv_booknumber_textBox.Text);
                 //예약 도서 목록 다시 불러오기
                 ResvListView();
+            }
+        }
+
+        /* 회원 정보 수정 */
+        private void modify_btn_Click(object sender, EventArgs e)
+        {
+            string pwd = this.pw_box.Text;
+            string tel = this.tel_box.Text;
+
+            if (!string.IsNullOrWhiteSpace(pwd) && !string.IsNullOrWhiteSpace(tel))
+            {
+                if(MemberManager.Member.MemInfoUpdate(MainForm.Mem_no, pwd, tel))
+                {
+                    member = MemberManager.Member.MemInfoLookup(MainForm.Mem_no);
+                }
+            }
+            else
+            {
+                MessageBox.Show("정보 입력 필요", "수정", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

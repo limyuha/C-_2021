@@ -43,19 +43,22 @@ namespace book_management_program.Forms
             {
                 switch (group_comboBox.SelectedItem.ToString())
                 {
+                    case "ISBN":
+                        type = "isbn";
+                        break;
                     case "도서명":
                         type = "book_nm";
                         break;
                     case "저자":
                         type = "author";
                         break;
-                    case "출판사":
-                        type = "pub";
+                    case "분류":
+                        type = "cat_nm";
                         break;
                 }
             }
 
-            if (type != "" && string.IsNullOrWhiteSpace(search) == false)
+            if (!string.IsNullOrWhiteSpace(type) && !string.IsNullOrWhiteSpace(search))
             {
                 //books.Clear();
 

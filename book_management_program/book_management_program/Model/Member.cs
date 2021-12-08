@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace book_management_program.Model
 {
-    class Member
+    public class Member
     {
         private int mem_no;
         private string mem_nm;
         private string pw;
         private string mem_grade;
         private string phone_no;
-        private DateTime overdue;
+        private string overdue;
 
         public int Mem_no
         {
@@ -45,6 +45,6 @@ namespace book_management_program.Model
             set { phone_no = value; }
         }
 
-        public DateTime Overdue { get => overdue; set => overdue = value; }
+        public string Overdue { get => overdue; set => overdue = value; }
     }
 }

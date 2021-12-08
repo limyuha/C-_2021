@@ -137,24 +137,6 @@ namespace book_management_program.Manager
             return books;
         }
 
-        /*
-        //도서 대여량
-        public int RentSum(string isbn)
-        {
-            string sql = $"SELECT COUNT(*) FROM rental WHERE isbn = '{isbn}';";
-            int brentSum = 0;
-
-            MySqlDataReader result = MySql_Util.Instance.BSelect_Sql(sql);
-            if (result.HasRows)
-            {
-                while (result.Read())
-                {
-                    brentSum = result.GetInt32(0);
-                }
-            }
-            return brentSum;
-
-        }*/
 
         //도서 정보 수정
         public void BookInfoUpdate(Book book)
@@ -187,21 +169,13 @@ namespace book_management_program.Manager
                 {
                     if (stockresult.GetInt32(0) > 0)
                     {
-                        //재고 있을 때
-                        //MessageBox.Show("stockresult.GetInt32(0)=" + stockresult.GetInt32(0));
                         return stockresult.GetInt32(0);
-                    }
-                    else
-                    {
-                        //MessageBox.Show("stockresult.GetInt32(0)=" + stockresult.GetInt32(0));
-
                     }
                 }
                 return 0;
             }
             else
             {
-                //MessageBox.Show("stockresult.HasRows = false");
                 return 0;
             }
         }
@@ -217,11 +191,9 @@ namespace book_management_program.Manager
 
                 String todayDt = System.DateTime.Now.ToString("yyyy-MM-dd"); // 오늘 날짜
                 string sql = $"INSERT INTO rental(isbn, mem_no, rent_dt, return_dt, ext) VALUES('{isbn}' , {mem_no} , '{todayDt}', '2000-01-01', 'N') ;";
-                //MessageBox.Show("sql=" + sql);
+               
                 int stock = RentStockCheck(isbn) - 1; // 재고 -1
-                //MessageBox.Show("stock=" + stock);
                 string sql2 = $"UPDATE bookinfo SET stock={stock} WHERE isbn= '{isbn}'; ";
-                //MessageBox.Show("sql2=" + sql2);
                 if (MySql_Util.Instance.Update_Sql(sql) && MySql_Util.Instance.Update_Sql(sql2))
                 {
                     MessageBox.Show("대여 완료", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -258,64 +230,6 @@ namespace book_management_program.Manager
             return rent;
         }
 
-        /* 도서 연체 처리
-        public void RentOverdueUpdate(int mem_no, int rent_no)
-        {
-            MessageBox.Show("대여번호 : " + rent_no, "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            int over = 0; //연체 일 수
-
-            String sql_overcheck = $"SELECT mem_no, rent_dt FROM rental WHERE rent_no={rent_no};";
-            MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql_overcheck);
-            if (result.HasRows)
-            {
-                while (result.Read())
-                {
-                    String todayDt = System.DateTime.Now.ToString("yyyy-MM-dd"); //오늘 날짜
-                    String rentDt = result.GetString(1); //대여 날짜 */
-
-                    /* 연체일 체크
-                    String sql_over = $"SELECT TIMESTAMPDIFF(DAY, '{rentDt}', '{todayDt}');"; // if(결과 > 0) = 연체일
-                    MySqlDataReader overresult = MySql_Util.Instance.Select_Sql(sql_over);
-                    if (overresult.HasRows)
-                    {
-                        while (overresult.Read())
-                        {
-                            if (overresult.GetInt32(0) - 7 > over)
-                            {
-                                over = overresult.GetInt32(0) - 7;
-                                MessageBox.Show("연체일 검사 : " + over);
-                            }
-                        }
-                    }
-                }
-            } 
-            
-            string overDt = System.DateTime.Now.AddDays(over).ToString("yyyy-MM-dd");
-            MessageBox.Show("*최종 반납 연체일 : " + overDt, "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
-           
-            if (over > 0) // 연체 있음
-            {
-                //현재 회원 연체일 조회
-                String sql_memoverdue = $"SELECT overdue FROM member WHERE mem_no={mem_no};";
-                MySqlDataReader result2 = MySql_Util.Instance.Select_Sql(sql_memoverdue);
-                if (result2.HasRows)
-                {
-                    while (result2.Read()) 
-                    {*/
-                        /* 회원 연체일 업데이트
-                        // 현재 연채일 < 새로운 연체일
-                        if (string.Compare(result2.GetString(0), overDt) < 0)
-                        {
-                            String overdueupdate = $"Update member Set overdue='{overDt}' where mem_no={mem_no}";
-                            MySql_Util.Instance.Update_Sql(overdueupdate);
-                            MessageBox.Show("연체일 변경\n연체일 : " + sql_memoverdue, "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                }
-            }
-        }*/
-
         /* 도서 반납 */
         public bool BookReturn(int mem_no, string isbn)
         {
@@ -329,15 +243,10 @@ namespace book_management_program.Manager
             int rent_no = MemRentCheck(mem_no, isbn);
             if (rent_no > 0) //대여중일 때
             {
-                MessageBox.Show("회원 번호 : " + mem_no);
-                MessageBox.Show("책 번호 : " + isbn);
-
                 //'가장 먼저 대여한 것' 하나만 반납
-                MessageBox.Show("대여 번호 : " + rent_no);
                 string sql = $"UPDATE rental SET return_dt='{todayDt}'  WHERE rent_no = {rent_no}; ";
                 if (MySql_Util.Instance.Update_Sql(sql))
                 {
-                    //RentOverdueUpdate(mem_no, rent_no);
                     MessageBox.Show("반납 완료\n반납일 : " + todayDt, "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     isSuccess = true;
                 }
@@ -405,7 +314,6 @@ namespace book_management_program.Manager
             string sql = $"SELECT isbn,cat_nm,author,pub,pub_dt,book_nm,stock FROM bookinfo,category WHERE {type} LIKE '%{search}%' && bookinfo.cat_no = category.cat_no;";
 
             MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql);
-            MessageBox.Show(""+ result.HasRows);
             if (result.HasRows)
             {
                 while (result.Read())

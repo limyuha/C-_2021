@@ -494,6 +494,7 @@ namespace book_management_program.Forms
             this.modify_btn.TabIndex = 33;
             this.modify_btn.Text = "수정하기";
             this.modify_btn.UseVisualStyleBackColor = false;
+            this.modify_btn.Click += new System.EventHandler(this.modify_btn_Click);
             // 
             // label8
             // 
@@ -566,6 +567,7 @@ namespace book_management_program.Forms
             this.pw_box.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.pw_box.Location = new System.Drawing.Point(746, 35);
             this.pw_box.Name = "pw_box";
+            this.pw_box.PasswordChar = '*';
             this.pw_box.Size = new System.Drawing.Size(238, 23);
             this.pw_box.TabIndex = 25;
             // 

@@ -16,8 +16,7 @@ namespace book_management_program.Forms
     public partial class MainForm : Form
     {
         private Member member;
-        private bool isOverdued; 
-        public static int Mem_no //회원id
+        public static int Mem_no //회원번호
         {
             get; set;
         }
@@ -26,19 +25,14 @@ namespace book_management_program.Forms
             get; set;
         }
 
-
-        public MainForm()
-        {
-            InitializeComponent();
-        }
-
         public MainForm(string id)
         {
             InitializeComponent();
 
-            member = MemberManager.Member.MemInfoLookup(id); //회원 정보 조회
-            Mem_no = member.Mem_no;
+            id_name_label.Text = id+ " 님";
 
+            member = MemberManager.Member.MemInfo(id); //회원 번호 조회
+            Mem_no = member.Mem_no;
             MemberManager.Member.MemOverdueCheck(Mem_no); //대여 목록 연체 검사
             IsOverdued = MemberManager.Member.MemOverdueUpdate(Mem_no); //회원 연체 상태 체크
             MessageBox.Show("회원 연체 상태"+ IsOverdued);
@@ -47,8 +41,6 @@ namespace book_management_program.Forms
 
         private void main_Load(object sender, EventArgs e)
         {
-            id_name_label.Text = member.Mem_nm + " 님";
-
             HomeForm home = new HomeForm();
             home.MdiParent = this;
             home.Show();
@@ -97,12 +89,7 @@ namespace book_management_program.Forms
             //Point parentPoint = this.Location; //main 폼 시작 위치 값
 
             MypageForm mypage = new MypageForm();
-            //mypage.TopLevel = false;
-
-            //Wmypage.StartPosition = FormStartPosition.Manual;
             mypage.MdiParent = this;
-            //mypage.Location = new Point(parentPoint.X+150, parentPoint.Y+45);
-            //mypage.Location = new Point(parentPoint.X + 155, parentPoint.Y + 45);
             mypage.Show();
 
             formName = mypage;

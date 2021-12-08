@@ -57,7 +57,7 @@ namespace book_management_program.Forms
             member.Pw = this.pw_textBox.Text;
             member.Mem_grade = "NOR";
             member.Phone_no = this.tel_textBox.Text;
-            member.Overdue = DateTime.Parse(DateTime.Now.ToShortDateString());
+            member.Overdue = DateTime.Now.ToString("yyyy-MM-dd");
 
             membermanager.MemInfoInsert(member);
             ListViewConn();
