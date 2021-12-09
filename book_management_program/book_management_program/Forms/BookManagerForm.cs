@@ -55,10 +55,10 @@ namespace book_management_program.Forms
                 book.Isbn = this.book_number_textBox.Text;
                 book.Book_nm = this.book_name_textBox.Text;
                 book.Author = this.book_writer_textBox.Text;
-                book.Cat_no = 1;
+                book.Cat_no = this.cat_nm_comboBox.SelectedIndex + 1;
                 book.Pub = this.book_publisher_textBox.Text;
                 book.Stock = int.Parse(this.book_stock_textBox.Text);
-                book.Pub_dt = DateTime.Now.ToString("yyyy-MM-dd").ToString();
+                book.Pub_dt = this.pub_dt_textBox.Text;
                 BookManager.Book.BookInfoInsert(book);
             }
             BookList();

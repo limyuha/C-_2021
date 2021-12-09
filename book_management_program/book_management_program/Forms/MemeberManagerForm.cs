@@ -41,6 +41,7 @@ namespace book_management_program.Forms
                 item.SubItems.Add(member.Mem_nm.ToString());
                 item.SubItems.Add(member.Pw.ToString());
                 item.SubItems.Add(member.Phone_no.ToString());
+                item.SubItems.Add(member.Mem_grade.ToString());
 
 
                 this.member_manager_listView.Items.Add(item);
@@ -80,6 +81,10 @@ namespace book_management_program.Forms
                     member.Phone_no = this.tel_textBox.Text;
 
                     MemberManager.Member.MemInfoInsert(member);
+                    this.no_textBox.Clear();
+                    this.id_textBox.Clear();
+                    this.pw_textBox.Clear();
+                    this.tel_textBox.Clear();
                 }
             }
 
