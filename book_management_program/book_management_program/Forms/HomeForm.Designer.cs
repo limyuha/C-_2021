@@ -105,7 +105,7 @@ namespace book_management_program.Forms
             this.resv_checkBox.Font = new System.Drawing.Font("맑은 고딕 Semilight", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.resv_checkBox.Location = new System.Drawing.Point(130, 56);
             this.resv_checkBox.Name = "resv_checkBox";
-            this.resv_checkBox.Size = new System.Drawing.Size(59, 17);
+            this.resv_checkBox.Size = new System.Drawing.Size(84, 25);
             this.resv_checkBox.TabIndex = 19;
             this.resv_checkBox.Text = "예약중";
             this.resv_checkBox.UseVisualStyleBackColor = true;
@@ -118,7 +118,7 @@ namespace book_management_program.Forms
             this.rent_checkBox.Font = new System.Drawing.Font("맑은 고딕 Semilight", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rent_checkBox.Location = new System.Drawing.Point(40, 56);
             this.rent_checkBox.Name = "rent_checkBox";
-            this.rent_checkBox.Size = new System.Drawing.Size(59, 17);
+            this.rent_checkBox.Size = new System.Drawing.Size(84, 25);
             this.rent_checkBox.TabIndex = 18;
             this.rent_checkBox.Text = "대여중";
             this.rent_checkBox.UseVisualStyleBackColor = true;
@@ -174,7 +174,7 @@ namespace book_management_program.Forms
             this.bookname_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.bookname_label.Location = new System.Drawing.Point(400, 53);
             this.bookname_label.Name = "bookname_label";
-            this.bookname_label.Size = new System.Drawing.Size(47, 18);
+            this.bookname_label.Size = new System.Drawing.Size(63, 26);
             this.bookname_label.TabIndex = 15;
             this.bookname_label.Text = "도서명";
             // 
@@ -184,7 +184,7 @@ namespace book_management_program.Forms
             this.bookname_textBox.Location = new System.Drawing.Point(469, 50);
             this.bookname_textBox.Name = "bookname_textBox";
             this.bookname_textBox.ReadOnly = true;
-            this.bookname_textBox.Size = new System.Drawing.Size(863, 23);
+            this.bookname_textBox.Size = new System.Drawing.Size(863, 31);
             this.bookname_textBox.TabIndex = 14;
             // 
             // booknumber_label
@@ -193,7 +193,7 @@ namespace book_management_program.Forms
             this.booknumber_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.booknumber_label.Location = new System.Drawing.Point(220, 53);
             this.booknumber_label.Name = "booknumber_label";
-            this.booknumber_label.Size = new System.Drawing.Size(60, 18);
+            this.booknumber_label.Size = new System.Drawing.Size(80, 26);
             this.booknumber_label.TabIndex = 13;
             this.booknumber_label.Text = "도서번호";
             // 
@@ -203,7 +203,7 @@ namespace book_management_program.Forms
             this.booknumber_textBox.Location = new System.Drawing.Point(306, 50);
             this.booknumber_textBox.Name = "booknumber_textBox";
             this.booknumber_textBox.ReadOnly = true;
-            this.booknumber_textBox.Size = new System.Drawing.Size(73, 23);
+            this.booknumber_textBox.Size = new System.Drawing.Size(73, 31);
             this.booknumber_textBox.TabIndex = 0;
             // 
             // panel7
@@ -288,9 +288,9 @@ namespace book_management_program.Forms
             this.rent_avg_labels.BackColor = System.Drawing.Color.Transparent;
             this.rent_avg_labels.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rent_avg_labels.ForeColor = System.Drawing.Color.Black;
-            this.rent_avg_labels.Location = new System.Drawing.Point(197, 27);
+            this.rent_avg_labels.Location = new System.Drawing.Point(140, 27);
             this.rent_avg_labels.Name = "rent_avg_labels";
-            this.rent_avg_labels.Size = new System.Drawing.Size(97, 31);
+            this.rent_avg_labels.Size = new System.Drawing.Size(141, 46);
             this.rent_avg_labels.TabIndex = 12;
             this.rent_avg_labels.Text = "10,000";
             // 
@@ -301,9 +301,9 @@ namespace book_management_program.Forms
             this.rent_avg_label.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rent_avg_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.rent_avg_label.ForeColor = System.Drawing.Color.Gray;
-            this.rent_avg_label.Location = new System.Drawing.Point(35, 34);
+            this.rent_avg_label.Location = new System.Drawing.Point(12, 34);
             this.rent_avg_label.Name = "rent_avg_label";
-            this.rent_avg_label.Size = new System.Drawing.Size(91, 24);
+            this.rent_avg_label.Size = new System.Drawing.Size(127, 32);
             this.rent_avg_label.TabIndex = 11;
             this.rent_avg_label.Text = "기간 대여량";
             // 
@@ -323,9 +323,9 @@ namespace book_management_program.Forms
             this.rent_sum_labels.BackColor = System.Drawing.Color.Transparent;
             this.rent_sum_labels.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rent_sum_labels.ForeColor = System.Drawing.Color.Black;
-            this.rent_sum_labels.Location = new System.Drawing.Point(136, 17);
+            this.rent_sum_labels.Location = new System.Drawing.Point(134, 17);
             this.rent_sum_labels.Name = "rent_sum_labels";
-            this.rent_sum_labels.Size = new System.Drawing.Size(29, 31);
+            this.rent_sum_labels.Size = new System.Drawing.Size(42, 46);
             this.rent_sum_labels.TabIndex = 12;
             this.rent_sum_labels.Text = "1";
             // 
@@ -338,7 +338,7 @@ namespace book_management_program.Forms
             this.rent_sum_label.ForeColor = System.Drawing.Color.Gray;
             this.rent_sum_label.Location = new System.Drawing.Point(7, 24);
             this.rent_sum_label.Name = "rent_sum_label";
-            this.rent_sum_label.Size = new System.Drawing.Size(91, 24);
+            this.rent_sum_label.Size = new System.Drawing.Size(127, 32);
             this.rent_sum_label.TabIndex = 11;
             this.rent_sum_label.Text = "하루 대여량";
             // 
@@ -359,9 +359,9 @@ namespace book_management_program.Forms
             this.book_count_labels.BackColor = System.Drawing.Color.Transparent;
             this.book_count_labels.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.book_count_labels.ForeColor = System.Drawing.Color.Black;
-            this.book_count_labels.Location = new System.Drawing.Point(92, 17);
+            this.book_count_labels.Location = new System.Drawing.Point(80, 17);
             this.book_count_labels.Name = "book_count_labels";
-            this.book_count_labels.Size = new System.Drawing.Size(29, 31);
+            this.book_count_labels.Size = new System.Drawing.Size(42, 46);
             this.book_count_labels.TabIndex = 10;
             this.book_count_labels.Text = "1";
             // 
@@ -372,9 +372,9 @@ namespace book_management_program.Forms
             this.book_count_label.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.book_count_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.book_count_label.ForeColor = System.Drawing.Color.Gray;
-            this.book_count_label.Location = new System.Drawing.Point(17, 24);
+            this.book_count_label.Location = new System.Drawing.Point(9, 24);
             this.book_count_label.Name = "book_count_label";
-            this.book_count_label.Size = new System.Drawing.Size(55, 24);
+            this.book_count_label.Size = new System.Drawing.Size(77, 32);
             this.book_count_label.TabIndex = 9;
             this.book_count_label.Text = "장서량";
             // 
@@ -394,7 +394,7 @@ namespace book_management_program.Forms
             this.ranking_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ranking_label.Location = new System.Drawing.Point(0, 20);
             this.ranking_label.Name = "ranking_label";
-            this.ranking_label.Size = new System.Drawing.Size(61, 17);
+            this.ranking_label.Size = new System.Drawing.Size(78, 25);
             this.ranking_label.TabIndex = 5;
             this.ranking_label.Text = "대여 순위";
             // 
@@ -446,7 +446,7 @@ namespace book_management_program.Forms
             // 
             this.search_textBox.Location = new System.Drawing.Point(318, 398);
             this.search_textBox.Name = "search_textBox";
-            this.search_textBox.Size = new System.Drawing.Size(1016, 23);
+            this.search_textBox.Size = new System.Drawing.Size(1016, 31);
             this.search_textBox.TabIndex = 18;
             // 
             // search_btn
@@ -484,7 +484,7 @@ namespace book_management_program.Forms
             "분류"});
             this.group_comboBox.Location = new System.Drawing.Point(201, 397);
             this.group_comboBox.Name = "group_comboBox";
-            this.group_comboBox.Size = new System.Drawing.Size(111, 23);
+            this.group_comboBox.Size = new System.Drawing.Size(111, 33);
             this.group_comboBox.TabIndex = 15;
             // 
             // all_btn
