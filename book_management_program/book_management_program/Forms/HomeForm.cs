@@ -88,6 +88,10 @@ namespace book_management_program.Forms
             {
                 rent_checkBox.Checked = true;
             }
+            else
+            {
+                rent_checkBox.Checked = false;
+            }
             //예약중 체크
             resv_checkBox.Checked = BookManager.Book.MemResvCheck(MainForm.Mem_no, this.booknumber_textBox.Text);
         }
@@ -180,14 +184,17 @@ namespace book_management_program.Forms
             {
                 switch (group_comboBox.SelectedItem.ToString())
                 {
+                    case "ISBN":
+                        type = "isbn";
+                        break;
                     case "도서명":
                         type = "book_nm";
                         break;
                     case "저자":
                         type = "author";
                         break;
-                    case "출판사":
-                        type = "pub";
+                    case "분류":
+                        type = "cat_nm";
                         break;
                 }
             }

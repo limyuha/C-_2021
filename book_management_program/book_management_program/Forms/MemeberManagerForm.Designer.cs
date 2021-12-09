@@ -48,6 +48,7 @@ namespace book_management_program.Forms
             this.id_textBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.no_textBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel7.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -66,16 +67,19 @@ namespace book_management_program.Forms
             // 
             // member_manager_listView
             // 
+            this.member_manager_listView.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.member_manager_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.no,
             this.id,
             this.pw,
             this.tel});
             resources.ApplyResources(this.member_manager_listView, "member_manager_listView");
+            this.member_manager_listView.FullRowSelect = true;
             this.member_manager_listView.HideSelection = false;
             this.member_manager_listView.Name = "member_manager_listView";
             this.member_manager_listView.UseCompatibleStateImageBehavior = false;
             this.member_manager_listView.View = System.Windows.Forms.View.Details;
+            this.member_manager_listView.ItemActivate += new System.EventHandler(this.member_manager_listView_ItemActivate_1);
             // 
             // no
             // 
@@ -95,6 +99,7 @@ namespace book_management_program.Forms
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.tel_textBox);
             this.panel1.Controls.Add(this.member_delete_btn);
@@ -127,6 +132,7 @@ namespace book_management_program.Forms
             this.member_delete_btn.ForeColor = System.Drawing.Color.White;
             this.member_delete_btn.Name = "member_delete_btn";
             this.member_delete_btn.UseVisualStyleBackColor = false;
+            this.member_delete_btn.Click += new System.EventHandler(this.member_delete_btn_Click);
             // 
             // member_add_btn
             // 
@@ -136,6 +142,7 @@ namespace book_management_program.Forms
             this.member_add_btn.ForeColor = System.Drawing.Color.White;
             this.member_add_btn.Name = "member_add_btn";
             this.member_add_btn.UseVisualStyleBackColor = false;
+            this.member_add_btn.Click += new System.EventHandler(this.member_add_btn_Click);
             // 
             // label2
             // 
@@ -169,6 +176,13 @@ namespace book_management_program.Forms
             this.no_textBox.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.no_textBox, "no_textBox");
             this.no_textBox.Name = "no_textBox";
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.label4.Name = "label4";
+            this.label4.DoubleClick += new System.EventHandler(this.label4_DoubleClick);
             // 
             // MemeberManagerForm
             // 
@@ -207,5 +221,6 @@ namespace book_management_program.Forms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tel_textBox;
         private System.Windows.Forms.ColumnHeader tel;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -36,20 +36,21 @@ namespace book_management_program.Manager
 
             if (Instance.Update_Sql(sql) == true)
             {
-                //MessageBox.Show("삽입 완료", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("가입 완료", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                //MessageBox.Show("삽입 에러", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("가입 에러", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
 
         /* 회원 정보 조회 */
-        public Member MemInfoLookup(string mem_nm)
+        //메인폼
+        public Member MemInfo(string mem_nm)
         {
             Member member = new Member();
-            string sql = $"SELECT mem_no, mem_nm FROM member WHERE mem_nm = '{mem_nm}' ;";
+            string sql = $"SELECT mem_no FROM member WHERE mem_nm = '{mem_nm}' ;";
             MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql);
 
             if (result.HasRows)
@@ -57,10 +58,45 @@ namespace book_management_program.Manager
                 while (result.Read())
                 {
                     member.Mem_no = result.GetInt32(0);
-                    member.Mem_nm = result.GetString(1);
                 }
             }
             return member;
+        }
+        //마이페이지
+        public Member MemInfoLookup(int mem_no)
+        {
+            Member member = new Member();
+            string sql = $"SELECT mem_nm, pw, phone_no, overdue FROM member WHERE mem_no = '{mem_no}' ;";
+            MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql);
+
+            if (result.HasRows)
+            {
+                while (result.Read())
+                {
+                    member.Mem_nm = result.GetString(0);
+                    member.Pw = result.GetString(1);
+                    member.Phone_no = result.GetString(2);
+                    member.Overdue = result.GetString(3);
+                }
+            }
+            return member;
+        }
+
+
+        /* 회원 정보 업데이트 */
+        public bool MemInfoUpdate(int mem_no, string pwd, string tel)
+        {
+            String sql = $"Update member Set phone_no='{tel}', pw='{pwd}' where mem_no={mem_no}";
+            if (MySql_Util.Instance.Update_Sql(sql))
+            {
+                MessageBox.Show("변경 완료");
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("변경 실패","회원 정보 수정",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return false;
+            }
         }
 
         /* 회원의 작성 글 목록 */
@@ -123,44 +159,24 @@ namespace book_management_program.Manager
 
             if (MySql_Util.Instance.Update_Sql(sql) == true)
             {
-                //MessageBox.Show("삭제 완료", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("삭제 완료", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                //MessageBox.Show("삭제 에러", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("삭제 에러", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
 
         /* 회원 로그인 */
-        public bool MemLogin(string id, string password)
+        public bool MemLogin(string id, string password, string mem_grade)
         {
             bool islogin = false;
 
             try
             {
                 Member member = new Member();
-                string sql = $"SELECT mem_nm, pw FROM member WHERE mem_nm = '{id}' ;";
-                /*
-                MySqlDataReader result = Instance.Select_Sql(sql);
-                MessageBox.Show("id: " + id + "==" + result.GetString(0));
-                MessageBox.Show("password: " + password + "==" + result.GetString(1));
-                if (result.HasRows)
-                {
-                    MessageBox.Show("id: " + id + "==" + result.GetString(0));
-                    MessageBox.Show("password: " + password + "==" + result.GetString(1));
-                    if (id.Equals(result.GetString(0)) && password.Equals(result.GetString(1)))
-                    {
-                        member.Mem_nm = id;
-                        member.Pw = password;
-                        islogin = true;
-                    }
-                    else
-                    {
-                        islogin = false;
-                    }
-                }*/
-
+                string sql = $"SELECT mem_nm, pw FROM member WHERE mem_nm = '{id}' && mem_grade='{mem_grade}';";
                 DataSet ds = MySql_Util.Instance.Select_Sqlw(sql);
                 foreach (DataRow row in ds.Tables[0].Rows)
                 {
@@ -170,7 +186,7 @@ namespace book_management_program.Manager
             }
             catch(Exception e)
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show("로그인 에러", "로그인", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return islogin;
             }
 
@@ -182,11 +198,9 @@ namespace book_management_program.Manager
             List<Book> rentBooks = new List<Book>();
             Book book;
 
-            string sql = $"SELECT rent_no, rental.isbn, cat_nm, author, pub,pub_dt, book_nm, rent_dt, return_dt " +
+            string sql = $"SELECT rent_no, rental.isbn, cat_nm, author, pub,pub_dt, book_nm, rent_dt, return_dt, overcheck " +
                 $"FROM bookinfo,category,rental WHERE rental.mem_no= {mem_no}" +
                 $"&& rental.isbn = bookinfo.isbn &&bookinfo.cat_no = category.cat_no &&rental.return_dt='2000-01-01';";
-
-
 
             MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql);
 
@@ -195,6 +209,7 @@ namespace book_management_program.Manager
                 while (result.Read())
                 {
                     book = new Book();
+
                     book.Rent_no = result.GetInt32(0);
                     book.Isbn = result.GetString(1);
                     book.Cat_nm = result.GetString(2);
@@ -202,9 +217,9 @@ namespace book_management_program.Manager
                     book.Pub = result.GetString(4);
                     book.Pub_dt = result.GetString(5);
                     book.Book_nm = result.GetString(6);
-                    book.Rent_dt = result.GetDateTime(7);
-                    book.Return_dt = result.GetDateTime(8);
-
+                    book.Rent_dt = result.GetString(7);
+                    book.Return_dt = result.GetString(8);
+                    book.Overcheck = result.GetInt32(9);
 
                     rentBooks.Add(book);
                 }
@@ -217,11 +232,14 @@ namespace book_management_program.Manager
         public int MemRentListCnt(int mem_no)
         {
             int count = 0;
-            string sql = $" SELECT count(*) FROM rental WHERE mem_no = {mem_no} && return_dt IS NULL ;";
+            string sql = $" SELECT count(*) FROM rental WHERE mem_no = {mem_no} && return_dt like '2000-01-01' ;";
             MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql);
             if (result.HasRows)
             {
-                count = result.GetInt32(0);
+                while (result.Read())
+                {
+                    count = result.GetInt32(0);
+                }
             }
             return count;
         }
@@ -282,18 +300,10 @@ namespace book_management_program.Manager
         /* 1. 회원 대여 목록 연체 검사 - 처리 >> 로그인 시, 반납 시 */
         public void MemOverdueCheck(int mem_no)
         {
-            MessageBox.Show("회원번호 : " + mem_no, "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            //return_dt 반납일이 if ("2000-01-01 오전 12:00:00" != result.GetString(0)) 기본값이 아니면 "반납 완료"
-            //기본값 2000-01-01 "대여중" 일 때
-            //2.연체된 책 검사
-            //그중 가장 오래된 연체로 연체일 지정
-
             String todayDt = System.DateTime.Now.ToString("yyyy-MM-dd"); //오늘 날짜
-            //MessageBox.Show("오늘 날짜 : " + todayDt, "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             int over = 0; //연체 일 수
-            //도서 대여 목록 - rent_dt & return_dt 목록 가져오기
+            //1.도서 대여 목록 - rent_dt & return_dt 목록 가져오기
             String sql_overcheck = $"SELECT rent_no, rent_dt, return_dt FROM rental WHERE mem_no={mem_no};";
             MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql_overcheck);
             if (result.HasRows)
@@ -301,49 +311,50 @@ namespace book_management_program.Manager
                 while (result.Read())
                 {
                     String rentDt = result.GetString(1); //대여 날짜
-                    //MessageBox.Show("대여 번호 : " + result.GetString(0) + "대여 날짜 : " + rentDt + ", 반납 여부 : " + result.GetString(2));
-
-                    if ("2000-01-01 오전 12:00:00" == result.GetString(2)) //"대여중"인 도서에서 == "반납 안한" 도서 
+                    if ("2000-01-01" == result.GetString(2)) //"대여중"인 도서에서 == "반납 안한" 도서 
                     {
-                        /* 연체일 체크 */
+                        // 2.연체일수 체크
                         String sql_over = $"SELECT TIMESTAMPDIFF(DAY, '{rentDt}', '{todayDt}');"; // if(결과 > 0) = 연체일
                         MySqlDataReader overresult = MySql_Util.Instance.Select_Sql(sql_over);
                         if (overresult.HasRows)
                         {
                             while (overresult.Read())
                             {
+                                //3. 대여 도서 연체 상태 변경
+                                if(overresult.GetInt32(0) - 7 > 0)
+                                {
+
+                                    String sql = $"Update rental Set overcheck=1 where rent_no={result.GetString(0)}";
+                                    MySql_Util.Instance.Update_Sql(sql);
+                                }
+
                                 if (overresult.GetInt32(0) - 7 > over)
                                 {
                                     over = overresult.GetInt32(0) - 7;
-                                    //MessageBox.Show("연체일 검사 : " + over);
                                 }
                             }
                         }
                     }
                 }
-                //MessageBox.Show("*최종 반납 연체일 : " + over, "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             if (over > 0) // 도서목록에 연체 있음
             {
-                /* 회원 연체일 업데이트 */
-                String overdueDt = System.DateTime.Now.AddDays(over).ToString("yyyy-MM-dd");
+                String overdueDt = System.DateTime.Now.AddDays(over).ToString("yyyy-MM-dd"); //연체일
 
-                //현재 회원 연체일 조회
-               String sql_memoverdue = $"SELECT overdue FROM member WHERE mem_no={mem_no};";
+                // 4. 현재 회원 연체일 조회 후 업데이트 
+                String sql_memoverdue = $"SELECT overdue FROM member WHERE mem_no={mem_no};";
                 MySqlDataReader result2 = MySql_Util.Instance.Select_Sql(sql_memoverdue);
                 if (result2.HasRows)
                 {
                     while (result2.Read())
                     {
-                        //MessageBox.Show("기존 회원 연체일 : " + result2.GetString(0) + "\n변경 연체일 : " + overdueDt);
-                        /* 회원 연체일 업데이트 */
                         // 현재 연채일 < 새로운 연체일
                         if (string.Compare(result2.GetString(0), overdueDt) < 0)
                         {
                             String sql = $"Update member Set overdue='{overdueDt}' where mem_no={mem_no}";
                             MySql_Util.Instance.Update_Sql(sql);
-                           // MessageBox.Show("연체일 변경\n연체일 : " + overdueDt, "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("연체일 : " + overdueDt, "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                 }
@@ -355,15 +366,13 @@ namespace book_management_program.Manager
         {
             bool isOver = false;
 
-            String sql_overcheck = $"SELECT overdue FROM member WHERE mem_no={mem_no};";
+            String sql_overcheck = $"SELECT overdue FROM member WHERE member.mem_no={mem_no};";
             MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql_overcheck);
             if (result.HasRows) //NullReferenceException
             {
                 while (result.Read())
                 {
-                    //MessageBox.Show(result.GetString(0));
-
-                    if ("2000-01-01 오전 12:00:00" == result.GetString(0))
+                    if (result.GetString(0)=="2000-01-01")
                     {
                         isOver = true; //연체 아님 - 대여 가능
                         break;
@@ -378,18 +387,18 @@ namespace book_management_program.Manager
                             string sql = $"UPDATE member SET overdue='2000-01-01' WHERE mem_no = {mem_no}; ";
                             if (MySql_Util.Instance.Update_Sql(sql))
                             {
-                                //MessageBox.Show("연체 풀림", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("연체 풀림", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 isOver = true;
                                 break;
                             }
                             else
                             {
-                                //MessageBox.Show("연체 에러", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("연체 에러", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         else //연체일 > 현재 : 연체 중 false
                         {
-                            //MessageBox.Show("연체중", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("연체중", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             isOver = false;
                             break;
                         }
@@ -402,7 +411,6 @@ namespace book_management_program.Manager
                 return isOver;
             }
         }
-
 
     }
 }

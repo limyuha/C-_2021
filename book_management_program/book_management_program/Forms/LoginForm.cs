@@ -31,7 +31,7 @@ namespace book_management_program.Forms
 
             if (!string.IsNullOrWhiteSpace(id) && !string.IsNullOrWhiteSpace(pwd))
             {   //회원 로그인 체크
-                if (MemberManager.Member.MemLogin(id.TrimStart(),pwd.TrimStart()))
+                if (MemberManager.Member.MemLogin(id.TrimStart(),pwd.TrimStart(), "NOR"))
                 {
                     MessageBox.Show("ID : " + id + "님 환영합니다.");
                     MainForm mainform = new MainForm(id);
@@ -68,7 +68,7 @@ namespace book_management_program.Forms
 
             if (!string.IsNullOrWhiteSpace(id) && !string.IsNullOrWhiteSpace(pwd))
             {   //관리자 로그인 체크
-                if (MemberManager.Member.MemLogin(id.TrimStart(), pwd.TrimStart()))
+                if (MemberManager.Member.MemLogin(id.TrimStart(), pwd.TrimStart(), "MAN"))
                 {
                     MainManagerForm main_manager = new MainManagerForm();
                     this.Hide(); //1.login 폼 숨김

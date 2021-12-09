@@ -63,13 +63,13 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="member_manager_label.Font" type="System.Drawing.Font, System.Drawing">
-    <value>한컴 고딕, 12pt</value>
+    <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="member_manager_label.Location" type="System.Drawing.Point, System.Drawing">
     <value>1, 21</value>
   </data>
   <data name="member_manager_label.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 31</value>
+    <value>61, 20</value>
   </data>
   <data name="member_manager_label.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -89,7 +89,40 @@
   <data name="&gt;&gt;member_manager_label.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="no.Text" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="no.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="id.Text" xml:space="preserve">
+    <value>아이디</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="id.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="id.Width" type="System.Int32, mscorlib">
+    <value>370</value>
+  </data>
+  <data name="pw.Text" xml:space="preserve">
+    <value>비밀번호</value>
+  </data>
+  <data name="pw.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="pw.Width" type="System.Int32, mscorlib">
+    <value>370</value>
+  </data>
+  <data name="tel.Text" xml:space="preserve">
+    <value>전화번호</value>
+  </data>
+  <data name="tel.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="tel.Width" type="System.Int32, mscorlib">
+    <value>400</value>
+  </data>
   <data name="member_manager_listView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
@@ -135,44 +168,38 @@
   <data name="&gt;&gt;panel7.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="no.Text" xml:space="preserve">
-    <value>No</value>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="no.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>290, 68</value>
   </data>
-  <data name="id.Text" xml:space="preserve">
-    <value>아이디</value>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 15</value>
   </data>
-  <data name="id.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
   </data>
-  <data name="id.Width" type="System.Int32, mscorlib">
-    <value>370</value>
+  <data name="label4.Text" xml:space="preserve">
+    <value>지우기</value>
   </data>
-  <data name="pw.Text" xml:space="preserve">
-    <value>비밀번호</value>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
   </data>
-  <data name="pw.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="pw.Width" type="System.Int32, mscorlib">
-    <value>370</value>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="tel.Text" xml:space="preserve">
-    <value>전화번호</value>
-  </data>
-  <data name="tel.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="tel.Width" type="System.Int32, mscorlib">
-    <value>400</value>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>한컴 고딕, 11pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 11pt, style=Bold</value>
   </data>
   <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -181,7 +208,7 @@
     <value>35, 335</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 29</value>
+    <value>60, 18</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -199,13 +226,13 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="tel_textBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>42, 367</value>
   </data>
   <data name="tel_textBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 31</value>
+    <value>291, 23</value>
   </data>
   <data name="tel_textBox.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -220,13 +247,13 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;tel_textBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="member_delete_btn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="member_delete_btn.Font" type="System.Drawing.Font, System.Drawing">
-    <value>한컴 고딕, 14pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 14pt, style=Bold</value>
   </data>
   <data name="member_delete_btn.Location" type="System.Drawing.Point, System.Drawing">
     <value>203, 437</value>
@@ -250,13 +277,13 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;member_delete_btn.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="member_add_btn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="member_add_btn.Font" type="System.Drawing.Font, System.Drawing">
-    <value>한컴 고딕, 14pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 14pt, style=Bold</value>
   </data>
   <data name="member_add_btn.Location" type="System.Drawing.Point, System.Drawing">
     <value>35, 437</value>
@@ -280,19 +307,19 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;member_add_btn.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>한컴 고딕, 11pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 11pt, style=Bold</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>35, 250</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 29</value>
+    <value>60, 18</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -310,13 +337,13 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="pw_textBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>42, 282</value>
   </data>
   <data name="pw_textBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 31</value>
+    <value>291, 23</value>
   </data>
   <data name="pw_textBox.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -331,19 +358,19 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;pw_textBox.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>한컴 고딕, 11pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 11pt, style=Bold</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>35, 159</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 29</value>
+    <value>47, 18</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -361,13 +388,13 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="id_textBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>42, 191</value>
   </data>
   <data name="id_textBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 31</value>
+    <value>291, 23</value>
   </data>
   <data name="id_textBox.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -382,19 +409,19 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;id_textBox.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
-    <value>한컴 고딕, 11pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 11pt, style=Bold</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
     <value>35, 68</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 29</value>
+    <value>65, 18</value>
   </data>
   <data name="label10.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -412,13 +439,13 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="no_textBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>42, 100</value>
   </data>
   <data name="no_textBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 31</value>
+    <value>291, 23</value>
   </data>
   <data name="no_textBox.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -433,7 +460,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;no_textBox.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>1306, 171</value>
