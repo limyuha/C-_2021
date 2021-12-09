@@ -20,6 +20,26 @@ namespace book_management_program.Manager
             set { bookManager = value; }
         }
 
+        /* 카테고리명 가져오기 - 도서관리폼 */
+        public List<string> CategoryList()
+        {
+            List<string> catList = new List<string>();
+
+            string sql = "SELECT cat_nm FROM category ;";
+            MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql);
+            if (result.HasRows)
+            {
+                while (result.Read())
+                {
+                    catList.Add(result.GetString(0));
+                }
+
+            }
+
+            return catList;
+        }
+
+        /* 장서량 */
         public int BookCount()
         {
             string sql = "SELECT stock FROM bookinfo ;";

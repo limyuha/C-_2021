@@ -42,10 +42,10 @@ namespace book_management_program.Forms
             this.rent_sum = new System.Windows.Forms.ColumnHeader();
             this.book_manager_label = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.pub_dt_label = new System.Windows.Forms.Label();
             this.pub_dt_textBox = new System.Windows.Forms.TextBox();
             this.cat_no_label = new System.Windows.Forms.Label();
-            this.cat_no_textBox = new System.Windows.Forms.TextBox();
             this.book_delete_btn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.book_stock_textBox = new System.Windows.Forms.TextBox();
@@ -65,7 +65,7 @@ namespace book_management_program.Forms
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.group_comboBox = new System.Windows.Forms.ComboBox();
             this.search_btn = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.cat_nm_comboBox = new System.Windows.Forms.ComboBox();
             this.panel7.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -158,11 +158,11 @@ namespace book_management_program.Forms
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cat_nm_comboBox);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.pub_dt_label);
             this.groupBox1.Controls.Add(this.pub_dt_textBox);
             this.groupBox1.Controls.Add(this.cat_no_label);
-            this.groupBox1.Controls.Add(this.cat_no_textBox);
             this.groupBox1.Controls.Add(this.book_delete_btn);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.book_stock_textBox);
@@ -183,6 +183,17 @@ namespace book_management_program.Forms
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "등록 / 수정 / 재고 추가 / 삭제";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.label4.Location = new System.Drawing.Point(1318, 113);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 15);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "지우기";
+            this.label4.DoubleClick += new System.EventHandler(this.label4_DoubleClick);
             // 
             // pub_dt_label
             // 
@@ -211,14 +222,6 @@ namespace book_management_program.Forms
             this.cat_no_label.Size = new System.Drawing.Size(34, 18);
             this.cat_no_label.TabIndex = 22;
             this.cat_no_label.Text = "분류";
-            // 
-            // cat_no_textBox
-            // 
-            this.cat_no_textBox.BackColor = System.Drawing.Color.White;
-            this.cat_no_textBox.Location = new System.Drawing.Point(135, 72);
-            this.cat_no_textBox.Name = "cat_no_textBox";
-            this.cat_no_textBox.Size = new System.Drawing.Size(89, 23);
-            this.cat_no_textBox.TabIndex = 21;
             // 
             // book_delete_btn
             // 
@@ -429,16 +432,13 @@ namespace book_management_program.Forms
             this.search_btn.UseVisualStyleBackColor = false;
             this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
             // 
-            // label4
+            // cat_nm_comboBox
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label4.Location = new System.Drawing.Point(1318, 113);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 15);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "지우기";
-            this.label4.DoubleClick += new System.EventHandler(this.label4_DoubleClick);
+            this.cat_nm_comboBox.FormattingEnabled = true;
+            this.cat_nm_comboBox.Location = new System.Drawing.Point(133, 71);
+            this.cat_nm_comboBox.Name = "cat_nm_comboBox";
+            this.cat_nm_comboBox.Size = new System.Drawing.Size(101, 23);
+            this.cat_nm_comboBox.TabIndex = 26;
             // 
             // book_manager_Form
             // 
@@ -495,7 +495,6 @@ namespace book_management_program.Forms
         private System.Windows.Forms.ColumnHeader book_name;
         private System.Windows.Forms.ColumnHeader book_stock;
         private System.Windows.Forms.Label cat_no_label;
-        private System.Windows.Forms.TextBox cat_no_textBox;
         private System.Windows.Forms.Label pub_dt_label;
         private System.Windows.Forms.TextBox pub_dt_textBox;
         private System.Windows.Forms.Button all_btn;
@@ -505,5 +504,6 @@ namespace book_management_program.Forms
         private System.Windows.Forms.Button search_btn;
         private System.Windows.Forms.ColumnHeader rent_sum;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cat_nm_comboBox;
     }
 }

@@ -100,5 +100,11 @@ namespace book_management_program.Forms
         {
             BooksList();
         }
+
+        private void all_btn_Click(object sender, EventArgs e)
+        {
+            search_textBox.Clear();
+            BooksList();
+        }
     }
 }

@@ -42,11 +42,11 @@ namespace book_management_program.Forms
             IssueWriteForm issue_write = new IssueWriteForm();
             if (issue_write.ShowDialog() == DialogResult.OK)
             {
-                //회원 게시글 불러오기
-                List<Issue> issues = MemberManager.Member.MemIssueList(MainForm.Mem_no);
+                //전체 게시글 불러오기
+                List<Issue> issues = IssueManager.Issue.IssueList();
                 IssueListView(issues);
 
-                button1.Text = "전체 글 보기";
+                button1.Text = "내가 작성한 글 보기";
                 isChecked = 0;
             }
         }

@@ -59,7 +59,7 @@ namespace book_management_program.Forms
             "분류"});
             this.group_comboBox.Location = new System.Drawing.Point(119, 10);
             this.group_comboBox.Name = "group_comboBox";
-            this.group_comboBox.Size = new System.Drawing.Size(132, 33);
+            this.group_comboBox.Size = new System.Drawing.Size(132, 23);
             this.group_comboBox.TabIndex = 0;
             // 
             // pictureBox1
@@ -90,7 +90,7 @@ namespace book_management_program.Forms
             // 
             this.search_textBox.Location = new System.Drawing.Point(257, 11);
             this.search_textBox.Name = "search_textBox";
-            this.search_textBox.Size = new System.Drawing.Size(1052, 31);
+            this.search_textBox.Size = new System.Drawing.Size(1052, 23);
             this.search_textBox.TabIndex = 4;
             // 
             // search_listView
@@ -173,6 +173,7 @@ namespace book_management_program.Forms
             this.all_btn.TabIndex = 20;
             this.all_btn.Text = "전체보기";
             this.all_btn.UseVisualStyleBackColor = false;
+            this.all_btn.Click += new System.EventHandler(this.all_btn_Click);
             // 
             // SearchForm
             // 

@@ -210,7 +210,7 @@ namespace book_management_program.Manager
             List<Book> rentBooks = new List<Book>();
             Book book;
 
-            string sql = $"SELECT rent_no, rental.isbn, cat_nm, author, pub,pub_dt, book_nm, rent_dt, return_dt, overcheck " +
+            string sql = $"SELECT rent_no, rental.isbn, cat_nm, author, pub,pub_dt, book_nm, rent_dt, return_dt, ext, overcheck " +
                 $"FROM bookinfo,category,rental WHERE rental.mem_no= {mem_no}" +
                 $"&& rental.isbn = bookinfo.isbn &&bookinfo.cat_no = category.cat_no &&rental.return_dt='2000-01-01';";
 
@@ -231,7 +231,8 @@ namespace book_management_program.Manager
                     book.Book_nm = result.GetString(6);
                     book.Rent_dt = result.GetString(7);
                     book.Return_dt = result.GetString(8);
-                    book.Overcheck = result.GetInt32(9);
+                    book.Ext = result.GetString(9);
+                    book.Overcheck = result.GetInt32(10);
 
                     rentBooks.Add(book);
                 }

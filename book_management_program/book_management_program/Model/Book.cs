@@ -23,6 +23,7 @@ namespace book_management_program.Model
         private int rent_sum;
         private string rent_ck;
         private int overcheck;
+        private string ext;
 
         public string Isbn { get => isbn; set => isbn = value; }
         public int Cat_no { get => cat_no; set => cat_no = value; }
@@ -39,5 +40,6 @@ namespace book_management_program.Model
         public int Rent_sum { get => rent_sum; set => rent_sum = value; }
         public int Overcheck { get => overcheck; set => overcheck = value; }
         public string Rent_ck { get => rent_ck; set => rent_ck = value; }
+        public string Ext { get => ext; set => ext = value; }
     }
 }

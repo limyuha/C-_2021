@@ -25,6 +25,14 @@ namespace book_management_program.Forms
 
             //검색 타입 설정
             this.group_comboBox.SelectedIndex = 0;
+
+            //도서 분류
+            List<string> catList = BookManager.Book.CategoryList();
+            foreach (string cat_nm in catList)
+            {
+                this.cat_nm_comboBox.Items.Add(cat_nm);
+            }
+            this.cat_nm_comboBox.SelectedIndex = -1;
         }
 
         private void rent_btn_Click(object sender, EventArgs e)
@@ -37,7 +45,7 @@ namespace book_management_program.Forms
                 this.book_writer_textBox.Clear();
                 this.book_publisher_textBox.Clear();
                 this.book_stock_textBox.Clear();
-                this.cat_no_textBox.Clear();
+                this.cat_nm_comboBox.SelectedIndex = -1;
                 this.pub_dt_textBox.Clear();
             }
             else
@@ -84,7 +92,7 @@ namespace book_management_program.Forms
                 where = book_listView.SelectedIndices[0];
 
                 this.book_number_textBox.Text = book_listView.Items[where].SubItems[0].Text;
-                this.cat_no_textBox.Text = book_listView.Items[where].SubItems[1].Text;
+                this.cat_nm_comboBox.Text = book_listView.Items[where].SubItems[1].Text;
                 this.pub_dt_textBox.Text = book_listView.Items[where].SubItems[4].Text;
                 this.book_writer_textBox.Text = book_listView.Items[where].SubItems[2].Text;
                 this.book_publisher_textBox.Text = book_listView.Items[where].SubItems[3].Text;
@@ -194,7 +202,7 @@ namespace book_management_program.Forms
             this.book_writer_textBox.Clear();
             this.book_publisher_textBox.Clear();
             this.book_stock_textBox.Clear();
-            this.cat_no_textBox.Clear();
+            this.cat_nm_comboBox.SelectedIndex = -1;
             this.pub_dt_textBox.Clear();
         }
     }

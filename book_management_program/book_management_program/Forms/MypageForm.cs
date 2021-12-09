@@ -48,13 +48,22 @@ namespace book_management_program.Forms
         {
             this.rent_listView.Items.Clear();
             List<Book> rentbooks = MemberManager.Member.MemRentList(MainForm.Mem_no); //대여목록 불러오기
+            string[] row;
             foreach (var book in rentbooks)
             {
                 if (book.Overcheck>0)
                 {
-                    overcnt++;
+                    overcnt++; //연체량 체크
                 }
-                string[] row = { book.Rent_no.ToString(), book.Isbn, book.Cat_nm, book.Author, book.Pub, book.Pub_dt.ToString(), book.Book_nm, book.Rent_dt, Convert.ToDateTime(book.Rent_dt).AddDays(7).ToString("yyyy-MM-dd") };
+
+                if (book.Ext == "Y") //도서 반납일 : 연장 체크 
+                {
+                    row = new string[]{ book.Rent_no.ToString(), book.Isbn, book.Cat_nm, book.Author, book.Pub, book.Pub_dt.ToString(), book.Book_nm, book.Rent_dt, Convert.ToDateTime(book.Rent_dt).AddDays(14).ToString("yyyy-MM-dd") };
+                }
+                else
+                {
+                    row = new string[] { book.Rent_no.ToString(), book.Isbn, book.Cat_nm, book.Author, book.Pub, book.Pub_dt.ToString(), book.Book_nm, book.Rent_dt, Convert.ToDateTime(book.Rent_dt).AddDays(7).ToString("yyyy-MM-dd") };
+                }
                 var lvItem = new ListViewItem(row);
                 this.rent_listView.Items.Add(lvItem);
             }
@@ -78,10 +87,11 @@ namespace book_management_program.Forms
         {
             if (!string.IsNullOrWhiteSpace(this.rent_booknumber_textBox.Text) && !string.IsNullOrWhiteSpace(rent_booknumber_textBox.Text))
             {
-                if (MainForm.IsOverdued) //대여 가능도 체크
+                if (MainForm.IsOverdued) //연체-대여 가능 체크
                 {
                     string isbn = rent_booknumber_textBox.Text;
                     BookManager.Book.RentExtUpdate(MainForm.Mem_no, isbn);
+                    RentListView();//대여 목록 불러오기
                 }
                 else
                 {
