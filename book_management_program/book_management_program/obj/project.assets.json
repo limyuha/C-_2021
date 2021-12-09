@@ -1850,19 +1850,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lolol\\.nuget\\packages\\": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\DevPrograms\\Git_Folder\\C-_2021\\book_management_program\\book_management_program\\book_management_program.csproj",
+      "projectUniqueName": "E:\\C#_2021\\book_management_program\\book_management_program\\book_management_program.csproj",
       "projectName": "book_management_program",
-      "projectPath": "C:\\DevPrograms\\Git_Folder\\C-_2021\\book_management_program\\book_management_program\\book_management_program.csproj",
-      "packagesPath": "C:\\Users\\lolol\\.nuget\\packages\\",
-      "outputPath": "C:\\DevPrograms\\Git_Folder\\C-_2021\\book_management_program\\book_management_program\\obj\\",
+      "projectPath": "E:\\C#_2021\\book_management_program\\book_management_program\\book_management_program.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "E:\\C#_2021\\book_management_program\\book_management_program\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\lolol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1915,16 +1915,8 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300-preview.21180.15\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "캐시 파일 C:\\DevPrograms\\Git_Folder\\C-_2021\\book_management_program\\book_management_program\\obj\\project.nuget.cache을(를) 읽는 동안 문제가 발생했습니다. Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

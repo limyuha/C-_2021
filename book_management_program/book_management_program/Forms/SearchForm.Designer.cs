@@ -43,6 +43,7 @@ namespace book_management_program.Forms
             this.book_name = new System.Windows.Forms.ColumnHeader();
             this.book_stock = new System.Windows.Forms.ColumnHeader();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.all_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +57,7 @@ namespace book_management_program.Forms
             "도서명",
             "저자",
             "분류"});
-            this.group_comboBox.Location = new System.Drawing.Point(178, 13);
+            this.group_comboBox.Location = new System.Drawing.Point(119, 10);
             this.group_comboBox.Name = "group_comboBox";
             this.group_comboBox.Size = new System.Drawing.Size(132, 33);
             this.group_comboBox.TabIndex = 0;
@@ -65,7 +66,7 @@ namespace book_management_program.Forms
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(142, 15);
+            this.pictureBox1.Location = new System.Drawing.Point(83, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -77,7 +78,7 @@ namespace book_management_program.Forms
             this.search_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.search_btn.FlatAppearance.BorderSize = 0;
             this.search_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.search_btn.Location = new System.Drawing.Point(1374, 14);
+            this.search_btn.Location = new System.Drawing.Point(1315, 11);
             this.search_btn.Name = "search_btn";
             this.search_btn.Size = new System.Drawing.Size(111, 33);
             this.search_btn.TabIndex = 2;
@@ -87,7 +88,7 @@ namespace book_management_program.Forms
             // 
             // search_textBox
             // 
-            this.search_textBox.Location = new System.Drawing.Point(316, 14);
+            this.search_textBox.Location = new System.Drawing.Point(257, 11);
             this.search_textBox.Name = "search_textBox";
             this.search_textBox.Size = new System.Drawing.Size(1052, 31);
             this.search_textBox.TabIndex = 4;
@@ -151,6 +152,7 @@ namespace book_management_program.Forms
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.all_btn);
             this.panel1.Controls.Add(this.group_comboBox);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.search_textBox);
@@ -159,6 +161,18 @@ namespace book_management_program.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1626, 55);
             this.panel1.TabIndex = 6;
+            // 
+            // all_btn
+            // 
+            this.all_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.all_btn.FlatAppearance.BorderSize = 0;
+            this.all_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.all_btn.Location = new System.Drawing.Point(1432, 11);
+            this.all_btn.Name = "all_btn";
+            this.all_btn.Size = new System.Drawing.Size(111, 33);
+            this.all_btn.TabIndex = 20;
+            this.all_btn.Text = "전체보기";
+            this.all_btn.UseVisualStyleBackColor = false;
             // 
             // SearchForm
             // 
@@ -194,5 +208,6 @@ namespace book_management_program.Forms
         private System.Windows.Forms.ColumnHeader book_name;
         private System.Windows.Forms.ColumnHeader book_stock;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button all_btn;
     }
 }
