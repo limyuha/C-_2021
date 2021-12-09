@@ -26,18 +26,20 @@ namespace book_management_program.Forms
 
             if (string.IsNullOrWhiteSpace(id) || string.IsNullOrWhiteSpace(pwd) || string.IsNullOrWhiteSpace(phone))
             {
-
                 MessageBox.Show("정보를 입력해주세요", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                Member member = new Member();
-                member.Mem_nm = id;
-                member.Pw = pwd;
-                member.Phone_no = phone;
+                if (MemberManager.Member.IdReCheck(id))
+                {
+                    Member member = new Member();
+                    member.Mem_nm = id;
+                    member.Pw = pwd;
+                    member.Phone_no = phone;
 
-                MemberManager.Member.MemInfoInsert(member);
-                this.Close();
+                    MemberManager.Member.MemInfoInsert(member);
+                    this.Close();
+                }
             }
         }
     }

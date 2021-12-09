@@ -22,18 +22,31 @@ namespace book_management_program.Manager
             set { memberManager = value; }
         }
 
+        /* 아이디 중복 체크 */
+        public bool IdReCheck(string id)
+        {
+            string sql_idcheck = $"SELECT mem_nm FROM member WHERE mem_nm = '{id}' ;";
+            MySqlDataReader result_idcheck = MySql_Util.Instance.Select_Sql(sql_idcheck);
+            if (result_idcheck.HasRows)
+            {
+                MessageBox.Show("사용 불가능한 아이디입니다.", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         /* 회원 가입 */
         public void MemInfoInsert(Member member)
         {
-
             string sql = "INSERT INTO member (mem_nm, pw, phone_no, overdue) VALUES ('"
-                + member.Mem_nm + "', '"
-                + member.Pw + "', '"
-                + member.Phone_no + "', '"
-                + "2000-01-01"
-                + "')";
-
-
+                 + member.Mem_nm + "', '"
+                 + member.Pw + "', '"
+                 + member.Phone_no + "', '"
+                 + "2000-01-01"
+                 + "')";
             if (Instance.Update_Sql(sql) == true)
             {
                 MessageBox.Show("가입 완료", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -43,7 +56,6 @@ namespace book_management_program.Manager
                 MessageBox.Show("가입 에러", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
         /* 회원 정보 조회 */
         //메인폼
@@ -297,7 +309,7 @@ namespace book_management_program.Manager
         }
 
 
-        /* 1. 회원 대여 목록 연체 검사 - 처리 >> 로그인 시, 반납 시 */
+        /* 1. 회원 대여 목록 연체 검사 - 처리 >> 로그인 시 */
         public void MemOverdueCheck(int mem_no)
         {
             String todayDt = System.DateTime.Now.ToString("yyyy-MM-dd"); //오늘 날짜
@@ -361,7 +373,7 @@ namespace book_management_program.Manager
             }
         }
 
-        /* 2. 회원 연체 상태 체크 >> 로그인 시, 대여 시 */
+        /* 2. 회원 연체 상태 체크 >> 로그인 시*/
         public bool MemOverdueUpdate(int mem_no)
         {
             bool isOver = false;

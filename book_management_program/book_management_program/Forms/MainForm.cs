@@ -36,9 +36,9 @@ namespace book_management_program.Forms
             MemberManager.Member.MemOverdueCheck(Mem_no); //대여 목록 연체 검사
 
             IsOverdued = MemberManager.Member.MemOverdueUpdate(Mem_no); //회원 연체 상태 체크
-            if (IsOverdued)
+            if (!IsOverdued)
             {
-                MessageBox.Show("연체 중, 대여 불가","연체",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("연체 중, 대여 불가","연체");
             }
 
         }

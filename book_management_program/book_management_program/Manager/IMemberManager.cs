@@ -17,6 +17,8 @@ namespace book_management_program.Manager
         bool MemInfoUpdate(int mem_no, string pwd, string tel);
 
         List<Member> MemList();
+        bool MemOverdueUpdate(int mem_no);
+        void MemOverdueCheck(int mem_no);
 
         int MemRentListCnt(int mem_no);
         List<Book> MemRentList(int mem_no);
