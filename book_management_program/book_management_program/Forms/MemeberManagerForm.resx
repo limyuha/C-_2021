@@ -69,7 +69,7 @@
     <value>1, 21</value>
   </data>
   <data name="member_manager_label.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 20</value>
+    <value>95, 29</value>
   </data>
   <data name="member_manager_label.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -103,7 +103,7 @@
     <value>Center</value>
   </data>
   <data name="id.Width" type="System.Int32, mscorlib">
-    <value>370</value>
+    <value>330</value>
   </data>
   <data name="pw.Text" xml:space="preserve">
     <value>비밀번호</value>
@@ -112,7 +112,7 @@
     <value>Center</value>
   </data>
   <data name="pw.Width" type="System.Int32, mscorlib">
-    <value>370</value>
+    <value>350</value>
   </data>
   <data name="tel.Text" xml:space="preserve">
     <value>전화번호</value>
@@ -121,7 +121,16 @@
     <value>Center</value>
   </data>
   <data name="tel.Width" type="System.Int32, mscorlib">
-    <value>400</value>
+    <value>360</value>
+  </data>
+  <data name="mem_grade.Text" xml:space="preserve">
+    <value>회원등급</value>
+  </data>
+  <data name="mem_grade.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="mem_grade.Width" type="System.Int32, mscorlib">
+    <value>100</value>
   </data>
   <data name="member_manager_listView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
@@ -172,10 +181,10 @@
     <value>True</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>290, 68</value>
+    <value>267, 68</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 15</value>
+    <value>66, 25</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
@@ -208,7 +217,7 @@
     <value>35, 335</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 18</value>
+    <value>80, 26</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -232,7 +241,7 @@
     <value>42, 367</value>
   </data>
   <data name="tel_textBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 23</value>
+    <value>291, 31</value>
   </data>
   <data name="tel_textBox.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -319,7 +328,7 @@
     <value>35, 250</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 18</value>
+    <value>80, 26</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -343,7 +352,7 @@
     <value>42, 282</value>
   </data>
   <data name="pw_textBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 23</value>
+    <value>291, 31</value>
   </data>
   <data name="pw_textBox.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -370,7 +379,7 @@
     <value>35, 159</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 18</value>
+    <value>63, 26</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -394,7 +403,7 @@
     <value>42, 191</value>
   </data>
   <data name="id_textBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 23</value>
+    <value>291, 31</value>
   </data>
   <data name="id_textBox.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -421,7 +430,7 @@
     <value>35, 68</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 18</value>
+    <value>87, 26</value>
   </data>
   <data name="label10.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -445,7 +454,7 @@
     <value>42, 100</value>
   </data>
   <data name="no_textBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 23</value>
+    <value>291, 31</value>
   </data>
   <data name="no_textBox.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -517,6 +526,12 @@
     <value>tel</value>
   </data>
   <data name="&gt;&gt;tel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mem_grade.Name" xml:space="preserve">
+    <value>mem_grade</value>
+  </data>
+  <data name="&gt;&gt;mem_grade.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

@@ -37,7 +37,9 @@ namespace book_management_program.Forms
             this.id = new System.Windows.Forms.ColumnHeader();
             this.pw = new System.Windows.Forms.ColumnHeader();
             this.tel = new System.Windows.Forms.ColumnHeader();
+            this.mem_grade = new System.Windows.Forms.ColumnHeader();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tel_textBox = new System.Windows.Forms.TextBox();
             this.member_delete_btn = new System.Windows.Forms.Button();
@@ -48,7 +50,6 @@ namespace book_management_program.Forms
             this.id_textBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.no_textBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel7.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -72,7 +73,8 @@ namespace book_management_program.Forms
             this.no,
             this.id,
             this.pw,
-            this.tel});
+            this.tel,
+            this.mem_grade});
             resources.ApplyResources(this.member_manager_listView, "member_manager_listView");
             this.member_manager_listView.FullRowSelect = true;
             this.member_manager_listView.HideSelection = false;
@@ -97,6 +99,10 @@ namespace book_management_program.Forms
             // 
             resources.ApplyResources(this.tel, "tel");
             // 
+            // mem_grade
+            // 
+            resources.ApplyResources(this.mem_grade, "mem_grade");
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label4);
@@ -112,6 +118,13 @@ namespace book_management_program.Forms
             this.panel1.Controls.Add(this.no_textBox);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.label4.Name = "label4";
+            this.label4.DoubleClick += new System.EventHandler(this.label4_DoubleClick);
             // 
             // label3
             // 
@@ -177,13 +190,6 @@ namespace book_management_program.Forms
             resources.ApplyResources(this.no_textBox, "no_textBox");
             this.no_textBox.Name = "no_textBox";
             // 
-            // label4
-            // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label4.Name = "label4";
-            this.label4.DoubleClick += new System.EventHandler(this.label4_DoubleClick);
-            // 
             // MemeberManagerForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -222,5 +228,6 @@ namespace book_management_program.Forms
         private System.Windows.Forms.TextBox tel_textBox;
         private System.Windows.Forms.ColumnHeader tel;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ColumnHeader mem_grade;
     }
 }
