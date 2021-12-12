@@ -24,7 +24,7 @@ namespace book_management_program.Manager
         public List<string> CategoryList()
         {
             List<string> catList = new List<string>();
-
+            
             string sql = "SELECT cat_nm FROM category ;";
             MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql);
             if (result.HasRows)
@@ -35,7 +35,7 @@ namespace book_management_program.Manager
                 }
 
             }
-
+            MySql_Util.Instance.sqlConn.ClearAllPoolsAsync();
             return catList;
         }
 
@@ -64,23 +64,40 @@ namespace book_management_program.Manager
                 }
 
             }
+            MySql_Util.Instance.sqlConn.ClearAllPoolsAsync();
             return count;
         }
 
         // BookManager.cs 도서 삭제 버튼 기능
-        public void BookInfoDelete(string isbn)
+        public bool BookInfoDelete(string isbn)
         {
-            string sql = "DELETE FROM bookinfo WHERE isbn = " + isbn;
+            bool isDel = false;
 
-            if (MySql_Util.Instance.Update_Sql(sql) == true)
+            string sql = "DELETE FROM bookinfo WHERE isbn = " + isbn; //도서 정보 삭제
+            String sql_listcheck = $"SELECT rent_no FROM rental WHERE isbn='{isbn}' && return_dt='2000-01-01';"; //대여 중 확인
+            MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql_listcheck);
+            if (result.HasRows)
             {
-                MessageBox.Show("삭제 완료", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("삭제 에러 : 대여 중인 도서가 있습니다.", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("삭제 에러", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                var msg = MessageBox.Show("삭제할까요? [ ISBN ] : " + isbn, "관리 메시지", MessageBoxButtons.YesNo);
+                if (msg == DialogResult.Yes)
+                {
+                    if (MySql_Util.Instance.Update_Sql(sql))
+                    {
+                        MessageBox.Show("삭제 완료 : [ ISBN ] " + isbn, "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        isDel = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("삭제 에러", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
+            MySql_Util.Instance.sqlConn.ClearAllPoolsAsync();
+            return isDel;
         }
 
         // BookManager.cs 도서 등록 버튼 기능
@@ -125,6 +142,8 @@ namespace book_management_program.Manager
                     books.Add(book);
                 }
             }
+            MySql_Util.Instance.sqlConn.ClearAllPoolsAsync();
+            MySql_Util.Instance.sqlConn.Close();
             return books;
         }
 
@@ -154,6 +173,7 @@ namespace book_management_program.Manager
                     books.Add(book);
                 }
             }
+            MySql_Util.Instance.sqlConn.ClearAllPoolsAsync();
             return books;
         }
 
@@ -181,6 +201,7 @@ namespace book_management_program.Manager
         /* 도서 재고 확인 */
         public int RentStockCheck(string isbn)
         {
+            int sum = 0;
             String sql_stockcheck = $"SELECT stock FROM bookinfo WHERE isbn='{isbn}';";
             MySqlDataReader stockresult = MySql_Util.Instance.Select_Sql(sql_stockcheck);
             if (stockresult.HasRows)
@@ -189,15 +210,12 @@ namespace book_management_program.Manager
                 {
                     if (stockresult.GetInt32(0) > 0)
                     {
-                        return stockresult.GetInt32(0);
+                        sum = stockresult.GetInt32(0);
                     }
                 }
-                return 0;
             }
-            else
-            {
-                return 0;
-            }
+            MySql_Util.Instance.sqlConn.ClearAllPoolsAsync();
+            return sum;
         }
 
         /* 도서 대여 */
@@ -247,6 +265,7 @@ namespace book_management_program.Manager
                     break;
                 }
             }
+            MySql_Util.Instance.sqlConn.ClearAllPoolsAsync();
             return rent;
         }
 
@@ -322,6 +341,7 @@ namespace book_management_program.Manager
                 }
 
             }
+            MySql_Util.Instance.sqlConn.ClearAllPoolsAsync();
             return books;
         }
 
@@ -350,12 +370,15 @@ namespace book_management_program.Manager
                 }
 
             }
+            MySql_Util.Instance.sqlConn.ClearAllPoolsAsync();
             return books;
         }
 
         /* 도서 대여 연장 */
         public bool RentExtUpdate(int mem_no, string isbn)
         {
+            bool check = false;
+
             //rental ext update
             // 도서 연장 가능 여부 확인
             String sql_extcheck = $"SELECT rent_no, ext FROM rental WHERE mem_no={mem_no} && isbn='{isbn}' ORDER BY rent_dt ASC;";
@@ -371,18 +394,19 @@ namespace book_management_program.Manager
                         if (MySql_Util.Instance.Update_Sql(sql) == true)
                         {
                             MessageBox.Show("연장 완료", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MySql_Util.Instance.sqlConn.ClearAllPoolsAsync();
                             return true;
                         }
                     }
                 }
                 MessageBox.Show("연장 불가", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
             }
             else
             {
                 MessageBox.Show("연장 조회 에러", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
             }
+            MySql_Util.Instance.sqlConn.ClearAllPoolsAsync();
+            return check;
         }
 
 
@@ -410,10 +434,12 @@ namespace book_management_program.Manager
             MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql_listcheck);
             if (result.HasRows)
             {
+                MySql_Util.Instance.sqlConn.ClearAllPoolsAsync();
                 return true;
             }
             else
             {
+                MySql_Util.Instance.sqlConn.ClearAllPoolsAsync();
                 return false;
             }
         }
@@ -465,6 +491,7 @@ namespace book_management_program.Manager
                 }
                 rentAvg = rentAvg / 30;
             }
+            MySql_Util.Instance.sqlConn.ClearAllPoolsAsync();
             return rentAvg;
         }
 
@@ -484,6 +511,7 @@ namespace book_management_program.Manager
                     rentSum = result.GetInt32(0);
                 }
             }
+            MySql_Util.Instance.sqlConn.ClearAllPoolsAsync();
             return rentSum;
         }
 

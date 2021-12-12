@@ -14,8 +14,6 @@ namespace book_management_program.Forms
 {
     public partial class MemeberManagerForm : Form
     {
-        private MemberManager membermanager = new MemberManager();
-
         public MemeberManagerForm()
         {
             InitializeComponent();
@@ -23,12 +21,11 @@ namespace book_management_program.Forms
             this.no_textBox.Enabled = false;
         }
 
+        // 회원 목록 
         private void ListViewConn()
         {
             List<Member> list = new List<Member>();
-            MemberManager membermanager = new MemberManager();
-
-            list = membermanager.MemList();
+            list = MemberManager.Member.MemList(); //불러오기
 
             ListViewItem item;
 
@@ -41,8 +38,15 @@ namespace book_management_program.Forms
                 item.SubItems.Add(member.Mem_nm.ToString());
                 item.SubItems.Add(member.Pw.ToString());
                 item.SubItems.Add(member.Phone_no.ToString());
-                item.SubItems.Add(member.Mem_grade.ToString());
+                if (member.Mem_grade.ToString()=="NOR")
+                {
+                    item.SubItems.Add("일반회원");
+                }
+                else
+                {
 
+                    item.SubItems.Add("관리자");
+                }
 
                 this.member_manager_listView.Items.Add(item);
             }
@@ -50,6 +54,7 @@ namespace book_management_program.Forms
             Invalidate();
         }
 
+        //회원 추가
         private void member_add_btn_Click(object sender, EventArgs e)
         {
             if (this.id_textBox.Enabled == false)
@@ -91,16 +96,20 @@ namespace book_management_program.Forms
             ListViewConn();
         }
 
+        //회원 삭제
         private void member_delete_btn_Click(object sender, EventArgs e)
         {
-            membermanager.MemInfoDelete(Int32.Parse(this.no_textBox.Text));
-            this.no_textBox.Clear();
-            this.id_textBox.Clear();
-            this.pw_textBox.Clear();
-            this.tel_textBox.Clear();
-            ListViewConn();
+            if (MemberManager.Member.MemInfoDelete(Int32.Parse(this.no_textBox.Text)))
+            {
+                this.no_textBox.Clear();
+                this.id_textBox.Clear();
+                this.pw_textBox.Clear();
+                this.tel_textBox.Clear();
+                ListViewConn();
+            }
         }
 
+        /*
         private void member_manager_listView_ItemActivate(object sender, EventArgs e)
         {
             if (member_manager_listView.SelectedIndices.Count > 0)
@@ -133,8 +142,9 @@ namespace book_management_program.Forms
                 }
 
             }
-        }
+        }*/
 
+        //회원 선택
         private void member_manager_listView_ItemActivate_1(object sender, EventArgs e)
         {
             int where = 0;
@@ -154,6 +164,7 @@ namespace book_management_program.Forms
             }
         }
 
+        //지우기 버튼
         private void label4_DoubleClick(object sender, EventArgs e)
         {
             this.no_textBox.Clear();

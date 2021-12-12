@@ -35,18 +35,23 @@ namespace book_management_program.Forms
             this.cat_nm_comboBox.SelectedIndex = -1;
         }
 
+        private void InfoClear()
+        {
+            this.book_number_textBox.Enabled = true;
+            this.book_number_textBox.Clear();
+            this.book_name_textBox.Clear();
+            this.book_writer_textBox.Clear();
+            this.book_publisher_textBox.Clear();
+            this.book_stock_textBox.Clear();
+            this.cat_nm_comboBox.SelectedIndex = -1;
+            this.pub_dt_textBox.Clear();
+        }
+
         private void rent_btn_Click(object sender, EventArgs e)
         {
             if (this.book_number_textBox.Enabled == false)
             {
-                this.book_number_textBox.Enabled = true;
-                this.book_number_textBox.Clear();
-                this.book_name_textBox.Clear();
-                this.book_writer_textBox.Clear();
-                this.book_publisher_textBox.Clear();
-                this.book_stock_textBox.Clear();
-                this.cat_nm_comboBox.SelectedIndex = -1;
-                this.pub_dt_textBox.Clear();
+                InfoClear();
             }
             else
             {
@@ -80,8 +85,11 @@ namespace book_management_program.Forms
 
         private void book_delete_btn_Click(object sender, EventArgs e)
         {
-            BookManager.Book.BookInfoDelete(this.book_number_textBox.Text);
-            BookList();
+            if(BookManager.Book.BookInfoDelete(this.book_number_textBox.Text))
+            {
+                InfoClear();
+                BookList();
+            }
         }
 
         private void book_listView_ItemActivate(object sender, EventArgs e)

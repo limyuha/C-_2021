@@ -11,7 +11,7 @@ namespace book_management_program.Manager
         interface IBookManager
         {
             void BookInfoInsert(Book book);                     // BookManager.cs 도서 등록 버튼 기능
-            void BookInfoDelete(String isbn);                   // BookManager.cs 도서 삭제 버튼 기능
+            bool BookInfoDelete(String isbn);                   // BookManager.cs 도서 삭제 버튼 기능
             void BookInfoUpdate(Book book);
 
             List<Book> BookInfoList();                          // BookManager.cs 도서 리스트 기능
