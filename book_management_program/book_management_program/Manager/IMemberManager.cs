@@ -10,7 +10,7 @@ namespace book_management_program.Manager
     interface IMemberManager
     {
         bool MemLogin(string id, string password, string mem_grade);
-        void MemInfoDelete(int mem_no);
+        bool MemInfoDelete(int mem_no);
         void MemInfoInsert(Member member);
         Member MemInfo(string mem_nm);
         Member MemInfoLookup(int mem_no);
@@ -23,7 +23,6 @@ namespace book_management_program.Manager
         int MemRentListCnt(int mem_no);
         List<Book> MemRentList(int mem_no);
 
-        int memResvListcnt(int mem_no);
         List<Book> MemResvList(int mem_no);
 
         List<Issue> MemIssueList(int mem_no);

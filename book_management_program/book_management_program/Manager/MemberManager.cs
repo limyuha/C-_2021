@@ -164,20 +164,38 @@ namespace book_management_program.Manager
             }
             return members;
         }
-        /*회원 삭제 */
-        public void MemInfoDelete(int mem_no)
-        {
-            string sql = "DELETE FROM member WHERE mem_no =" + mem_no;
 
-            if (MySql_Util.Instance.Update_Sql(sql) == true)
+        /*회원 삭제 */
+        public bool MemInfoDelete(int mem_no)
+        {
+            bool isDel = false;
+
+            string sql = "DELETE FROM member WHERE mem_no =" + mem_no; //회원 삭제
+            String sql_listcheck = $"SELECT rent_no FROM rental WHERE mem_no={mem_no} && return_dt='2000-01-01';"; //회원 대여중 확인
+            MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql_listcheck);
+            if (result.HasRows)
             {
-                MessageBox.Show("삭제 완료", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("삭제 에러 : 대여 중인 도서가 있습니다.", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("삭제 에러", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                var msg = MessageBox.Show("삭제할까요? [ 회원번호 ] : " + mem_no, "관리 메시지", MessageBoxButtons.YesNo);
+                if (msg == DialogResult.Yes)
+                {
+                    if (MySql_Util.Instance.Update_Sql(sql) == true)
+                    {
+                        MessageBox.Show("삭제 완료", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        isDel = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("삭제 에러", "관리 메시지", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                    }
+                }
             }
+
+            return isDel;
         }
 
         /* 회원 로그인 */
@@ -296,7 +314,7 @@ namespace book_management_program.Manager
             return resvBooks;
         }
 
-        /* 회원 예약 도서 개수 */
+        /* 회원 예약 도서 개수
         public int memResvListcnt(int mem_no)
         {
             int count = 0;
@@ -307,7 +325,7 @@ namespace book_management_program.Manager
                 count = result.GetInt32(0);
             }
             return count;
-        }
+        } */
 
 
         /* 1. 회원 대여 목록 연체 검사 - 처리 >> 로그인 시 */

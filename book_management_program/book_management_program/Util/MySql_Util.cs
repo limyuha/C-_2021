@@ -19,17 +19,13 @@ namespace book_management_program.Util
         }
 
         private string connection;
-        private MySqlConnection sqlConn;
+        public MySqlConnection sqlConn;
         private MySqlCommand sqlCmd;
-        private bool return_value;
         private MySqlDataReader result;
 
         /* DB연동 정보 */
         public MySql_Util()
         {
-
-            return_value = false;
-
             string database = "c2021";
             string server = "localhost";
             string user = "c2021";
@@ -64,7 +60,7 @@ namespace book_management_program.Util
             {
                 MessageBox.Show(e.ToString());
                 sqlConn.Close();
-                return null; 
+                return result; 
             }
         }
 
