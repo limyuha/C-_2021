@@ -119,7 +119,7 @@ namespace book_management_program.Manager
         // BookManager.cs 도서 리스트 기능
         public List<Book> BookInfoList()
         {
-            string sql = "SELECT isbn, cat_nm, author, pub, pub_dt, book_nm, stock FROM bookinfo,category WHERE bookinfo.cat_no = category.cat_no order by book_nm;";
+            string sql = "SELECT isbn, cat_nm, author, pub, pub_dt, book_nm, stock FROM bookinfo,category WHERE bookinfo.cat_no = category.cat_no order by isbn;";
 
             List<Book> books = new List<Book>();
 
@@ -351,7 +351,7 @@ namespace book_management_program.Manager
             List<Book> books = new List<Book>();
             Book book;
 
-            string sql = $"SELECT isbn,cat_nm,author,pub,pub_dt,book_nm,stock FROM bookinfo,category WHERE {type} LIKE '%{search}%' && bookinfo.cat_no = category.cat_no;";
+            string sql = $"SELECT bookinfo.isbn,cat_nm,author,pub,pub_dt,book_nm,stock, COUNT(rent.isbn) FROM bookinfo left OUTER JOIN (SELECT * FROM rental where return_dt like '2000-01-01') rent ON bookinfo.isbn = rent.isbn INNER JOIN category ON bookinfo.cat_no = category.cat_no WHERE {type} LIKE '%{search}%' GROUP BY bookinfo.isbn,cat_nm,author,pub,pub_dt,book_nm,stock order by bookinfo.isbn;";
 
             MySqlDataReader result = MySql_Util.Instance.Select_Sql(sql);
             if (result.HasRows)
@@ -366,6 +366,7 @@ namespace book_management_program.Manager
                     book.Pub_dt = result.GetString(4);
                     book.Book_nm = result.GetString(5);
                     book.Stock = result.GetInt32(6);
+                    book.Rent_sum = result.GetInt32(7);
                     books.Add(book);
                 }
 

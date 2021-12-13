@@ -33,6 +33,9 @@ namespace book_management_program.Forms
                 this.cat_nm_comboBox.Items.Add(cat_nm);
             }
             this.cat_nm_comboBox.SelectedIndex = -1;
+
+            //isbn 입력 가능
+            this.book_number_textBox.Enabled = true;
         }
 
         private void InfoClear()
@@ -47,6 +50,7 @@ namespace book_management_program.Forms
             this.pub_dt_textBox.Clear();
         }
 
+        //도서 등록
         private void rent_btn_Click(object sender, EventArgs e)
         {
             if (this.book_number_textBox.Enabled == false)
@@ -55,16 +59,24 @@ namespace book_management_program.Forms
             }
             else
             {
-                Book book = new Book();
+                if(!string.IsNullOrWhiteSpace(this.book_number_textBox.Text)&& !string.IsNullOrWhiteSpace(this.cat_nm_comboBox.Text) && !string.IsNullOrWhiteSpace(this.pub_dt_textBox.Text) &&
+                    !string.IsNullOrWhiteSpace(this.book_writer_textBox.Text) && !string.IsNullOrWhiteSpace(this.book_publisher_textBox.Text) && !string.IsNullOrWhiteSpace(this.book_stock_textBox.Text) && !string.IsNullOrWhiteSpace(this.book_name_textBox.Text))
+                {
+                    Book book = new Book();
 
-                book.Isbn = this.book_number_textBox.Text;
-                book.Book_nm = this.book_name_textBox.Text;
-                book.Author = this.book_writer_textBox.Text;
-                book.Cat_no = this.cat_nm_comboBox.SelectedIndex + 1;
-                book.Pub = this.book_publisher_textBox.Text;
-                book.Stock = int.Parse(this.book_stock_textBox.Text);
-                book.Pub_dt = this.pub_dt_textBox.Text;
-                BookManager.Book.BookInfoInsert(book);
+                    book.Isbn = this.book_number_textBox.Text;
+                    book.Book_nm = this.book_name_textBox.Text;
+                    book.Author = this.book_writer_textBox.Text;
+                    book.Cat_no = this.cat_nm_comboBox.SelectedIndex + 1;
+                    book.Pub = this.book_publisher_textBox.Text;
+                    book.Stock = int.Parse(this.book_stock_textBox.Text);
+                    book.Pub_dt = this.pub_dt_textBox.Text;
+                    BookManager.Book.BookInfoInsert(book);
+                }
+                else
+                {
+                    MessageBox.Show("정보 입력 필요");
+                }
             }
             BookList();
         }
@@ -153,7 +165,7 @@ namespace book_management_program.Forms
                 switch (group_comboBox.SelectedItem.ToString())
                 {
                     case "ISBN":
-                        type = "isbn";
+                        type = "bookinfo.isbn";
                         break;
                     case "도서명":
                         type = "book_nm";
@@ -192,7 +204,7 @@ namespace book_management_program.Forms
             this.book_listView.Items.Clear();
             foreach (var book in books)
             {
-                string[] row = { book.Isbn, book.Cat_nm, book.Author, book.Pub, book.Pub_dt.ToString(), book.Book_nm, book.Stock.ToString() };
+                string[] row = { book.Isbn, book.Cat_nm, book.Author, book.Pub, book.Pub_dt.ToString(), book.Book_nm, book.Stock.ToString(), book.Rent_sum.ToString() };
                 var lvItem = new ListViewItem(row);
                 this.book_listView.Items.Add(lvItem);
             }
@@ -203,15 +215,10 @@ namespace book_management_program.Forms
             BookList();
         }
 
+        //지우기
         private void label4_DoubleClick(object sender, EventArgs e)
         {
-            this.book_number_textBox.Clear();
-            this.book_name_textBox.Clear();
-            this.book_writer_textBox.Clear();
-            this.book_publisher_textBox.Clear();
-            this.book_stock_textBox.Clear();
-            this.cat_nm_comboBox.SelectedIndex = -1;
-            this.pub_dt_textBox.Clear();
+            InfoClear();
         }
     }
 }

@@ -185,7 +185,7 @@ namespace book_management_program.Forms
                 switch (group_comboBox.SelectedItem.ToString())
                 {
                     case "ISBN":
-                        type = "isbn";
+                        type = "bookinfo.isbn";
                         break;
                     case "도서명":
                         type = "book_nm";
