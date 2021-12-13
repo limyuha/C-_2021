@@ -72,13 +72,14 @@ namespace book_management_program.Forms
                     book.Stock = int.Parse(this.book_stock_textBox.Text);
                     book.Pub_dt = this.pub_dt_textBox.Text;
                     BookManager.Book.BookInfoInsert(book);
+
+                    BookList();
                 }
                 else
                 {
                     MessageBox.Show("정보 입력 필요");
                 }
             }
-            BookList();
         }
 
         private void modify_btn_Click(object sender, EventArgs e)

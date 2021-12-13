@@ -77,19 +77,22 @@ namespace book_management_program.Forms
                 }
                 else
                 {
-                    Member member = new Member();
+                    if (MemberManager.Member.IdReCheck(this.id_textBox.Text))
+                    {
+                        Member member = new Member();
 
-                    //member.Mem_no = Int32.Parse(this.no_textBox.Text);
-                    member.Mem_nm = this.id_textBox.Text;
-                    member.Pw = this.pw_textBox.Text;
-                    //member.Mem_grade = "NOR";
-                    member.Phone_no = this.tel_textBox.Text;
+                        //member.Mem_no = Int32.Parse(this.no_textBox.Text);
+                        member.Mem_nm = this.id_textBox.Text;
+                        member.Pw = this.pw_textBox.Text;
+                        //member.Mem_grade = "NOR";
+                        member.Phone_no = this.tel_textBox.Text;
 
-                    MemberManager.Member.MemInfoInsert(member);
-                    this.no_textBox.Clear();
-                    this.id_textBox.Clear();
-                    this.pw_textBox.Clear();
-                    this.tel_textBox.Clear();
+                        MemberManager.Member.MemInfoInsert(member);
+                        this.no_textBox.Clear();
+                        this.id_textBox.Clear();
+                        this.pw_textBox.Clear();
+                        this.tel_textBox.Clear();
+                    }
                 }
             }
 
