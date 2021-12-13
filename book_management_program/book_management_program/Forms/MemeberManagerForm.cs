@@ -171,6 +171,10 @@ namespace book_management_program.Forms
             this.id_textBox.Clear();
             this.pw_textBox.Clear();
             this.tel_textBox.Clear();
+
+            this.id_textBox.Enabled = true;
+            this.pw_textBox.Enabled = true;
+            this.tel_textBox.Enabled = true;
         }
     }
 }
